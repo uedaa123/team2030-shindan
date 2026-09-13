@@ -57,13 +57,42 @@ node build.mjs
 
 ## 公開する
 
-### 段階1：確認用（Netlify）
+### いま公開されている場所
 
-このフォルダごと [app.netlify.com/drop](https://app.netlify.com/drop) にドラッグ＆ドロップ。
-数秒でURLが出る。**未ログインのサイトは一定期間で消えるので、無料アカウントは作っておく**
-（固定URL・差し替え・削除ができるようになる）。
+| | |
+|---|---|
+| 公開URL | **https://uedaa123.github.io/team2030-shindan/** |
+| リポジトリ | https://github.com/uedaa123/team2030-shindan （**public**） |
+| Claudeアーティファクト版 | https://claude.ai/code/artifact/bb37437a-0431-4cfa-8054-6eb2cbf3faf6 （非公開・Claudeアカウントが要る） |
 
-`_headers` を置いてあるので、検索エンジンには載らない。
+公開URLはログイン不要で誰でも開ける。2026-09-14に植田さんの判断で公開した。
+
+**リポジトリが public なので、`data/cases.json`（事例113件）も誰でも落とせる状態にある。**
+引継ぎ資料 §10 が「113件の事例集と各種解釈は有料コンテンツの一部で、全公開は運営判断が要る」
+と書いているのはこの状態のこと。運営の判断でこれを止めるときは、リポジトリを private にすると
+Pages も止まる（無料プランの場合）ので、UTAGE か Netlify に移すことになる。
+
+`robots.txt` と `<meta name="robots" content="noindex">` を置いてあるので、検索には出ない。
+ただし**検索避けであって、アクセス制限ではない**。URLを知っていれば誰でも開ける。
+
+### 更新のしかた
+
+`main` に push すれば1〜2分で反映される。
+
+```bash
+node build.mjs
+git add -A && git commit -m "..." && git push
+```
+
+`node build.mjs` を先に流すのを忘れないこと（`dist/` の埋め込み版が古いままになる）。
+
+### もう1つの選択肢：Netlify
+
+リポジトリを公開したくない場合は、このフォルダごと
+[app.netlify.com/drop](https://app.netlify.com/drop) にドラッグ＆ドロップ。
+アカウント不要で数秒でURLが出る。**未ログインのサイトは一定期間で消えるので、
+無料アカウントは作っておく**（固定URL・差し替え・削除ができるようになる）。
+`_headers` はNetlify用の設定ファイルで、Pages では何もしない。
 
 ### 段階2：本番（UTAGEの会員エリア）
 
@@ -71,7 +100,7 @@ UTAGEにカスタムHTMLブロックがあれば `dist/...offline.html` の中�
 外部ファイルの参照がいらない）。なければ Netlify のURLを会員ページから iframe で呼ぶ。
 
 **会員だけがアクセスできる状態にする（完了条件2）のは、このコードの外側の話。**
-Netlifyに置いただけではURLを知っている人は誰でも見られる。UTAGEの会員エリアに入れるか、
+いまの GitHub Pages はURLを知っている人なら誰でも見られる。UTAGEの会員エリアに入れるか、
 Netlifyのパスワード保護（有料プラン）を使うか、どちらかを運営と決めること。
 
 ---
