@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>チーム2030 プロジェクト診断</title>
+<meta name="description" content="住んでいる場所と気になっていることを選ぶと、似た条件で実際に動いている事例が出てきます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header><div class="wrap">
+<h1>プロジェクト診断</h1>
+<p>住んでいる場所と、気になっていることを選んでいくと、似た条件で実際に動いている事例が出てきます。最後に、いくら用意すれば始められるかまで見られます。</p>
+</div></header>
+
+<div class="bar"><i id="bar"></i></div>
+
+<main class="wrap" id="app" aria-live="polite">
+  <div class="step"><p class="hint" id="boot">事例データを読み込んでいます…</p></div>
+</main>
+
+<textarea id="fallbackpad" aria-hidden="true" tabindex="-1"></textarea>
+
+<script src="config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
