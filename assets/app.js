@@ -1,6 +1,9 @@
 /* チーム2030 プロジェクト診断
-   素のHTML/CSS/JS。ビルド不要、外部CDNなし、localStorage/sessionStorage 不使用。
-   状態はすべてメモリ上の A オブジェクトで持つ（引継ぎ資料 §9）。 */
+   素のHTML/CSS/JS。ビルド不要、フレームワークなし、localStorage/sessionStorage 不使用。
+   状態はすべてメモリ上の A オブジェクトで持つ。
+
+   設問は5問。分野／誰に届けたいか／ウェルスダイナミクス／勇誠義礼2問。
+   住んでいる場所・出せるお金・使える時間は聞かない（2026-09-20 植田さんの指示）。 */
 (function () {
 "use strict";
 
@@ -13,20 +16,20 @@ var CFG = Object.assign({
   askName: true
 }, window.T2030_CONFIG || {});
 
-/* URLの ?q=3 で3問版に切り替え（引継ぎ資料 §8-⑤。既定は7問） */
+/* URLの ?q=3 で短い版（分野・届け先・勇誠義礼1問）に切り替え */
 try {
   var qp = new URLSearchParams(location.search);
   if (qp.get("q") === "3") CFG.questionSet = "short";
-  if (qp.get("q") === "7") CFG.questionSet = "full";
+  if (qp.get("q") === "5") CFG.questionSet = "full";
 } catch (e) { /* URLSearchParams が無い環境では既定のまま */ }
 
 /* 埋め込み版（オフライン配布用）はこの変数にデータが入っている */
 var EMBEDDED = window.T2030_DATA || null;
 
 /* ── 固定マスタ①：勇誠義礼（行動コミュニケーション学の思考特性4タイプ）
-   出典 https://note.com/kanada0627/n/n6c3fbceb3427
+   出典 一般社団法人行動コミュニケーション協会
    勇＝左脳イン/右脳アウト、誠＝左左、義＝右右、礼＝右脳イン/左脳アウト
-   ※定義文は言い換えない（引継ぎ資料 §6-1） ───────────── */
+   ※定義文は言い換えない ───────────────────────────── */
 var YN = {
  "勇":{ q:"What", head:"考えるより、まず動く",
    desc:"思ったら即行動。うまくいかないのは、まだ行動していないからだと考える。「で、どうする？」「結局、自分は何をしたらいいのか」が気になる。",
@@ -40,7 +43,7 @@ var YN = {
    love:"そばにいてもらったとき（言葉を交わさなくても、同じ空間にいること）",
    loveShort:"そばにいてもらえると嬉しい",
    ai:"隣人愛（身近な人だけでなく、見ず知らずの人も含む広いコミュニティへ。仕組みやシステムを通して届ける）",
-   proj:"数字と期限を先に置くこと。measurableな目標がないと力が出ない。仕組みづくりが持ち場。",
+   proj:"数字と期限を先に置くこと。測れる目標がないと力が出ない。仕組みづくりが持ち場。",
    buddy:"同じ時間に一緒に作業してくれる相手。離れた場所からの励ましより、隣にいること。"},
  "義":{ q:"Why", head:"なぜやるのかが、いちばん大事",
    desc:"目的とビジョンを示し、みんなのエネルギーを上げることが成果につながると考える。「なぜですか？」が気になり、そのWhyに向けた一貫した行動を大切にする。",
@@ -59,8 +62,7 @@ var YN = {
 };
 var YN_ORDER = ["勇","誠","義","礼"];
 
-/* ── 固定マスタ②：ウェルスダイナミクス（協会発行レポート p.50-51, p.60）
-   ※この表はバディのペアリングにそのまま使う（引継ぎ資料 §6-2） ── */
+/* ── 固定マスタ②：ウェルスダイナミクス（協会発行レポート p.50-51, p.60） ── */
 var WDROLE = {
  "クリエイター":{role:"立ち上げ役。混乱は起きるが、そこから抜ける方法を思いつく",
    support:"機会提供者・出資者", catalyst:["メカニック","ディールメーカー"],
@@ -88,28 +90,110 @@ var WDROLE = {
    why:"クリエイターが中身を足し、ディールメーカーが仕組みをお金に換えてくれる"}
 };
 
-var COSTS = ["3万円まで","30万円まで","30万円以上"];
-var TIMES = ["月2〜4時間","月8時間くらい","月20時間以上"];
+/* ── 固定マスタ③：あなたの入り方（勇誠義礼4 × ウェルスダイナミクス8 ＝ 32通り）
+   「何をやるか」ではなく「あなたはそこにどう入るか」。結果画面のいちばん上に出る。
+   自動生成にすると当たり障りのない文になるので、1本ずつ手で書いてある。 ── */
+var COMBO = {
+ "勇":{
+  "クリエイター":"思いついた形を、今週そのまま試してください。相談はやってみたあとでいい。ただし2週目には誰かに渡す前提で。",
+  "スター":"先に人前で「やります」と言ってしまうのが早い。引き受けてくれる人は、そのあと集まります。",
+  "サポーター":"動きながら人を巻き込むタイプ。計画書を作る前に、手伝ってくれる人を1人つかまえてください。",
+  "ディールメーカー":"思いついたらその場で電話する。あなたの一歩目は「つなぐ」なので、資料はいりません。",
+  "トレーダー":"まず小さく売ってみる。反応を見てから、続けるかどうかを決めてください。",
+  "アキュムレーター":"動きたい気持ちと、確実に仕上げたい性質がぶつかります。今週やる1つだけ決めて、それだけやる。",
+  "ロード":"調べる前に一度、現場に行ってください。数字は行ってから取るほうが速い。",
+  "メカニック":"いきなり作り始めていい。直すのは、動くものができてからです。"
+ },
+ "誠":{
+  "クリエイター":"思いつきを、先に期限と数字に変換してください。「いつまでに何を」が決まると手が動きます。",
+  "スター":"出る場所と回数を先に決める。行き当たりばったりの露出は消耗します。",
+  "サポーター":"計画は人からもらっていい。あなたは動かす側です。一歩目は「計画を持っている人」を探すこと。",
+  "ディールメーカー":"誰と誰をつなぐと何が起きるかを、先に1枚にする。会う順番を決めてから動いてください。",
+  "トレーダー":"いくらで何個売れば成り立つかを先に出す。数字が立たないうちは売らない。",
+  "アキュムレーター":"いちばん強い組み合わせです。期限を切って、そのとおりに終わらせられる。最初の期限を今週決めてください。",
+  "ロード":"得意がそのまま一歩目になります。ただし分析で止まらないよう、報告する相手を先に決めておくこと。",
+  "メカニック":"すでにある仕組みを1つ選んで、どこが壊れているかを測る。作り直すのはそのあとです。"
+ },
+ "義":{
+  "クリエイター":"なぜやるのかを1行書いてから作り始めてください。その1行が、人を呼ぶ看板になります。",
+  "スター":"目的を語る場を先に作る。あなたが語ると人が動きます。中身を作る人は後から来ます。",
+  "サポーター":"目的を掲げて、そこに人を集める。実務は集まった人に渡していい。",
+  "ディールメーカー":"「何のためか」を言葉にしてから人に会う。目的がないと、あなたのつなぎは空回りします。",
+  "トレーダー":"何のために売るのかを決める。値段より先に意味。そこが決まると強い。",
+  "アキュムレーター":"目的が腹落ちしないと進行管理に力が入りません。着地点を先に自分の言葉にしてください。",
+  "ロード":"分析の前に、何を証明したいのかを決める。目的のないデータは、集めても使いません。",
+  "メカニック":"直す前に「何のために直すのか」を決める。そこがないと、きれいにして終わります。"
+ },
+ "礼":{
+  "クリエイター":"誰と作るかを先に決めてください。ひとりで作ると途中で止まります。",
+  "スター":"あなたの語りは物語になる。まず1人の話を聞いて、その人を主役にして語ってください。",
+  "サポーター":"いちばん自然な組み合わせです。誰を支えるかを1人決めるところから始めてください。",
+  "ディールメーカー":"会って話を聞くところから始めていい。あなたの一歩目は、用件のない訪問でかまいません。",
+  "トレーダー":"買ってくれる人の顔が見えないと動けないタイプ。まず1人に、手渡しで売ってください。",
+  "アキュムレーター":"進行管理は得意ですが、人を急かすのが苦手。期限は自分で決めず、みんなで決めること。",
+  "ロード":"数字の前に、その数字が誰の何を変えるのかを聞いておく。そこが分かると手が速くなります。",
+  "メカニック":"直す前に、それを使っている人の話を最後まで聞く。使い手の話がそのまま設計図になります。"
+ }
+};
 
-var PLACEDESC = {
- "中山間・農山漁村":"山あい、農村、漁村。集落単位で暮らしが回っている",
- "小さな町・村":"歩いて用が足りる規模。顔が見える範囲",
- "地方都市の市街地":"駅前や商店街がある。中核市・小都市",
- "大都市・都市圏":"政令市やその周辺。人は多いがつながりは薄い",
- "沿岸・離島":"海沿い、島。水辺が生活のそばにある"
+/* ウェルスダイナミクスが「まだ分からない」人向け。勇誠義礼だけで出す */
+var COMBO_SOLO = {
+ "勇":"考える前に動けるのが強みです。今週やる1つを決めて、それだけやってください。計画はあとから追いつきます。",
+ "誠":"数字と期限を先に置いてください。「いつまでに、何を、どれだけ」が決まると、あなたは一気に進みます。",
+ "義":"なぜやるのかを1行にしてから始めてください。目的が言葉になっていないと、あなたの手は動きません。",
+ "礼":"誰とやるかを先に決めてください。人の顔が見えると進みます。まず1人、話を聞きに行くところから。"
+};
+
+/* ── 設問 ──────────────────────────────────────────── */
+var Q = {
+ genre: {key:"genre", type:"many", max:3, q:"どの分野に心が動きますか",
+   h:"気になるものを3つまで。深く考えず、目に留まったものでかまいません。",
+   opts:function(){ return DB.genres.map(function(g, i){ return {v:g, b:g, c:hue(i), s:GENREDESC[g]}; }); }},
+ reach: {key:"reach", type:"one", q:"どこまで届けたいですか", h:"あとから変えられます。いまの気分で。",
+   opts:function(){ return [
+     {v:"自分のまち", b:"まず、自分のまちで", s:"目の届く範囲から始める。顔の見える人に効く"},
+     {v:"日本じゅうに", b:"日本じゅうに広げたい", s:"うまくいったら他の地域にも渡せる形をねらう"}
+   ]; }},
+ wd:    {key:"wd", type:"one", q:"ウェルスダイナミクスのプロファイルは",
+   h:"インサイドクラスで診断します。まだの人は「まだ分からない」で先に進めます。",
+   opts:function(){ return DB.wd.map(function(w){ return {v:w,b:w,s:WDROLE[w].role}; })
+     .concat([{v:"unknown",b:"まだ分からない",s:"勇誠義礼だけで、あなたの入り方を出します"}]); }},
+ yn1:   {key:"yn1", type:"one", q:"人の話を聞いていて、いちばん引っかかるのはどれですか",
+   h:"勇誠義礼の思考特性を見ます。正解はありません。反射的に選んでください。",
+   opts:function(){ return YN_ORDER.map(function(k){ return {v:k,b:YN[k].head,s:YN[k].desc,c:YN_HUE[k]}; }); }},
+ yn2:   {key:"yn2", type:"one", q:"どんなときに、大切にされていると感じますか",
+   h:"同じタイプ分けを、別の角度から確かめます。",
+   opts:function(){ return YN_ORDER.map(function(k){ return {v:k,b:YN[k].love,c:YN_HUE[k]}; }); }}
+};
+
+var STEP_SETS = {
+  full:  [Q.genre, Q.reach, Q.wd, Q.yn1, Q.yn2],
+  short: [Q.genre, Q.reach, Q.yn1]
+};
+
+var GENREDESC = {
+  "子どもと学び":"学校の外でも、子どもが伸びる場をつくる",
+  "水辺と生きもの":"川・湖・海と、そこに棲むものを戻す",
+  "里山・森・畑":"手が入らなくなった土地に、もう一度手を入れる",
+  "記録して残す":"その人しか知らないことを、消える前に残す",
+  "まちと空き家":"使われていない場所を、使われる状態に戻す",
+  "地域の稼ぎをつくる":"地域の外に出ていくお金を、中で回す",
+  "ごみを資源に戻す":"捨てているものを、もう一度使える形にする",
+  "仕組みをつくる":"人に頼りきりの作業を、続く形に変える",
+  "年を重ねても動ける":"年齢を理由に、外に出られなくならないようにする",
+  "だれも外れない":"事情があっても、輪の中にいられるようにする",
+  "いざというときに備える":"そのときに動ける状態を、いまつくっておく"
 };
 
 /* ── 色 ────────────────────────────────────────────
-   「気になっていること」は1項目ずつ固有の色を持つ。選んだ課題の色が、
-   そのまま結果画面の事例カードの上辺に出る（assets/style.css の --h0〜--h9）。
-   issues が増えたときは style.css に --h10 を足せばよく、無ければ既定色に落ちる。 */
-/* --c は文字にも使う濃いほう、--cv は面を塗る鮮やかなほう */
+   分野ごとに固有の色。選んだ分野の色が、そのままおすすめカードの上辺に出る。
+   分野を増やしたら style.css に --h11 / --h11v を足す。無ければ既定色に落ちる。 */
 function hue(i){
   return i >= 0
     ? "--c:var(--h" + i + ",var(--accent));--cv:var(--h" + i + "v,var(--accent))"
     : "--c:var(--accent);--cv:var(--accent)";
 }
-function issueHue(name){ return hue(DB.issues.indexOf(name)); }
+function genreHue(name){ return hue(DB.genres.indexOf(name)); }
 
 var YN_HUE = {
   "勇":"--c:var(--yu);--cv:var(--h0v)",
@@ -118,43 +202,20 @@ var YN_HUE = {
   "礼":"--c:var(--rei);--cv:var(--h7v)"
 };
 
-/* ── 設問 ──────────────────────────────────────────── */
-var Q = {
- place: {key:"place", type:"one", q:"住んでいるのは、どんなところですか", h:"いちばん近いものを1つ。",
-   opts:function(){ return DB.places.map(function(p){ return {v:p,b:p,s:PLACEDESC[p]}; }); }},
- feat:  {key:"feat", type:"many", max:3, q:"その土地には、何がありますか", h:"あるものを3つまで。無理に埋めなくて構いません。",
-   opts:function(){ return DB.feats.map(function(f){ return {v:f,b:f}; }); }},
- issue: {key:"issue", type:"many", max:3, q:"気になっていることは何ですか", h:"解決したいことでも、ただ気になることでも。3つまで。",
-   opts:function(){ return DB.issues.map(function(f, i){ return {v:f,b:f,c:hue(i)}; }); }},
- wd:    {key:"wd", type:"one", q:"ウェルスダイナミクスのプロファイルは", h:"8/6のインサイドクラスで診断します。まだの人は「まだ分からない」で先に進めます。",
-   opts:function(){ return DB.wd.map(function(w){ return {v:w,b:w,s:WDROLE[w].role}; })
-     .concat([{v:"unknown",b:"まだ分からない",s:"この項目は結果に使いません"}]); }},
- yn1:   {key:"yn1", type:"one", q:"人の話を聞いていて、いちばん引っかかるのはどれですか",
-   h:"勇誠義礼の思考特性を見ます。正解はありません。反射的に選んでください。",
-   opts:function(){ return YN_ORDER.map(function(k){ return {v:k,b:YN[k].head,s:YN[k].desc}; }); }},
- yn2:   {key:"yn2", type:"one", q:"どんなときに、大切にされていると感じますか",
-   h:"同じタイプ分けを、別の角度から確かめます。",
-   opts:function(){ return YN_ORDER.map(function(k){ return {v:k,b:YN[k].love}; }); }},
- money: {key:"money", type:"money", q:"最初に出せるものを教えてください", h:"多い少ないで結果は変わりません。無理のない範囲が出るだけです。"}
-};
-
-var STEP_SETS = {
-  full:  [Q.place, Q.feat, Q.issue, Q.wd, Q.yn1, Q.yn2, Q.money],
-  short: [Q.place, Q.issue, Q.money]
-};
-var STEPS = STEP_SETS[CFG.questionSet] || STEP_SETS.full;
-var TOTAL = STEPS.length;
+var SCALE_ORDER = {S:0, M:1, L:2};
 
 /* ── 状態（メモリのみ） ────────────────────────────── */
-var A, step, DB = null, lastResult = null, started = false;
+var A, step, STEPS, TOTAL, DB = null, lastResult = null, started = false;
 var SESSION = "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 
 function reset() {
-  A = {place:null, feat:[], issue:[], wd:null, yn1:null, yn2:null, cost:null, time:null, name:""};
+  A = {genre:[], reach:null, wd:null, yn1:null, yn2:null, name:""};
   step = 0;
   lastResult = null;
 }
 reset();
+STEPS = STEP_SETS[CFG.questionSet] || STEP_SETS.full;
+TOTAL = STEPS.length;
 
 var app = document.getElementById("app");
 var bar = document.getElementById("bar");
@@ -169,23 +230,28 @@ function progress(){ bar.style.width = (step / TOTAL * 100) + "%"; }
 
 /* ── データ読み込み ───────────────────────────────── */
 function boot(){
-  if (EMBEDDED) { DB = EMBEDDED; render(); return; }
+  if (EMBEDDED) { DB = ready(EMBEDDED); render(); return; }
   fetch(CFG.dataUrl, {cache:"no-cache"})
     .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-    .then(function(json){ DB = json; render(); })
+    .then(function(json){ DB = ready(json); render(); })
     .catch(function(err){ failed(err); });
+}
+function ready(json){
+  /* ウェルスダイナミクスの8種はコード側のマスタから（データに持たせない） */
+  json.wd = Object.keys(WDROLE);
+  return json;
 }
 
 function failed(err){
   var isFile = location.protocol === "file:";
   app.innerHTML =
   '<div class="oops">' +
-    '<h2>事例データを読み込めませんでした</h2>' +
+    '<h2>データを読み込めませんでした</h2>' +
     (isFile
       ? '<p>いま <code>file://</code> でこのファイルを直接開いています。この開き方では' +
         'ブラウザの決まり（CORS）で <code>data/cases.json</code> を読めません。</p>' +
         '<p>手元で確認するだけなら <code>dist/TEAM2030_プロジェクト診断_offline.html</code>（データ埋め込み版）を開いてください。' +
-        'こちらのファイルは、Netlify などに置いた状態では問題なく動きます。</p>'
+        'こちらのファイルは、公開した状態では問題なく動きます。</p>'
       : '<p><code>' + esc(CFG.dataUrl) + '</code> が見つからないか、JSONとして読めませんでした。' +
         'ファイルを差し替えた直後なら、書式が壊れていないか確認してください。</p>') +
     '<p class="note">' + esc(String((err && err.message) || err)) + '</p>' +
@@ -197,7 +263,6 @@ function render(){
   progress();
   if (step >= STEPS.length) return results();
   var S = STEPS[step];
-  if (S.type === "money") return money(S);
 
   var cur = A[S.key];
   var sel = function(v){ return S.type === "many" ? cur.indexOf(v) >= 0 : cur === v; };
@@ -221,8 +286,10 @@ function render(){
     '</div>' +
     '<div class="nav">' +
       (step > 0 ? '<button type="button" class="back" id="back">ひとつ戻る</button>' : '') +
-      '<button type="button" class="go" id="go"' + (ready(S) ? "" : " disabled") + '>次へ</button>' +
-      (S.type === "many" ? '<span class="count">' + cur.length + ' / ' + S.max + ' 選択中</span>' : '') +
+      (S.type === "many"
+        ? '<button type="button" class="go" id="go"' + (canGo(S) ? "" : " disabled") + '>次へ</button>' +
+          '<span class="count">' + cur.length + ' / ' + S.max + ' 選択中</span>'
+        : '') +
     '</div>' +
   '</div>';
 
@@ -236,7 +303,7 @@ function render(){
         else if (A[S.key].length < S.max) A[S.key].push(v);
         render();
       } else {
-        /* 単一選択はタップした瞬間に次へ進む（確定ボタンなし。§3） */
+        /* 単一選択はタップした瞬間に次へ進む（確定ボタンなし） */
         A[S.key] = v; step++; render(); top();
       }
     };
@@ -246,148 +313,141 @@ function render(){
   var bk = document.getElementById("back");
   if (bk) bk.onclick = function(){ step--; render(); top(); };
 }
-function ready(S){ return S.type === "many" ? A[S.key].length > 0 : !!A[S.key]; }
+function canGo(S){ return S.type === "many" ? A[S.key].length > 0 : !!A[S.key]; }
 
-function money(S){
-  app.innerHTML =
-  '<div class="step">' +
-    '<p class="stepno">' + (step + 1) + ' / ' + TOTAL + '</p>' +
-    '<h2>' + esc(S.q) + '</h2>' +
-    '<p class="hint">' + esc(S.h) + '</p>' +
-    '<p class="sublabel">ひと月に使える時間</p>' +
-    '<div class="opts">' + TIMES.map(function(t){
-      return '<button type="button" class="opt t ' + (A.time === t ? "on" : "") + '"' +
-        ' aria-pressed="' + (A.time === t ? "true" : "false") + '" data-v="' + esc(t) + '"><b>' + esc(t) + '</b></button>';
-    }).join("") + '</div>' +
-    '<p class="sublabel">最初に出せるお金</p>' +
-    '<div class="opts">' + COSTS.map(function(c){
-      return '<button type="button" class="opt c ' + (A.cost === c ? "on" : "") + '"' +
-        ' aria-pressed="' + (A.cost === c ? "true" : "false") + '" data-v="' + esc(c) + '"><b>' + esc(c) + '</b></button>';
-    }).join("") + '</div>' +
-    '<div class="nav">' +
-      '<button type="button" class="back" id="back">ひとつ戻る</button>' +
-      '<button type="button" class="go" id="go"' + (A.time && A.cost ? "" : " disabled") + '>事例を見る</button>' +
-    '</div>' +
-  '</div>';
-
-  Array.prototype.forEach.call(app.querySelectorAll(".opt.t"), function(b){
-    b.onclick = function(){ markStarted(); A.time = b.getAttribute("data-v"); money(S); };
-  });
-  Array.prototype.forEach.call(app.querySelectorAll(".opt.c"), function(b){
-    b.onclick = function(){ markStarted(); A.cost = b.getAttribute("data-v"); money(S); };
-  });
-  document.getElementById("back").onclick = function(){ step--; render(); top(); };
-  var g = document.getElementById("go");
-  if (A.time && A.cost) g.onclick = function(){ step++; render(); top(); };
-}
-
-/* ── スコアリング（引継ぎ資料 §5）
-   配点を変えたら node tools/verify-scoring.mjs を必ず流すこと ── */
-function ynType(){ return A.yn1 || null; }
-
+/* ── 並べ方 ───────────────────────────────────────
+   分野が合うか（×40）と、届け先が合うか（+15）だけで点を出す。
+   同点のときは「小さく始められる順」。入会2週目の人に、いきなり
+   十数人や許認可が要るものを一番上に出さないため。
+   性格（ウェルスダイナミクス・勇誠義礼）は順位に使わない。
+   89件に性格タグを機械で振ると当てずっぽうになるので、
+   性格は「あなたの入り方」を書くほうにだけ使っている。 ── */
 function score(it){
   var s = 0, why = [];
-  var t = ynType();
-  var ih = it.issue.filter(function(x){ return A.issue.indexOf(x) >= 0; });
-  if (ih.length) { s += ih.length * 30; why.push("「" + ih[0] + "」に効く"); }
-  var fh = it.feat.filter(function(x){ return A.feat.indexOf(x) >= 0; });
-  if (fh.length) { s += fh.length * 12; why.push(fh[0] + "土地の事例"); }
-  if (it.place.indexOf(A.place) >= 0 || it.place.indexOf("どこでも") >= 0) { s += 15; why.push("同じ規模の地域"); }
-  if (A.wd && A.wd !== "unknown" && it.wd.indexOf(A.wd) >= 0) { s += 18; why.push(A.wd + "が主役になれる"); }
-  /* 3問版では勇誠義礼を聞かないので、この項は加点も減点もしない */
-  if (t) {
-    if (it.yn && it.yn.indexOf(t) >= 0) { s += 22; why.push(t + "タイプの進め方に合う"); }
-    else { s -= 8; }
-  }
-  var co = COSTS.indexOf(it.cost) - COSTS.indexOf(A.cost);
-  var to = TIMES.indexOf(it.time) - TIMES.indexOf(A.time);
-  var raw = s;
-  if (co > 0) s -= co * 14;
-  if (to > 0) s -= to * 10;
-  return {s:s, raw:raw, why:why, over: co > 0 || to > 0};
+  if (A.genre.indexOf(it.genre) >= 0) { s += 40; why.push(it.genre); }
+  if (A.reach && it.reach === A.reach) { s += 15; why.push(it.reach + "に効く"); }
+  return {s:s, why:why};
 }
+
+function pick(n){
+  var all = DB.items.map(function(it){ var r = score(it); r.it = it; return r; })
+    .filter(function(r){ return r.s > 0; })
+    .sort(function(a, b){
+      if (b.s !== a.s) return b.s - a.s;
+      var sa = SCALE_ORDER[a.it.scale], sb = SCALE_ORDER[b.it.scale];
+      if (sa !== sb) return sa - sb;
+      return a.it.id < b.it.id ? -1 : 1;
+    });
+
+  /* 選んだ分野を1つずつ拾ってから、残りを埋める。
+     3つ選んだのに1つの分野で5件埋まる、を避ける */
+  var out = [], seen = {};
+  A.genre.forEach(function(g){
+    for (var i = 0; i < all.length; i++) {
+      if (!seen[all[i].it.id] && all[i].it.genre === g) { out.push(all[i]); seen[all[i].it.id] = 1; break; }
+    }
+  });
+  for (var i = 0; i < all.length && out.length < n; i++) {
+    if (!seen[all[i].it.id]) { out.push(all[i]); seen[all[i].it.id] = 1; }
+  }
+  return {list: out.slice(0, n), rest: all.filter(function(r){ return !seen[r.it.id]; })};
+}
+
+function ynType(){ return A.yn1 || null; }
 
 /* ── 結果画面 ─────────────────────────────────────── */
 function results(){
   progress();
-  var all = DB.items.map(function(it){
-    var r = score(it); r.it = it; return r;
-  });
-  var ranked  = all.filter(function(r){ return !r.over; }).sort(function(a,b){ return b.s - a.s; }).slice(0, 5);
-  var stretch = all.filter(function(r){ return r.over; }).sort(function(a,b){ return b.raw - a.raw; }).slice(0, 2);
-  var max = Math.max(ranked[0] ? ranked[0].s : 1, 1);
+  var got = pick(5);
+  var ranked = got.list;
+
+  /* もう少し大きくなったらできること（十数人か許認可が要るもの） */
+  var big = got.rest.filter(function(r){ return r.it.scale === "L"; }).slice(0, 2);
+
+  /* もう動いている場所（実在事例）。選んだ分野に合うものだけ */
+  var reals = (DB.reals || []).filter(function(x){
+    return x.genre.some(function(g){ return A.genre.indexOf(g) >= 0; });
+  }).slice(0, 2);
+
   var t = ynType();
   var y = t ? YN[t] : null;
-  var wd = (A.wd && A.wd !== "unknown") ? WDROLE[A.wd] : null;
+  var wdKey = (A.wd && A.wd !== "unknown") ? A.wd : null;
+  var wd = wdKey ? WDROLE[wdKey] : null;
+  var combo = t ? (wdKey ? COMBO[t][wdKey] : COMBO_SOLO[t]) : null;
 
-  lastResult = {ranked:ranked, stretch:stretch, yn:t, wd:wd};
-
-  var recap =
-    '<b>' + esc(A.place) + '</b>' +
-    (A.feat.length ? '／あるもの <b>' + A.feat.map(esc).join("・") + '</b>' : '') +
-    '／気になること <b>' + A.issue.map(esc).join("・") + '</b>' +
-    (wd ? '／<b>' + esc(A.wd) + '</b>' : '') +
-    (t ? '／<b>' + esc(t) + 'タイプ</b>' : '') +
-    '／' + esc(A.time) + '・' + esc(A.cost);
+  lastResult = {ranked:ranked, big:big, reals:reals, yn:t, wd:wd, wdKey:wdKey, combo:combo};
 
   app.innerHTML =
   '<div class="res">' +
-    '<p class="lede">この条件に近いところで、実際に動いている事例です。</p>' +
-    '<p class="recap">' + recap + '</p>' +
+    '<p class="lede">' + esc(A.genre.join("・")) + 'で、今週から始められることです。</p>' +
+    '<p class="recap">' +
+      A.genre.map(esc).join(' ・ ') +
+      (A.reach ? '／<b>' + esc(A.reach) + '</b>' : '') +
+      (wdKey ? '／<b>' + esc(wdKey) + '</b>' : '') +
+      (t ? '／<b>' + esc(t) + 'タイプ</b>' : '') +
+    '</p>' +
+
+    /* いちばん上に「あなたの入り方」。何をやるかより、どう入るか */
+    (combo ?
+    '<section class="block me" style="' + (YN_HUE[t] || "") + '">' +
+      '<h4>あなたの入り方</h4>' +
+      '<p class="mesub">' +
+        (wdKey ? esc(wdKey) + 'の' + esc(wd.role.split("。")[0]) + ' × ' : '') +
+        esc(t) + 'タイプ' + (wdKey ? '' : '（ウェルスダイナミクスは未診断）') +
+      '</p>' +
+      '<p class="melead">' + esc(combo) + '</p>' +
+      (wd ?
+        '<div class="pair"><b>人に渡していいこと</b><br>' +
+          '組むなら ' + wd.catalyst.map(esc).join(" か ") + '。' + esc(wd.why) + '</div>' : '') +
+      (y ? '<div class="pair"><b>バディに伝えておくこと</b><br>' + esc(y.buddy) + '</div>' : '') +
+    '</section>' : '') +
 
     actCard("head") +
 
-    ranked.map(function(r, i){ return card(r, i, max, false); }).join("") +
+    '<h4 class="sec">あなたに向いているプロジェクト</h4>' +
+    '<p class="hint">上から順に、小さく始められるものです。</p>' +
+    ranked.map(function(r, i){ return card(r, i); }).join("") +
 
-    /* 予算・時間を最大にすると超過する事例が無くなる。その時は枠ごと出さない。
-       それ以外では必ず残す（§7-3。消すと成長の行き先が消える） */
-    (stretch.length ?
-      '<h4 class="sec">いまは少し届かないもの</h4>' +
-      '<p class="hint">条件そのものは合っています。予算か時間が増えたときに、もう一度見てください。</p>' +
-      stretch.map(function(r, i){ return card(r, i, Math.max(r.raw, max), true); }).join("")
+    (reals.length ?
+      '<h4 class="sec">もう動いている場所</h4>' +
+      '<p class="hint">同じ分野で、実際に続いている活動です。ゼロから立ち上げなくても、' +
+      'すでにある場に入れてもらうという入り方があります。まず見に行く、連絡してみる、で十分です。</p>' +
+      reals.map(function(x){ return realCard(x); }).join("")
       : '') +
+
+    (big.length ?
+      '<h4 class="sec">人が集まったら、これも</h4>' +
+      '<p class="hint">十数人か、許認可が要るもの。いまは無理でも、行き先として置いておいてください。</p>' +
+      big.map(function(r, i){ return card(r, i, true); }).join("")
+      : '') +
+
+    (y ?
+    '<section class="block yn" style="' + (YN_HUE[t] || "") + '">' +
+      '<h4>' + esc(t) + 'タイプ：' + esc(y.head) + '</h4>' +
+      '<p>' + esc(y.desc) + '</p>' +
+      '<div class="pair"><b>プロジェクトの進め方</b><br>' + esc(y.proj) + '</div>' +
+      '<div class="pair"><b>大切にされていると感じるのは</b><br>' + esc(y.love) + '<br>' +
+        '<span class="dim">この愛のかたちは' + esc(y.ai) + '</span></div>' +
+      (A.yn2 && A.yn1 !== A.yn2 ?
+        '<p class="note">' +
+        '2つの質問で判定が割れました（注目点は' + esc(A.yn1) + '、愛を感じるポイントは' + esc(A.yn2) + '）。' +
+        '会話なしでは決めきれないタイプ分けなので、' +
+        esc(A.yn1) + 'と' + esc(A.yn2) + 'の両方の説明を読んで、近い方を自分で選んでください。' +
+        'ここでは' + esc(A.yn1) + 'として結果を出しています。</p>' : '') +
+    '</section>' : '') +
 
     (wd ?
     '<section class="block wd">' +
       '<h4>ひとりでやらない</h4>' +
-      '<p>' + esc(A.wd) + 'のチームでの持ち場は「' + esc(wd.role) + '」。ここから外れる作業は、はじめから人に渡した方が早く進みます。</p>' +
+      '<p>' + esc(wdKey) + 'のチームでの持ち場は「' + esc(wd.role) + '」。ここから外れる作業は、はじめから人に渡した方が早く進みます。</p>' +
       '<div class="pair"><b>バディに向くのは ' + wd.catalyst.map(esc).join(" か ") + '</b><br>' + esc(wd.why) + '</div>' +
       '<div class="pair"><b>チームの外に置いておきたいのは ' + esc(wd.support) + '</b><br>' +
         '頼れる相手を先に1人決めてから動き出すと、止まりにくくなります。</div>' +
     '</section>' : '') +
 
-    (y ?
-    '<section class="block yn" style="' + (YN_HUE[t] || "--c:var(--accent);--cv:var(--accent)") + '">' +
-      '<h4>' + esc(t) + 'タイプ：' + esc(y.head) + '</h4>' +
-      '<p>' + esc(y.desc) + '</p>' +
-      '<div class="pair"><b>プロジェクトの進め方</b><br>' + esc(y.proj) + '</div>' +
-      '<div class="pair"><b>大切にされていると感じるのは</b><br>' + esc(y.love) + '<br>' +
-        '<span style="font-size:12.5px;opacity:.8">この愛のかたちは' + esc(y.ai) + '</span></div>' +
-      '<div class="pair"><b>バディに伝えておくこと</b><br>' + esc(y.buddy) + '</div>' +
-      (A.yn2 && A.yn1 !== A.yn2 ?
-        '<p class="note">' +
-        '2つの質問で判定が割れました（注目点は' + esc(A.yn1) + '、愛を感じるポイントは' + esc(A.yn2) + '）。' +
-        '腕組み・手組みだけでも会話なしでも決めきれないタイプ分けなので、' +
-        esc(A.yn1) + 'と' + esc(A.yn2) + 'の両方の説明を読んで、近い方を自分で選んでください。' +
-        'ここでは' + esc(A.yn1) + 'として結果を出しています。</p>' : '') +
-    '</section>' : '') +
-
-    '<section class="block money" style="--c:var(--h6);--cv:var(--h6v)">' +
-      '<h4>始める前に、お金の見通しを立てる</h4>' +
-      '<p>' + esc(A.cost) + '・' + esc(A.time) + 'で始める前提です。ここが埋まらないうちに人を集めると、途中で止まります。</p>' +
-      '<ul class="check">' +
-        '<li>初回にかかる実費を書き出した（材料・場所代・保険・交通費）</li>' +
-        '<li>2年目以降の原資を決めた（売上／会費／協賛／行政の支援／持ち出し）</li>' +
-        '<li>持ち出しなら、いくらまでなら続けられるか上限を決めた</li>' +
-        '<li>行政の窓口に一度電話した（制度の有無と、担当課の名前を確認）</li>' +
-        '<li>お金を扱うなら、記録の担当を自分以外に決めた</li>' +
-      '</ul>' +
-      '<p class="note">補助金は年度単位で募集が動きます。今年度に間に合わなくても、来年度の募集に合わせて準備すれば十分です。まず担当課の名前を控えるところまでで、今週は終わりで構いません。</p>' +
-    '</section>' +
-
     actCard("tail") +
 
-    '<div class="restart"><button type="button" class="go" id="again">条件を変えてやり直す</button></div>' +
+    '<div class="restart"><button type="button" class="go" id="again">選び直す</button></div>' +
   '</div>';
 
   wireAct();
@@ -395,7 +455,42 @@ function results(){
   logEvent("result");
 }
 
-/* ── 次の行動へ：コピーカード（§8-①。このツールで最優先の機能） ── */
+/* ── カード ───────────────────────────────────────── */
+function card(r, i, isBig){
+  var it = r.it;
+  return '<article class="' + ((i === 0 && !isBig) ? "top" : "") + '"' +
+    ' style="' + genreHue(it.genre) + '">' +
+    '<p class="rank">' + esc(it.genre) + '／' + esc(it.scaleLabel) + '</p>' +
+    '<h3>' + esc(it.title) + '</h3>' +
+    '<p class="cause">' + esc(it.cause) + '</p>' +
+    '<dl>' +
+      '<dt>今週やること</dt><dd class="strong">' + esc(it.step) + '</dd>' +
+      (it.land ? '<dt>そのあと</dt><dd>' + esc(it.land) + '</dd>' : '') +
+      (it.orgs ? '<dt>行政の入口</dt><dd>' + esc(it.orgs) + '</dd>' : '') +
+      (it.numbers ? '<dt>測る数字</dt><dd>' + esc(it.numbers) + '</dd>' : '') +
+      (it.ref ? '<dt>元ネタ</dt><dd>' + esc(it.ref) + '</dd>' : '') +
+    '</dl>' +
+  '</article>';
+}
+
+function realCard(x){
+  return '<article class="real" style="' + genreHue(x.genre[0]) + '">' +
+    '<p class="rank">' + esc(x.genre.join("・")) + '／実際に続いている活動</p>' +
+    '<h3>' + esc(x.title) + '</h3>' +
+    '<dl>' +
+      '<dt>やっていること</dt><dd>' + esc(x.summary) + '</dd>' +
+      (x.result ? '<dt>出ている成果</dt><dd>' + esc(x.result) + '</dd>' : '') +
+      (x.orgs ? '<dt>関わっている人</dt><dd>' + esc(x.orgs) + '</dd>' : '') +
+    '</dl>' +
+    (x.url ? '<p class="src">見に行く：<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' +
+      esc(host(x.url)) + '</a></p>' : '') +
+  '</article>';
+}
+function host(u){
+  try { return new URL(u).hostname; } catch (e) { return u; }
+}
+
+/* ── 次の行動へ：コピーカード ───────────────────────── */
 function actCard(pos){
   var wantName = CFG.askName && !!CFG.logEndpoint;
   return '<div class="act ' + (pos === "tail" ? "tail" : "") + '">' +
@@ -417,14 +512,14 @@ function copyText(){
   var L = [];
   L.push("【診断結果】");
   if (A.name) L.push("名前：" + A.name);
-  L.push("地域：" + A.place + (A.feat.length ? "／" + A.feat.join("・") : ""));
-  L.push("気になること：" + A.issue.join("／"));
-  if (lastResult.wd) L.push("ウェルスダイナミクス：" + A.wd + "（" + lastResult.wd.role.split("。")[0] + "）");
+  L.push("気になる分野：" + A.genre.join("／"));
+  if (A.reach) L.push("届けたい範囲：" + A.reach);
+  if (lastResult.wdKey) L.push("ウェルスダイナミクス：" + lastResult.wdKey + "（" + lastResult.wd.role.split("。")[0] + "）");
   if (lastResult.yn) L.push("勇誠義礼：" + lastResult.yn + "タイプ（" + YN[lastResult.yn].loveShort + "）");
-  L.push("気になった事例：");
+  if (lastResult.combo) L.push("わたしの入り方：" + lastResult.combo);
+  L.push("気になったプロジェクト：");
   lastResult.ranked.slice(0, 3).forEach(function(r, i){ L.push(" " + (i + 1) + ". " + r.it.title); });
-  if (lastResult.ranked[0]) L.push("最初の一歩：" + lastResult.ranked[0].it.step);
-  L.push("使える時間・お金：" + A.time + "／" + A.cost);
+  if (lastResult.ranked[0]) L.push("今週やること：" + lastResult.ranked[0].it.step);
   return L.join("\n");
 }
 
@@ -432,7 +527,6 @@ function wireAct(){
   Array.prototype.forEach.call(app.querySelectorAll(".nm"), function(inp){
     inp.oninput = function(){
       A.name = inp.value.trim();
-      /* もう一方のカードの入力欄とプレビューを合わせる（画面は作り直さない） */
       Array.prototype.forEach.call(app.querySelectorAll(".nm"), function(o){ if (o !== inp) o.value = inp.value; });
       refreshPreviews();
     };
@@ -442,16 +536,14 @@ function wireAct(){
       var msg = app.querySelector('.copied[data-msg="' + btn.getAttribute("data-pos") + '"]');
       copyToClipboard(copyText(), function(ok){
         btn.textContent = ok ? "コピーしました" : "結果をコピーする";
-        if (ok) { btn.className = "go copybtn done"; } else { btn.className = "go copybtn"; }
+        btn.className = ok ? "go copybtn done" : "go copybtn";
         msg.textContent = ok
           ? "Discordの自己紹介チャンネルに貼ってください。"
           : "このブラウザではコピーが使えませんでした。下に出した文章を、手で選んでコピーしてください。";
         if (!ok) {
-          /* 自動コピーができないときは、手で選べるように本文を開いておく */
           var box = btn.parentNode.querySelector("details.previewbox");
           if (box) { box.open = true; box.scrollIntoView({block:"nearest"}); }
-        }
-        if (ok) {
+        } else {
           logEvent("copy");
           setTimeout(function(){
             btn.textContent = "結果をコピーする";
@@ -469,7 +561,7 @@ function refreshPreviews(){
 }
 
 /* クリップボード。navigator.clipboard は HTTPS でないと使えないので、
-   textarea + execCommand のフォールバックを必ず持つ（§8-①） */
+   textarea + execCommand のフォールバックを必ず持つ */
 function copyToClipboard(text, done){
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(legacyCopy(text)); });
@@ -485,8 +577,7 @@ function legacyCopy(text){
     pad.removeAttribute("aria-hidden");
     pad.value = text;
     pad.readOnly = false;
-    /* iOS Safari は textarea.select() だけでは選択できないことがあるので、
-       Range を作って選択し直す */
+    /* iOS Safari は textarea.select() だけでは選択できないことがあるので Range も張る */
     pad.contentEditable = "true";
     pad.focus();
     var range = document.createRange();
@@ -509,7 +600,7 @@ function legacyCopy(text){
   return !!ok;
 }
 
-/* ── 回答の記録（§8-③）。logEndpoint が空なら一切送らない ── */
+/* ── 回答の記録。logEndpoint が空なら一切送らない ── */
 function markStarted(){
   if (started) return;
   started = true;
@@ -524,16 +615,15 @@ function logEvent(kind){
     at: new Date().toISOString(),
     set: CFG.questionSet,
     name: A.name || "",
-    place: A.place, feat: A.feat, issue: A.issue,
-    wd: A.wd, yn1: A.yn1, yn2: A.yn2, time: A.time, cost: A.cost,
+    genre: A.genre, reach: A.reach,
+    wd: A.wd, yn1: A.yn1, yn2: A.yn2,
     top: lastResult ? lastResult.ranked.map(function(r){ return r.it.id; }) : [],
-    stretch: lastResult ? lastResult.stretch.map(function(r){ return r.it.id; }) : []
+    reals: lastResult ? lastResult.reals.map(function(x){ return x.id; }) : []
   };
   try {
     fetch(CFG.logEndpoint, {
       method: "POST",
       mode: "no-cors",
-      /* text/plain にすると preflight が飛ばず、GAS 側でそのまま受け取れる */
       headers: {"Content-Type": "text/plain;charset=utf-8"},
       body: JSON.stringify(payload),
       keepalive: true
@@ -541,50 +631,13 @@ function logEvent(kind){
   } catch (e) { /* 同上 */ }
 }
 
-/* ── 事例カード ───────────────────────────────────── */
-function card(r, i, max, isStretch){
-  var it = r.it;
-  var pct = Math.max(12, Math.round((isStretch ? r.raw : r.s) / max * 100));
-  /* カードの色は、その事例が「自分の選んだ課題」のどれに効くかで決まる。
-     どれにも当たらなければ、その事例の代表的な課題の色 */
-  var lead = it.issue.filter(function(x){ return A.issue.indexOf(x) >= 0; })[0] || it.issue[0];
-  var tag = function(list, selected){
-    return list.map(function(x){
-      return '<span class="tag ' + (selected.indexOf(x) >= 0 ? "hit" : "") + '">' + esc(x) + '</span>';
-    }).join("");
-  };
-  return '<article class="' + ((i === 0 && !isStretch) ? "top" : "") + '"' +
-    ' style="' + issueHue(lead) + '">' +
-    '<p class="rank">' + (isStretch ? "条件は合う" : (i + 1) + "番目に近い") +
-      (it.src === "事例集" ? "／実在事例" : "／企画のかたち") + '</p>' +
-    '<h3>' + esc(it.title) +
-      (r.over ? '<span class="over">' + esc(it.cost) + '・' + esc(it.time) + 'が必要</span>' : '') + '</h3>' +
-    '<div class="fit"><i><i style="width:' + pct + '%"></i></i><em>適合度 ' + pct + '</em></div>' +
-    '<p class="why">' + r.why.map(function(w){ return '<s>' + esc(w) + '</s>'; }).join(" ／ ") + '</p>' +
-    '<dl>' +
-      '<dt>何をする</dt><dd>' + esc(it.summary) + '</dd>' +
-      '<dt>最初の一歩</dt><dd>' + esc(it.step) + '</dd>' +
-      (it.apply ? '<dt>' + (it.src === "事例集" ? "応用の勘所" : "育て方") + '</dt><dd>' + esc(it.apply) + '</dd>' : '') +
-      (it.result ? '<dt>' + (it.src === "事例集" ? "確認できた成果" : "測る数字") + '</dt><dd>' + esc(it.result) + '</dd>' : '') +
-      (it.orgs ? '<dt>' + (it.src === "事例集" ? "関わる人" : "行政の入口") + '</dt><dd>' + esc(it.orgs) + '</dd>' : '') +
-      '<dt>目安</dt><dd>' + esc(it.cost) + '・' + esc(it.time) + (it.term ? '・' + esc(it.term) : '') + '</dd>' +
-    '</dl>' +
-    '<p class="tags">' + tag(it.issue, A.issue) + tag(it.feat, A.feat) + '</p>' +
-    (it.url ? '<p class="src">出典：<a href="' + esc(it.url) + '" target="_blank" rel="noopener">' +
-      esc(host(it.url)) + '</a></p>' : '') +
-  '</article>';
-}
-function host(u){
-  try { return new URL(u).hostname; } catch (e) { return u; }
-}
-
-/* 配点を変えたときの確認用の口（tools/verify-scoring.mjs から使う）。
-   画面の動きには一切影響しない。 */
+/* 並べ方を変えたときの確認用の口（tools/verify-scoring.mjs から使う） */
 window.T2030_TEST = {
   score: score,
+  pick: pick,
   answers: function(){ return A; },
-  setDB: function(d){ DB = d; },
-  COSTS: COSTS, TIMES: TIMES, YN_ORDER: YN_ORDER
+  setDB: function(d){ DB = ready(d); },
+  COMBO: COMBO, WDROLE: WDROLE, YN_ORDER: YN_ORDER
 };
 
 boot();

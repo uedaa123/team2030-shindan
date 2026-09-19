@@ -1,9 +1,12 @@
-/* 引継ぎ資料 §5 が要求している確認を自動でやる。
-   「配点を変えたら、4タイプ × 3地域くらいで結果が変わることを必ず確認すること。
-     変えた結果、誰がやっても同じ5件が出るようになるのが最悪の失敗。」
+/* 結果の出し方を変えたら、これを流す。
+     node tools/verify-scoring.mjs
 
-   使い方： node tools/verify-scoring.mjs
-   assets/app.js の score() をそのまま呼ぶので、配点を変えたら結果もここに反映される。 */
+   assets/app.js の中身をそのまま呼ぶので、並べ方を変えれば結果もここに出る。
+   見ているのは4つ。
+     ① どの分野を選んでも5件出るか（0件や2件で終わらないか）
+     ② 分野を変えたら結果が変わるか（誰がやっても同じ、になっていないか）
+     ③ 3つ選んだとき、3つの分野からちゃんと拾えているか
+     ④ 「あなたの入り方」32通りが全部埋まっているか */
 
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -19,7 +22,6 @@ const stubEl = new Proxy({}, {
     if (k === "style") return {};
     if (k === "querySelectorAll") return () => [];
     if (k === "querySelector") return () => null;
-    if (k === "classList") return { toggle(){}, remove(){}, add(){} };
     if (k === "innerHTML" || k === "textContent" || k === "value") return "";
     return () => stubEl;
   },
@@ -29,12 +31,9 @@ const sandbox = {
   window: {},
   document: { getElementById: () => stubEl, querySelectorAll: () => [], querySelector: () => null },
   location: { search: "", protocol: "https:" },
-  navigator: {},
-  URL,
-  URLSearchParams,
+  navigator: {}, URL, URLSearchParams, Object,
   fetch: () => Promise.reject(new Error("verify: fetch は使わない")),
-  setTimeout,
-  console
+  setTimeout, console
 };
 sandbox.window = sandbox;
 sandbox.globalThis = sandbox;
@@ -45,82 +44,84 @@ const T = sandbox.window.T2030_TEST;
 T.setDB(DB);
 const A = T.answers();
 
-const TYPES = ["勇", "誠", "義", "礼"];
-const PLACES = ["中山間・農山漁村", "地方都市の市街地", "大都市・都市圏"];
-
-function run({ place, yn1, issue, feat, wd, cost, time }) {
-  A.place = place;
-  A.feat = feat ?? [];
-  A.issue = issue ?? [];
-  A.wd = wd ?? "unknown";
-  A.yn1 = yn1 ?? null;
-  A.yn2 = yn1 ?? null;
-  A.cost = cost ?? "30万円まで";
-  A.time = time ?? "月8時間くらい";
-
-  const all = DB.items.map((it) => ({ it, ...T.score(it) }));
-  const ranked = all.filter((r) => !r.over).sort((a, b) => b.s - a.s).slice(0, 5);
-  const stretch = all.filter((r) => r.over).sort((a, b) => b.raw - a.raw).slice(0, 2);
-  return { ids: ranked.map((r) => r.it.id), titles: ranked.map((r) => r.it.title), stretch: stretch.map((r) => r.it.id) };
+function run(genres, reach) {
+  A.genre = genres;
+  A.reach = reach ?? "自分のまち";
+  const got = T.pick(5);
+  return {
+    ids: got.list.map((r) => r.it.id),
+    titles: got.list.map((r) => r.it.title),
+    genres: got.list.map((r) => r.it.genre),
+    big: got.rest.filter((r) => r.it.scale === "L").slice(0, 2).map((r) => r.it.id),
+    reals: (DB.reals || []).filter((x) => x.genre.some((g) => genres.includes(g))).length
+  };
 }
 
-/* ── ① 4タイプ × 3地域 = 12パターンで、上位5件が重ならないこと ── */
-console.log("── 4タイプ × 3地域（気になること：担い手がいない／若者が出ていく）──\n");
-const sets = new Map();
-let emptyStretch = 0;
+const problems = [];
 
-for (const place of PLACES) {
-  for (const yn1 of TYPES) {
-    const r = run({ place, yn1, issue: ["担い手がいない", "若者が出ていく"], feat: ["自然が豊か"] });
-    const key = r.ids.join(",");
-    sets.set(key, (sets.get(key) || 0) + 1);
-    if (r.stretch.length === 0) emptyStretch++;
-    console.log(`${place.padEnd(9, "　")} ${yn1}  ${r.ids.join(" ")}  ${r.titles[0]}`);
+/* ── ① ② 分野を1つずつ ── */
+console.log("── 分野を1つだけ選んだとき ──\n");
+const seen = new Map();
+for (const g of DB.genres) {
+  const r = run([g]);
+  seen.set(r.ids.join(","), (seen.get(r.ids.join(",")) || 0) + 1);
+  const n = DB.items.filter((i) => i.genre === g).length;
+  console.log(`${g.padEnd(12, "　")} 手持ち${String(n).padStart(2)}件 → ${r.ids.join(" ")}  実在${r.reals}件`);
+  console.log(`${"".padEnd(12, "　")} 1位: ${r.titles[0]}`);
+  if (r.ids.length < 5) problems.push(`「${g}」で ${r.ids.length} 件しか出ない`);
+}
+console.log(`\n11分野で ${seen.size} 通りの結果`);
+if (seen.size < DB.genres.length) problems.push(`11分野なのに ${seen.size} 通りしか出ていない`);
+
+/* ── ③ 3つ選んだとき ── */
+console.log("\n── 3つ選んだとき、3分野から拾えているか ──\n");
+const trios = [
+  ["子どもと学び", "水辺と生きもの", "記録して残す"],
+  ["まちと空き家", "地域の稼ぎをつくる", "仕組みをつくる"],
+  ["里山・森・畑", "ごみを資源に戻す", "いざというときに備える"],
+  ["年を重ねても動ける", "だれも外れない", "子どもと学び"]
+];
+for (const trio of trios) {
+  const r = run(trio);
+  const covered = new Set(r.genres).size;
+  console.log(`${trio.join(" + ")}`);
+  console.log(`   ${r.ids.join(" ")}  → ${covered}/3 分野をカバー`);
+  if (covered < 3) problems.push(`${trio.join("+")} で ${covered}/3 分野しか出ていない`);
+}
+
+/* ── 届け先で変わるか ── */
+console.log("\n── 届け先を変えたとき ──\n");
+for (const g of ["水辺と生きもの", "記録して残す"]) {
+  const a = run([g], "自分のまち").ids.join(" ");
+  const b = run([g], "日本じゅうに").ids.join(" ");
+  console.log(`${g}\n   自分のまち   ${a}\n   日本じゅうに ${b}`);
+  if (a === b) problems.push(`「${g}」で届け先を変えても結果が同じ`);
+}
+
+/* ── ④ 入り方32通り ── */
+console.log("\n── あなたの入り方（勇誠義礼4 × ウェルスダイナミクス8）──\n");
+const wds = Object.keys(T.WDROLE);
+let filled = 0, blanks = [];
+for (const t of T.YN_ORDER) {
+  for (const w of wds) {
+    const v = T.COMBO[t] && T.COMBO[t][w];
+    if (v && v.length > 15) filled++;
+    else blanks.push(`${t} × ${w}`);
   }
 }
+console.log(`${filled} / ${T.YN_ORDER.length * wds.length} 通り書けている`);
+if (blanks.length) problems.push(`入り方が空: ${blanks.join(", ")}`);
 
-const patterns = sets.size;
-console.log(`\n12パターン中、上位5件の並びは ${patterns} 通り`);
-const worst = Math.max(...sets.values());
-console.log(`同じ並びが最大 ${worst} パターンで重複`);
-
-/* ── ② 課題を変えたら結果が変わること ── */
-console.log("\n── 同じ人（中山間・礼）で、気になることだけ変える ──\n");
-const issueRuns = [
-  ["担い手がいない"],
-  ["子どもの体験機会が少ない"],
-  ["お金が地域の外に出ていく"],
-  ["空き家・空き店舗が多い"]
-];
-const issueSets = new Set();
-for (const issue of issueRuns) {
-  const r = run({ place: "中山間・農山漁村", yn1: "礼", issue });
-  issueSets.add(r.ids.join(","));
-  console.log(`${issue[0].padEnd(12, "　")} ${r.ids.join(" ")}  ${r.titles[0]}`);
-}
-console.log(`\n4通りの課題で ${issueSets.size} 通りの結果`);
-
-/* ── ③ 予算・時間を絞っても5件出ること／「届かないもの」が出ること ── */
-console.log("\n── いちばん条件が厳しい人（3万円まで・月2〜4時間）──\n");
-const tight = run({
-  place: "中山間・農山漁村", yn1: "礼", issue: ["担い手がいない"],
-  cost: "3万円まで", time: "月2〜4時間"
-});
-console.log(`推薦 ${tight.ids.length} 件：${tight.ids.join(" ")}`);
-console.log(`いまは少し届かないもの ${tight.stretch.length} 件：${tight.stretch.join(" ")}`);
+/* 同じ文の使い回しがないか */
+const all = T.YN_ORDER.flatMap((t) => wds.map((w) => T.COMBO[t][w]));
+const dup = all.length - new Set(all).size;
+if (dup > 0) problems.push(`入り方に同じ文が ${dup} 個ある（使い回しは意味がない）`);
+else console.log("同じ文の使い回しなし");
 
 /* ── 判定 ── */
-const problems = [];
-if (patterns < 8) problems.push(`12パターン中 ${patterns} 通りしか出ていない。配点が効きすぎ／効かなすぎ`);
-if (worst > 3) problems.push(`同じ並びが ${worst} パターンで重複している`);
-if (issueSets.size < 4) problems.push(`課題を変えても結果が ${issueSets.size} 通りしか変わらない`);
-if (tight.ids.length < 5) problems.push(`条件が厳しい人に ${tight.ids.length} 件しか出ていない`);
-if (tight.stretch.length < 2) problems.push(`「いまは少し届かないもの」が ${tight.stretch.length} 件しか出ていない`);
-if (emptyStretch > 0) problems.push(`${emptyStretch} パターンで「届かないもの」が0件`);
-
-console.log("\n" + "─".repeat(50));
+console.log("\n" + "─".repeat(52));
 if (problems.length === 0) {
-  console.log("OK：誰がやっても同じ5件、にはなっていない。");
+  console.log("OK：どの分野でも5件出るし、選び方で結果が変わる。");
   process.exit(0);
 } else {
   console.log("要確認：");
