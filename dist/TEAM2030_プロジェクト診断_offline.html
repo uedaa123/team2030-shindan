@@ -146,13 +146,22 @@ header{background:var(--deep);color:#fff;padding:0 0 40px}
 header:before{content:"";display:block;height:7px;
   background:linear-gradient(90deg,var(--h0v), var(--h1v), var(--h2v), var(--h3v), var(--h4v), var(--h5v), var(--h6v), var(--h7v), var(--h8v), var(--h9v), var(--h10v), var(--h11v), var(--h12v), var(--h13v), var(--h14v), var(--h15v), var(--h16v), var(--h17v), var(--h18v), var(--h19v), var(--h20v), var(--h21v), var(--h22v), var(--h23v), var(--h24v), var(--h25v))}
 header .wrap{padding-top:40px;padding-bottom:0}
-h1{font-family:var(--display);font-weight:700;font-size:38px;line-height:1.3;
-   margin:0 0 14px;letter-spacing:.01em;text-wrap:balance}
-header p{margin:0;color:#b8bfdc;font-size:14px;line-height:1.85;max-width:52ch}
+/* タイトル。濃紺の地なので、グラデーションは沈む。
+   白＋アクセントの2色にして、ぶら下がりの「コンパス」だけを立たせる。
+   アクセントは地が暗いぶん、本文用より明るいほうを使う。 */
+h1{font-family:var(--display);font-weight:700;font-size:44px;line-height:1.16;
+   margin:0 0 18px;letter-spacing:-.015em;color:#fff;text-wrap:balance}
+h1 span{display:block;color:#ff8d5e}
+header p{margin:0;color:#b8bfdc;font-size:16px;line-height:1.8;max-width:52ch;
+  letter-spacing:.01em}
+header p b{color:#fff;font-weight:700}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.24em;
+  color:#7f8ab5;margin:0 0 12px}
 @media(max-width:560px){
-  header{padding-bottom:28px}
-  header .wrap{padding-top:28px}
-  h1{font-size:29px}
+  header{padding-bottom:30px}
+  header .wrap{padding-top:30px}
+  h1{font-size:34px}
+  header p{font-size:15px}
 }
 
 /* 進捗バー。進むほど色数が増える */
@@ -470,10 +479,6 @@ ol.ststeps li:before{content:counter(st);position:absolute;left:0;top:12px;
   .stepper li em{font-size:10px}
 }
 
-/* ヘッダーの肩書き */
-.eyebrow{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.22em;
-  color:#8f9ac4;margin:0 0 8px}
-header p b{color:#fff;font-weight:700}
 .step{padding-top:0}
 
 </style>
@@ -482,8 +487,8 @@ header p b{color:#fff;font-weight:700}
 
 <header><div class="wrap">
 <p class="eyebrow">TEAM2030</p>
-<h1>プロジェクトコンパス</h1>
-<p>3分で、今週から始められることが1つ決まります。やりたいことが決まっていなくても大丈夫。<b>むしろ、決まっていない人のために作りました。</b></p>
+<h1>プロジェクト<span>コンパス</span></h1>
+<p>3分。<b>あなたのプロジェクトが見つかる。</b></p>
 </div></header>
 
 <div class="bar"><i id="bar"></i></div>
@@ -687,7 +692,7 @@ var Q = {
  group: {key:"group", type:"many", max:2,
    label:"どのへん",
    q:"どのへんに、ワクワクする？",
-   h:"全部、ほんとうにやれることです。深く考えず、目に留まったものを。",
+   h:"26分野を、大きく6つに束ねています。",
    note:"2つまで選べます。1つでもOK",
    opts:function(){ return DB.groups.map(function(g, i){
      return {v:g.name, b:g.name, s:g.sub, c:hue(GROUP_HUE[i])};

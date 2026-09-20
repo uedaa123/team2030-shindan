@@ -166,7 +166,7 @@ var Q = {
  group: {key:"group", type:"many", max:2,
    label:"どのへん",
    q:"どのへんに、ワクワクする？",
-   h:"全部、ほんとうにやれることです。深く考えず、目に留まったものを。",
+   h:"26分野を、大きく6つに束ねています。",
    note:"2つまで選べます。1つでもOK",
    opts:function(){ return DB.groups.map(function(g, i){
      return {v:g.name, b:g.name, s:g.sub, c:hue(GROUP_HUE[i])};

@@ -47,8 +47,8 @@ ${css}
 
 <header><div class="wrap">
 <p class="eyebrow">TEAM2030</p>
-<h1>プロジェクトコンパス</h1>
-<p>3分で、今週から始められることが1つ決まります。やりたいことが決まっていなくても大丈夫。<b>むしろ、決まっていない人のために作りました。</b></p>
+<h1>プロジェクト<span>コンパス</span></h1>
+<p>3分。<b>あなたのプロジェクトが見つかる。</b></p>
 </div></header>
 
 <div class="bar"><i id="bar"></i></div>
