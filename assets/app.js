@@ -164,17 +164,19 @@ function shortlist(){
 
 var Q = {
  group: {key:"group", type:"many", max:2,
-   q:"どのあたりに心が動きますか",
-   h:"大きく6つに分けてあります。ここでざっくり選んで、次でしぼります。",
-   note:"2つまで選べます。1つだけでも先に進めます。",
+   label:"どのへん",
+   q:"どのへんに、ワクワクする？",
+   h:"全部、ほんとうにやれることです。深く考えず、目に留まったものを。",
+   note:"2つまで選べます。1つでもOK",
    opts:function(){ return DB.groups.map(function(g, i){
      return {v:g.name, b:g.name, s:g.sub, c:hue(GROUP_HUE[i])};
    }); }},
 
  genre: {key:"genre", type:"many", max:3,
-   q:"もう少し近づけると、どれですか",
-   h:"選んだ中から出しています。ピンとくるものを。",
-   note:"3つまで選べます。",
+   label:"もう少し",
+   q:"もうちょっと近づけると？",
+   h:"さっき選んだ中から出しています。",
+   note:"3つまで選べます",
    opts:function(){
      var names = [];
      DB.groups.forEach(function(g){ if (A.group.indexOf(g.name) >= 0) names = names.concat(g.genres); });
@@ -188,27 +190,30 @@ var Q = {
    }},
 
  project: {key:"project", type:"one",
-   q:"この中で、いちばんやってみたいのは",
-   h:"1つ選んでください。あとで選び直せます。",
+   label:"これ",
+   q:"この中で、いちばんやってみたいのは？",
+   h:"ピンときたものを1つ。あとで選び直せます。",
    opts:function(){
      return shortlist().map(function(it){
        return {v:it.id, b:it.title, c:hue(genreIndex(it.genre)),
                s:"今週やること：" + it.step, tag:it.genre};
      }).concat([{v:"auto", b:"どれもピンとこない",
-                 s:"いちばん小さく始められるものを、こちらで選びます"}]);
+                 s:"いちばん小さく始められるものを、こっちで選びます"}]);
    }},
 
  yn:    {key:"yn1", type:"one", q:"あなたの勇誠義礼は",
    h:"診断したタイプを選ぶだけです。",
+   label:"タイプ",
    opts:function(){ return YN_ORDER.map(function(k){
      return {v:k, b:k + "タイプ", s:YN_HEAD[k], c:YN_HUE[k]};
-   }).concat([{v:"unknown", b:"まだ分からない"}]); }},
+   }).concat([{v:"unknown", b:"まだ分からない", s:"これでも結果は出ます"}]); }},
 
  wd:    {key:"wd", type:"one", q:"あなたのウェルスダイナミクスは",
    h:"診断したプロファイルを選ぶだけです。",
+   label:"持ち場",
    opts:function(){ return Object.keys(WDROLE).map(function(w){
      return {v:w, b:w, s:WDROLE[w].role};
-   }).concat([{v:"unknown", b:"まだ分からない"}]); }}
+   }).concat([{v:"unknown", b:"まだ分からない", s:"これでも結果は出ます"}]); }}
 };
 var STEP_SETS = {
   full:  [Q.group, Q.genre, Q.project, Q.yn, Q.wd],
@@ -275,6 +280,14 @@ function failed(err){
     '<p class="note">' + esc(String((err && err.message) || err)) + '</p></div>';
 }
 
+/* 上の帯。いまどこにいて、あと何が残っているかを常に見せる */
+function stepper(){
+  return '<ol class="stepper">' + STEPS.map(function(S, i){
+    var cls = i < step ? "done" : (i === step ? "now" : "");
+    return '<li class="' + cls + '"><i>' + (i + 1) + '</i><em>' + esc(S.label || "") + '</em></li>';
+  }).join("") + '</ol>';
+}
+
 /* ── 設問画面 ───────────────────────────────────── */
 /* 上の設問を変えたら、その下の答えは捨てる（選べなくなった分野が残らないように） */
 function prune(){
@@ -298,8 +311,8 @@ function render(){
   var full = S.type === "many" && cur.length >= S.max;
 
   app.innerHTML =
+  stepper() +
   '<div class="step' + (S.type === "many" ? " haspad" : "") + '">' +
-    '<p class="stepno">' + (step + 1) + ' / ' + TOTAL + '</p>' +
     '<h2>' + esc(S.q) + '</h2>' +
     '<p class="hint">' + esc(S.h || "") + '</p>' +
     (S.note ? '<p class="multi">' + esc(S.note) + '</p>' : '') +
@@ -322,7 +335,7 @@ function render(){
     ? '<div class="bottombar"><div class="bottominner">' +
         '<span class="count">' + cur.length + ' / ' + S.max + ' 選択中</span>' +
         '<button type="button" class="go" id="go"' + (cur.length ? "" : " disabled") + '>' +
-        (cur.length ? "次へ" : "1つ以上えらぶ") + '</button>' +
+        (cur.length ? "次へ" : "まず1つえらんでね") + '</button>' +
       '</div></div>'
     : '');
 
@@ -374,6 +387,18 @@ function pick(n){
   return {list: out.slice(0, n), rest: all.filter(function(r){ return !seen[r.it.id]; }), total: all.length};
 }
 
+/* 発行日と診断No.。同じ人が同じ日にやれば同じ番号になる */
+function today(){
+  var d = new Date();
+  return d.getFullYear() + "." + ("0" + (d.getMonth() + 1)).slice(-2) + "." + ("0" + d.getDate()).slice(-2);
+}
+function docNo(){
+  var seed = (A.genre.join("") + (A.project || "") + (A.yn1 || "") + (A.wd || ""));
+  var n = 0;
+  for (var i = 0; i < seed.length; i++) n = (n * 31 + seed.charCodeAt(i)) >>> 0;
+  return "C-" + n.toString(36).toUpperCase().slice(0, 4);
+}
+
 function ynType(){ return (A.yn1 && A.yn1 !== "unknown") ? A.yn1 : null; }
 function wdKey(){ return (A.wd && A.wd !== "unknown") ? A.wd : null; }
 
@@ -412,10 +437,19 @@ function results(){
   app.innerHTML =
   '<div class="res">' +
 
-    '<div class="guide">' +
-      '<p class="guidehead">結果は3つに分かれています</p>' +
+    /* 結果の頭。何が出ているかを1目で分かるようにする */
+    '<div class="doc">' +
+      '<p class="docmeta"><span>プロジェクトコンパス</span><span>' + esc(today()) + '</span>' +
+        '<span>No. ' + esc(docNo()) + '</span></p>' +
+      '<h2 class="docttl">あなたの1枚</h2>' +
+      '<p class="docsub">上から読めば、今週やることまで決まります。</p>' +
+      '<div class="chips">' +
+        A.genre.map(function(g){ return '<span class="chip" style="' + genreHue(g) + '">' + esc(g) + '</span>'; }).join("") +
+        (t ? '<span class="chip" style="' + YN_HUE[t] + '">' + esc(t) + 'タイプ</span>' : '') +
+        (w ? '<span class="chip plain">' + esc(w) + '</span>' : '') +
+      '</div>' +
       '<ol class="guidelist">' +
-        '<li><b>やってみるプロジェクト</b>　あなたが選んだ1つと、ほかの候補</li>' +
+        '<li><b>やってみるプロジェクト</b>　選んだ1つと、ほかの候補</li>' +
         '<li><b>進め方</b>　' + (t ? esc(t) + 'タイプの' : '') + 'あなたに合った手順</li>' +
         '<li><b>チームやバディに共有する</b>　結果をコピーして貼る</li>' +
       '</ol>' +
@@ -424,8 +458,9 @@ function results(){
     '<h4 class="sec"><span class="secno">1</span>やってみるプロジェクト</h4>' +
     (lead ?
     '<article class="lead" style="' + genreHue(lead.it.genre) + '">' +
-      '<p class="rank">' + (A.project && A.project !== "auto" ? 'あなたが選んだもの／' : 'いちばん小さく始められるもの／') +
-        esc(lead.it.genre) + '／' + esc(lead.it.scaleLabel) + '</p>' +
+      '<p class="rank">' +
+        '<em class="pick">' + (A.project && A.project !== "auto" ? 'あなたが選んだもの' : 'おすすめ') + '</em>' +
+        '<em>' + esc(lead.it.genre) + '</em><em>' + esc(lead.it.scaleLabel) + '</em></p>' +
       '<h3>' + esc(lead.it.title) + '</h3>' +
       (lead.it.summary ? '<p class="cause">' + esc(lead.it.summary) + '</p>' :
        lead.it.why ? '<p class="cause">' + esc(lead.it.why) + '</p>' : '') +
@@ -445,13 +480,13 @@ function results(){
       '</dl>' +
     '</article>' : '<p class="hint">選んだ分野にプロジェクトが見つかりませんでした。</p>') +
 
-    (rest.length ? '<p class="subsec">選ばなかった候補</p>' +
+    (rest.length ? '<p class="subsec">気が変わったら、こっちも</p>' +
       rest.map(function(it){ return card({it:it}); }).join("") : '') +
     (got.total < 5 ?
       '<p class="note">この分野のプロジェクトはいま' + got.total + '件です。分野をもう1つ選ぶと、もっと出ます。</p>' : '') +
 
     (big.length ?
-      '<p class="subsec">人が集まったら、これも</p>' +
+      '<p class="subsec">仲間が増えたら、これも</p>' +
       big.map(function(r){ return card(r); }).join("") : '') +
 
     '<h4 class="sec"><span class="secno">2</span>進め方</h4>' +
@@ -491,7 +526,7 @@ function results(){
 function card(r){
   var it = r.it;
   return '<article style="' + genreHue(it.genre) + '">' +
-    '<p class="rank">' + esc(it.genre) + '／' + esc(it.scaleLabel) + '</p>' +
+    '<p class="rank"><em>' + esc(it.genre) + '</em><em>' + esc(it.scaleLabel) + '</em></p>' +
     '<h3>' + esc(it.title) + '</h3>' +
     (it.summary ? '<p class="cause">' + esc(it.summary) + '</p>' :
      it.why ? '<p class="cause">' + esc(it.why) + '</p>' : '') +

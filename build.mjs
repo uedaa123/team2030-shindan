@@ -33,7 +33,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>チーム2030 プロジェクト診断</title>
+<title>TEAM2030 プロジェクトコンパス</title>
 <!-- オフライン配布版（build.mjs が自動生成）。直接編集しないこと。
      直すのは assets/ と data/ の側。 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,8 +46,9 @@ ${css}
 <body>
 
 <header><div class="wrap">
-<h1>プロジェクト診断</h1>
-<p>やってみたいことを選んでいくと、今週から始められるプロジェクトが1つ決まります。あなたのタイプに合った入り方と、ひとりで進めるときの手順つき。</p>
+<p class="eyebrow">TEAM2030</p>
+<h1>プロジェクトコンパス</h1>
+<p>3分で、今週から始められることが1つ決まります。やりたいことが決まっていなくても大丈夫。<b>むしろ、決まっていない人のために作りました。</b></p>
 </div></header>
 
 <div class="bar"><i id="bar"></i></div>
