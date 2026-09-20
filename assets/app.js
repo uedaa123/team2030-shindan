@@ -164,7 +164,7 @@ function shortlist(){
 
 var Q = {
  group: {key:"group", type:"many", max:2,
-   label:"どのへん",
+   label:"大分類",
    q:"どのへんに、ワクワクする？",
    h:"26分野を、大きく6つに束ねています。",
    note:"2つまで選べます。1つでもOK",
@@ -173,7 +173,7 @@ var Q = {
    }); }},
 
  genre: {key:"genre", type:"many", max:3,
-   label:"もう少し",
+   label:"分野",
    q:"もうちょっと近づけると？",
    h:"さっき選んだ中から出しています。",
    note:"3つまで選べます",
@@ -190,7 +190,7 @@ var Q = {
    }},
 
  project: {key:"project", type:"one",
-   label:"これ",
+   label:"やること",
    q:"この中で、いちばんやってみたいのは？",
    h:"ピンときたものを1つ。あとで選び直せます。",
    opts:function(){
@@ -203,14 +203,14 @@ var Q = {
 
  yn:    {key:"yn1", type:"one", q:"あなたの勇誠義礼は",
    h:"診断したタイプを選ぶだけです。",
-   label:"タイプ",
+   label:"勇誠義礼",
    opts:function(){ return YN_ORDER.map(function(k){
      return {v:k, b:k + "タイプ", s:YN_HEAD[k], c:YN_HUE[k]};
    }).concat([{v:"unknown", b:"まだ分からない", s:"これでも結果は出ます"}]); }},
 
  wd:    {key:"wd", type:"one", q:"あなたのウェルスダイナミクスは",
    h:"診断したプロファイルを選ぶだけです。",
-   label:"持ち場",
+   label:"ウェルス",
    opts:function(){ return Object.keys(WDROLE).map(function(w){
      return {v:w, b:w, s:WDROLE[w].role};
    }).concat([{v:"unknown", b:"まだ分からない", s:"これでも結果は出ます"}]); }}
