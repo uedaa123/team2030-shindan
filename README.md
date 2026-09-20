@@ -93,7 +93,14 @@ node build.mjs
 git add -A && git commit -m "..." && git push
 ```
 
-`node build.mjs` を先に流すのを忘れないこと（`dist/` の埋め込み版が古いままになる）。
+**`node build.mjs` を先に流すこと。** 2つのことをやっている。
+
+1. `dist/` の埋め込み版を作り直す
+2. `index.html` の CSS/JS のURLに `?v=<中身のハッシュ>` を打ち直す
+
+2がないと、GitHub Pages のキャッシュ（10分ほど）のせいで、
+更新したのに古い画面が出たままになる。中身が変わったときだけ版が変わるので、
+何度流しても差分は出ない。
 
 ### もう1つの選択肢：Netlify
 

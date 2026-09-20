@@ -7,6 +7,7 @@
    file:// で直接開けるので、実機確認やオフライン配布はこちらを使う。 */
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -65,6 +66,18 @@ ${js}
 </body>
 </html>
 `;
+
+/* ── 公開用 index.html に版を打つ ────────────────────
+   GitHub Pages は CSS/JS を10分ほどキャッシュするので、
+   更新しても古いままの画面を見せてしまう。中身が変わったときだけ
+   変わる短いハッシュを ?v= に付けて、確実に新しいほうを読ませる。 */
+const stamp = createHash("sha1").update(css + js + cfg).digest("hex").slice(0, 8);
+const idxPath = resolve(ROOT, "index.html");
+const idx = readFileSync(idxPath, "utf8")
+  .replace(/(href|src)="(assets\/[\w.-]+|config\.js)(\?v=[0-9a-f]+)?"/g,
+           (_, attr, file) => `${attr}="${file}?v=${stamp}"`);
+writeFileSync(idxPath, idx, "utf8");
+console.log(`index.html に版を打ちました: ?v=${stamp}`);
 
 mkdirSync(resolve(ROOT, "dist"), { recursive: true });
 const out = resolve(ROOT, "dist/TEAM2030_プロジェクト診断_offline.html");
