@@ -9,7 +9,7 @@
      直すのは assets/ と data/ の側。 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap">
 <style>
 /* チーム2030 プロジェクト診断
    ── 配色の考え方 ──────────────────────────────────
@@ -18,15 +18,7 @@
    カードの上辺に出る。色は飾りではなく、自分が何を選んだかの目印。
    勇誠義礼の4タイプにも固有色がある（勇＝朱、誠＝青、義＝橙、礼＝桃）。
    色の指定は --c（文字用の濃い側）と --cv（塗り用の鮮やかな側）を
-   各要素に流し込む形に統一してある。色は tools/ のパレット生成で作った26色。
-
-   ── 見た目の方針（2026-09-21）───────────────────
-   「コンパス」なので計器の顔にする。
-   ・虹のグラデーションはやめた。26分野は26本の目盛りにした
-   ・角丸は2〜3px。影は使わず、細線で区切る
-   ・色は塗らない。左の柱・枠線・番号にだけ使う
-   ・数値・単位・札はモノスペース。見出しは角のあるゴシック
-   飾りを減らして、情報の並びだけで持たせる。 */
+   各要素に流し込む形に統一してある。色は tools/ のパレット生成で作った26色。 */
 
 :root{
   /* 分野26色（data/cases.json の genres と同じ順）
@@ -89,21 +81,12 @@
   --line:#d9deea;
   --line-2:#eaeef6;
 
-  /* 丸ゴシックはやめた。計器の顔にするため、見出しは角のある
-     Zen Kaku Gothic New、数値と札はモノスペースにする */
-  --display:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Noto Sans JP",
-            system-ui,sans-serif;
+  --display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic",
+            "Noto Sans JP",system-ui,sans-serif;
   --gothic:"Hiragino Sans","Yu Gothic","Noto Sans JP","Meiryo",system-ui,sans-serif;
-  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,
-         "Hiragino Sans","Yu Gothic",monospace;
 
-  --ink-3:#8b93ab;            /* 添え字・単位・番号 */
-  --line-3:#b6bece;           /* 細線より少し強い線 */
-  --hover:#eef1f7;
-  --sel:#f7f8fc;
-  --paper-fade:rgba(244,246,250,.9);
-  --dim:#9aa3c4;              /* 濃紺の地に置く文字 */
-  --on-ink-dim:#9aa3c4;
+  --r:14px;   /* カードの丸み */
+  --r-s:10px; /* ボタンの丸み */
 }
 
 @media (prefers-color-scheme: dark){
@@ -124,10 +107,8 @@
     --yu:#fb923c; --sei:#60a5fa; --gi:#facc15; --rei:#f472b6;
     --yuv:#fb923c; --seiv:#60a5fa; --giv:#facc15; --reiv:#f472b6;
     --accent:#ff7a55; --accent-soft:#33221d;
-    --ink:#e9ecf6; --ink-2:#a2aac4; --paper:#12142a; --card:#191c33;
-    --deep:#0c0e20; --line:#2e3352; --line-2:#242845;
-    --ink-3:#7d86a6; --line-3:#444b70; --hover:#1a1d34; --sel:#1a1d34;
-    --paper-fade:rgba(18,20,42,.9); --dim:#8790b4; --on-ink-dim:#7d86a6;
+    --ink:#e9ecf6; --ink-2:#a2aac4; --paper:#12142a; --card:#1c1f38;
+    --deep:#0c0e20; --line:#333856; --line-2:#272b46;
   }
 }
 :root[data-theme="dark"]{
@@ -147,288 +128,230 @@
   --yu:#fb923c; --sei:#60a5fa; --gi:#facc15; --rei:#f472b6;
   --yuv:#fb923c; --seiv:#60a5fa; --giv:#facc15; --reiv:#f472b6;
   --accent:#ff7a55; --accent-soft:#33221d;
-  --ink:#e9ecf6; --ink-2:#a2aac4; --paper:#12142a; --card:#191c33;
-  --deep:#0c0e20; --line:#2e3352; --line-2:#242845;
-  --ink-3:#7d86a6; --line-3:#444b70; --hover:#1a1d34; --sel:#1a1d34;
-  --paper-fade:rgba(18,20,42,.9); --dim:#8790b4; --on-ink-dim:#7d86a6;
+  --ink:#e9ecf6; --ink-2:#a2aac4; --paper:#12142a; --card:#1c1f38;
+  --deep:#0c0e20; --line:#333856; --line-2:#272b46;
 }
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--gothic);
-     font-size:15px;line-height:1.85;-webkit-font-smoothing:antialiased;
+     font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;
      -webkit-tap-highlight-color:transparent}
-.wrap{max-width:720px;margin:0 auto;padding:0 22px 110px}
-.wrap#app{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 96px}
+.wrap#app{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 
-/* ══ ヘッダー ═══════════════════════════════════════
-   コンパスなので計器の顔にする。虹のグラデーションはやめて、
-   26分野を26本の目盛りにした。選んだ分野の目盛りだけが立つ。 */
-header{background:var(--deep);color:#fff;padding:44px 0 0}
-header .wrap{padding-bottom:26px}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.34em;
-  color:var(--dim);margin:0 0 14px;text-transform:uppercase}
-h1{font-family:var(--display);font-weight:900;font-size:40px;line-height:1.12;
-   margin:0;letter-spacing:-.02em;text-wrap:balance}
-header p{margin:16px 0 0;color:var(--dim);font-size:15px;line-height:1.7;max-width:34ch}
-header p b{color:#fff;font-weight:700}
-
-/* 目盛り。26本＝26分野。いまの進み具合で左から灯る */
-.dial{display:flex;gap:3px;align-items:flex-end;height:22px;margin:34px 0 0}
-.dial i{flex:1;height:5px;background:rgba(255,255,255,.16);display:block;
-  transition:height .45s ease,background .45s ease}
-.dial i.half{height:11px;background:rgba(255,255,255,.4)}
-.dial i.on{height:22px;background:var(--accent)}
-
+/* ── ヘッダー ──────────────────────────────────── */
+header{background:var(--deep);color:#fff;padding:0 0 40px}
+/* 26色の帯。このツールが扱う分野の数だけ色がある */
+header:before{content:"";display:block;height:7px;
+  background:linear-gradient(90deg,var(--h0v), var(--h1v), var(--h2v), var(--h3v), var(--h4v), var(--h5v), var(--h6v), var(--h7v), var(--h8v), var(--h9v), var(--h10v), var(--h11v), var(--h12v), var(--h13v), var(--h14v), var(--h15v), var(--h16v), var(--h17v), var(--h18v), var(--h19v), var(--h20v), var(--h21v), var(--h22v), var(--h23v), var(--h24v), var(--h25v))}
+header .wrap{padding-top:40px;padding-bottom:0}
+h1{font-family:var(--display);font-weight:700;font-size:38px;line-height:1.3;
+   margin:0 0 14px;letter-spacing:.01em;text-wrap:balance}
+header p{margin:0;color:#b8bfdc;font-size:14px;line-height:1.85;max-width:52ch}
 @media(max-width:560px){
-  header{padding-top:32px}
-  header .wrap{padding-bottom:22px}
-  h1{font-size:31px}
-  header p{font-size:14px}
-  .dial{margin-top:26px;gap:2px}
+  header{padding-bottom:28px}
+  header .wrap{padding-top:28px}
+  h1{font-size:29px}
 }
 
-/* 細い進捗線。ヘッダー直下に1本だけ */
-.bar{height:2px;background:var(--line);position:sticky;top:0;z-index:5}
-.bar i{display:block;height:100%;width:0;background:var(--ink);transition:width .4s ease}
+/* 進捗バー。進むほど色数が増える */
+.bar{height:5px;background:var(--line-2);position:sticky;top:0;z-index:5}
+.bar i{display:block;height:100%;width:0;transition:width .35s ease;
+  background:linear-gradient(90deg,var(--h0v),var(--h8v) 45%,var(--h3v) 70%,var(--h4v));
+  background-size:760px 100%;background-repeat:no-repeat}
 
-/* ══ ステップ表示 ═══════════════════════════════════
-   丸に数字ではなく、計器の目盛りらしく横一列の番号と細線にする */
-.stepper{display:flex;list-style:none;margin:34px 0 34px;padding:0;
-  border-top:1px solid var(--line)}
-.stepper li{flex:1;min-width:0;padding:11px 0 0;position:relative;
-  font-size:11px;color:var(--ink-3);letter-spacing:.02em}
-.stepper li:before{content:"";position:absolute;top:-1px;left:0;right:1px;height:2px;
-  background:transparent}
-.stepper li.done:before{background:var(--line-3)}
-.stepper li.now:before{background:var(--accent)}
-.stepper li i{font-style:normal;font-family:var(--mono);font-size:10px;
-  display:block;margin:0 0 2px;color:var(--ink-3)}
-.stepper li.now i,.stepper li.now em{color:var(--accent)}
-.stepper li.now em{font-weight:700}
-.stepper li em{font-style:normal;display:block;white-space:nowrap;overflow:hidden;
-  text-overflow:ellipsis;padding-right:6px}
-@media(max-width:560px){.stepper{margin:26px 0 26px}.stepper li em{font-size:10.5px}}
+/* ── 設問 ──────────────────────────────────────── */
+.step{padding:40px 0 0}
+.stepno{font-family:var(--display);font-weight:700;font-size:12px;color:var(--accent);
+  margin:0 0 8px;letter-spacing:.14em}
+h2{font-family:var(--display);font-weight:700;font-size:25px;line-height:1.5;
+   margin:0 0 8px;text-wrap:balance}
+@media(max-width:560px){.step{padding:28px 0 0}h2{font-size:22px}}
+.hint{color:var(--ink-2);font-size:13px;margin:0 0 22px}
 
-/* ══ 設問 ═══════════════════════════════════════════ */
-.step{padding:0}
-h2{font-family:var(--display);font-weight:900;font-size:30px;line-height:1.3;
-   margin:0 0 10px;letter-spacing:-.02em;text-wrap:balance}
-@media(max-width:560px){h2{font-size:25px}}
-.hint{color:var(--ink-2);font-size:13.5px;margin:0 0 20px;line-height:1.75}
-.multi{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
-  color:var(--accent);margin:0 0 20px}
-.multi:before{content:"▸ "}
+.opts{display:grid;gap:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+@media(max-width:560px){.opts.two{grid-template-columns:1fr}}
 
-.opts{display:grid;gap:0;border-top:1px solid var(--line)}
+button.opt{font:inherit;text-align:left;background:var(--card);
+  border:2px solid var(--line);border-radius:var(--r-s);
+  padding:14px 16px;cursor:pointer;color:var(--ink);min-height:50px;
+  transition:border-color .13s,background .13s,transform .09s}
+button.opt:hover{border-color:var(--c,var(--accent))}
+button.opt:active{transform:scale(.99)}
+button.opt:focus-visible{outline:3px solid var(--c,var(--accent));outline-offset:2px}
+button.opt.on{border-color:var(--c,var(--accent));
+  background:color-mix(in srgb,var(--cv,var(--c,var(--accent))) 12%,var(--card))}
+button.opt.off{opacity:.45}
+button.opt b{display:block;font-weight:700;font-family:var(--display)}
+button.opt span{display:block;font-size:12.5px;color:var(--ink-2);margin-top:3px;
+  line-height:1.7;font-family:var(--gothic)}
 
-/* 選択肢は箱ではなく行。左端の2pxが分野の色 */
-button.opt{font:inherit;text-align:left;background:none;border:0;
-  border-bottom:1px solid var(--line);padding:16px 14px 16px 16px;
-  cursor:pointer;color:var(--ink);position:relative;
-  transition:background .12s}
-button.opt:before{content:"";position:absolute;left:0;top:-1px;bottom:0;width:2px;
-  background:var(--c,var(--line-3));opacity:.45;transition:opacity .12s,width .12s}
-button.opt:hover{background:var(--hover)}
-button.opt:hover:before{opacity:1}
-button.opt:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-button.opt.on{background:var(--sel)}
-button.opt.on:before{opacity:1;width:4px}
-button.opt.off{opacity:.42}
-button.opt b{display:block;font-family:var(--display);font-weight:700;
-  font-size:16.5px;line-height:1.5;letter-spacing:-.01em}
-button.opt.on b{color:var(--c,var(--ink))}
-button.opt span{display:block;font-size:12.5px;color:var(--ink-2);margin-top:4px;
-  line-height:1.7}
+/* 色を持つ選択肢（分野・勇誠義礼）は、色の丸を左に置いて、中身は縦に積む */
+button.opt.hue{display:grid;grid-template-columns:15px 1fr;column-gap:12px}
+button.opt.hue:before{content:"";grid-column:1;grid-row:1;width:15px;height:15px;
+  border-radius:50%;background:var(--cv,var(--c));margin-top:6px;transition:box-shadow .13s}
+button.opt.hue.on:before{box-shadow:0 0 0 4px color-mix(in srgb,var(--cv,var(--c)) 30%,transparent)}
+button.opt.hue > b,
+button.opt.hue > span,
+button.opt.hue > em{grid-column:2}
 
-/* 選択中の印。左に小さなチェック */
-button.opt:after{content:"";position:absolute;right:16px;top:50%;
-  width:16px;height:16px;margin-top:-8px;border:1px solid var(--line-3);
-  border-radius:50%;transition:background .12s,border-color .12s}
-button.opt.on:after{background:var(--c,var(--accent));border-color:var(--c,var(--accent));
-  box-shadow:inset 0 0 0 3px var(--card)}
-button.opt.hue{padding-right:44px}
-button.opt.hue:before{opacity:.55}
-
-/* 分野名の小札 */
-.opt .gtag{display:inline-block;font-style:normal;font-family:var(--mono);
-  font-size:10px;letter-spacing:.06em;color:var(--ink-3);margin-top:8px}
-.opt .gtag:before{content:"— "}
-
-/* ══ ボタン ═════════════════════════════════════════ */
-.go{font:inherit;font-family:var(--display);font-weight:700;font-size:15px;
-    background:var(--ink);color:var(--paper);border:0;border-radius:2px;
-    padding:15px 30px;cursor:pointer;min-height:50px;letter-spacing:.02em;
-    transition:opacity .12s}
-.go:hover{opacity:.84}
-.go:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.go[disabled]{background:none;color:var(--ink-3);border:1px solid var(--line);
-  cursor:not-allowed;opacity:1}
-.go.ghost{background:none;color:var(--ink-2);border:1px solid var(--line)}
-.go.ghost:hover{color:var(--ink);border-color:var(--ink-3);opacity:1}
-.nav{display:flex;gap:14px;align-items:center;margin-top:24px}
-.back{font:inherit;background:none;border:0;color:var(--ink-3);cursor:pointer;
-      font-size:13px;padding:10px 0;text-decoration:underline;text-underline-offset:3px}
+.nav{display:flex;gap:12px;align-items:center;margin-top:28px;flex-wrap:wrap}
+.go{font:inherit;font-family:var(--display);font-weight:700;background:var(--accent);
+    color:#fff;border:0;border-radius:var(--r-s);padding:14px 28px;cursor:pointer;
+    min-height:50px;transition:filter .13s,transform .09s}
+.go:hover{filter:brightness(1.08)}
+.go:active{transform:scale(.99)}
+.go:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.go[disabled]{background:var(--line);color:var(--ink-2);cursor:not-allowed;filter:none}
+.back{font:inherit;background:none;border:0;color:var(--ink-2);cursor:pointer;
+      text-decoration:underline;padding:12px 4px;min-height:50px}
 .back:hover{color:var(--ink)}
-.back:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.back:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.count{font-size:12.5px;color:var(--ink-2);margin-left:auto;
+  font-variant-numeric:tabular-nums}
 
-/* 下に固定する操作バー */
-.bottombar{position:sticky;bottom:0;z-index:6;margin:0 -22px;
-  padding:12px 22px calc(12px + env(safe-area-inset-bottom));
-  background:var(--paper-fade);backdrop-filter:blur(10px);
-  border-top:1px solid var(--line)}
-.bottominner{max-width:676px;margin:0 auto;display:flex;align-items:center;gap:14px}
-.bottominner .go{flex:1;text-align:center}
-.count{font-family:var(--mono);font-size:11px;color:var(--ink-3);white-space:nowrap;
-  letter-spacing:.06em}
+/* ── 結果 ──────────────────────────────────────── */
+.res{padding:36px 0 0}
+.lede{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.6;
+  margin:0 0 14px;text-wrap:balance}
+.recap{font-size:12.5px;color:var(--ink-2);background:var(--card);
+  border:2px solid var(--line-2);border-radius:var(--r-s);
+  padding:13px 15px;margin:0 0 22px;line-height:1.9}
+.recap b{color:var(--ink);font-weight:700}
 
-/* ══ 結果：計器の読み値 ══════════════════════════════ */
-.res{padding:0}
+/* カード。上辺の色は、その分野の色 */
+article{background:var(--card);border:1px solid var(--line-2);
+  border-top:6px solid var(--cv,var(--c,var(--line)));
+  border-radius:var(--r);padding:20px 20px 18px;margin-bottom:14px}
+article.top{box-shadow:0 2px 0 0 var(--line-2),0 10px 26px -18px var(--ink)}
+/* カード上の札。分野・規模・「あなたが選んだもの」 */
+.rank{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.rank em{font-style:normal;font-family:var(--display);font-weight:700;font-size:11px;
+  letter-spacing:.04em;color:var(--ink-2);background:var(--line-2);
+  border-radius:999px;padding:3px 10px}
+.rank em.pick{color:#fff;background:var(--c,var(--accent))}
+h3{font-family:var(--display);font-weight:700;font-size:20px;line-height:1.5;margin:0 0 10px;
+   text-wrap:balance}
+dl{margin:0;display:grid;grid-template-columns:6.5em 1fr;gap:8px 14px;font-size:13.5px}
+@media(max-width:560px){dl{grid-template-columns:1fr;gap:2px 0}dl dt{margin-top:11px}}
+dt{font-family:var(--display);font-weight:700;color:var(--ink-2);font-size:12px;padding-top:3px}
+dd{margin:0;line-height:1.8}
+.src{font-size:12px;margin-top:13px}
+.src a{color:var(--c,var(--accent))}
 
-/* 読み値の帯。方位・日付・番号をモノスペースで */
-.readout{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);
-  padding:14px 0;margin:0 0 30px;
-  display:flex;flex-wrap:wrap;gap:6px 22px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
-.readout b{color:var(--ink);font-weight:700}
-.readout .bearing{color:var(--accent)}
+h4.sec{font-family:var(--display);font-weight:700;font-size:19px;margin:38px 0 4px}
 
-/* 結果の見出し */
-.docttl{font-family:var(--display);font-weight:900;font-size:13px;letter-spacing:.2em;
-  color:var(--ink-3);margin:0 0 6px;text-transform:uppercase}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 26px}
-.chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;
-  color:var(--c,var(--ink));border:1px solid var(--c,var(--line-3));
-  border-radius:2px;padding:4px 9px}
-.chip.plain{color:var(--ink-2);border-color:var(--line-3)}
-
-/* 目次 */
-.guidelist{counter-reset:gl;list-style:none;margin:0 0 4px;padding:0;
-  font-size:13px;color:var(--ink-2);line-height:1.7}
-.guidelist li{counter-increment:gl;position:relative;padding:9px 0 9px 28px;
-  border-bottom:1px solid var(--line)}
-.guidelist li:first-child{border-top:1px solid var(--line)}
-.guidelist li:before{content:"0" counter(gl);position:absolute;left:0;top:11px;
-  font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.04em}
-.guidelist b{color:var(--ink);font-weight:700;font-family:var(--display)}
-
-/* 章見出し */
-h4.sec{display:flex;align-items:baseline;gap:12px;
-  font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.01em;
-  margin:52px 0 18px;padding-top:16px;border-top:2px solid var(--ink)}
-h4.sec .secno{font-family:var(--mono);font-weight:400;font-size:11px;
-  color:var(--accent);letter-spacing:.1em}
-h4.sec .secno:before{content:"0"}
-.subsec{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink-3);
-  margin:34px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-
-/* ══ カード ═════════════════════════════════════════
-   箱ではなく、左に色の柱を立てた記事にする */
-article{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--c,var(--line-3));
-  border-radius:2px;padding:20px 22px 18px;margin:0 0 12px}
-article.lead{border-left-width:5px;padding:26px 24px 22px;margin:0 0 16px}
-article.lead h3{font-size:27px;line-height:1.25;letter-spacing:-.025em;margin:0 0 12px}
-@media(max-width:560px){article.lead h3{font-size:23px}article.lead{padding:22px 18px 18px}}
-
-.rank{display:flex;flex-wrap:wrap;gap:5px 10px;margin:0 0 12px;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-3)}
-.rank em{font-style:normal}
-.rank em.pick{color:var(--accent)}
-.rank em+em:before{content:"／ "}
-
-h3{font-family:var(--display);font-weight:900;font-size:19px;line-height:1.45;
-   margin:0 0 10px;letter-spacing:-.015em;text-wrap:balance}
-.cause{font-size:14px;color:var(--ink-2);margin:0 0 12px;line-height:1.75}
-.forwho{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin:0 0 16px;
-  letter-spacing:.03em}
-
-/* 今週やること。ここだけ地を反転させて外さないようにする */
-.todo{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:16px 0;margin:18px 0 0}
-.todolabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
-  color:var(--accent);margin:0 0 7px}
-.todobody{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.55;
-  margin:0;letter-spacing:-.01em}
-@media(max-width:560px){.todobody{font-size:17px}}
-
-/* あなたの入り方 */
-.youdo{background:var(--ink);color:var(--paper);border-radius:2px;
-  padding:18px 20px;margin:14px 0 0}
-.youlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
-  color:var(--on-ink-dim);margin:0 0 8px}
-.youbody{font-family:var(--display);font-weight:700;font-size:16px;line-height:1.7;
-  margin:0;letter-spacing:-.005em}
-
-dl{margin:18px 0 0;display:grid;grid-template-columns:7em 1fr;gap:0;font-size:13.5px}
-@media(max-width:560px){dl{grid-template-columns:1fr}}
-dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-3);
-  padding:10px 0 2px;border-top:1px solid var(--line)}
-dd{margin:0;padding:10px 0;line-height:1.7}
-@media(min-width:561px){dd{border-top:1px solid var(--line)}}
-@media(max-width:560px){dt{border-top:1px solid var(--line)}dd{padding:0 0 10px}}
-dd.strong{font-family:var(--display);font-weight:700;font-size:15px}
-.src{font-size:12px;margin:14px 0 0}
-.src a,dd a{color:var(--accent);text-underline-offset:3px}
-
-/* ══ 解説ブロック ═══════════════════════════════════ */
-section.block{margin:0;padding:24px;border:1px solid var(--line);
-  border-left:3px solid var(--c,var(--ink));border-radius:2px;background:var(--card)}
-section.block h4{font-family:var(--display);font-weight:900;font-size:19px;
-  margin:0 0 10px;letter-spacing:-.015em}
-section.block p{margin:0 0 12px;font-size:13.5px;color:var(--ink-2);line-height:1.8}
-section.block p b{color:var(--ink)}
-section.block .pair{border-top:1px solid var(--line);padding:14px 0 0;margin:14px 0 0;
-  font-size:13px;line-height:1.75;color:var(--ink-2)}
+/* ── 解説ブロック ─────────────────────────────── */
+section.block{margin:36px 0 0;padding:24px 22px;border-radius:var(--r);
+  background:var(--card);border:1px solid var(--line-2);
+  border-top:6px solid var(--cv,var(--c,var(--accent)))}
+section.block h4{font-family:var(--display);font-weight:700;font-size:19px;
+  margin:0 0 10px;color:var(--ink);text-wrap:balance}
+section.block p{margin:0 0 10px;font-size:13.5px;color:var(--ink-2);line-height:1.85}
+section.block .pair{background:color-mix(in srgb,var(--c,var(--accent)) 7%,var(--card));
+  border-radius:var(--r-s);padding:13px 15px;margin:11px 0 0;font-size:13.5px;
+  line-height:1.85}
 section.block .pair b{color:var(--ink);font-family:var(--display);font-weight:700}
-section.wd{margin-top:14px;border-left-color:var(--line-3)}
 
-.stlead{font-family:var(--display);font-weight:700;font-size:16px;
-  color:var(--ink) !important;margin:0 0 16px !important;letter-spacing:-.01em}
-ol.ststeps{margin:0;padding:0;list-style:none;counter-reset:st}
-ol.ststeps li{counter-increment:st;position:relative;padding:14px 0 14px 40px;
-  font-size:14.5px;line-height:1.75;border-top:1px solid var(--line)}
-ol.ststeps li:before{content:"0" counter(st);position:absolute;left:0;top:15px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--c,var(--accent))}
-.ststuck{font-size:12.5px;color:var(--ink-3) !important;margin:16px 0 0 !important;
-  padding-top:14px;border-top:1px solid var(--line)}
-.dim{font-size:12.5px;color:var(--ink-3)}
+/* 1位のプロジェクト。今週やることと、あなたの入り方をひとつながりで見せる */
+article.lead{border-top-width:8px;padding:24px 22px 20px;margin-bottom:26px;
+  box-shadow:0 2px 0 0 var(--line-2),0 14px 34px -22px var(--ink)}
+article.lead h3{font-size:24px;margin:0 0 10px}
+@media(max-width:560px){article.lead h3{font-size:21px}}
 
-/* ══ 共有 ═══════════════════════════════════════════ */
-.act{border:1px solid var(--line);border-radius:2px;padding:22px;background:var(--card)}
-.act .go{width:100%;text-align:center;background:var(--accent);color:#fff}
-.act .go.done{background:var(--ink)}
-.namefield{margin:0 0 16px}
-.namefield label{display:block;font-family:var(--mono);font-size:10.5px;
-  letter-spacing:.08em;color:var(--ink-3);margin:0 0 6px}
-.namefield input{font:inherit;width:100%;padding:12px 13px;border:1px solid var(--line);
-  border-radius:2px;background:var(--paper);color:var(--ink);min-height:48px}
-.namefield input:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.copied{font-size:12.5px;color:var(--accent);margin:12px 0 0;min-height:1.5em;
-  line-height:1.6}
-pre.preview{font-family:var(--mono);font-size:11.5px;line-height:1.85;
-  background:var(--paper);border:1px solid var(--line);border-radius:2px;
-  padding:16px;margin:14px 0 0;white-space:pre-wrap;word-break:break-word;
-  color:var(--ink-2);max-height:17em;overflow:auto}
-details.previewbox{margin:14px 0 0}
-details.previewbox summary{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
-  color:var(--ink-3);cursor:pointer;padding:4px 0}
-details.previewbox summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.restart{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line)}
-.restart .go{width:100%;text-align:center}
+/* 今週やること。ここがいちばん読まれる */
+.todo{background:color-mix(in srgb,var(--cv,var(--accent)) 14%,var(--card));
+  border-radius:var(--r-s);padding:15px 17px;margin:16px 0 0}
+.todolabel{font-family:var(--display);font-weight:700;font-size:12px;
+  color:var(--c,var(--accent));letter-spacing:.1em;margin:0 0 5px}
+.todobody{font-family:var(--display);font-weight:700;font-size:17px;line-height:1.7;margin:0}
 
-/* ══ 読み込み失敗 ═══════════════════════════════════ */
-.oops{border:1px solid var(--accent);border-left:3px solid var(--accent);
-  border-radius:2px;padding:22px;margin:30px 0 0;background:var(--card)}
+/* そのプロジェクトに、あなたはどう入るか */
+.youdo{background:var(--deep);color:#eef0fa;border-radius:var(--r-s);
+  padding:15px 17px;margin:12px 0 0}
+.youlabel{font-family:var(--display);font-weight:700;font-size:12px;color:#9aa5d0;
+  letter-spacing:.06em;margin:0 0 6px}
+.youbody{font-family:var(--display);font-weight:700;font-size:16px;line-height:1.75;
+  color:#fff;margin:0}
+.younote{font-size:12.5px;color:#b8bfdc;line-height:1.8;margin:10px 0 0;
+  padding-top:10px;border-top:1px solid rgba(255,255,255,.14)}
+@media(max-width:560px){
+  .todobody{font-size:16px}
+  .youbody{font-size:15px}
+}
+
+/* 使わなくなった「あなたの入り方」単独ブロック（残してあるのは互換のため） */
+section.me{background:var(--deep);border-color:var(--deep);color:#eef0fa;margin:0 0 30px}
+section.me h4{color:#fff;font-size:21px}
+section.me .mesub{font-size:12px;color:#8f9ac4;letter-spacing:.04em;margin:0 0 14px}
+section.me .melead{font-family:var(--display);font-weight:700;font-size:17px;line-height:1.75;
+  color:#fff;margin:0}
+section.me .pair{background:rgba(255,255,255,.09)}
+section.me .pair b{color:#fff}
+@media(max-width:560px){
+  section.me h4{font-size:19px}
+  section.me .melead{font-size:16px}
+}
+
+/* 「ひとりでやらない」は薄い地。主役は上の me なので、ここは静かにする */
+section.wd{border-top-color:var(--ink-2)}
+section.wd .pair{background:var(--paper)}
+
+/* 大義。プロジェクトが何をもたらすのか */
+.cause{font-size:13.5px;color:var(--c,var(--ink-2));font-weight:700;
+  margin:0 0 14px;line-height:1.75}
+dd.strong{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.7}
+.dim{font-size:12.5px;opacity:.75}
+
+/* もう動いている場所（実在事例）。おすすめとは別の見え方にする */
+article.real{border-style:dashed;border-width:1px;border-top-style:solid;border-top-width:6px;
+  background:var(--paper)}
+
+.note{font-size:12px;color:var(--ink-2);border-left:3px solid var(--cv,var(--c,var(--accent)));
+  padding:8px 0 8px 13px;margin:18px 0 0;line-height:1.85}
+section.me .note{color:#b8bfdc}
+.restart{margin-top:34px}
+.restart .go{background:var(--ink)}
+
+/* ── 次の行動へ：コピーカード ───────────────────── */
+.act{background:var(--card);border:2px solid var(--accent);border-radius:var(--r);
+     padding:20px;margin:0 0 30px}
+.act.tail{margin:36px 0 0}
+.act h4{font-family:var(--display);font-weight:700;font-size:18px;margin:0 0 8px;
+  text-wrap:balance}
+.act p{font-size:12.5px;color:var(--ink-2);margin:0 0 14px;line-height:1.85}
+.act .go{width:100%;text-align:center}
+.act .go.done{background:var(--h3)}
+.namefield{margin:0 0 14px}
+.namefield label{display:block;font-size:12.5px;color:var(--ink-2);margin:0 0 6px}
+.namefield input{font:inherit;width:100%;padding:12px 13px;border:2px solid var(--line);
+  border-radius:var(--r-s);background:var(--paper);color:var(--ink);min-height:48px}
+.namefield input:focus-visible{outline:3px solid var(--accent);outline-offset:1px;
+  border-color:var(--accent)}
+.copied{font-size:12.5px;color:var(--accent);font-weight:700;margin:11px 0 0;min-height:1.5em;
+  line-height:1.7}
+pre.preview{font-family:var(--gothic);font-size:12px;line-height:1.85;background:var(--paper);
+  border-radius:var(--r-s);padding:14px;margin:12px 0 0;
+  white-space:pre-wrap;word-break:break-word;color:var(--ink-2);max-height:15em;overflow:auto}
+details.previewbox{margin:13px 0 0}
+details.previewbox summary{font-size:12.5px;color:var(--ink-2);cursor:pointer;
+  padding:4px 0}
+details.previewbox summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;
+  border-radius:4px}
+
+/* ── 読み込み失敗 ─────────────────────────────── */
+.oops{background:var(--card);border:2px solid var(--accent);border-radius:var(--r);
+  padding:22px;margin:40px 0 0}
 .oops h2{font-size:20px;margin:0 0 10px}
-.oops p{font-size:13.5px;color:var(--ink-2);margin:0 0 10px;line-height:1.8}
-.oops code{font-family:var(--mono);font-size:12px;background:var(--paper);
-  padding:2px 6px;border-radius:2px}
-.note{font-family:var(--mono);font-size:11px;color:var(--ink-3);
-  border-left:2px solid var(--line-3);padding:8px 0 8px 14px;margin:20px 0 0;
-  line-height:1.8;letter-spacing:.02em}
+.oops p{font-size:13.5px;color:var(--ink-2);margin:0 0 10px;line-height:1.85}
+.oops code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;
+  background:var(--paper);padding:2px 6px;border-radius:5px}
 
-/* 画面外のコピー用テキストエリア。
-   opacity:0 や display:none にすると execCommand("copy") が効かない端末がある */
+/* 自動コピーが使えないブラウザ向けの控え。
+   opacity:0 や display:none にすると execCommand("copy") が効かない端末があるので、
+   位置だけで画面外へ逃がす。 */
 #fallbackpad{position:fixed;left:-9999px;top:0;width:1px;height:1px;
   border:0;padding:0;font-size:16px;pointer-events:none}
 
@@ -436,15 +359,131 @@ details.previewbox summary:focus-visible{outline:2px solid var(--accent);outline
   *,*:before,*:after{transition-duration:.01ms !important;animation-duration:.01ms !important}
 }
 
+/* ══ 2026-09-20 作り直し：3問・結果を3つに分ける ══════════ */
+
+/* 「複数えらべます」を見落とさせない */
+.multi{display:inline-block;font-family:var(--display);font-weight:700;font-size:12.5px;
+  color:var(--accent);background:var(--accent-soft);border-radius:999px;
+  padding:6px 14px;margin:0 0 20px}
+
+/* 分野の選択肢。見出しは行為、分野名は小さく添える */
+.opt .gtag{justify-self:start;font-style:normal;font-size:11px;font-weight:700;
+  font-family:var(--display);color:var(--c,var(--accent));
+  border:1px solid var(--c,var(--accent));border-radius:999px;
+  padding:1px 9px;margin-top:8px}
+.step.haspad{padding-bottom:20px}
+
+/* 下に固定する「次へ」。26個スクロールしても押せるように */
+.bottombar{position:sticky;bottom:0;z-index:6;margin:0 -20px;
+  padding:10px 20px calc(10px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+.bottominner{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.bottominner .count{margin:0;white-space:nowrap}
+.bottominner .go{flex:1;text-align:center}
+
+/* 結果の頭。「ちゃんとした1枚が出てきた」と思える見た目にする */
+.doc{background:var(--card);border:1px solid var(--line-2);border-radius:var(--r);
+  padding:22px 22px 20px;margin:0 0 30px;
+  box-shadow:0 2px 0 0 var(--line-2),0 18px 40px -30px var(--ink);
+  position:relative;overflow:hidden}
+.doc:before{content:"";position:absolute;inset:0 0 auto 0;height:5px;
+  background:linear-gradient(90deg,var(--h0v),var(--h6v) 25%,var(--h12v) 50%,var(--h18v) 75%,var(--h24v))}
+.docmeta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11px;letter-spacing:.08em;
+  color:var(--ink-2);margin:6px 0 12px;font-variant-numeric:tabular-nums}
+.docmeta span{position:relative}
+.docmeta span+span:before{content:"";position:absolute;left:-8px;top:.35em;bottom:.35em;
+  width:1px;background:var(--line)}
+.docttl{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.3;margin:0}
+.docsub{font-size:13px;color:var(--ink-2);margin:6px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 0}
+/* 白文字を乗せるので、鮮やかな側ではなく文字用の濃い側を地にする */
+.chip{font-family:var(--display);font-weight:700;font-size:12px;
+  color:#fff;background:var(--c,var(--accent));border-radius:999px;padding:4px 12px}
+.chip.plain{background:none;color:var(--ink);border:2px solid var(--line)}
+.guidelist{counter-reset:gl;list-style:none;margin:18px 0 0;padding:0;
+  font-size:13px;color:var(--ink-2);line-height:1.8}
+.guidelist li{counter-increment:gl;position:relative;padding:7px 0 7px 30px;
+  border-top:1px solid var(--line-2)}
+.guidelist li:before{content:counter(gl);position:absolute;left:0;top:9px;
+  width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--paper);
+  font-family:var(--display);font-weight:700;font-size:11px;
+  display:flex;align-items:center;justify-content:center}
+.guidelist b{color:var(--ink)}
+@media(max-width:560px){.docttl{font-size:22px}.doc{padding:20px 18px 18px}}
+
+/* 大見出しに番号 */
+h4.sec{display:flex;align-items:center;gap:11px;font-size:21px;margin:44px 0 14px}
+h4.sec .secno{display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--paper);
+  font-size:15px;flex:0 0 auto}
+.subsec{font-family:var(--display);font-weight:700;font-size:14px;color:var(--ink-2);
+  margin:28px 0 12px}
+.forwho{font-size:12.5px;color:var(--ink-2);margin:-8px 0 14px}
+
+/* 進め方の4ステップ */
+.stlead{font-family:var(--display);font-weight:700;font-size:16px;
+  color:var(--ink) !important;margin:0 0 14px !important}
+ol.ststeps{margin:0;padding:0;list-style:none;counter-reset:st}
+ol.ststeps li{counter-increment:st;position:relative;padding:12px 0 12px 42px;
+  font-size:14.5px;line-height:1.8;border-top:1px solid var(--line-2)}
+ol.ststeps li:before{content:counter(st);position:absolute;left:0;top:12px;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--c,var(--accent));color:#fff;
+  font-family:var(--display);font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center}
+.ststuck{font-size:12.5px;color:var(--ink-2) !important;margin:16px 0 0 !important;
+  padding-top:14px;border-top:1px solid var(--line-2)}
+
+/* 共有：バディ用とチーム用 */
+.shares{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:620px){.shares{grid-template-columns:1fr}}
+.share{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-s);
+  padding:16px}
+.sharelabel{font-family:var(--display);font-weight:700;font-size:16px;margin:0 0 4px}
+.sharedesc{font-size:12.5px;color:var(--ink-2);margin:0 0 12px;line-height:1.75}
+.share .go{width:100%;text-align:center}
+.act{border-color:var(--line-2);border-width:1px}
+.go.ghost{background:none;color:var(--ink-2);border:2px solid var(--line)}
+.go.ghost:hover{color:var(--ink);border-color:var(--ink-2);filter:none}
+
+/* ── 上の帯。いまどこにいるか ────────────────────── */
+.stepper{display:flex;list-style:none;margin:32px 0 26px;padding:0;gap:4px}
+.stepper li{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px;
+  position:relative}
+.stepper li:before{content:"";position:absolute;top:13px;left:-50%;width:100%;height:2px;
+  background:var(--line);z-index:0}
+.stepper li:first-child:before{display:none}
+.stepper li.done:before,.stepper li.now:before{background:var(--accent)}
+.stepper li i{position:relative;z-index:1;width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;font-size:12px;font-style:normal;
+  background:var(--card);border:2px solid var(--line);color:var(--ink-2)}
+.stepper li.done i{background:var(--accent);border-color:var(--accent);color:#fff}
+.stepper li.now i{background:var(--card);border-color:var(--accent);color:var(--accent);
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+.stepper li em{font-style:normal;font-size:10.5px;color:var(--ink-2);white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.stepper li.now em{color:var(--accent);font-weight:700}
+@media(max-width:560px){
+  .stepper{margin:24px 0 22px}
+  .stepper li em{font-size:10px}
+}
+
+/* ヘッダーの肩書き */
+.eyebrow{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.22em;
+  color:#8f9ac4;margin:0 0 8px}
+header p b{color:#fff;font-weight:700}
+.step{padding-top:0}
+
 </style>
 </head>
 <body>
 
 <header><div class="wrap">
 <p class="eyebrow">TEAM2030</p>
-<h1>プロジェクト<br>コンパス</h1>
-<p>3分。<b>今週やることが、1つ決まる。</b></p>
-<div class="dial" id="dial" aria-hidden="true"></div>
+<h1>プロジェクトコンパス</h1>
+<p>3分で、今週から始められることが1つ決まります。やりたいことが決まっていなくても大丈夫。<b>むしろ、決まっていない人のために作りました。</b></p>
 </div></header>
 
 <div class="bar"><i id="bar"></i></div>
@@ -646,19 +685,19 @@ function shortlist(){
 
 var Q = {
  group: {key:"group", type:"many", max:2,
-   label:"入口",
-   q:"どこから入る？",
-   h:"26分野を6つに束ねています。",
-   note:"2つまで",
+   label:"どのへん",
+   q:"どのへんに、ワクワクする？",
+   h:"全部、ほんとうにやれることです。深く考えず、目に留まったものを。",
+   note:"2つまで選べます。1つでもOK",
    opts:function(){ return DB.groups.map(function(g, i){
      return {v:g.name, b:g.name, s:g.sub, c:hue(GROUP_HUE[i])};
    }); }},
 
  genre: {key:"genre", type:"many", max:3,
-   label:"分野",
-   q:"もう少し、近づける",
-   h:"",
-   note:"3つまで",
+   label:"もう少し",
+   q:"もうちょっと近づけると？",
+   h:"さっき選んだ中から出しています。",
+   note:"3つまで選べます",
    opts:function(){
      var names = [];
      DB.groups.forEach(function(g){ if (A.group.indexOf(g.name) >= 0) names = names.concat(g.genres); });
@@ -672,15 +711,15 @@ var Q = {
    }},
 
  project: {key:"project", type:"one",
-   label:"選ぶ",
-   q:"どれをやる？",
-   h:"あとで選び直せます。",
+   label:"これ",
+   q:"この中で、いちばんやってみたいのは？",
+   h:"ピンときたものを1つ。あとで選び直せます。",
    opts:function(){
      return shortlist().map(function(it){
        return {v:it.id, b:it.title, c:hue(genreIndex(it.genre)),
                s:"今週やること：" + it.step, tag:it.genre};
      }).concat([{v:"auto", b:"どれもピンとこない",
-                 s:"いちばん小さく始められるものを、こちらで選びます"}]);
+                 s:"いちばん小さく始められるものを、こっちで選びます"}]);
    }},
 
  yn:    {key:"yn1", type:"one", q:"あなたの勇誠義礼は",
@@ -688,14 +727,14 @@ var Q = {
    label:"タイプ",
    opts:function(){ return YN_ORDER.map(function(k){
      return {v:k, b:k + "タイプ", s:YN_HEAD[k], c:YN_HUE[k]};
-   }).concat([{v:"unknown", b:"まだ分からない", s:"なくても結果は出ます"}]); }},
+   }).concat([{v:"unknown", b:"まだ分からない", s:"これでも結果は出ます"}]); }},
 
  wd:    {key:"wd", type:"one", q:"あなたのウェルスダイナミクスは",
    h:"診断したプロファイルを選ぶだけです。",
-   label:"WD",
+   label:"持ち場",
    opts:function(){ return Object.keys(WDROLE).map(function(w){
      return {v:w, b:w, s:WDROLE[w].role};
-   }).concat([{v:"unknown", b:"まだ分からない", s:"なくても結果は出ます"}]); }}
+   }).concat([{v:"unknown", b:"まだ分からない", s:"これでも結果は出ます"}]); }}
 };
 var STEP_SETS = {
   full:  [Q.group, Q.genre, Q.project, Q.yn, Q.wd],
@@ -741,23 +780,7 @@ function esc(s){
   });
 }
 function top(){ window.scrollTo(0, 0); }
-function progress(){ bar.style.width = (step / TOTAL * 100) + "%"; dial(); }
-
-/* ヘッダーの目盛り。26本＝26分野。
-   選んだ分野は立ち、そのグループの分野は半分だけ灯る。 */
-function dial(){
-  var el = document.getElementById("dial");
-  if (!el || !DB) return;
-  if (el.childNodes.length !== DB.genres.length) {
-    el.innerHTML = DB.genres.map(function(){ return "<i></i>"; }).join("");
-  }
-  var inGroup = [];
-  DB.groups.forEach(function(g){ if (A.group.indexOf(g.name) >= 0) inGroup = inGroup.concat(g.genres); });
-  Array.prototype.forEach.call(el.childNodes, function(node, i){
-    var name = DB.genres[i].name;
-    node.className = A.genre.indexOf(name) >= 0 ? "on" : (inGroup.indexOf(name) >= 0 ? "half" : "");
-  });
-}
+function progress(){ bar.style.width = (step / TOTAL * 100) + "%"; }
 
 /* ── 読み込み ───────────────────────────────────── */
 function boot(){
@@ -782,7 +805,7 @@ function failed(err){
 function stepper(){
   return '<ol class="stepper">' + STEPS.map(function(S, i){
     var cls = i < step ? "done" : (i === step ? "now" : "");
-    return '<li class="' + cls + '"><i>' + ("0" + (i + 1)) + '</i><em>' + esc(S.label || "") + '</em></li>';
+    return '<li class="' + cls + '"><i>' + (i + 1) + '</i><em>' + esc(S.label || "") + '</em></li>';
   }).join("") + '</ol>';
 }
 
@@ -833,7 +856,7 @@ function render(){
     ? '<div class="bottombar"><div class="bottominner">' +
         '<span class="count">' + cur.length + ' / ' + S.max + ' 選択中</span>' +
         '<button type="button" class="go" id="go"' + (cur.length ? "" : " disabled") + '>' +
-        (cur.length ? "次へ" : "1つえらぶ") + '</button>' +
+        (cur.length ? "次へ" : "まず1つえらんでね") + '</button>' +
       '</div></div>'
     : '');
 
@@ -890,16 +913,6 @@ function today(){
   var d = new Date();
   return d.getFullYear() + "." + ("0" + (d.getMonth() + 1)).slice(-2) + "." + ("0" + d.getDate()).slice(-2);
 }
-/* 選んだ分野を360度に割り当てた方位。複数選んだときは真ん中を取る */
-function bearing(){
-  if (!A.genre.length) return "000";
-  var sum = 0;
-  A.genre.forEach(function(g){ sum += genreIndex(g) * (360 / DB.genres.length); });
-  var deg = Math.round(sum / A.genre.length);
-  return ("00" + deg).slice(-3);
-}
-var lastCount = 0;
-
 function docNo(){
   var seed = (A.genre.join("") + (A.project || "") + (A.yn1 || "") + (A.wd || ""));
   var n = 0;
@@ -933,7 +946,6 @@ function results(){
 
   var total = DB.items.filter(function(it){ return A.genre.indexOf(it.genre) >= 0; }).length;
   var got = {total: total};
-  lastCount = total;
 
   var t = ynType(), w = wdKey();
   var wd = w ? WDROLE[w] : null;
@@ -946,26 +958,23 @@ function results(){
   app.innerHTML =
   '<div class="res">' +
 
-    /* 読み値。方位は分野を360度に割り当てたもの。飾りではなく、
-       同じ分野を選べば必ず同じ数字になる */
-    '<p class="readout">' +
-      '<span class="bearing">方位 ' + bearing() + '°</span>' +
-      '<span>' + esc(today()) + '</span>' +
-      '<span>No. ' + esc(docNo()) + '</span>' +
-      '<span>候補 ' + lastCount + ' 件から</span>' +
-    '</p>' +
-
-    '<p class="docttl">Result</p>' +
-    '<div class="chips">' +
-      A.genre.map(function(g){ return '<span class="chip" style="' + genreHue(g) + '">' + esc(g) + '</span>'; }).join("") +
-      (t ? '<span class="chip" style="' + YN_HUE[t] + '">' + esc(t) + 'タイプ</span>' : '') +
-      (w ? '<span class="chip plain">' + esc(w) + '</span>' : '') +
+    /* 結果の頭。何が出ているかを1目で分かるようにする */
+    '<div class="doc">' +
+      '<p class="docmeta"><span>プロジェクトコンパス</span><span>' + esc(today()) + '</span>' +
+        '<span>No. ' + esc(docNo()) + '</span></p>' +
+      '<h2 class="docttl">あなたの1枚</h2>' +
+      '<p class="docsub">上から読めば、今週やることまで決まります。</p>' +
+      '<div class="chips">' +
+        A.genre.map(function(g){ return '<span class="chip" style="' + genreHue(g) + '">' + esc(g) + '</span>'; }).join("") +
+        (t ? '<span class="chip" style="' + YN_HUE[t] + '">' + esc(t) + 'タイプ</span>' : '') +
+        (w ? '<span class="chip plain">' + esc(w) + '</span>' : '') +
+      '</div>' +
+      '<ol class="guidelist">' +
+        '<li><b>やってみるプロジェクト</b>　選んだ1つと、ほかの候補</li>' +
+        '<li><b>進め方</b>　' + (t ? esc(t) + 'タイプの' : '') + 'あなたに合った手順</li>' +
+        '<li><b>チームやバディに共有する</b>　結果をコピーして貼る</li>' +
+      '</ol>' +
     '</div>' +
-    '<ol class="guidelist">' +
-      '<li><b>やってみるプロジェクト</b>　選んだ1つと、ほかの候補</li>' +
-      '<li><b>進め方</b>　' + (t ? esc(t) + 'タイプの' : '') + '手順</li>' +
-      '<li><b>チームやバディに共有する</b>　結果をコピーして貼る</li>' +
-    '</ol>' +
 
     '<h4 class="sec"><span class="secno">1</span>やってみるプロジェクト</h4>' +
     (lead ?
