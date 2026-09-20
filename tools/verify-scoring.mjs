@@ -44,9 +44,8 @@ const T = sandbox.window.T2030_TEST;
 T.setDB(DB);
 const A = T.answers();
 
-function run(genres, reach) {
+function run(genres) {
   A.genre = genres;
-  A.reach = reach ?? "自分のまち";
   const got = T.pick(5);
   return {
     ids: got.list.map((r) => r.it.id),
@@ -76,10 +75,10 @@ if (seen.size < DB.genres.length) problems.push(`11分野なのに ${seen.size} 
 /* ── ③ 3つ選んだとき ── */
 console.log("\n── 3つ選んだとき、3分野から拾えているか ──\n");
 const trios = [
-  ["子どもと学び", "水辺と生きもの", "記録して残す"],
-  ["まちと空き家", "地域の稼ぎをつくる", "仕組みをつくる"],
-  ["里山・森・畑", "ごみを資源に戻す", "いざというときに備える"],
-  ["年を重ねても動ける", "だれも外れない", "子どもと学び"]
+  ["子ども・教育", "川・海・生きもの", "歴史・文化・記録"],
+  ["空き家・まちなみ", "地域のしごと・お店", "デジタル・事務しごと"],
+  ["里山・森・畑", "ごみ・エネルギー", "防災"],
+  ["高齢者・介護", "福祉・多様性", "子ども・教育"]
 ];
 for (const trio of trios) {
   const r = run(trio);
@@ -89,13 +88,12 @@ for (const trio of trios) {
   if (covered < 3) problems.push(`${trio.join("+")} で ${covered}/3 分野しか出ていない`);
 }
 
-/* ── 届け先で変わるか ── */
-console.log("\n── 届け先を変えたとき ──\n");
-for (const g of ["水辺と生きもの", "記録して残す"]) {
-  const a = run([g], "自分のまち").ids.join(" ");
-  const b = run([g], "日本じゅうに").ids.join(" ");
-  console.log(`${g}\n   自分のまち   ${a}\n   日本じゅうに ${b}`);
-  if (a === b) problems.push(`「${g}」で届け先を変えても結果が同じ`);
+/* ── 分野を選ぶ画面に出る「例」が、ちゃんと具体的か ── */
+console.log("\n── 分野を選ぶ画面に出る例（実際のプロジェクト名）──\n");
+for (const g of DB.genres) {
+  const ex = DB.items.filter((i) => i.genre === g).slice(0, 3).map((i) => i.title);
+  console.log(g + "\n   " + ex.join("／"));
+  if (ex.length < 3) problems.push(`「${g}」の例が ${ex.length} 件しか出せない`);
 }
 
 /* ── ④ 入り方32通り ── */

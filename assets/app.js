@@ -2,8 +2,9 @@
    素のHTML/CSS/JS。ビルド不要、フレームワークなし、localStorage/sessionStorage 不使用。
    状態はすべてメモリ上の A オブジェクトで持つ。
 
-   設問は5問。分野／誰に届けたいか／ウェルスダイナミクス／勇誠義礼2問。
-   住んでいる場所・出せるお金・使える時間は聞かない（2026-09-20 植田さんの指示）。 */
+   設問は3問。分野／勇誠義礼のタイプ／ウェルスダイナミクス。
+   勇誠義礼とウェルスは講座で診断ずみなので「選ぶだけ」。
+   住んでいる場所・出せるお金・使える時間・届け先は聞かない。 */
 (function () {
 "use strict";
 
@@ -16,11 +17,11 @@ var CFG = Object.assign({
   askName: true
 }, window.T2030_CONFIG || {});
 
-/* URLの ?q=3 で短い版（分野・届け先・勇誠義礼1問）に切り替え */
+/* URLの ?q=2 でウェルスダイナミクスを省いた2問版に切り替え */
 try {
   var qp = new URLSearchParams(location.search);
-  if (qp.get("q") === "3") CFG.questionSet = "short";
-  if (qp.get("q") === "5") CFG.questionSet = "full";
+  if (qp.get("q") === "2") CFG.questionSet = "short";
+  if (qp.get("q") === "3") CFG.questionSet = "full";
 } catch (e) { /* URLSearchParams が無い環境では既定のまま */ }
 
 /* 埋め込み版（オフライン配布用）はこの変数にデータが入っている */
@@ -144,45 +145,33 @@ var COMBO_SOLO = {
  "礼":"誰とやるかを先に決めてください。人の顔が見えると進みます。まず1人、話を聞きに行くところから。"
 };
 
-/* ── 設問 ──────────────────────────────────────────── */
+/* ── 設問（3問）───────────────────────────────────
+   勇誠義礼もウェルスダイナミクスも、参加者は講座で診断ずみ。
+   だから「判定する」のではなく「自分のタイプを選ぶだけ」にしてある。 ── */
 var Q = {
  genre: {key:"genre", type:"many", max:3, q:"どの分野に心が動きますか",
-   h:"気になるものを3つまで。深く考えず、目に留まったものでかまいません。",
-   opts:function(){ return DB.genres.map(function(g, i){ return {v:g, b:g, c:hue(i), s:GENREDESC[g]}; }); }},
- reach: {key:"reach", type:"one", q:"どこまで届けたいですか", h:"あとから変えられます。いまの気分で。",
-   opts:function(){ return [
-     {v:"自分のまち", b:"まず、自分のまちで", s:"目の届く範囲から始める。顔の見える人に効く"},
-     {v:"日本じゅうに", b:"日本じゅうに広げたい", s:"うまくいったら他の地域にも渡せる形をねらう"}
-   ]; }},
- wd:    {key:"wd", type:"one", q:"ウェルスダイナミクスのプロファイルは",
-   h:"インサイドクラスで診断します。まだの人は「まだ分からない」で先に進めます。",
+   h:"気になるものを3つまで。下に出ている例を見て、やってみたいものがあるほうを選んでください。",
+   opts:function(){ return DB.genres.map(function(g, i){
+     /* 説明文は書かない。その分野に実際に入っているプロジェクト名を出す。
+        抽象的な一文より、中身を見せたほうが選べる */
+     var ex = DB.items.filter(function(it){ return it.genre === g; })
+                .slice(0, 3).map(function(it){ return it.title; }).join("／");
+     return {v:g, b:g, c:hue(i), s:ex};
+   }); }},
+ yn:    {key:"yn1", type:"one", q:"あなたの勇誠義礼のタイプは",
+   h:"キックオフで診断したものを選ぶだけです。忘れた人は説明を読んで、近いほうを。",
+   opts:function(){ return YN_ORDER.map(function(k){
+     return {v:k, b:k + "タイプ　" + YN[k].head, s:YN[k].desc, c:YN_HUE[k]};
+   }).concat([{v:"unknown", b:"まだ分からない", s:"これを選んでもプロジェクトは出ます"}]); }},
+ wd:    {key:"wd", type:"one", q:"あなたのウェルスダイナミクスは",
+   h:"インサイドクラスで診断したものを選ぶだけです。",
    opts:function(){ return DB.wd.map(function(w){ return {v:w,b:w,s:WDROLE[w].role}; })
-     .concat([{v:"unknown",b:"まだ分からない",s:"勇誠義礼だけで、あなたの入り方を出します"}]); }},
- yn1:   {key:"yn1", type:"one", q:"人の話を聞いていて、いちばん引っかかるのはどれですか",
-   h:"勇誠義礼の思考特性を見ます。正解はありません。反射的に選んでください。",
-   opts:function(){ return YN_ORDER.map(function(k){ return {v:k,b:YN[k].head,s:YN[k].desc,c:YN_HUE[k]}; }); }},
- yn2:   {key:"yn2", type:"one", q:"どんなときに、大切にされていると感じますか",
-   h:"同じタイプ分けを、別の角度から確かめます。",
-   opts:function(){ return YN_ORDER.map(function(k){ return {v:k,b:YN[k].love,c:YN_HUE[k]}; }); }}
+     .concat([{v:"unknown",b:"まだ分からない",s:"これを選んでもプロジェクトは出ます"}]); }}
 };
 
 var STEP_SETS = {
-  full:  [Q.genre, Q.reach, Q.wd, Q.yn1, Q.yn2],
-  short: [Q.genre, Q.reach, Q.yn1]
-};
-
-var GENREDESC = {
-  "子どもと学び":"学校の外でも、子どもが伸びる場をつくる",
-  "水辺と生きもの":"川・湖・海と、そこに棲むものを戻す",
-  "里山・森・畑":"手が入らなくなった土地に、もう一度手を入れる",
-  "記録して残す":"その人しか知らないことを、消える前に残す",
-  "まちと空き家":"使われていない場所を、使われる状態に戻す",
-  "地域の稼ぎをつくる":"地域の外に出ていくお金を、中で回す",
-  "ごみを資源に戻す":"捨てているものを、もう一度使える形にする",
-  "仕組みをつくる":"人に頼りきりの作業を、続く形に変える",
-  "年を重ねても動ける":"年齢を理由に、外に出られなくならないようにする",
-  "だれも外れない":"事情があっても、輪の中にいられるようにする",
-  "いざというときに備える":"そのときに動ける状態を、いまつくっておく"
+  full:  [Q.genre, Q.yn, Q.wd],
+  short: [Q.genre, Q.yn]
 };
 
 /* ── 色 ────────────────────────────────────────────
@@ -209,7 +198,7 @@ var A, step, STEPS, TOTAL, DB = null, lastResult = null, started = false;
 var SESSION = "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 
 function reset() {
-  A = {genre:[], reach:null, wd:null, yn1:null, yn2:null, name:""};
+  A = {genre:[], wd:null, yn1:null, name:""};
   step = 0;
   lastResult = null;
 }
@@ -316,17 +305,12 @@ function render(){
 function canGo(S){ return S.type === "many" ? A[S.key].length > 0 : !!A[S.key]; }
 
 /* ── 並べ方 ───────────────────────────────────────
-   分野が合うか（×40）と、届け先が合うか（+15）だけで点を出す。
-   同点のときは「小さく始められる順」。入会2週目の人に、いきなり
-   十数人や許認可が要るものを一番上に出さないため。
-   性格（ウェルスダイナミクス・勇誠義礼）は順位に使わない。
-   89件に性格タグを機械で振ると当てずっぽうになるので、
+   選んだ分野に入っているかどうかだけ。同点のときは「小さく始められる順」。
+   入会2週目の人に、いきなり十数人や許認可が要るものを一番上に出さないため。
+   性格は順位に使わない。89件に性格タグを機械で振ると当てずっぽうになるので、
    性格は「あなたの入り方」を書くほうにだけ使っている。 ── */
 function score(it){
-  var s = 0, why = [];
-  if (A.genre.indexOf(it.genre) >= 0) { s += 40; why.push(it.genre); }
-  if (A.reach && it.reach === A.reach) { s += 15; why.push(it.reach + "に効く"); }
-  return {s:s, why:why};
+  return {s: A.genre.indexOf(it.genre) >= 0 ? 40 : 0};
 }
 
 function pick(n){
@@ -353,18 +337,19 @@ function pick(n){
   return {list: out.slice(0, n), rest: all.filter(function(r){ return !seen[r.it.id]; })};
 }
 
-function ynType(){ return A.yn1 || null; }
+function ynType(){ return (A.yn1 && A.yn1 !== "unknown") ? A.yn1 : null; }
 
-/* ── 結果画面 ─────────────────────────────────────── */
+/* ── 結果画面 ─────────────────────────────────────
+   いちばん上に「1位のプロジェクト」を大きく出し、その中に
+   「あなたはこれにどう入るか」を名指しで埋め込む。
+   性格の話だけが宙に浮いていると、何の話か分からなくなるため。 ── */
 function results(){
   progress();
   var got = pick(5);
   var ranked = got.list;
-
-  /* もう少し大きくなったらできること（十数人か許認可が要るもの） */
+  var lead = ranked[0];
+  var rest = ranked.slice(1);
   var big = got.rest.filter(function(r){ return r.it.scale === "L"; }).slice(0, 2);
-
-  /* もう動いている場所（実在事例）。選んだ分野に合うものだけ */
   var reals = (DB.reals || []).filter(function(x){
     return x.genre.some(function(g){ return A.genre.indexOf(g) >= 0; });
   }).slice(0, 2);
@@ -374,39 +359,47 @@ function results(){
   var wdKey = (A.wd && A.wd !== "unknown") ? A.wd : null;
   var wd = wdKey ? WDROLE[wdKey] : null;
   var combo = t ? (wdKey ? COMBO[t][wdKey] : COMBO_SOLO[t]) : null;
+  var who = [wdKey, t ? t + "タイプ" : null].filter(Boolean).join(" × ");
 
   lastResult = {ranked:ranked, big:big, reals:reals, yn:t, wd:wd, wdKey:wdKey, combo:combo};
 
   app.innerHTML =
   '<div class="res">' +
-    '<p class="lede">' + esc(A.genre.join("・")) + 'で、今週から始められることです。</p>' +
-    '<p class="recap">' +
-      A.genre.map(esc).join(' ・ ') +
-      (A.reach ? '／<b>' + esc(A.reach) + '</b>' : '') +
-      (wdKey ? '／<b>' + esc(wdKey) + '</b>' : '') +
-      (t ? '／<b>' + esc(t) + 'タイプ</b>' : '') +
-    '</p>' +
+    '<p class="lede">まず、これを1つやってみてください。</p>' +
 
-    /* いちばん上に「あなたの入り方」。何をやるかより、どう入るか */
-    (combo ?
-    '<section class="block me" style="' + (YN_HUE[t] || "") + '">' +
-      '<h4>あなたの入り方</h4>' +
-      '<p class="mesub">' +
-        (wdKey ? esc(wdKey) + 'の' + esc(wd.role.split("。")[0]) + ' × ' : '') +
-        esc(t) + 'タイプ' + (wdKey ? '' : '（ウェルスダイナミクスは未診断）') +
-      '</p>' +
-      '<p class="melead">' + esc(combo) + '</p>' +
-      (wd ?
-        '<div class="pair"><b>人に渡していいこと</b><br>' +
-          '組むなら ' + wd.catalyst.map(esc).join(" か ") + '。' + esc(wd.why) + '</div>' : '') +
-      (y ? '<div class="pair"><b>バディに伝えておくこと</b><br>' + esc(y.buddy) + '</div>' : '') +
-    '</section>' : '') +
+    /* 1位。今週やることと、あなたの入り方をひとつながりで出す */
+    (lead ?
+    '<article class="lead" style="' + genreHue(lead.it.genre) + '">' +
+      '<p class="rank">いちばんのおすすめ／' + esc(lead.it.genre) + '／' + esc(lead.it.scaleLabel) + '</p>' +
+      '<h3>' + esc(lead.it.title) + '</h3>' +
+      '<p class="cause">' + esc(lead.it.cause) + '</p>' +
+      '<div class="todo">' +
+        '<p class="todolabel">今週やること</p>' +
+        '<p class="todobody">' + esc(lead.it.step) + '</p>' +
+      '</div>' +
+      (combo ?
+        '<div class="youdo">' +
+          '<p class="youlabel">' + esc(who) + 'のあなたは、こう入る</p>' +
+          '<p class="youbody">' + esc(combo) + '</p>' +
+          (wd ? '<p class="younote">ここから外れる作業は、' + wd.catalyst.map(esc).join("か") +
+            'のバディに渡していい。' + esc(wd.why) + '</p>' : '') +
+        '</div>'
+        : '<div class="youdo"><p class="youlabel">あなたの入り方</p>' +
+          '<p class="youbody">勇誠義礼のタイプを選ぶと、ここに「あなたの場合どう入るか」が出ます。' +
+          '下の「選び直す」から選んでみてください。</p></div>') +
+      '<dl>' +
+        (lead.it.land ? '<dt>そのあと</dt><dd>' + esc(lead.it.land) + '</dd>' : '') +
+        (lead.it.orgs ? '<dt>行政の入口</dt><dd>' + esc(lead.it.orgs) + '</dd>' : '') +
+        (lead.it.numbers ? '<dt>測る数字</dt><dd>' + esc(lead.it.numbers) + '</dd>' : '') +
+        (lead.it.ref ? '<dt>元ネタ</dt><dd>' + esc(lead.it.ref) + '</dd>' : '') +
+      '</dl>' +
+    '</article>' : '') +
 
     actCard("head") +
 
-    '<h4 class="sec">あなたに向いているプロジェクト</h4>' +
-    '<p class="hint">上から順に、小さく始められるものです。</p>' +
-    ranked.map(function(r, i){ return card(r, i); }).join("") +
+    (rest.length ?
+      '<h4 class="sec">ほかに向いているもの</h4>' +
+      rest.map(function(r, i){ return card(r, i + 1); }).join("") : '') +
 
     (reals.length ?
       '<h4 class="sec">もう動いている場所</h4>' +
@@ -418,7 +411,7 @@ function results(){
     (big.length ?
       '<h4 class="sec">人が集まったら、これも</h4>' +
       '<p class="hint">十数人か、許認可が要るもの。いまは無理でも、行き先として置いておいてください。</p>' +
-      big.map(function(r, i){ return card(r, i, true); }).join("")
+      big.map(function(r, i){ return card(r, i + 1, true); }).join("")
       : '') +
 
     (y ?
@@ -426,14 +419,9 @@ function results(){
       '<h4>' + esc(t) + 'タイプ：' + esc(y.head) + '</h4>' +
       '<p>' + esc(y.desc) + '</p>' +
       '<div class="pair"><b>プロジェクトの進め方</b><br>' + esc(y.proj) + '</div>' +
+      '<div class="pair"><b>バディに伝えておくこと</b><br>' + esc(y.buddy) + '</div>' +
       '<div class="pair"><b>大切にされていると感じるのは</b><br>' + esc(y.love) + '<br>' +
         '<span class="dim">この愛のかたちは' + esc(y.ai) + '</span></div>' +
-      (A.yn2 && A.yn1 !== A.yn2 ?
-        '<p class="note">' +
-        '2つの質問で判定が割れました（注目点は' + esc(A.yn1) + '、愛を感じるポイントは' + esc(A.yn2) + '）。' +
-        '会話なしでは決めきれないタイプ分けなので、' +
-        esc(A.yn1) + 'と' + esc(A.yn2) + 'の両方の説明を読んで、近い方を自分で選んでください。' +
-        'ここでは' + esc(A.yn1) + 'として結果を出しています。</p>' : '') +
     '</section>' : '') +
 
     (wd ?
@@ -458,8 +446,7 @@ function results(){
 /* ── カード ───────────────────────────────────────── */
 function card(r, i, isBig){
   var it = r.it;
-  return '<article class="' + ((i === 0 && !isBig) ? "top" : "") + '"' +
-    ' style="' + genreHue(it.genre) + '">' +
+  return '<article style="' + genreHue(it.genre) + '">' +
     '<p class="rank">' + esc(it.genre) + '／' + esc(it.scaleLabel) + '</p>' +
     '<h3>' + esc(it.title) + '</h3>' +
     '<p class="cause">' + esc(it.cause) + '</p>' +
@@ -468,7 +455,6 @@ function card(r, i, isBig){
       (it.land ? '<dt>そのあと</dt><dd>' + esc(it.land) + '</dd>' : '') +
       (it.orgs ? '<dt>行政の入口</dt><dd>' + esc(it.orgs) + '</dd>' : '') +
       (it.numbers ? '<dt>測る数字</dt><dd>' + esc(it.numbers) + '</dd>' : '') +
-      (it.ref ? '<dt>元ネタ</dt><dd>' + esc(it.ref) + '</dd>' : '') +
     '</dl>' +
   '</article>';
 }
@@ -513,13 +499,20 @@ function copyText(){
   L.push("【診断結果】");
   if (A.name) L.push("名前：" + A.name);
   L.push("気になる分野：" + A.genre.join("／"));
-  if (A.reach) L.push("届けたい範囲：" + A.reach);
   if (lastResult.wdKey) L.push("ウェルスダイナミクス：" + lastResult.wdKey + "（" + lastResult.wd.role.split("。")[0] + "）");
   if (lastResult.yn) L.push("勇誠義礼：" + lastResult.yn + "タイプ（" + YN[lastResult.yn].loveShort + "）");
-  if (lastResult.combo) L.push("わたしの入り方：" + lastResult.combo);
-  L.push("気になったプロジェクト：");
-  lastResult.ranked.slice(0, 3).forEach(function(r, i){ L.push(" " + (i + 1) + ". " + r.it.title); });
-  if (lastResult.ranked[0]) L.push("今週やること：" + lastResult.ranked[0].it.step);
+  var lead = lastResult.ranked[0];
+  if (lead) {
+    L.push("");
+    L.push("やってみるもの：" + lead.it.title);
+    L.push("今週やること：" + lead.it.step);
+    if (lastResult.combo) L.push("わたしの入り方：" + lastResult.combo);
+  }
+  if (lastResult.ranked.length > 1) {
+    L.push("");
+    L.push("ほかに気になったもの：");
+    lastResult.ranked.slice(1, 3).forEach(function(r){ L.push(" ・" + r.it.title); });
+  }
   return L.join("\n");
 }
 
@@ -615,8 +608,8 @@ function logEvent(kind){
     at: new Date().toISOString(),
     set: CFG.questionSet,
     name: A.name || "",
-    genre: A.genre, reach: A.reach,
-    wd: A.wd, yn1: A.yn1, yn2: A.yn2,
+    genre: A.genre,
+    wd: A.wd, yn1: A.yn1,
     top: lastResult ? lastResult.ranked.map(function(r){ return r.it.id; }) : [],
     reals: lastResult ? lastResult.reals.map(function(x){ return x.id; }) : []
   };

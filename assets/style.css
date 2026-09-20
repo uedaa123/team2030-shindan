@@ -9,19 +9,19 @@
 
 :root{
   /* 分野11色（data/cases.json の genres と同じ順） */
-  --h0:#d9700a;  /* 子どもと学び          橙 */
-  --h1:#1d7fc2;  /* 水辺と生きもの        青 */
-  --h2:#5f8f18;  /* 里山・森・畑          黄緑 */
-  --h3:#8438c9;  /* 記録して残す          紫 */
-  --h4:#e8471f;  /* まちと空き家          朱 */
-  --h5:#b07d00;  /* 地域の稼ぎをつくる    黄 */
-  --h6:#159a5c;  /* ごみを資源に戻す      緑 */
-  --h7:#4a4cdb;  /* 仕組みをつくる        藍 */
-  --h8:#00867c;  /* 年を重ねても動ける    青緑 */
-  --h9:#d62d72;  /* だれも外れない        桃 */
-  --h10:#8a5a2b; /* いざというときに備える 土 */
+  --h0:#d9700a;  /* 子ども・教育         橙 */
+  --h1:#1d7fc2;  /* 川・海・生きもの     青 */
+  --h2:#5f8f18;  /* 里山・森・畑         黄緑 */
+  --h3:#8438c9;  /* 歴史・文化・記録     紫 */
+  --h4:#e8471f;  /* 空き家・まちなみ     朱 */
+  --h5:#b07d00;  /* 地域のしごと・お店   黄 */
+  --h6:#159a5c;  /* ごみ・エネルギー     緑 */
+  --h7:#4a4cdb;  /* デジタル・事務しごと 藍 */
+  --h8:#00867c;  /* 高齢者・介護         青緑 */
+  --h9:#d62d72;  /* 福祉・多様性         桃 */
+  --h10:#8a5a2b; /* 防災                 土 */
 
-  /* 同じ10色の、塗り用の鮮やかな側。--hN は文字にも使うので白地で読める濃さに
+  /* 同じ11色の、塗り用の鮮やかな側。--hN は文字にも使うので白地で読める濃さに
      抑えてある。面で見せるところ（カードの上辺・丸・バー）は --hNv を使う。 */
   --h0v:#fb8b1e; --h1v:#2fa3e8; --h2v:#84cc16; --h3v:#a855f7; --h4v:#ff5a2d;
   --h5v:#fbbf24; --h6v:#18c26e; --h7v:#6366f1; --h8v:#00c2b2; --h9v:#f43f8e;
@@ -193,7 +193,34 @@ section.block .pair{background:color-mix(in srgb,var(--c,var(--accent)) 7%,var(-
   line-height:1.85}
 section.block .pair b{color:var(--ink);font-family:var(--display);font-weight:700}
 
-/* 「あなたの入り方」。結果画面のいちばん上に来る、このツールの主役 */
+/* 1位のプロジェクト。今週やることと、あなたの入り方をひとつながりで見せる */
+article.lead{border-top-width:8px;padding:24px 22px 20px;margin-bottom:26px;
+  box-shadow:0 2px 0 0 var(--line-2),0 14px 34px -22px var(--ink)}
+article.lead h3{font-size:24px;margin:0 0 10px}
+@media(max-width:560px){article.lead h3{font-size:21px}}
+
+/* 今週やること。ここがいちばん読まれる */
+.todo{background:color-mix(in srgb,var(--cv,var(--accent)) 14%,var(--card));
+  border-radius:var(--r-s);padding:15px 17px;margin:16px 0 0}
+.todolabel{font-family:var(--display);font-weight:700;font-size:12px;
+  color:var(--c,var(--accent));letter-spacing:.1em;margin:0 0 5px}
+.todobody{font-family:var(--display);font-weight:700;font-size:17px;line-height:1.7;margin:0}
+
+/* そのプロジェクトに、あなたはどう入るか */
+.youdo{background:var(--deep);color:#eef0fa;border-radius:var(--r-s);
+  padding:15px 17px;margin:12px 0 0}
+.youlabel{font-family:var(--display);font-weight:700;font-size:12px;color:#9aa5d0;
+  letter-spacing:.06em;margin:0 0 6px}
+.youbody{font-family:var(--display);font-weight:700;font-size:16px;line-height:1.75;
+  color:#fff;margin:0}
+.younote{font-size:12.5px;color:#b8bfdc;line-height:1.8;margin:10px 0 0;
+  padding-top:10px;border-top:1px solid rgba(255,255,255,.14)}
+@media(max-width:560px){
+  .todobody{font-size:16px}
+  .youbody{font-size:15px}
+}
+
+/* 使わなくなった「あなたの入り方」単独ブロック（残してあるのは互換のため） */
 section.me{background:var(--deep);border-color:var(--deep);color:#eef0fa;margin:0 0 30px}
 section.me h4{color:#fff;font-size:21px}
 section.me .mesub{font-size:12px;color:#8f9ac4;letter-spacing:.04em;margin:0 0 14px}
