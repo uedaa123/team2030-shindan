@@ -52,6 +52,24 @@ const GENRES = [
   ["観光・関係人口",      "外から来る人との関わりを増やす"],
   ["福祉・多様性",        "事情があっても、輪の中にいられるようにする"]
 ];
+/* ── 大きな6つ。1問目はここから選ぶ。
+   いきなり26個から選ばせると粒度がバラバラで選べないので、
+   大きく → 分野 → プロジェクト の3段階にする。 ── */
+const GROUPS = [
+  ["自然と生きもの",   "川・海、山や畑、動物",
+   ["川・水辺・海","自然・環境","動物","農山漁村","食・農"]],
+  ["人と暮らし",       "子ども、お年寄り、健康、人のつながり",
+   ["子ども・教育","学校・若者との協働","高齢者・ケア","福祉・多様性","心理・人間関係","からだ・健康"]],
+  ["まちと場所",       "空き家、道、人が集まる場所",
+   ["まち・空き家","道・橋・インフラ","旅・場づくり","観光・関係人口"]],
+  ["しごととお金",     "小商い、ブランド、地域のお金の流れ",
+   ["お金・小商い","地域ブランド・知財","政治・経済"]],
+  ["技術と仕組み",     "IT、AI、エネルギー、防災",
+   ["IT・システムづくり","AI・デジタル","資源循環","脱炭素・エネルギー","防災・安全"]],
+  ["文化とものづくり", "歴史、記録、手を動かすこと",
+   ["歴史・文化","発信・記録","ものづくり・アート"]]
+];
+
 const GENRE_ORDER = GENRES.map(g => g[0]);
 const GENRE_SET = new Set(GENRE_ORDER);
 
@@ -228,11 +246,29 @@ const reals = oldReals.map(i => {
 });
 
 /* ── 書き出し ─────────────────────────────────── */
-const db = { genres: GENRES.map(([name, lead]) => ({ name, lead })), items, reals };
+/* 26分野が6グループに漏れなく入っているか、ここで落としておく */
+const inGroups = GROUPS.flatMap(g => g[2]);
+const missing = GENRE_ORDER.filter(g => !inGroups.includes(g));
+const unknown = inGroups.filter(g => !GENRE_SET.has(g));
+if (missing.length) throw new Error("どのグループにも入っていない分野: " + missing.join(" / "));
+if (unknown.length) throw new Error("26分野にない名前がグループに入っている: " + unknown.join(" / "));
+if (inGroups.length !== new Set(inGroups).size) throw new Error("分野がグループに重複している");
+
+const db = {
+  groups: GROUPS.map(([name, sub, genres]) => ({ name, sub, genres })),
+  genres: GENRES.map(([name, lead]) => ({ name, lead })),
+  items, reals
+};
 writeFileSync("data/cases.json", JSON.stringify(db, null, 1), "utf8");
 
 console.log(`プロジェクト ${items.length} 件（事例200 ${items.filter(i=>i.src==="事例200").length} ＋ 大義つき90 ${items.filter(i=>i.src==="大義つき90").length}）`);
 console.log(`もう動いている場所 ${reals.length} 件\n`);
+console.log("大きな6つ");
+for (const [name, , gs] of GROUPS) {
+  const n = items.filter(i => gs.includes(i.genre)).length;
+  console.log(`  ${String(n).padStart(3)} 件  ${name}（${gs.length}分野）`);
+}
+console.log("");
 console.log("分野ごとの件数（実在＝もう動いている場所／入口＝行政の入口つき）");
 const thin = [];
 for (const [g] of GENRES) {

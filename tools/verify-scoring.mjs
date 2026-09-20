@@ -48,14 +48,15 @@ const NAMES = DB.genres.map((g) => g.name);
 const problems = [];
 
 function run(genres) {
+  A.group = DB.groups.filter((g) => g.genres.some((x) => genres.includes(x))).map((g) => g.name);
   A.genre = genres;
-  const got = T.pick(5);
+  A.project = null;
+  const list = T.shortlist();
   return {
-    ids: got.list.map((r) => r.it.id),
-    titles: got.list.map((r) => r.it.title),
-    genres: got.list.map((r) => r.it.genre),
-    total: got.total,
-    reals: (DB.reals || []).filter((x) => x.genre.some((g) => genres.includes(g))).length
+    ids: list.map((it) => it.id),
+    titles: list.map((it) => it.title),
+    genres: list.map((it) => it.genre),
+    total: DB.items.filter((it) => genres.includes(it.genre)).length
   };
 }
 
@@ -66,10 +67,10 @@ const seen = new Map();
 for (const g of NAMES) {
   const r = run([g]);
   seen.set(r.ids.join(","), (seen.get(r.ids.join(",")) || 0) + 1);
-  console.log(`${g.padEnd(11, "　")} 手持ち${String(r.total).padStart(2)}件 → ${r.ids.join(" ")}  実在${r.reals}`);
+  console.log(`${g.padEnd(11, "　")} 手持ち${String(r.total).padStart(2)}件 → 候補 ${r.ids.join(" ")}`);
   console.log(`${"".padEnd(11, "　")} 1位: ${r.titles[0]}`);
   if (r.total < 3) problems.push(`「${g}」が ${r.total} 件しかない`);
-  if (r.ids.length < Math.min(5, r.total)) problems.push(`「${g}」で出せるはずの件数が出ていない`);
+  if (r.ids.length < Math.min(8, r.total)) problems.push(`「${g}」の候補が ${r.ids.length} 件しか出ていない（手持ち${r.total}件）`);
 }
 console.log("");
 console.log(`${NAMES.length}分野で ${seen.size} 通りの結果`);
@@ -93,16 +94,41 @@ for (const trio of trios) {
   if (covered < 3) problems.push(`${trio.join("+")} で ${covered}/3 分野しか出ていない`);
 }
 
-/* ── ③ 設問画面の文が具体的か ── */
+/* ── ③ 3段階の入口 ── */
 console.log("");
-console.log("── 分野を選ぶ画面に出る文 ──");
+console.log("── 1問目：大きな6つ ──");
+console.log("");
+const inGroups = DB.groups.flatMap((g) => g.genres);
+for (const g of DB.groups) {
+  const n = DB.items.filter((it) => g.genres.includes(it.genre)).length;
+  console.log(`${g.name}（${g.sub}）`);
+  console.log(`   ${g.genres.length}分野 / ${n}件 … ${g.genres.join(" / ")}`);
+  if (n < 20) problems.push(`グループ「${g.name}」が ${n} 件しかない`);
+}
+const missing = NAMES.filter((g) => !inGroups.includes(g));
+if (missing.length) problems.push("どのグループにも入っていない分野: " + missing.join(" / "));
+if (inGroups.length !== new Set(inGroups).size) problems.push("分野がグループに重複している");
+
+console.log("");
+console.log("── 2問目：分野の選択肢に出る「たとえば」──");
 console.log("");
 for (const g of DB.genres) {
-  const ex = DB.items.filter((i) => i.genre === g.name && i.step)[0];
-  console.log(g.lead);
-  console.log(`   たとえば：${ex ? ex.step : "(なし)"}   [${g.name}]`);
-  if (!ex) problems.push(`「${g.name}」に一歩目つきのプロジェクトがない`);
-  if (g.lead === g.name) problems.push(`「${g.name}」の見出しが分野名のまま`);
+  const ex = DB.items.filter((i) => i.genre === g.name).slice(0, 2).map((i) => i.title);
+  console.log(`${g.name}`);
+  console.log(`   ${ex.join(" ／ ")}`);
+  if (ex.length < 2) problems.push(`「${g.name}」の例が2つ出せない`);
+  /* 一歩目ではなくプロジェクト名が出ているか（一歩目は「〜する」で終わる手続きが多い） */
+  if (ex.some((x) => x.length > 34)) problems.push(`「${g.name}」の例が長すぎる（${ex.find((x) => x.length > 34)}）`);
+}
+
+console.log("");
+console.log("── 3問目：候補として出るプロジェクト ──");
+console.log("");
+for (const trio of [["政治・経済"], ["AI・デジタル", "IT・システムづくり"], ["動物", "からだ・健康"]]) {
+  const r = run(trio);
+  console.log(trio.join(" + "));
+  r.titles.forEach((t, i) => console.log(`   ${i + 1}. ${t}`));
+  if (r.titles.length < Math.min(4, r.total)) problems.push(`${trio.join("+")} の候補が少なすぎる`);
 }
 
 /* ── ④ 入り方と進め方 ── */
@@ -125,7 +151,7 @@ console.log(`進め方 ${T.YN_ORDER.length} タイプ × 4ステップ`);
 
 /* ── ⑤ 共有文 ── */
 run(["子ども・教育"]);
-const got = T.pick(5);
+const got = { list: T.shortlist().slice(0, 3).map((it) => ({ it })) };
 T.setResult({
   ranked: got.list, yn: "礼", wdKey: "サポーター",
   wd: T.WDROLE["サポーター"], combo: T.COMBO["礼"]["サポーター"], style: T.STYLE["礼"]
