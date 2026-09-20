@@ -33,42 +33,41 @@ var YN_HEAD = {
 };
 
 /* ── 進め方：タイプ別の4ステップ ──────────────────────
-   どのプロジェクトを選んでも同じように使える、汎用の手順。
-   バディとチームがここで自然に出てくるようにしてある
-   （結果のとちゅうで唐突に出てこないように）。 ── */
+   「人にどう動いてもらうか」ではなく「自分ひとりで進めるとき、
+   どうやると止まらないか」を書いている。どのプロジェクトでも同じように使える。 ── */
 var STYLE = {
- "勇":{ lead:"計画より先に動く。動いてから直す。",
+ "勇":{ lead:"計画より先に手をつける。動いてから直す。",
    steps:[
-     "今週やる1つだけ決める。計画は後でいい",
-     "決めた1つを、今週のうちに実際にやってしまう",
-     "やった結果をバディに話す。相談ではなく報告でいい",
-     "うまくいかなかったら、やり方を変えてもう一度やる"
+     "今週やる1つだけ決めて、紙かメモに書く",
+     "準備が半分でも、今週のうちに手をつけてしまう",
+     "やって分かったことを、1行だけ書き残す",
+     "合わなければ、やり方を変えてもう一度やる"
    ],
    stuck:"止まるのは、考えすぎたとき。迷ったら小さいほうを今日やる。" },
  "誠":{ lead:"数字と期限を先に置く。置けば進む。",
    steps:[
      "30日後にどうなっていたいかを、数字で1つ決める",
-     "そこから逆算して、今週やることを決める",
-     "バディと同じ時間に作業する日を、週に1つ入れる",
+     "そこから逆算して、今週やることを1つに絞る",
+     "作業する時間を、先にカレンダーに入れてしまう",
      "30日たったら、その数字が動いたかを確かめる"
    ],
    stuck:"止まるのは、ゴールが数字になっていないとき。まず測れる形にする。" },
- "義":{ lead:"なぜやるのかを、先に言葉にする。",
+ "義":{ lead:"なぜやるのかを、先に自分の言葉にする。",
    steps:[
-     "なぜやるのかを、1行で書く",
-     "その1行をバディとチームに話して、反応を見る",
-     "うなずいてくれた人と、今週やることを決める",
-     "進んだら、その1行に近づいたかを言葉で確かめる"
+     "なぜやるのかを1行で書いて、見えるところに置く",
+     "その1行に合わない作業は、今はやらないと決める",
+     "残った中から、今週やることを1つ決めて手をつける",
+     "進んだら、その1行に近づいたかを自分で確かめる"
    ],
    stuck:"止まるのは、目的があいまいなとき。作業を増やす前に1行を直す。" },
- "礼":{ lead:"誰とやるかを、先に決める。",
+ "礼":{ lead:"誰のためにやるのかを、先にはっきりさせる。",
    steps:[
-     "一緒にやりたい人を、まず1人決める",
-     "その人に、やりたい理由を最後まで話す。相手の話も最後まで聞く",
-     "2人で、今週やることを決める",
-     "やったことをチームに共有して、次にやる人を増やす"
+     "これで助かる人を、具体的に1人思い浮かべる",
+     "その人に話すつもりで、やりたい理由を書き出す",
+     "今週やることを1つ決める。人と会う予定を1つ入れておくと進む",
+     "やったことを書き留めておく。積み重なると次のきっかけになる"
    ],
-   stuck:"止まるのは、ひとりで抱えたとき。人の顔が見えないと進まない。" }
+   stuck:"止まるのは、相手の顔が見えなくなったとき。1人に絞ると戻ってくる。" }
 };
 
 /* ── ウェルスダイナミクス：持ち場と、渡す相手 ── */
@@ -314,9 +313,9 @@ function results(){
   var got = pick(5);
   var ranked = got.list, lead = ranked[0], rest = ranked.slice(1);
   var big = got.rest.filter(function(r){ return r.it.scale === "L"; }).slice(0, 2);
-  var reals = (DB.reals || []).filter(function(x){
-    return x.genre.some(function(g){ return A.genre.indexOf(g) >= 0; });
-  }).slice(0, 2);
+  /* 「もう動いている場所」（実在事例）は結果に出さない。
+     そちらに行く人がチームから抜けてしまい、誰の得にもならないため
+     （2026-09-20 植田さんの判断）。データは data/cases.json の reals に残してある。 */
 
   var t = ynType(), w = wdKey();
   var wd = w ? WDROLE[w] : null;
@@ -324,7 +323,7 @@ function results(){
   var combo = t ? (w ? COMBO[t][w] : st.lead) : null;
   var who = [w, t ? t + "タイプ" : null].filter(Boolean).join(" ／ ");
 
-  lastResult = {ranked:ranked, big:big, reals:reals, yn:t, wdKey:w, wd:wd, combo:combo, style:st};
+  lastResult = {ranked:ranked, big:big, yn:t, wdKey:w, wd:wd, combo:combo, style:st};
 
   app.innerHTML =
   '<div class="res">' +
@@ -332,13 +331,13 @@ function results(){
     '<div class="guide">' +
       '<p class="guidehead">結果は3つに分かれています</p>' +
       '<ol class="guidelist">' +
-        '<li><b>やること</b>　今週やる1つと、ほかの候補</li>' +
-        '<li><b>進め方</b>　' + (t ? esc(t) + 'タイプの' : '') + 'あなたに合った手順</li>' +
-        '<li><b>共有する</b>　バディとチームに送る文をコピーする</li>' +
+        '<li><b>おすすめのプロジェクト</b>　今週やる1つと、ほかの候補</li>' +
+        '<li><b>進め方</b>　' + (t ? esc(t) + 'タイプの' : '') + 'あなたが、ひとりで進めるときの手順</li>' +
+        '<li><b>共有する</b>　結果をコピーして、バディとチームに貼る</li>' +
       '</ol>' +
     '</div>' +
 
-    '<h4 class="sec"><span class="secno">1</span>やること</h4>' +
+    '<h4 class="sec"><span class="secno">1</span>おすすめのプロジェクト</h4>' +
     (lead ?
     '<article class="lead" style="' + genreHue(lead.it.genre) + '">' +
       '<p class="rank">' + esc(lead.it.genre) + '／' + esc(lead.it.scaleLabel) + '</p>' +
@@ -364,10 +363,6 @@ function results(){
     (got.total < 5 ?
       '<p class="note">この分野のプロジェクトはいま' + got.total + '件です。分野をもう1つ選ぶと、もっと出ます。</p>' : '') +
 
-    (reals.length ?
-      '<p class="subsec">ゼロから作らず、もう動いている場所に入る手もあります</p>' +
-      reals.map(realCard).join("") : '') +
-
     (big.length ?
       '<p class="subsec">人が集まったら、これも</p>' +
       big.map(function(r){ return card(r); }).join("") : '') +
@@ -375,7 +370,7 @@ function results(){
     '<h4 class="sec"><span class="secno">2</span>進め方</h4>' +
     (st ?
     '<section class="block yn" style="' + (YN_HUE[t] || "") + '">' +
-      '<h4>' + esc(t) + 'タイプの進め方</h4>' +
+      '<h4>' + esc(t) + 'タイプの、ひとりで進めるときの手順</h4>' +
       '<p class="stlead">' + esc(st.lead) + '</p>' +
       '<ol class="ststeps">' + st.steps.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join("") + '</ol>' +
       '<p class="ststuck">' + esc(st.stuck) + '</p>' +
@@ -388,11 +383,13 @@ function results(){
       '<p>あなたの持ち場は<b>' + esc(wd.role) + '</b>。' + esc(wd.hand) +
         'は、はじめから人に渡した方が早く進みます。</p>' +
       '<div class="pair"><b>渡す相手に向くのは ' + wd.catalyst.map(esc).join(" か ") + '</b><br>' +
-        'バディを決めるとき、このどちらかの人を選ぶと噛み合います。</div>' +
+        'バディがこのどちらかなら、そのまま頼んでみてください。違うタイプなら、' +
+        'チームの中にこの2つの人がいないか探すと噛み合います。</div>' +
     '</section>' : '') +
 
     '<h4 class="sec"><span class="secno">3</span>共有する</h4>' +
-    '<p class="hint">ここまで決めたら、あとは人に言うだけです。言った時点で、今月やることの仮決めは終わりです。</p>' +
+    '<p class="hint">診断結果をそのままコピーできます。バディにもチームにも、同じ文で貼れます。' +
+      '貼った時点で、今月やることの仮決めは終わりです。</p>' +
     shareCard() +
 
     '<div class="restart"><button type="button" class="go ghost" id="again">選び直す</button></div>' +
@@ -432,57 +429,48 @@ function realCard(x){
 }
 function host(u){ try { return new URL(u).hostname; } catch (e) { return u; } }
 
-/* ── 共有（バディ用とチーム用の2種類）───────────────── */
+/* ── 共有：1本にまとめた「診断結果シェア」──────────────
+   バディにもチームにも同じ文を貼れるようにする。
+   「話せますか？」のような問いかけは入れない（貼る人が決める）。 ── */
 function shareCard(){
   var wantName = CFG.askName && !!CFG.logEndpoint;
   return '<div class="act">' +
     (wantName ?
       '<div class="namefield"><label for="nm">あなたの表示名（任意）</label>' +
       '<input type="text" id="nm" class="nm" autocomplete="off" maxlength="40" value="' + esc(A.name) + '"></div>' : '') +
-    '<div class="shares">' +
-      shareOne("buddy", "バディに送る", "2人で動くための短い連絡。何を頼みたいかまで入っています。") +
-      shareOne("team", "チームに貼る", "グループやDiscordに貼る宣言文。一緒にやれる人を呼ぶ形です。") +
-    '</div>' +
-  '</div>';
-}
-function shareOne(kind, label, desc){
-  return '<div class="share">' +
-    '<p class="sharelabel">' + esc(label) + '</p>' +
-    '<p class="sharedesc">' + esc(desc) + '</p>' +
-    '<button type="button" class="go copybtn" data-kind="' + kind + '">コピーする</button>' +
-    '<p class="copied" data-msg="' + kind + '" role="status"></p>' +
-    '<details class="previewbox"><summary>文を見る</summary>' +
-      '<pre class="preview" data-pre="' + kind + '">' + esc(shareText(kind)) + '</pre></details>' +
+    '<button type="button" class="go copybtn" data-kind="share">診断結果をコピーする</button>' +
+    '<p class="copied" data-msg="share" role="status"></p>' +
+    '<details class="previewbox"><summary>コピーされる内容を見る</summary>' +
+      '<pre class="preview" data-pre="share">' + esc(shareText("share")) + '</pre></details>' +
   '</div>';
 }
 
-function shareText(kind){
+function shareText(){
   if (!lastResult) return "";
   var lead = lastResult.ranked[0];
   if (!lead) return "";
   var L = [];
   var me = [lastResult.wdKey, lastResult.yn ? lastResult.yn + "タイプ" : null].filter(Boolean).join("／");
 
-  if (kind === "buddy") {
-    L.push("【今月やること】" + (A.name ? " " + A.name : ""));
-    L.push(lead.it.title);
-    L.push("今週やること：" + lead.it.step);
-    if (me) L.push("わたしは " + me + "。" + (lastResult.combo || ""));
-    if (lastResult.wd) {
-      L.push("手伝ってほしいのは：" + lastResult.wd.hand);
-      L.push("（" + lastResult.wd.catalyst.join("か") + "の人が合うそうです）");
-    }
-    L.push("今週どこかで15分、話せますか？");
-  } else {
-    L.push("【プロジェクト宣言】" + (A.name || ""));
-    L.push("やること：" + lead.it.title);
-    if (lead.it.cause) L.push("だれのため：" + lead.it.cause);
-    L.push("今週やること：" + lead.it.step);
-    if (lead.it.result) L.push("30〜90日で：" + lead.it.result);
-    if (me) L.push("タイプ：" + me);
-    if (lastResult.style) L.push("進め方：" + lastResult.style.steps[0]);
-    L.push("気になった分野：" + A.genre.join("／"));
-    L.push("同じ分野の人、一緒にやれる人がいたら声をかけてください。");
+  L.push("【プロジェクト診断の結果】" + (A.name ? " " + A.name : ""));
+  L.push("気になった分野：" + A.genre.join("／"));
+  if (me) L.push("タイプ：" + me);
+  L.push("");
+  L.push("やってみるプロジェクト：" + lead.it.title);
+  if (lead.it.cause) L.push("だれのため：" + lead.it.cause);
+  L.push("今週やること：" + lead.it.step);
+  if (lead.it.result) L.push("30〜90日で：" + lead.it.result);
+  if (lastResult.combo) L.push("わたしの入り方：" + lastResult.combo);
+  if (lastResult.wd) L.push("人に渡していいこと：" + lastResult.wd.hand);
+  if (lastResult.style) {
+    L.push("");
+    L.push("進め方（" + lastResult.yn + "タイプ）");
+    lastResult.style.steps.forEach(function(x, i){ L.push(" " + (i + 1) + ". " + x); });
+  }
+  if (lastResult.ranked.length > 1) {
+    L.push("");
+    L.push("ほかに気になったもの：");
+    lastResult.ranked.slice(1, 3).forEach(function(r){ L.push(" ・" + r.it.title); });
   }
   return L.join("\n");
 }

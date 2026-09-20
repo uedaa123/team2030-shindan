@@ -130,12 +130,20 @@ T.setResult({
   ranked: got.list, yn: "礼", wdKey: "サポーター",
   wd: T.WDROLE["サポーター"], combo: T.COMBO["礼"]["サポーター"], style: T.STYLE["礼"]
 });
-for (const kind of ["buddy", "team"]) {
-  const txt = T.shareText(kind);
-  console.log("");
-  console.log(`── 共有文（${kind}）──`);
-  console.log(txt);
-  if (!txt || txt.length < 60) problems.push(`共有文（${kind}）が短すぎる`);
+const txt = T.shareText();
+console.log("");
+console.log("── 共有文（バディ・チーム共通）──");
+console.log(txt);
+if (!txt || txt.length < 100) problems.push("共有文が短すぎる");
+if (/ますか？|ませんか？/.test(txt)) problems.push("共有文に問いかけが残っている");
+
+/* 進め方が「自分ひとりで進めるとき」の手順になっているか。
+   相手に動いてもらう書き方（バディに話す・チームに共有する）が混ざっていないか */
+for (const t of T.YN_ORDER) {
+  const joined = T.STYLE[t].steps.join(" ");
+  if (/バディに|チームに共有/.test(joined)) {
+    problems.push(`${t}タイプの手順に、人に動いてもらう書き方が残っている`);
+  }
 }
 
 /* ── 判定 ── */
