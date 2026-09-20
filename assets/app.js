@@ -416,8 +416,8 @@ function results(){
       '<p class="guidehead">結果は3つに分かれています</p>' +
       '<ol class="guidelist">' +
         '<li><b>やってみるプロジェクト</b>　あなたが選んだ1つと、ほかの候補</li>' +
-        '<li><b>進め方</b>　' + (t ? esc(t) + 'タイプの' : '') + 'あなたが、ひとりで進めるときの手順</li>' +
-        '<li><b>共有する</b>　結果をコピーして、バディとチームに貼る</li>' +
+        '<li><b>進め方</b>　' + (t ? esc(t) + 'タイプの' : '') + 'あなたに合った手順</li>' +
+        '<li><b>チームやバディに共有する</b>　結果をコピーして貼る</li>' +
       '</ol>' +
     '</div>' +
 
@@ -427,8 +427,9 @@ function results(){
       '<p class="rank">' + (A.project && A.project !== "auto" ? 'あなたが選んだもの／' : 'いちばん小さく始められるもの／') +
         esc(lead.it.genre) + '／' + esc(lead.it.scaleLabel) + '</p>' +
       '<h3>' + esc(lead.it.title) + '</h3>' +
-      (lead.it.summary ? '<p class="cause">' + esc(lead.it.summary) + '</p>' : '') +
-      (lead.it.cause ? '<p class="forwho">これで助かるのは：' + esc(lead.it.cause) + '</p>' : '') +
+      (lead.it.summary ? '<p class="cause">' + esc(lead.it.summary) + '</p>' :
+       lead.it.why ? '<p class="cause">' + esc(lead.it.why) + '</p>' : '') +
+      (lead.it.forwho ? '<p class="forwho">これで助かるのは：' + esc(lead.it.forwho) + '</p>' : '') +
       '<div class="todo"><p class="todolabel">今週やること</p>' +
         '<p class="todobody">' + esc(lead.it.step) + '</p></div>' +
       (combo ?
@@ -440,7 +441,7 @@ function results(){
         (lead.it.result ? '<dt>30〜90日で</dt><dd>' + esc(lead.it.result) + '</dd>' : '') +
         (lead.it.land ? '<dt>そのあと</dt><dd>' + esc(lead.it.land) + '</dd>' : '') +
         (lead.it.orgs ? '<dt>行政の入口</dt><dd>' + esc(lead.it.orgs) + '</dd>' : '') +
-        (lead.it.ref ? '<dt>元ネタ</dt><dd>' + esc(lead.it.ref) + '</dd>' : '') +
+        (lead.it.ref ? '<dt>元ネタ</dt><dd>' + refLink(lead.it) + '</dd>' : '') +
       '</dl>' +
     '</article>' : '<p class="hint">選んだ分野にプロジェクトが見つかりませんでした。</p>') +
 
@@ -456,7 +457,7 @@ function results(){
     '<h4 class="sec"><span class="secno">2</span>進め方</h4>' +
     (st ?
     '<section class="block yn" style="' + (YN_HUE[t] || "") + '">' +
-      '<h4>' + esc(t) + 'タイプの、ひとりで進めるときの手順</h4>' +
+      '<h4>' + esc(t) + 'タイプの進め方</h4>' +
       '<p class="stlead">' + esc(st.lead) + '</p>' +
       '<ol class="ststeps">' + st.steps.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join("") + '</ol>' +
       '<p class="ststuck">' + esc(st.stuck) + '</p>' +
@@ -465,17 +466,17 @@ function results(){
 
     (wd ?
     '<section class="block wd">' +
-      '<h4>' + esc(w) + 'のあなたが、人に渡していいこと</h4>' +
-      '<p>あなたの持ち場は<b>' + esc(wd.role) + '</b>。' + esc(wd.hand) +
-        'は、はじめから人に渡した方が早く進みます。</p>' +
-      '<div class="pair"><b>渡す相手に向くのは ' + wd.catalyst.map(esc).join(" か ") + '</b><br>' +
-        'バディがこのどちらかなら、そのまま頼んでみてください。違うタイプなら、' +
-        'チームの中にこの2つの人がいないか探すと噛み合います。</div>' +
+      '<h4>' + esc(w) + 'のあなたが、つまずきやすいところ</h4>' +
+      '<p>基本はひとりで進めて大丈夫です。あなたが力を出せるのは<b>' + esc(wd.role) + '</b>。' +
+        'ただ、' + esc(wd.hand) + 'は後回しになりやすいところです。' +
+        'ここで詰まったら、抱え込まずに人に聞いてください。</p>' +
+      '<div class="pair"><b>聞くなら ' + wd.catalyst.map(esc).join(" か ") + '</b><br>' +
+        'バディがこのどちらかなら、そのまま相談を。違うタイプなら、' +
+        'チームの中にこの2つの人がいないか探すと早いです。</div>' +
     '</section>' : '') +
 
-    '<h4 class="sec"><span class="secno">3</span>共有する</h4>' +
-    '<p class="hint">診断結果をそのままコピーできます。バディにもチームにも、同じ文で貼れます。' +
-      '貼った時点で、今月やることの仮決めは終わりです。</p>' +
+    '<h4 class="sec"><span class="secno">3</span>チームやバディに共有する</h4>' +
+    '<p class="hint">バディやチームに共有しましょう。そして、アドバイスや感想をもらいましょう。</p>' +
     shareCard() +
 
     '<div class="restart"><button type="button" class="go ghost" id="again">選び直す</button></div>' +
@@ -492,10 +493,11 @@ function card(r){
   return '<article style="' + genreHue(it.genre) + '">' +
     '<p class="rank">' + esc(it.genre) + '／' + esc(it.scaleLabel) + '</p>' +
     '<h3>' + esc(it.title) + '</h3>' +
-    (it.summary ? '<p class="cause">' + esc(it.summary) + '</p>' : '') +
+    (it.summary ? '<p class="cause">' + esc(it.summary) + '</p>' :
+     it.why ? '<p class="cause">' + esc(it.why) + '</p>' : '') +
     '<dl>' +
       '<dt>今週やること</dt><dd class="strong">' + esc(it.step) + '</dd>' +
-      (it.cause && !it.summary ? '<dt>だれのため</dt><dd>' + esc(it.cause) + '</dd>' : '') +
+      (it.forwho ? '<dt>だれのため</dt><dd>' + esc(it.forwho) + '</dd>' : '') +
       (it.result ? '<dt>30〜90日で</dt><dd>' + esc(it.result) + '</dd>' : '') +
       (it.orgs ? '<dt>行政の入口</dt><dd>' + esc(it.orgs) + '</dd>' : '') +
     '</dl>' +
@@ -514,6 +516,12 @@ function realCard(x){
   '</article>';
 }
 function host(u){ try { return new URL(u).hostname; } catch (e) { return u; } }
+
+/* 元ネタ。URLが分かっているものはリンクにする */
+function refLink(it){
+  if (!it.refUrl) return esc(it.ref);
+  return '<a href="' + esc(it.refUrl) + '" target="_blank" rel="noopener">' + esc(it.ref) + '</a>';
+}
 
 /* ── 共有：1本にまとめた「診断結果シェア」──────────────
    バディにもチームにも同じ文を貼れるようにする。
@@ -543,11 +551,12 @@ function shareText(){
   if (me) L.push("タイプ：" + me);
   L.push("");
   L.push("やってみるプロジェクト：" + lead.it.title);
-  if (lead.it.cause) L.push("だれのため：" + lead.it.cause);
+  if (lead.it.forwho) L.push("だれのため：" + lead.it.forwho);
+  else if (lead.it.why) L.push("何のために：" + lead.it.why);
   L.push("今週やること：" + lead.it.step);
   if (lead.it.result) L.push("30〜90日で：" + lead.it.result);
   if (lastResult.combo) L.push("わたしの入り方：" + lastResult.combo);
-  if (lastResult.wd) L.push("人に渡していいこと：" + lastResult.wd.hand);
+  if (lastResult.wd) L.push("つまずきやすいところ：" + lastResult.wd.hand);
   if (lastResult.style) {
     L.push("");
     L.push("進め方（" + lastResult.yn + "タイプ）");

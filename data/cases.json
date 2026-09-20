@@ -175,7 +175,8 @@
    "src": "事例200",
    "title": "近所の川の「消えた生き物」聞き書き",
    "genre": "自然・環境",
-   "cause": "近所の年長者と子ども世代",
+   "forwho": "近所の年長者と子ども世代",
+   "why": "",
    "summary": "川沿いに住む70代以上に、昔いた魚・虫・遊び方を聞いて1枚の絵地図にまとめる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -184,14 +185,16 @@
    "result": "証言5人分＋手描きの絵地図1枚",
    "land": "",
    "orgs": "",
-   "ref": "アサザ基金"
+   "ref": "アサザ基金",
+   "refUrl": "https://www.asaza.jp/"
   },
   {
    "id": "A002",
    "src": "事例200",
    "title": "ホタル／メダカが戻る水路を1区画つくる",
    "genre": "自然・環境",
-   "cause": "川の生きものと下流の住民",
+   "forwho": "川の生きものと下流の住民",
+   "why": "",
    "summary": "用水路や側溝の一区画を月1回、泥上げ・草刈りして生きものが戻るか観察する。",
    "reach": "自分のまち",
    "scale": "M",
@@ -200,14 +203,16 @@
    "result": "before/after写真と生きもの数のカウント表",
    "land": "",
    "orgs": "",
-   "ref": "生物多様性アクション大賞"
+   "ref": "生物多様性アクション大賞",
+   "refUrl": "https://www.7midori.org/katsudo/kouhou/tayousei-award/"
   },
   {
    "id": "A003",
    "src": "事例200",
    "title": "放置竹林を「食べて」減らす",
    "genre": "自然・環境",
-   "cause": "竹林の持ち主と里山",
+   "forwho": "竹林の持ち主と里山",
+   "why": "",
    "summary": "タケノコ・メンマ・竹炭に加工して消費することで、切る動機を作り竹林を戻す。",
    "reach": "自分のまち",
    "scale": "M",
@@ -216,14 +221,16 @@
    "result": "自家製メンマ1瓶＋伐採した面積(㎡)",
    "land": "",
    "orgs": "",
-   "ref": "生物多様性アクション大賞2015大賞（加茂女）"
+   "ref": "生物多様性アクション大賞2015大賞（加茂女）",
+   "refUrl": "https://www.7midori.org/katsudo/kouhou/tayousei-award/"
   },
   {
    "id": "A004",
    "src": "事例200",
    "title": "街路樹・公園木にQR解説をつける",
    "genre": "自然・環境",
-   "cause": "通行人と子ども",
+   "forwho": "通行人と子ども",
+   "why": "",
    "summary": "木にQRコードを付け、種類・樹齢・由来の解説ページに飛ばす。",
    "reach": "自分のまち",
    "scale": "S",
@@ -232,14 +239,16 @@
    "result": "10本にラベル設置＋読み取り回数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A005",
    "src": "事例200",
    "title": "在来種の里親になる（メダカ・タナゴ・水草）",
    "genre": "自然・環境",
-   "cause": "在来種と次の世代",
+   "forwho": "在来種と次の世代",
+   "why": "",
    "summary": "地域の在来個体を分散飼育し、絶滅リスクを分散させる。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -248,14 +257,16 @@
    "result": "繁殖1世代＋譲渡先3件",
    "land": "",
    "orgs": "",
-   "ref": "生物多様性アクション大賞"
+   "ref": "生物多様性アクション大賞",
+   "refUrl": "https://www.7midori.org/katsudo/kouhou/tayousei-award/"
   },
   {
    "id": "A006",
    "src": "事例200",
    "title": "空き地に3m×3mの「小さな森」を植える",
    "genre": "自然・環境",
-   "cause": "近隣住民と暑さに困る人",
+   "forwho": "近隣住民と暑さに困る人",
+   "why": "",
    "summary": "在来樹種を密植して数年で林にする。狭い土地でもできる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -264,14 +275,16 @@
    "result": "苗50本の植栽写真＋1年後の樹高記録",
    "land": "",
    "orgs": "",
-   "ref": "検索：宮脇方式 ミニ森／Tiny Forest"
+   "ref": "検索：宮脇方式 ミニ森／Tiny Forest",
+   "refUrl": ""
   },
   {
    "id": "A007",
    "src": "事例200",
    "title": "ゴミ拾いを競技にする（拾い方で点が変わる大会）",
    "genre": "自然・環境",
-   "cause": "川と海のごみ被害",
+   "forwho": "川と海のごみ被害",
+   "why": "",
    "summary": "制限時間内に、量と分別の質でチーム対抗。ゴミ拾いを苦行から遊びに変える。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -280,14 +293,16 @@
    "result": "参加10人・回収量kg・集合写真",
    "land": "",
    "orgs": "",
-   "ref": "検索：スポGOMI"
+   "ref": "検索：スポGOMI",
+   "refUrl": ""
   },
   {
    "id": "A008",
    "src": "事例200",
    "title": "自宅で試した省資源のやり方を近所に広げる",
    "genre": "自然・環境",
-   "cause": "近所の5軒",
+   "forwho": "近所の5軒",
+   "why": "",
    "summary": "雨水タンク・断熱・節電を自分の家で検証し、効果の数字ごと近所に渡す。自分だけで終わらせない。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -296,14 +311,16 @@
    "result": "伝えた世帯数と、真似した家の数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A009",
    "src": "事例200",
    "title": "耕作放棄地1枚（1〜3畝）で作物を育てる",
    "genre": "食・農",
-   "cause": "農地の持ち主と食べる人",
+   "forwho": "農地の持ち主と食べる人",
+   "why": "",
    "summary": "米・大豆・そばなど1品目に絞る。売らなくても「食べきる」でよい。",
    "reach": "自分のまち",
    "scale": "M",
@@ -312,14 +329,16 @@
    "result": "収穫量kgと収穫写真、食べた人の数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A010",
    "src": "事例200",
    "title": "味噌／醤油の仕込み会を開く",
    "genre": "食・農",
-   "cause": "参加した家庭",
+   "forwho": "参加した家庭",
+   "why": "",
    "summary": "年1回の仕込みを口実に人が集まる。参加者は1年後にまた集まる理由ができる。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -328,14 +347,16 @@
    "result": "仕込み樽の数＋参加者の持ち帰り個数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A011",
    "src": "事例200",
    "title": "規格外野菜の「もったいない便」",
    "genre": "食・農",
-   "cause": "農家と食べ手",
+   "forwho": "農家と食べ手",
+   "why": "",
    "summary": "近隣農家の売れない野菜を週1回まとめて仲間に配る／格安販売する。",
    "reach": "自分のまち",
    "scale": "M",
@@ -344,14 +365,16 @@
    "result": "救った野菜のkgと配布先件数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A012",
    "src": "事例200",
    "title": "郷土料理を10品、動画で残す",
    "genre": "食・農",
-   "cause": "作れる人が消える前の次世代",
+   "forwho": "作れる人が消える前の次世代",
+   "why": "",
    "summary": "作れる人が生きているうちに、手元のスマホで記録してレシピ化する。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -360,14 +383,16 @@
    "result": "動画10本＋PDFレシピ集",
    "land": "",
    "orgs": "",
-   "ref": "検索：郷土料理 アーカイブ 文化庁"
+   "ref": "検索：郷土料理 アーカイブ 文化庁",
+   "refUrl": ""
   },
   {
    "id": "A013",
    "src": "事例200",
    "title": "学校給食に地元の魚・野菜を入れる",
    "genre": "食・農",
-   "cause": "子どもと地元の生産者",
+   "forwho": "子どもと地元の生産者",
+   "why": "",
    "summary": "漁協・農家と学校をつなぐ。子どもの食体験と地場産業が同時に動く。",
    "reach": "自分のまち",
    "scale": "L",
@@ -376,14 +401,16 @@
    "result": "給食で1回採用された献立表",
    "land": "",
    "orgs": "",
-   "ref": "気仙沼の魚を学校給食に普及させる会（生物多様性アクション大賞）"
+   "ref": "気仙沼の魚を学校給食に普及させる会（生物多様性アクション大賞）",
+   "refUrl": "https://www.7midori.org/katsudo/kouhou/tayousei-award/"
   },
   {
    "id": "A014",
    "src": "事例200",
    "title": "自家採種で「うちの品種」を育てる",
    "genre": "食・農",
-   "cause": "その土地に合う品種",
+   "forwho": "その土地に合う品種",
+   "why": "",
    "summary": "毎年タネを採り続け、その土地に合った系統を作る。何年もかかるが記録は毎年出る。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -392,15 +419,17 @@
    "result": "採種した種の重量＋世代記録ノート",
    "land": "",
    "orgs": "",
-   "ref": "生物多様性アクション大賞"
+   "ref": "生物多様性アクション大賞",
+   "refUrl": "https://www.7midori.org/katsudo/kouhou/tayousei-award/"
   },
   {
    "id": "A015",
    "src": "事例200",
    "title": "加工品を1つだけ作って売ってみる",
    "genre": "食・農",
-   "cause": "生産者と買い手",
-   "summary": "はちみつ・ジャム・干物・ジビエなど、一点突破。許認可の壁も含めて学べる。",
+   "forwho": "生産者と買い手",
+   "why": "",
+   "summary": "はちみつ・ジャム・干物・しかやいのししの肉など、1つに絞る。許認可の壁も含めて学べる。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
@@ -408,14 +437,17 @@
    "result": "初回販売の売上と購入者の感想10件",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/",
+   "summarySrc": "はちみつ・ジャム・干物・ジビエなど、一点突破。許認可の壁も含めて学べる。"
   },
   {
    "id": "A016",
    "src": "事例200",
    "title": "子ども食堂を月1回だけ開く",
    "genre": "食・農",
-   "cause": "食に困る子ども",
+   "forwho": "食に困る子ども",
+   "why": "",
    "summary": "毎週は無理でも月1回なら続く。既存の子ども食堂に入るのが最短。",
    "reach": "自分のまち",
    "scale": "M",
@@ -424,14 +456,16 @@
    "result": "開催回数と延べ来場者数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A017",
    "src": "事例200",
    "title": "空き家1軒を借りて週末だけ開ける",
    "genre": "まち・空き家",
-   "cause": "居場所がない人",
+   "forwho": "居場所がない人",
+   "why": "",
    "summary": "購入せず「週末だけ使う」から始める。カフェでも作業場でも図書室でもよい。",
    "reach": "自分のまち",
    "scale": "L",
@@ -440,14 +474,16 @@
    "result": "契約1件＋オープン初日の来訪者数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A018",
    "src": "事例200",
    "title": "シャッター1軒でポップアップを1日だけやる",
    "genre": "まち・空き家",
-   "cause": "商店街と出店したい人",
+   "forwho": "商店街と出店したい人",
+   "why": "",
    "summary": "恒久出店の前に、1日だけ借りて反応を測る。失敗コストが極小。",
    "reach": "自分のまち",
    "scale": "M",
@@ -456,14 +492,16 @@
    "result": "1日の売上と来客数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A019",
    "src": "事例200",
    "title": "町の「無料で使える場所」リストを作る",
    "genre": "まち・空き家",
-   "cause": "場所を探している団体",
+   "forwho": "場所を探している団体",
+   "why": "",
    "summary": "公民館・集会所・空き教室の予約方法と料金を1枚にまとめて配る。",
    "reach": "自分のまち",
    "scale": "S",
@@ -472,14 +510,16 @@
    "result": "施設20か所の一覧表（PDF/1枚）",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A020",
    "src": "事例200",
    "title": "親子で「危ない場所マップ」を作る",
    "genre": "まち・空き家",
-   "cause": "通学する子ども",
+   "forwho": "通学する子ども",
+   "why": "",
    "summary": "通学路を子どもの目線で歩き、見通しの悪い箇所を写真付きで地図化。",
    "reach": "自分のまち",
    "scale": "S",
@@ -488,14 +528,16 @@
    "result": "地図1枚＋改善要望の提出1件",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A021",
    "src": "事例200",
    "title": "消える前の店を記録する（銭湯・喫茶店・床屋）",
    "genre": "まち・空き家",
-   "cause": "店主と将来の住民",
+   "forwho": "店主と将来の住民",
+   "why": "",
    "summary": "閉店予定の店を訪ね、写真と店主の話を残す。閉店後に価値が跳ね上がる記録。",
    "reach": "自分のまち",
    "scale": "S",
@@ -504,14 +546,16 @@
    "result": "記録した店3軒分の写真＋インタビュー",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A022",
    "src": "事例200",
    "title": "まちに本棚を置く（一箱古本市・私設図書館）",
    "genre": "まち・空き家",
-   "cause": "本を読みたい人",
+   "forwho": "本を読みたい人",
+   "why": "",
    "summary": "自宅の軒先やカフェの一角に本棚を出すだけ。持ち出し自由でよい。",
    "reach": "自分のまち",
    "scale": "S",
@@ -520,14 +564,16 @@
    "result": "設置1か所＋貸出／持ち帰り冊数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A023",
    "src": "事例200",
    "title": "ベンチか花壇を1つ増やす",
    "genre": "まち・空き家",
-   "cause": "休む場所がない高齢者",
+   "forwho": "休む場所がない高齢者",
+   "why": "",
    "summary": "「休む場所がない」は全国共通の小さな課題。1つ置くだけで景色が変わる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -536,14 +582,16 @@
    "result": "設置1基の写真＋利用されている写真",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A024",
    "src": "事例200",
    "title": "市民が壊れた場所を通報する仕組みを回す",
    "genre": "まち・空き家",
-   "cause": "壊れた場所に困る住民",
+   "forwho": "壊れた場所に困る住民",
+   "why": "",
    "summary": "街灯切れ・穴・落書きをスマホで写真通報し、対応状況まで見える化する。",
    "reach": "自分のまち",
    "scale": "M",
@@ -552,14 +600,16 @@
    "result": "通報10件と修繕された件数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選（市民レポーター型）"
+   "ref": "総務省ICT100選（市民レポーター型）",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A025",
    "src": "事例200",
    "title": "中高生と一緒に職人・農家に「聞き書き」",
    "genre": "子ども・教育",
-   "cause": "名人と若い世代",
+   "forwho": "名人と若い世代",
+   "why": "",
    "summary": "若者が名人に話を聞き、その人の言葉のまま文章化する。全国に手法の蓄積がある。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -568,14 +618,16 @@
    "result": "聞き書き作品3本（各3000字程度）",
    "land": "",
    "orgs": "",
-   "ref": "聞き書き甲子園／共存の森ネットワーク"
+   "ref": "聞き書き甲子園／共存の森ネットワーク",
+   "refUrl": "https://www.kikigaki.net/"
   },
   {
    "id": "A026",
    "src": "事例200",
    "title": "「ありふれた職業」の体験会を開く",
    "genre": "子ども・教育",
-   "cause": "子どもと保護者",
+   "forwho": "子どもと保護者",
+   "why": "",
    "summary": "花形でなく、就業人口の多い職業を子どもに体験させる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -584,14 +636,16 @@
    "result": "開催1回・参加児童数・保護者アンケート",
    "land": "",
    "orgs": "",
-   "ref": "内閣官房 地方創生事例集"
+   "ref": "内閣官房 地方創生事例集",
+   "refUrl": "https://www.chisou.go.jp/sousei/"
   },
   {
    "id": "A027",
    "src": "事例200",
    "title": "大人の読書部（1冊を4回で読み切る）",
    "genre": "子ども・教育",
-   "cause": "一人では読み切れない大人",
+   "forwho": "一人では読み切れない大人",
+   "why": "",
    "summary": "一人だと積読になる本を、締切と対話で読み切る。運営コストほぼゼロ。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -600,14 +654,16 @@
    "result": "完読1冊＋メンバーの感想レポート",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A028",
    "src": "事例200",
    "title": "探究学習のメンターになる",
    "genre": "子ども・教育",
-   "cause": "探究に迷う高校生",
+   "forwho": "探究に迷う高校生",
+   "why": "",
    "summary": "高校の探究の時間に、社会人として週1回相談に乗る。",
    "reach": "自分のまち",
    "scale": "M",
@@ -616,14 +672,16 @@
    "result": "担当した生徒数と発表会での成果物",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A029",
    "src": "事例200",
    "title": "地元の子にAI・プログラミングを教える",
    "genre": "子ども・教育",
-   "cause": "学ぶ場のない子ども",
+   "forwho": "学ぶ場のない子ども",
+   "why": "",
    "summary": "スクールがない地域ほど価値が高い。教える側の学習効果も大きい。",
    "reach": "自分のまち",
    "scale": "M",
@@ -632,14 +690,16 @@
    "result": "開催4回・受講者の作品数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A030",
    "src": "事例200",
    "title": "不登校の子の居場所を週1回開く",
    "genre": "子ども・教育",
-   "cause": "学校に行けない子ども",
+   "forwho": "学校に行けない子ども",
+   "why": "",
    "summary": "学校でも家でもない第三の場。少人数から始められる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -648,14 +708,16 @@
    "result": "開室回数と延べ利用人数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A031",
    "src": "事例200",
    "title": "部活の外部コーチ／指導補助に入る",
    "genre": "子ども・教育",
-   "cause": "指導者がいない部活",
+   "forwho": "指導者がいない部活",
+   "why": "",
    "summary": "指導者不足は全国的な課題。得意競技や吹奏楽・美術でもよい。",
    "reach": "自分のまち",
    "scale": "S",
@@ -664,14 +726,16 @@
    "result": "指導回数と担当生徒数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A032",
    "src": "事例200",
    "title": "スマホ・LINE教室を月2回開く",
    "genre": "高齢者・ケア",
-   "cause": "孫と連絡したい高齢者",
+   "forwho": "孫と連絡したい高齢者",
+   "why": "",
    "summary": "「孫と連絡が取れる」は最強の動機。教える内容は3つに絞る。",
    "reach": "自分のまち",
    "scale": "S",
@@ -680,14 +744,16 @@
    "result": "参加者数と、実際に送信できた人の割合",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A033",
    "src": "事例200",
    "title": "独居高齢者への「今日の一言」電話当番",
    "genre": "高齢者・ケア",
-   "cause": "独居の高齢者",
+   "forwho": "独居の高齢者",
+   "why": "",
    "summary": "1日1本、2分の電話。安否確認と孤独対策を同時に満たす。",
    "reach": "自分のまち",
    "scale": "M",
@@ -696,14 +762,16 @@
    "result": "架電件数と継続日数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A034",
    "src": "事例200",
    "title": "介護家族のオンライン愚痴会を月1回",
    "genre": "高齢者・ケア",
-   "cause": "介護している家族",
+   "forwho": "介護している家族",
+   "why": "",
    "summary": "解決しなくてよい。話す場があるだけで離職・共倒れが減る。",
    "reach": "自分のまち",
    "scale": "S",
@@ -712,14 +780,16 @@
    "result": "開催回数と参加者の継続率",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A035",
    "src": "事例200",
    "title": "昔の写真をデジタル化して上映会をやる",
    "genre": "高齢者・ケア",
-   "cause": "記憶が薄れていく高齢者",
+   "forwho": "記憶が薄れていく高齢者",
+   "why": "",
    "summary": "家に眠るアルバムをスキャンし、公民館で映す。記憶が一気に動き出す。",
    "reach": "自分のまち",
    "scale": "S",
@@ -728,14 +798,16 @@
    "result": "デジタル化枚数＋上映会1回の来場者",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A036",
    "src": "事例200",
    "title": "買い物・通院の相乗りを仕組み化する",
    "genre": "高齢者・ケア",
-   "cause": "移動できない住民",
+   "forwho": "移動できない住民",
+   "why": "",
    "summary": "運転できる人とできない人を、無理のない範囲でつなぐ。",
    "reach": "自分のまち",
    "scale": "M",
@@ -744,30 +816,35 @@
    "result": "送迎回数と利用者数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A037",
    "src": "事例200",
    "title": "認知症の人と歩くまち歩きを企画する",
    "genre": "高齢者・ケア",
-   "cause": "認知症の本人と家族",
+   "forwho": "認知症の本人と家族",
+   "why": "",
    "summary": "「隠す」から「一緒に出かける」へ。地域の理解も同時に進む。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "地域包括支援センターに相談する",
+   "step": "地域包括支援センター（市役所で場所を聞ける）に相談する",
    "result": "実施1回と参加者・伴走者数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/",
+   "stepSrc": "地域包括支援センターに相談する"
   },
   {
    "id": "A038",
    "src": "事例200",
    "title": "傾聴の練習会を月2回やる",
    "genre": "心理・人間関係",
-   "cause": "話を聞いてもらえない人",
+   "forwho": "話を聞いてもらえない人",
+   "why": "",
    "summary": "聞く技術は練習しないと身につかない。2人1組で15分ずつ話す／聞くだけ。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -776,46 +853,54 @@
    "result": "開催回数と、参加者の「聞かれた感」自己評価",
    "land": "",
    "orgs": "",
-   "ref": "チーム2030キックオフ（8/1）で扱う内容"
+   "ref": "チーム2030キックオフ（8/1）で扱う内容",
+   "refUrl": ""
   },
   {
    "id": "A039",
    "src": "事例200",
    "title": "タイプ診断を家族・職場でやって話し合う",
    "genre": "心理・人間関係",
-   "cause": "家族と職場の同僚",
+   "forwho": "家族と職場の同僚",
+   "why": "",
    "summary": "診断そのものより「違いを言葉にできる」ことが成果。",
    "reach": "目の前のひとり",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "家族1人に診断を受けてもらう",
+   "step": "家族のうち1人に、タイプ診断を受けてもらう",
    "result": "実施人数と、話し合いで出た「発見」リスト",
    "land": "",
    "orgs": "",
-   "ref": "チーム2030 8/6インサイド（ウェルスダイナミクス）"
+   "ref": "チーム2030 8/6インサイド（ウェルスダイナミクス）",
+   "refUrl": "",
+   "stepSrc": "家族1人に診断を受けてもらう"
   },
   {
    "id": "A040",
    "src": "事例200",
    "title": "夫婦（家族）で年1回の「経営会議」を開く",
    "genre": "心理・人間関係",
-   "cause": "配偶者と子ども",
+   "forwho": "配偶者と子ども",
+   "why": "",
    "summary": "家計・時間・5年後を、感情でなく議題として話す。議事録を残す。",
    "reach": "目の前のひとり",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "カレンダーに2時間だけ枠を取る",
+   "step": "カレンダーに2時間だけ、家族で話す枠を取る",
    "result": "議事録1本＋決まった行動3つ",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/",
+   "stepSrc": "カレンダーに2時間だけ枠を取る"
   },
   {
    "id": "A041",
    "src": "事例200",
    "title": "地域の先輩の自分史を1枚にまとめる",
    "genre": "心理・人間関係",
-   "cause": "語り残したい地域の先輩",
+   "forwho": "語り残したい地域の先輩",
+   "why": "",
    "summary": "本人が語れなくなる前に、転機を5つ聞いて年表にして渡す。本人にも家族にも残る。",
    "reach": "自分のまち",
    "scale": "S",
@@ -824,14 +909,16 @@
    "result": "作成した年表の枚数と、渡した人数",
    "land": "",
    "orgs": "",
-   "ref": "聞き書き甲子園／共存の森ネットワーク"
+   "ref": "聞き書き甲子園／共存の森ネットワーク",
+   "refUrl": "https://www.kikigaki.net/"
   },
   {
    "id": "A042",
    "src": "事例200",
    "title": "地域の困りごとを30日間、毎日1つ書き出す",
    "genre": "心理・人間関係",
-   "cause": "困りごとを抱えたままの住民",
+   "forwho": "困りごとを抱えたままの住民",
+   "why": "",
    "summary": "自分の感情ではなく、人が困っている場面を記録する。30日後に地域の課題リストが1本できる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -840,30 +927,35 @@
    "result": "30日分の記録と、抽出した課題10件",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A043",
    "src": "事例200",
    "title": "言えなかったことを手紙にして渡す",
    "genre": "心理・人間関係",
-   "cause": "伝えられていない相手",
+   "forwho": "伝えられていない相手",
+   "why": "",
    "summary": "親・恩師・別れた相手へ。出さなくてもよいが、書くことで前に進む。",
    "reach": "目の前のひとり",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "宛先を1人決める",
+   "step": "手紙を書く相手を1人決める",
    "result": "書いた通数／渡した通数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/",
+   "stepSrc": "宛先を1人決める"
   },
   {
    "id": "A044",
    "src": "事例200",
    "title": "男性が弱音を出せる場を月1回作る",
    "genre": "心理・人間関係",
-   "cause": "弱音を言えない男性",
+   "forwho": "弱音を言えない男性",
+   "why": "",
    "summary": "相談窓口に行かない層が、雑談の形でなら出せる。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -872,14 +964,16 @@
    "result": "開催回数と参加者数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A045",
    "src": "事例200",
    "title": "地元議会を1回傍聴してレポートを書く",
    "genre": "政治・経済",
-   "cause": "議会を知らない住民",
+   "forwho": "議会を知らない住民",
+   "why": "",
    "summary": "誰でも入れる。行った人がほぼいないので、書くだけで希少情報になる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -888,14 +982,16 @@
    "result": "傍聴1回＋レポート1本",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A046",
    "src": "事例200",
    "title": "市の予算書を読む会を開く",
    "genre": "政治・経済",
-   "cause": "税金の行方を知らない住民",
+   "forwho": "税金の行方を知らない住民",
+   "why": "",
    "summary": "自分の税金がどこに行くかを、資料を実際に開いて確認する。",
    "reach": "自分のまち",
    "scale": "S",
@@ -904,14 +1000,16 @@
    "result": "開催1回＋作成した支出円グラフ1枚",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A047",
    "src": "事例200",
    "title": "議員・候補者に1問だけ質問して回答を公開する",
    "genre": "政治・経済",
-   "cause": "判断材料がない有権者",
+   "forwho": "判断材料がない有権者",
+   "why": "",
    "summary": "全員に同じ1問を送り、回答をそのまま並べる。中立で価値が高い。",
    "reach": "自分のまち",
    "scale": "M",
@@ -920,14 +1018,16 @@
    "result": "送付人数と回答率、公開ページ1本",
    "land": "",
    "orgs": "",
-   "ref": "検索：候補者アンケート 公開 市民"
+   "ref": "検索：候補者アンケート 公開 市民",
+   "refUrl": ""
   },
   {
    "id": "A048",
    "src": "事例200",
    "title": "地域の「お金の流れ」を1枚に図解する",
    "genre": "政治・経済",
-   "cause": "地域外に流出しているお金",
+   "forwho": "地域外に流出しているお金",
+   "why": "",
    "summary": "地域外に出ていくお金（エネルギー・食料）を推計して可視化する。",
    "reach": "自分のまち",
    "scale": "M",
@@ -936,30 +1036,36 @@
    "result": "図解1枚＋推計の根拠メモ",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A049",
    "src": "事例200",
    "title": "パブリックコメントを1本出す",
    "genre": "政治・経済",
-   "cause": "声が届いていない当事者",
-   "summary": "国・自治体の意見募集に、実名で1本出す。所要時間は30分。",
+   "forwho": "声が届いていない当事者",
+   "why": "",
+   "summary": "国や自治体が「この案をどう思いますか」と意見を集める仕組みに、実名で1本出す。30分でできる。",
    "reach": "日本じゅうに",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "e-Govのパブコメ一覧から関心あるものを1件選ぶ",
+   "step": "e-Gov（国の意見募集サイト）を開いて、気になる募集を1件選ぶ",
    "result": "提出1件＋公表された回答",
    "land": "",
    "orgs": "",
-   "ref": "検索：e-Gov パブリックコメント"
+   "ref": "検索：e-Gov パブリックコメント",
+   "refUrl": "",
+   "summarySrc": "国・自治体の意見募集に、実名で1本出す。所要時間は30分。",
+   "stepSrc": "e-Govのパブコメ一覧から関心あるものを1件選ぶ"
   },
   {
    "id": "A050",
    "src": "事例200",
    "title": "選挙公報を読み比べる勉強会",
    "genre": "政治・経済",
-   "cause": "選ぶ基準を持てない有権者",
+   "forwho": "選ぶ基準を持てない有権者",
+   "why": "",
    "summary": "候補者の主張を並べて、事実と願望を仕分けする練習。",
    "reach": "自分のまち",
    "scale": "S",
@@ -968,14 +1074,16 @@
    "result": "開催1回＋比較表1枚",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A051",
    "src": "事例200",
    "title": "地元企業の求人と決算を調べて若者に共有する",
    "genre": "政治・経済",
-   "cause": "仕事がないと思っている若者",
+   "forwho": "仕事がないと思っている若者",
+   "why": "",
    "summary": "「地元には仕事がない」の思い込みを、実データで壊す。",
    "reach": "自分のまち",
    "scale": "M",
@@ -984,14 +1092,16 @@
    "result": "調査企業数＋共有した先の人数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A052",
    "src": "事例200",
    "title": "月3万円の小商いを1つ立てる",
    "genre": "お金・小商い",
-   "cause": "その商品を必要としている人",
+   "forwho": "その商品を必要としている人",
+   "why": "",
    "summary": "生活を変えずに始められる規模。単価×件数を先に決める。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1000,14 +1110,16 @@
    "result": "初月の売上と客数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp（小商い）"
+   "ref": "greenz.jp（小商い）",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A053",
    "src": "事例200",
    "title": "得意なことを1回だけ有料で売ってみる",
    "genre": "お金・小商い",
-   "cause": "困りごとを持つ知人",
+   "forwho": "困りごとを持つ知人",
+   "why": "",
    "summary": "無料で配っていたものに値段をつける。心理的な壁が最大の障害。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1016,14 +1128,16 @@
    "result": "1件の入金記録",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A054",
    "src": "事例200",
    "title": "誰か1世帯の固定費見直しを、無料で手伝う",
    "genre": "お金・小商い",
-   "cause": "家計に悩む1世帯",
+   "forwho": "家計に悩む1世帯",
+   "why": "",
    "summary": "通信・保険・サブスク。自分でやって効いた方法を、困っている人に対して使う。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1032,14 +1146,16 @@
    "result": "支援した世帯数と、月あたり削減できた額",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A055",
    "src": "事例200",
    "title": "不要品を集めてバザー・寄付で地域に回す",
    "genre": "お金・小商い",
-   "cause": "物を必要とする人・団体",
+   "forwho": "物を必要とする人・団体",
+   "why": "",
    "summary": "自分の家だけでなく近所から集める。売上は活動費か寄付に回すと目的が立つ。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1048,14 +1164,16 @@
    "result": "集めた点数と、渡った先の件数",
    "land": "",
    "orgs": "",
-   "ref": "J4CE"
+   "ref": "J4CE",
+   "refUrl": "https://j4ce.env.go.jp/casestudy/group/1/recycle/"
   },
   {
    "id": "A056",
    "src": "事例200",
    "title": "クラウドファンディングを1本立てる",
    "genre": "お金・小商い",
-   "cause": "資金がなくて動けない人",
+   "forwho": "資金がなくて動けない人",
+   "why": "",
    "summary": "資金より「共感してくれる人の実数」が測れることに価値がある。",
    "reach": "自分のまち",
    "scale": "M",
@@ -1064,14 +1182,16 @@
    "result": "支援者数と達成率",
    "land": "",
    "orgs": "",
-   "ref": "検索：地域 クラウドファンディング 成功事例"
+   "ref": "検索：地域 クラウドファンディング 成功事例",
+   "refUrl": ""
   },
   {
    "id": "A057",
    "src": "事例200",
    "title": "地域団体の会計を引き受けて見えるようにする",
    "genre": "お金・小商い",
-   "cause": "会計が不透明な団体",
+   "forwho": "会計が不透明な団体",
+   "why": "",
    "summary": "自治会・PTA・保護者会。お金が見えない団体は不信の温床になる。引き受け手が常にいない。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1080,14 +1200,16 @@
    "result": "作成した収支報告1本と、公開した相手の数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A058",
    "src": "事例200",
    "title": "知り合いの店のPOP・値付けを手伝う",
    "genre": "お金・小商い",
-   "cause": "売上に悩む店主",
+   "forwho": "売上に悩む店主",
+   "why": "",
    "summary": "自分の商売がなくても、他人の売上を上げれば実績になる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1096,14 +1218,16 @@
    "result": "改善前後の売上／客単価の比較",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A059",
    "src": "事例200",
    "title": "家業の業務を1つAIで自動化する",
    "genre": "AI・デジタル",
-   "cause": "家業で消耗している家族",
+   "forwho": "家業で消耗している家族",
+   "why": "",
    "summary": "見積書・日報・請求書など、繰り返し作業を1つだけ選ぶ。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1112,14 +1236,16 @@
    "result": "月あたり削減時間（時間／月）",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A060",
    "src": "事例200",
    "title": "地域の会議に議事録AIを入れる",
    "genre": "AI・デジタル",
-   "cause": "書記に消耗する地域の会議",
+   "forwho": "書記に消耗する地域の会議",
+   "why": "",
    "summary": "自治会・PTA・商店会。書記の負担が消えるので歓迎されやすい。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1128,30 +1254,37 @@
    "result": "導入した会議数と作成時間の短縮",
    "land": "",
    "orgs": "",
-   "ref": "チーム2030（Notta×Claude検証）"
+   "ref": "チーム2030（Notta×Claude検証）",
+   "refUrl": ""
   },
   {
    "id": "A061",
    "src": "事例200",
-   "title": "地元情報のLINE botを作る",
+   "title": "ゴミの日やイベントを自動で答えるLINEを作る",
    "genre": "AI・デジタル",
-   "cause": "情報を探せない住民",
-   "summary": "ゴミ収集日・イベント・災害情報を自動応答にする。",
+   "forwho": "情報を探せない住民",
+   "why": "",
+   "summary": "ゴミ収集日・イベント・災害情報を、聞かれたら自動で返す仕組みにする。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "市のオープンデータページを確認する",
+   "step": "市のホームページで「オープンデータ」（市が自由に使ってよいと公開しているデータ）のページを探す",
    "result": "登録者数と月間問い合わせ数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選（ごみ分別AIチャット）"
+   "ref": "総務省ICT100選（ごみ分別AIチャット）",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "titleSrc": "地元情報のLINE botを作る",
+   "summarySrc": "ゴミ収集日・イベント・災害情報を自動応答にする。",
+   "stepSrc": "市のオープンデータページを確認する"
   },
   {
    "id": "A062",
    "src": "事例200",
    "title": "方言・昔話をAIで文字化して保存する",
    "genre": "AI・デジタル",
-   "cause": "消えつつある方言と昔話",
+   "forwho": "消えつつある方言と昔話",
+   "why": "",
    "summary": "話者が減っている地域ほど緊急性が高い。録音は今日からできる。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -1160,30 +1293,35 @@
    "result": "録音時間と文字起こし本数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A063",
    "src": "事例200",
    "title": "高齢者向けAI活用講座を開く",
    "genre": "AI・デジタル",
-   "cause": "デジタルから外れる高齢者",
+   "forwho": "デジタルから外れる高齢者",
+   "why": "",
    "summary": "「怖い」を「便利」に変える。教える側の理解も深まる。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "教える機能を3つに絞る",
+   "step": "教える機能を3つに絞って、紙に書き出す",
    "result": "開催回数と受講者が作った成果物数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "stepSrc": "教える機能を3つに絞る"
   },
   {
    "id": "A064",
    "src": "事例200",
    "title": "AIで自分史・自費出版の下書きを作る",
    "genre": "AI・デジタル",
-   "cause": "人生を残したい本人と家族",
+   "forwho": "人生を残したい本人と家族",
+   "why": "",
    "summary": "話した内容を構成して原稿化。完走者の卒業制作にもつながる。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1192,30 +1330,37 @@
    "result": "原稿の章立て＋1章分の下書き",
    "land": "",
    "orgs": "",
-   "ref": "チーム2030 参加特典（POD出版）"
+   "ref": "チーム2030 参加特典（POD出版）",
+   "refUrl": ""
   },
   {
    "id": "A065",
    "src": "事例200",
-   "title": "紙・口頭でやっている管理を1つ表にする",
+   "title": "紙や口頭でやっている管理を、1つだけ表にする",
    "genre": "AI・デジタル",
-   "cause": "分別に迷う住民",
-   "summary": "名簿・当番表・在庫。共有できた瞬間に、属人化が1つ消える。",
+   "forwho": "分別に迷う住民",
+   "why": "",
+   "summary": "名簿・当番表・在庫のどれか1つ。共有できた瞬間に「その人しか分からない」が1つ消える。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "一番混乱している紙を1枚デジタル化",
+   "step": "名簿・当番表・在庫のうち、いま一番ややこしいものを1つ選んで、スマホで写真を撮る",
    "result": "移行した表1つと共同編集者の人数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "titleSrc": "紙・口頭でやっている管理を1つ表にする",
+   "summarySrc": "名簿・当番表・在庫。共有できた瞬間に、属人化が1つ消える。",
+   "stepSrc": "一番混乱している紙を1枚デジタル化"
   },
   {
    "id": "A066",
    "src": "事例200",
    "title": "地域のイベント情報を1か所に集約する",
    "genre": "AI・デジタル",
-   "cause": "属人化で困っている団体",
+   "forwho": "属人化で困っている団体",
+   "why": "",
    "summary": "バラバラな告知を1枚のカレンダーにまとめるだけで人が動く。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1224,14 +1369,16 @@
    "result": "掲載イベント数と閲覧数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A067",
    "src": "事例200",
    "title": "廃材で家具・看板を1つ作る",
    "genre": "ものづくり・アート",
-   "cause": "それを使う人・見る人",
+   "forwho": "それを使う人・見る人",
+   "why": "",
    "summary": "材料費がほぼゼロ。物として残るので成果が一目でわかる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1240,14 +1387,16 @@
    "result": "完成物1点の写真",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A068",
    "src": "事例200",
    "title": "シャッター・壁に絵を1面描く",
    "genre": "ものづくり・アート",
-   "cause": "シャッター街の通行人",
+   "forwho": "シャッター街の通行人",
+   "why": "",
    "summary": "許可さえ取れれば1日で終わる。写真映えするので波及しやすい。",
    "reach": "自分のまち",
    "scale": "M",
@@ -1256,14 +1405,16 @@
    "result": "完成1面＋通行人の反応",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A069",
    "src": "事例200",
    "title": "子どもの絵を商品にする",
    "genre": "ものづくり・アート",
-   "cause": "描いた子ども本人",
+   "forwho": "描いた子ども本人",
+   "why": "",
    "summary": "Tシャツ・缶バッジ・パッケージに。作った子の自己効力感が跳ね上がる。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1272,14 +1423,16 @@
    "result": "制作点数と販売／配布数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A070",
    "src": "事例200",
    "title": "手仕事を習って、半年後に教える側に回る",
    "genre": "ものづくり・アート",
-   "cause": "後継者がいない技",
+   "forwho": "後継者がいない技",
+   "why": "",
    "summary": "染め・木工・編み・刃物研ぎ。継承者不足の分野ほど歓迎される。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -1288,14 +1441,16 @@
    "result": "習得回数＋自分が教えた人数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A071",
    "src": "事例200",
    "title": "まちの音を録って作品にする",
    "genre": "ものづくり・アート",
-   "cause": "消えていく音の記録",
+   "forwho": "消えていく音の記録",
+   "why": "",
    "summary": "祭り・港・工場・電車。消えていく音は誰も記録していない。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -1304,15 +1459,17 @@
    "result": "収録トラック数＋公開1本",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A072",
    "src": "事例200",
    "title": "障がいのある人のアート展を1回開く",
    "genre": "ものづくり・アート",
-   "cause": "発表の場がない作り手",
-   "summary": "場所と壁があれば成立する。デジタルアーカイブ化も相性がよい。",
+   "forwho": "発表の場がない作り手",
+   "why": "",
+   "summary": "場所と壁があれば成立する。写真に撮ってネットに残す形とも相性がよい。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
@@ -1320,30 +1477,36 @@
    "result": "展示点数と来場者数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/",
+   "summarySrc": "場所と壁があれば成立する。デジタルアーカイブ化も相性がよい。"
   },
   {
    "id": "A073",
    "src": "事例200",
    "title": "地域の人を100人インタビューして図鑑にする",
    "genre": "発信・記録",
-   "cause": "知られていない地域の人",
+   "forwho": "知られていない地域の人",
+   "why": "",
    "summary": "「すごい人図鑑」形式。1人分でも成果、100人で資産になる。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "1人目のアポを取る",
+   "step": "話を聞きたい人を1人決めて、連絡して日程をもらう",
    "result": "掲載人数と公開ページ／冊子",
    "land": "",
    "orgs": "",
-   "ref": "房総すごい人図鑑（greenz.jp）"
+   "ref": "房総すごい人図鑑（greenz.jp）",
+   "refUrl": "https://greenz.jp/",
+   "stepSrc": "1人目のアポを取る"
   },
   {
    "id": "A074",
    "src": "事例200",
    "title": "商店主の1分動画を10本撮る",
    "genre": "発信・記録",
-   "cause": "発信できない商店主",
+   "forwho": "発信できない商店主",
+   "why": "",
    "summary": "店主が自分では作らないものを代わりに作る。感謝され、実績も残る。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1352,30 +1515,35 @@
    "result": "公開本数と再生数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A075",
    "src": "事例200",
    "title": "ローカルポッドキャストを月2本出す",
    "genre": "発信・記録",
-   "cause": "記録されない地域の声",
+   "forwho": "記録されない地域の声",
+   "why": "",
    "summary": "収録30分・編集30分から始める。継続すると地域の記録媒体になる。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "1本目のゲストを決める",
+   "step": "最初に話を聞くゲストを1人決めて、声をかける",
    "result": "配信本数と再生数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/",
+   "stepSrc": "1本目のゲストを決める"
   },
   {
    "id": "A076",
    "src": "事例200",
    "title": "フリーペーパーを年2回出す",
    "genre": "発信・記録",
-   "cause": "紙でしか届かない層",
+   "forwho": "紙でしか届かない層",
+   "why": "",
    "summary": "紙は年配層に届く。4ページ・両面2枚で十分成立する。",
    "reach": "自分のまち",
    "scale": "M",
@@ -1384,14 +1552,16 @@
    "result": "発行部数と設置店舗数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A077",
    "src": "事例200",
    "title": "地域の家族を無料で撮って、写真を渡す",
    "genre": "発信・記録",
-   "cause": "撮ってもらう機会がない家族",
+   "forwho": "撮ってもらう機会がない家族",
+   "why": "",
    "summary": "写真館に行かない家庭は多い。撮って渡すだけで確実に喜ばれ、地域の記録にもなる。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1400,15 +1570,17 @@
    "result": "撮影した家族数と、渡した枚数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A078",
    "src": "事例200",
    "title": "「地元の今日の一枚」を100日投稿する",
    "genre": "発信・記録",
-   "cause": "地域の風景の記録",
-   "summary": "毎日1枚。100日後にはその土地の記録アーカイブになっている。",
+   "forwho": "地域の風景の記録",
+   "why": "",
+   "summary": "毎日1枚。100日後には、その土地の記録になっている。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
@@ -1416,14 +1588,17 @@
    "result": "投稿日数とフォロワー増加数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/",
+   "summarySrc": "毎日1枚。100日後にはその土地の記録アーカイブになっている。"
   },
   {
    "id": "A079",
    "src": "事例200",
    "title": "地名の由来を調べて説明板を立てる",
    "genre": "歴史・文化",
-   "cause": "由来を知らない住民",
+   "forwho": "由来を知らない住民",
+   "why": "",
    "summary": "図書館の郷土資料で調べられる。板を1枚立てれば形になる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1432,14 +1607,16 @@
    "result": "調べた地名数＋設置1枚",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A080",
    "src": "事例200",
    "title": "途絶えた祭り・行事を小さく復活させる",
    "genre": "歴史・文化",
-   "cause": "途絶えた行事と地域の記憶",
+   "forwho": "途絶えた行事と地域の記憶",
+   "why": "",
    "summary": "元の規模を目指さない。10人でやる縮小版から始める。",
    "reach": "自分のまち",
    "scale": "M",
@@ -1448,14 +1625,16 @@
    "result": "開催1回と参加者数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A081",
    "src": "事例200",
    "title": "石碑・道祖神・庚申塔をマッピングする",
    "genre": "歴史・文化",
-   "cause": "記録されていない石造物",
+   "forwho": "記録されていない石造物",
+   "why": "",
    "summary": "歩いて写真を撮って地図に落とすだけ。誰もやっていない地域が多い。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -1464,14 +1643,16 @@
    "result": "記録した基数＋公開地図1枚",
    "land": "",
    "orgs": "",
-   "ref": "5actions.jp"
+   "ref": "5actions.jp",
+   "refUrl": "https://5actions.jp/"
   },
   {
    "id": "A082",
    "src": "事例200",
    "title": "戦争・災害の体験を3人分聞き取る",
    "genre": "歴史・文化",
-   "cause": "語り手が消える前の記録",
+   "forwho": "語り手が消える前の記録",
+   "why": "",
    "summary": "時間切れが迫っている領域。3人でも一次資料になる。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -1480,14 +1661,16 @@
    "result": "録音3本＋文字起こし",
    "land": "",
    "orgs": "",
-   "ref": "聞き書き甲子園／共存の森ネットワーク"
+   "ref": "聞き書き甲子園／共存の森ネットワーク",
+   "refUrl": "https://www.kikigaki.net/"
   },
   {
    "id": "A083",
    "src": "事例200",
    "title": "古地図と現在を重ねて歩く会を開く",
    "genre": "歴史・文化",
-   "cause": "土地の変化を知りたい住民",
+   "forwho": "土地の変化を知りたい住民",
+   "why": "",
    "summary": "国土地理院や図書館の資料で無料で用意できる。参加者の反応が良い。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1496,30 +1679,35 @@
    "result": "開催1回と参加者数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A084",
    "src": "事例200",
    "title": "家と屋号の来歴を聞き取って記録する",
    "genre": "歴史・文化",
-   "cause": "家と屋号の来歴",
+   "forwho": "家と屋号の来歴",
+   "why": "",
    "summary": "集落の家々の由来・屋号・移り住んだ経緯。知る人が減り続けている一次情報。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "一番古い家を1軒訪ねる",
+   "step": "集落で一番古い家を1軒訪ねて、話を聞かせてもらえるか頼む",
    "result": "記録した戸数と、聞き取った証言数",
    "land": "",
    "orgs": "",
-   "ref": "聞き書き甲子園／共存の森ネットワーク"
+   "ref": "聞き書き甲子園／共存の森ネットワーク",
+   "refUrl": "https://www.kikigaki.net/",
+   "stepSrc": "一番古い家を1軒訪ねる"
   },
   {
    "id": "A085",
    "src": "事例200",
    "title": "ハザードマップを持って実際に歩く",
    "genre": "防災・安全",
-   "cause": "危険を知らない住民",
+   "forwho": "危険を知らない住民",
+   "why": "",
    "summary": "地図で見るのと歩くのは別物。1回で危険箇所が体で分かる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1528,30 +1716,37 @@
    "result": "歩いた距離＋気づき写真10枚",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A086",
    "src": "事例200",
-   "title": "ローリングストック実践会を開く",
+   "title": "非常食を食べて買い足す会を開く",
    "genre": "防災・安全",
-   "cause": "備えのない家庭",
-   "summary": "備蓄を食べて買い足す。参加者が家に帰って即実行できる。",
+   "forwho": "備えのない家庭",
+   "why": "",
+   "summary": "非常食を普段のごはんとして食べ、食べたぶんを買い足す（ローリングストック）。参加者が家に帰ってすぐ実行できる。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "自宅の備蓄が何日分あるか数える",
+   "step": "自宅の非常食が何日分あるか数える",
    "result": "参加者数＋各家庭の備蓄日数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/",
+   "titleSrc": "ローリングストック実践会を開く",
+   "summarySrc": "備蓄を食べて買い足す。参加者が家に帰って即実行できる。",
+   "stepSrc": "自宅の備蓄が何日分あるか数える"
   },
   {
    "id": "A087",
    "src": "事例200",
    "title": "AED・消火栓・井戸の位置マップを作る",
    "genre": "防災・安全",
-   "cause": "いざという時の周辺住民",
+   "forwho": "いざという時の周辺住民",
+   "why": "",
    "summary": "いざという時に誰も場所を知らない。作れば確実に使われる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1560,30 +1755,35 @@
    "result": "マッピング数＋配布枚数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A088",
    "src": "事例200",
    "title": "町内の安否確認グループを作る",
    "genre": "防災・安全",
-   "cause": "孤立しやすい世帯",
+   "forwho": "孤立しやすい世帯",
+   "why": "",
    "summary": "LINE1つで成立する。訓練を1回やって初めて機能する。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "隣近所5軒に声をかける",
+   "step": "隣近所5軒に「災害のとき用の連絡グループを作りませんか」と声をかける",
    "result": "参加世帯数＋訓練実施1回",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "stepSrc": "隣近所5軒に声をかける"
   },
   {
    "id": "A089",
    "src": "事例200",
    "title": "除雪・草刈り・雪かきの助け合い当番を作る",
    "genre": "防災・安全",
-   "cause": "作業ができない高齢世帯",
+   "forwho": "作業ができない高齢世帯",
+   "why": "",
    "summary": "高齢世帯が最も困る作業。当番表1枚で回り始める。",
    "reach": "自分のまち",
    "scale": "M",
@@ -1592,14 +1792,16 @@
    "result": "対応した世帯数＋実施回数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選（除雪管理システム）"
+   "ref": "総務省ICT100選（除雪管理システム）",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A090",
    "src": "事例200",
    "title": "朝の散歩部を週2回やる",
    "genre": "からだ・健康",
-   "cause": "一人では歩き出せない人",
+   "forwho": "一人では歩き出せない人",
+   "why": "",
    "summary": "集合場所と時間を決めるだけ。健康と人間関係が同時に動く。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1608,30 +1810,35 @@
    "result": "開催回数と延べ参加人数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A091",
    "src": "事例200",
    "title": "健康測定会を開いて、その場で結果を渡す",
    "genre": "からだ・健康",
-   "cause": "測る機会がない住民",
+   "forwho": "測る機会がない住民",
+   "why": "",
    "summary": "血圧・体組成・握力。測る機会がないだけで放置している人が多い。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "測定器を借りられる先を1件探す",
+   "step": "血圧計や握力計を借りられる先（保健センター・薬局など）を1件探す",
    "result": "測定した人数と、受診をすすめた件数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/",
+   "stepSrc": "測定器を借りられる先を1件探す"
   },
   {
    "id": "A092",
    "src": "事例200",
    "title": "ラジオ体操を復活させる",
    "genre": "からだ・健康",
-   "cause": "集まる口実がない住民",
+   "forwho": "集まる口実がない住民",
+   "why": "",
    "summary": "場所と時間だけ。子どもと高齢者が同時に集まる稀有な仕組み。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1640,14 +1847,16 @@
    "result": "開催日数と参加者数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A093",
    "src": "事例200",
    "title": "誰でも出られる運動会・ニュースポーツ大会",
    "genre": "からだ・健康",
-   "cause": "運動から外れていた人",
+   "forwho": "運動から外れていた人",
+   "why": "",
    "summary": "モルック等、体力差が関係ない種目を選ぶと参加者が広がる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -1656,46 +1865,56 @@
    "result": "参加者数とチーム数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A094",
    "src": "事例200",
    "title": "健診・献血の呼びかけを1回やる",
    "genre": "からだ・健康",
-   "cause": "輸血や治療を待つ人",
+   "forwho": "輸血や治療を待つ人",
+   "why": "",
    "summary": "自分が行って発信するだけでも人は動く。数字で成果が出る。",
    "reach": "日本じゅうに",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "自分が予約を取る",
+   "step": "自分が健診か献血の予約を取る",
    "result": "同行／申込に至った人数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/",
+   "stepSrc": "自分が予約を取る"
   },
   {
    "id": "A095",
    "src": "事例200",
-   "title": "地域猫のTNRを1匹から始める",
+   "title": "野良猫を1匹、手術して元の場所に戻す",
    "genre": "動物",
-   "cause": "猫と苦情に困る住民",
-   "summary": "捕獲・不妊手術・元の場所へ。助成金がある自治体が多い。",
+   "forwho": "猫と苦情に困る住民",
+   "why": "",
+   "summary": "つかまえて、不妊手術をして、元いた場所に戻す（TNRと呼ばれるやり方）。費用を助成してくれる自治体が多い。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "市の助成制度の有無を調べる",
+   "step": "市役所の環境課か生活衛生課に電話して、猫の不妊手術の助成があるか聞く",
    "result": "実施頭数と苦情件数の変化",
    "land": "",
    "orgs": "",
-   "ref": "5actions.jp"
+   "ref": "5actions.jp",
+   "refUrl": "https://5actions.jp/",
+   "titleSrc": "地域猫のTNRを1匹から始める",
+   "summarySrc": "捕獲・不妊手術・元の場所へ。助成金がある自治体が多い。",
+   "stepSrc": "市の助成制度の有無を調べる"
   },
   {
    "id": "A096",
    "src": "事例200",
    "title": "保護犬猫の譲渡会を1回手伝う",
    "genre": "動物",
-   "cause": "行き場のない犬猫",
+   "forwho": "行き場のない犬猫",
+   "why": "",
    "summary": "主催でなく手伝いから。会場設営・撮影・SNSでも十分貢献できる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1704,14 +1923,16 @@
    "result": "参加した会の数と成立した譲渡件数",
    "land": "",
    "orgs": "",
-   "ref": "5actions.jp"
+   "ref": "5actions.jp",
+   "refUrl": "https://5actions.jp/"
   },
   {
    "id": "A097",
    "src": "事例200",
    "title": "ペット同伴避難のガイドを作る",
    "genre": "動物",
-   "cause": "ペットと避難する住民",
+   "forwho": "ペットと避難する住民",
+   "why": "",
    "summary": "避難所がペットを受け入れるか、実は誰も知らない。調べて1枚にする。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1720,30 +1941,35 @@
    "result": "調査した避難所数＋配布資料1枚",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A098",
    "src": "事例200",
    "title": "自宅を「1日だけの宿／食堂」にしてみる",
    "genre": "旅・場づくり",
-   "cause": "泊まる場所を探す人",
+   "forwho": "泊まる場所を探す人",
+   "why": "",
    "summary": "開業前のテスト。1日なら許認可の負担が小さいことも多い。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "誰を招くか3人決める",
+   "step": "招きたい人を3人決める",
    "result": "受け入れ人数と感想",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/",
+   "stepSrc": "誰を招くか3人決める"
   },
   {
    "id": "A099",
    "src": "事例200",
    "title": "まち歩きガイドを1本作って案内する",
    "genre": "旅・場づくり",
-   "cause": "まちを知らない来訪者",
+   "forwho": "まちを知らない来訪者",
+   "why": "",
    "summary": "90分・5スポット。原稿を作れば何度でも使える資産になる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1752,14 +1978,16 @@
    "result": "実施回数と参加者数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A100",
    "src": "事例200",
    "title": "他地域の実践者を訪ね、持ち帰って報告会をやる",
    "genre": "旅・場づくり",
-   "cause": "学びを待っている地域の仲間",
+   "forwho": "学びを待っている地域の仲間",
+   "why": "",
    "summary": "行って終わりにしない。見てきたことを地域や仲間に渡すところまでを1セットにする。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1768,30 +1996,37 @@
    "result": "訪問件数と、報告会の参加者数",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝"
+   "ref": "ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A101",
    "src": "事例200",
-   "title": "町内会・PTAの名簿と当番表をノーコードで作り直す",
+   "title": "町内会やPTAの表を、みんなで直せる形にする",
    "genre": "IT・システムづくり",
-   "cause": "二重管理に消耗する役員",
-   "summary": "紙とExcelの二重管理をやめ、共同編集できる1つの表に集約する。最も感謝されやすい入口。",
+   "forwho": "二重管理に消耗する役員",
+   "why": "",
+   "summary": "紙とExcelの二重管理をやめて、全員が同じ1つの表を見て直せるようにする。いちばん感謝されやすい入口。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "一番混乱している紙を1枚もらってくる",
+   "step": "自治会かPTAの役員さんに「いま一番ややこしい表はどれですか」と聞いて、その紙を1枚もらう",
    "result": "移行した表の数と、編集できる人の人数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "titleSrc": "町内会・PTAの名簿と当番表をノーコードで作り直す",
+   "summarySrc": "紙とExcelの二重管理をやめ、共同編集できる1つの表に集約する。最も感謝されやすい入口。",
+   "stepSrc": "一番混乱している紙を1枚もらってくる"
   },
   {
    "id": "A102",
    "src": "事例200",
    "title": "申込・予約フォームと自動返信を作ってあげる",
    "genre": "IT・システムづくり",
-   "cause": "手作業に追われる主催者",
+   "forwho": "手作業に追われる主催者",
+   "why": "",
    "summary": "イベント運営の手作業（メール返信・集計）を1日で消せる。無料ツールで完結する。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1800,14 +2035,16 @@
    "result": "作成フォーム数と削減した返信件数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A103",
    "src": "事例200",
    "title": "個人商店のホームページを1軒作る",
    "genre": "IT・システムづくり",
-   "cause": "発信できない店主",
+   "forwho": "発信できない店主",
+   "why": "",
    "summary": "「うちには無理」と言っている店ほど効果が出る。1軒作れば次から紹介で来る。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1816,14 +2053,16 @@
    "result": "公開1件＋公開後の問い合わせ件数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A104",
    "src": "事例200",
    "title": "スプレッドシート＋GASで定型作業を自動化する",
    "genre": "IT・システムづくり",
-   "cause": "繰り返し作業をしている人",
+   "forwho": "繰り返し作業をしている人",
+   "why": "",
    "summary": "毎週の集計・転記・リマインドを自動化。効果が「時間」で測れる。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -1832,14 +2071,16 @@
    "result": "月あたり削減時間（時間／月）",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A105",
    "src": "事例200",
    "title": "団体のDiscord／Slackを設計して立ち上げる",
    "genre": "IT・システムづくり",
-   "cause": "集まる場がない団体",
+   "forwho": "集まる場がない団体",
+   "why": "",
    "summary": "チャンネル構成と権限設計まで含めて作る。運用が回るかは設計で8割決まる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1848,30 +2089,37 @@
    "result": "参加人数と週あたり投稿数",
    "land": "",
    "orgs": "",
-   "ref": "チーム2030 Discord運用"
+   "ref": "チーム2030 Discord運用",
+   "refUrl": ""
   },
   {
    "id": "A106",
    "src": "事例200",
-   "title": "イベント受付をQRチェックインにする",
+   "title": "手伝うイベントの受付を、QRコードで一瞬にする",
    "genre": "IT・システムづくり",
-   "cause": "受付に並ぶ参加者",
-   "summary": "名簿と照合する受付行列が消える。当日の効果が目に見える。",
+   "forwho": "受付に並ぶ参加者",
+   "why": "",
+   "summary": "紙の名簿と照合する受付の行列が消える。自分が主催でなくても、受付だけ引き受ければできる。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "次のイベントで50人規模を想定して試作",
+   "step": "次に手伝う予定のイベントの主催者に「受付をやらせてください」と伝える",
    "result": "チェックイン人数と受付にかかった時間",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "titleSrc": "イベント受付をQRチェックインにする",
+   "summarySrc": "名簿と照合する受付行列が消える。当日の効果が目に見える。",
+   "stepSrc": "次のイベントで50人規模を想定して試作"
   },
   {
    "id": "A107",
    "src": "事例200",
    "title": "LINE公式アカウント＋簡易botで問い合わせを減らす",
    "genre": "IT・システムづくり",
-   "cause": "問い合わせ対応に追われる人",
+   "forwho": "問い合わせ対応に追われる人",
+   "why": "",
    "summary": "よくある質問を自動応答に。店・教室・自治会いずれでも使える。",
    "reach": "自分のまち",
    "scale": "M",
@@ -1880,14 +2128,16 @@
    "result": "登録者数と自動応答で解決した割合",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選（ごみ分別AIチャット）"
+   "ref": "総務省ICT100選（ごみ分別AIチャット）",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A108",
    "src": "事例200",
    "title": "売上・在庫・来客数のダッシュボードを1枚作る",
    "genre": "IT・システムづくり",
-   "cause": "勘で商売している店主",
+   "forwho": "勘で商売している店主",
+   "why": "",
    "summary": "勘でやっている商売を数字で見えるようにする。作った側の学習効果も大きい。",
    "reach": "自分のまち",
    "scale": "S",
@@ -1896,30 +2146,37 @@
    "result": "可視化した指標数と、更新が続いた週数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A109",
    "src": "事例200",
-   "title": "秘伝のExcel台帳をデータベース化する",
+   "title": "1人しか触れないExcelを、みんなが見られる形にする",
    "genre": "IT・システムづくり",
-   "cause": "属人化で潰れかける団体",
-   "summary": "属人化した1つのファイルが壊れたら終わる団体は多い。実は緊急性が高い。",
+   "forwho": "属人化で潰れかける団体",
+   "why": "",
+   "summary": "1人しか分からないファイルが壊れたら終わる団体は多い。実は緊急性が高い。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "誰も触れないファイルを1つ特定する",
+   "step": "所属している団体で「これは◯◯さんしか触れない」というファイルを1つ見つける",
    "result": "移行レコード件数と同時編集人数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "titleSrc": "秘伝のExcel台帳をデータベース化する",
+   "summarySrc": "属人化した1つのファイルが壊れたら終わる団体は多い。実は緊急性が高い。",
+   "stepSrc": "誰も触れないファイルを1つ特定する"
   },
   {
    "id": "A110",
    "src": "事例200",
    "title": "センサーを1個設置して環境データを取る",
    "genre": "IT・システムづくり",
-   "cause": "データがない現場",
+   "forwho": "データがない現場",
+   "why": "",
    "summary": "水位・温湿度・土壌。小さくても継続データは強い。学校と組むと広がる。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -1928,14 +2185,16 @@
    "result": "計測日数とグラフ1枚",
    "land": "",
    "orgs": "",
-   "ref": "アサザ基金×NEC センサーネットワーク"
+   "ref": "アサザ基金×NEC センサーネットワーク",
+   "refUrl": "https://www.asaza.jp/"
   },
   {
    "id": "A111",
    "src": "事例200",
    "title": "Raspberry Pi等で見守り・通知装置を自作する",
    "genre": "IT・システムづくり",
-   "cause": "見守りが必要な家族",
+   "forwho": "見守りが必要な家族",
+   "why": "",
    "summary": "高齢者の在室検知、水田の水位アラートなど。1台数千円で試せる。",
    "reach": "目の前のひとり",
    "scale": "M",
@@ -1944,30 +2203,37 @@
    "result": "稼働日数と発報した通知件数",
    "land": "",
    "orgs": "",
-   "ref": "アサザ基金×NEC センサーネットワーク"
+   "ref": "アサザ基金×NEC センサーネットワーク",
+   "refUrl": "https://www.asaza.jp/"
   },
   {
    "id": "A112",
    "src": "事例200",
-   "title": "オープンデータで地図アプリを1本作る",
+   "title": "市が公開しているデータで、地図アプリを1本作る",
    "genre": "IT・システムづくり",
-   "cause": "使われていないオープンデータ",
-   "summary": "自治体が公開しているデータは大量に眠っている。使う人がほとんどいない。",
+   "forwho": "使われていないオープンデータ",
+   "why": "",
+   "summary": "自治体が誰でも使える形で公開しているデータは大量に眠っていて、使う人がほとんどいない。",
    "reach": "日本じゅうに",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "市のオープンデータページを開いてCSVを1本落とす",
+   "step": "市のホームページの「オープンデータ」ページから、表データを1本ダウンロードする",
    "result": "地図上のデータ点数と利用者数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "titleSrc": "オープンデータで地図アプリを1本作る",
+   "summarySrc": "自治体が公開しているデータは大量に眠っている。使う人がほとんどいない。",
+   "stepSrc": "市のオープンデータページを開いてCSVを1本落とす"
   },
   {
    "id": "A113",
    "src": "事例200",
    "title": "自分の業種向けの業務アプリを作って売る",
    "genre": "IT・システムづくり",
-   "cause": "同じ業種の現場",
+   "forwho": "同じ業種の現場",
+   "why": "",
    "summary": "現場を知っている人が作るツールは強い。1社に使ってもらえれば実績になる。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -1976,14 +2242,16 @@
    "result": "導入社数と月額／買い切りの売上",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A114",
    "src": "事例200",
    "title": "自社・団体のFAQにAIチャットを載せる",
    "genre": "IT・システムづくり",
-   "cause": "電話が繋がらない問い合わせ者",
+   "forwho": "電話が繋がらない問い合わせ者",
+   "why": "",
    "summary": "電話対応の件数が減る。減った数がそのまま成果になる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -1992,14 +2260,16 @@
    "result": "問い合わせ件数の前後比較",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A115",
    "src": "事例200",
    "title": "紙の申請書・報告書を電子化する",
    "genre": "IT・システムづくり",
-   "cause": "押印と手渡しに縛られる住民",
+   "forwho": "押印と手渡しに縛られる住民",
+   "why": "",
    "summary": "自治会・PTA・小規模事業者。押印と手渡しが残っている場所ほど効く。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2008,14 +2278,16 @@
    "result": "電子化した様式数と提出にかかる日数の短縮",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A116",
    "src": "事例200",
    "title": "高齢者が「押すだけ」で使える画面を設計する",
    "genre": "IT・システムづくり",
-   "cause": "使えずに諦める高齢者",
+   "forwho": "使えずに諦める高齢者",
+   "why": "",
    "summary": "機能を足すのではなく削る設計。ユーザーテストの結果が明確に出る。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -2024,14 +2296,16 @@
    "result": "テスト参加者数と完了できた人の割合",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A117",
    "src": "事例200",
    "title": "地域の交通情報を検索できるようにする",
    "genre": "IT・システムづくり",
-   "cause": "移動手段がない住民",
+   "forwho": "移動手段がない住民",
+   "why": "",
    "summary": "バス時刻・乗り合い・デマンド交通。紙の時刻表しかない地域は今も多い。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2040,14 +2314,16 @@
    "result": "登録した便数と月間検索数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A118",
    "src": "事例200",
    "title": "自分の実践を公開して、後から始める人の手順書にする",
    "genre": "IT・システムづくり",
-   "cause": "後から同じことを始める人",
+   "forwho": "後から同じことを始める人",
+   "why": "",
    "summary": "つまずいた点と解決策まで書く。同じことを始める人の時間を丸ごと節約できる。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -2056,14 +2332,16 @@
    "result": "公開した記事数と、参考にしたと連絡が来た件数",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A119",
    "src": "事例200",
    "title": "団体のバックアップとセキュリティを棚卸しする",
    "genre": "IT・システムづくり",
-   "cause": "データを失いかけている団体",
+   "forwho": "データを失いかけている団体",
+   "why": "",
    "summary": "地味だが、失われてから気づく領域。1回やるだけで事故を防げる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2072,14 +2350,16 @@
    "result": "点検した項目数と是正した数",
    "land": "",
    "orgs": "",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "A120",
    "src": "事例200",
    "title": "コミュニティの「休眠検知」を仕組み化する",
    "genre": "IT・システムづくり",
-   "cause": "静かに離脱していく参加者",
+   "forwho": "静かに離脱していく参加者",
+   "why": "",
    "summary": "一定期間反応がない人を自動で拾って声かけにつなぐ。あらゆる組織で使える。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2088,14 +2368,16 @@
    "result": "検知した人数と、声かけ後に戻った人数",
    "land": "",
    "orgs": "",
-   "ref": "チーム2030 運用設計（30日オンボーディング）"
+   "ref": "チーム2030 運用設計（30日オンボーディング）",
+   "refUrl": ""
   },
   {
    "id": "A121",
    "src": "事例200",
    "title": "川か湖の一区画を「担当」して月2回手入れする",
    "genre": "川・水辺・海",
-   "cause": "川と下流の住民",
+   "forwho": "川と下流の住民",
+   "why": "",
    "summary": "草刈り・清掃・樹木伐採を継続。担当区間を決めることで責任と成果が可視化される。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2104,14 +2386,16 @@
    "result": "活動回数と、before/after写真",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（水辺基盤協会・霞ヶ浦）"
+   "ref": "手づくり郷土賞R6（水辺基盤協会・霞ヶ浦）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A122",
    "src": "事例200",
    "title": "魚釣り体験と水質調査をセットにした親子イベント",
    "genre": "川・水辺・海",
-   "cause": "親子と、水質の長期記録",
+   "forwho": "親子と、水質の長期記録",
+   "why": "",
    "summary": "遊びの中に調査を混ぜる。子どもが自分で測ったデータは親にも効く。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2120,14 +2404,16 @@
    "result": "開催1回・親子の参加組数・測定値の記録",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（水辺基盤協会）"
+   "ref": "手づくり郷土賞R6（水辺基盤協会）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A123",
    "src": "事例200",
    "title": "地元の絶滅危惧の淡水魚を小学校と一緒に増やす",
    "genre": "川・水辺・海",
-   "cause": "絶滅が近い在来魚",
+   "forwho": "絶滅が近い在来魚",
+   "why": "",
    "summary": "生態調査・増殖・生息環境保全・環境学習をひとつなぎにする。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -2136,14 +2422,16 @@
    "result": "調査回数と放流した個体数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（ニッコウイワナに学ぶ会・日光市）"
+   "ref": "手づくり郷土賞R6（ニッコウイワナに学ぶ会・日光市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A124",
    "src": "事例200",
    "title": "卵から孵化までを家庭の冷蔵庫で観察して川に放す",
    "genre": "川・水辺・海",
-   "cause": "子どもと川の未来",
+   "forwho": "子どもと川の未来",
+   "why": "",
    "summary": "家庭で完結する小ささなのに、子どもの関心が環境問題まで一気に伸びる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2152,14 +2440,16 @@
    "result": "観察日誌と放流写真",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（ニッコウイワナに学ぶ会）"
+   "ref": "手づくり郷土賞R6（ニッコウイワナに学ぶ会）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A125",
    "src": "事例200",
    "title": "不法投棄を片づけて「子どもが遊べる河原」に戻す",
    "genre": "川・水辺・海",
-   "cause": "遊び場のない子ども",
+   "forwho": "遊び場のない子ども",
+   "why": "",
    "summary": "ゴミの撤去が終わった瞬間から場として使える。成果が一目でわかる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2168,14 +2458,16 @@
    "result": "撤去した量と、遊びに来た子どもの数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（馬入水辺の楽校・平塚市）"
+   "ref": "手づくり郷土賞R6（馬入水辺の楽校・平塚市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A126",
    "src": "事例200",
    "title": "同じ場所で毎年、魚類調査を続ける",
    "genre": "川・水辺・海",
-   "cause": "長期データがない川",
+   "forwho": "長期データがない川",
+   "why": "",
    "summary": "1回では意味がなく、続けると誰にも作れないデータになる。",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -2184,14 +2476,16 @@
    "result": "調査回数と、確認種数の年次推移",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（矢田・庄内川をきれいにする会・名古屋市）"
+   "ref": "手づくり郷土賞R6（矢田・庄内川をきれいにする会・名古屋市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A127",
    "src": "事例200",
    "title": "手つかずの湿地・湖岸を保全して観察会を開く",
    "genre": "川・水辺・海",
-   "cause": "手つかずのまま失われる湿地",
+   "forwho": "手つかずのまま失われる湿地",
+   "why": "",
    "summary": "放置されていた場所ほど生きものが濃い。専門家と住民の混成チームで運営する。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -2200,14 +2494,16 @@
    "result": "観察会の開催回数と初参加者の割合",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（おにぐるみの学校・大津市）"
+   "ref": "手づくり郷土賞R6（おにぐるみの学校・大津市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A128",
    "src": "事例200",
    "title": "湿地・休耕田を再生して小学校の学習田にする",
    "genre": "川・水辺・海",
-   "cause": "学校と子ども食堂",
+   "forwho": "学校と子ども食堂",
+   "why": "",
    "summary": "保全と教育と食が一本につながる。収穫した米を子ども食堂に回す展開もある。",
    "reach": "自分のまち",
    "scale": "L",
@@ -2216,14 +2512,16 @@
    "result": "再生面積と、学校行事としての年間実施回数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6大賞（アザメの会・唐津市）"
+   "ref": "手づくり郷土賞R6大賞（アザメの会・唐津市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A129",
    "src": "事例200",
    "title": "海岸・港を使った子ども向けイベントを立ち上げる",
    "genre": "川・水辺・海",
-   "cause": "使われていない公共空間",
+   "forwho": "使われていない公共空間",
+   "why": "",
    "summary": "整備済みだが使われていない公共空間は全国にある。使う人がいないだけ。",
    "reach": "自分のまち",
    "scale": "L",
@@ -2232,14 +2530,16 @@
    "result": "参加児童数と観覧者数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（奈半利町みなと未来会議）"
+   "ref": "手づくり郷土賞R6（奈半利町みなと未来会議）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A130",
    "src": "事例200",
    "title": "手作りの案内看板を設置して通行人に見せる",
    "genre": "川・水辺・海",
-   "cause": "通りがかりの住民",
+   "forwho": "通りがかりの住民",
+   "why": "",
    "summary": "散歩・サイクリング客の目を楽しませるだけで、活動の認知が変わる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2248,14 +2548,16 @@
    "result": "設置枚数と、声をかけられた回数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（水辺基盤協会）"
+   "ref": "手づくり郷土賞R6（水辺基盤協会）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A131",
    "src": "事例200",
    "title": "国道・県道沿いに花を植え続ける",
    "genre": "道・橋・インフラ",
-   "cause": "荒れた沿道と通行者",
+   "forwho": "荒れた沿道と通行者",
+   "why": "",
    "summary": "3人から始まった活動が20年続いている例がある。着手が軽く継続で効く。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2264,14 +2566,16 @@
    "result": "植栽区間の長さと継続年数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（R29活性化委員会・鳥取）"
+   "ref": "手づくり郷土賞R6（R29活性化委員会・鳥取）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A132",
    "src": "事例200",
    "title": "ガードレールの色を地域の色に変える提案をする",
    "genre": "道・橋・インフラ",
-   "cause": "景観に無関心だった沿線",
+   "forwho": "景観に無関心だった沿線",
+   "why": "",
    "summary": "景観形成は行政と組めば実現する。1区間の塗替えでも風景が変わる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2280,14 +2584,16 @@
    "result": "塗替え区間と、前後の景観写真",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（R29活性化委員会）"
+   "ref": "手づくり郷土賞R6（R29活性化委員会）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A133",
    "src": "事例200",
    "title": "沿線・沿道の魅力マップを作って配る",
    "genre": "道・橋・インフラ",
-   "cause": "通り過ぎるだけの人",
+   "forwho": "通り過ぎるだけの人",
+   "why": "",
    "summary": "地元の人ほど自分の道を知らない。1枚作るだけで通る理由ができる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2296,14 +2602,16 @@
    "result": "作成部数と設置箇所数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（R29活性化委員会）"
+   "ref": "手づくり郷土賞R6（R29活性化委員会）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A134",
    "src": "事例200",
    "title": "橋・ダム・駅の「〇〇周年」を口実に祝祭を作る",
    "genre": "道・橋・インフラ",
-   "cause": "誇りを持てずにいる住民",
+   "forwho": "誇りを持てずにいる住民",
+   "why": "",
    "summary": "架橋100年のような節目は最強の企画理由。反対されにくい。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2312,14 +2620,16 @@
    "result": "来場者数と参加団体数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6大賞（金沢片町まちづくり会議・犀川大橋100年）"
+   "ref": "手づくり郷土賞R6大賞（金沢片町まちづくり会議・犀川大橋100年）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A135",
    "src": "事例200",
    "title": "橋の上・河川敷でカフェや乾杯イベントを年数回やる",
    "genre": "道・橋・インフラ",
-   "cause": "日常しかない街の風景",
+   "forwho": "日常しかない街の風景",
+   "why": "",
    "summary": "日常の風景を非日常にするだけ。設備投資がほぼいらない。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2328,30 +2638,37 @@
    "result": "開催回数と参加者数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（犀川リバーカフェ／水辺で乾杯）"
+   "ref": "手づくり郷土賞R6（犀川リバーカフェ／水辺で乾杯）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A136",
    "src": "事例200",
-   "title": "インフラを見に行くツアーを1本作る",
+   "title": "ダムや橋を見に行くツアーを1本作る",
    "genre": "道・橋・インフラ",
-   "cause": "見られていないインフラ",
-   "summary": "ダム・水門・トンネル・工場。見学制度が整っている施設が多い。",
+   "forwho": "見られていないインフラ",
+   "why": "",
+   "summary": "ダム・水門・トンネル・工場。見学を受け入れている施設が思ったより多い。",
    "reach": "日本じゅうに",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "近隣のインフラツーリズム受入施設を調べる",
+   "step": "近くのダムや水門で、見学を受け入れているところがないか調べる",
    "result": "実施回数と参加者数",
    "land": "",
    "orgs": "",
-   "ref": "国土交通省 インフラツーリズム"
+   "ref": "国土交通省 インフラツーリズム",
+   "refUrl": "https://www.mlit.go.jp/",
+   "titleSrc": "インフラを見に行くツアーを1本作る",
+   "summarySrc": "ダム・水門・トンネル・工場。見学制度が整っている施設が多い。",
+   "stepSrc": "近隣のインフラツーリズム受入施設を調べる"
   },
   {
    "id": "A137",
    "src": "事例200",
    "title": "月1回の清掃を「10年続ける前提」で始める",
    "genre": "道・橋・インフラ",
-   "cause": "汚れ続ける公共空間",
+   "forwho": "汚れ続ける公共空間",
+   "why": "",
    "summary": "短期の盛り上がりでなく、続く形で設計する。人数は少なくてよい。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2360,14 +2677,16 @@
    "result": "継続月数と参加延べ人数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（金沢片町まちづくり会議）"
+   "ref": "手づくり郷土賞R6（金沢片町まちづくり会議）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A138",
    "src": "事例200",
    "title": "旧街道・廃線跡を歩いて案内板を立てる",
    "genre": "道・橋・インフラ",
-   "cause": "忘れられた旧道",
+   "forwho": "忘れられた旧道",
+   "why": "",
    "summary": "歴史遺産の発掘・修復と、歩ける道の整備が同時に進む。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2376,30 +2695,37 @@
    "result": "調査した地点数と設置した案内板数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（井口・鈴が峰／ながと大内湯けむり街道）"
+   "ref": "手づくり郷土賞R6（井口・鈴が峰／ながと大内湯けむり街道）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A139",
    "src": "事例200",
-   "title": "地元の産品を地域団体商標に登録する",
+   "title": "地元の産品の名前を、商標として登録する",
    "genre": "地域ブランド・知財",
-   "cause": "名前を守れない産地",
-   "summary": "地域名＋商品名を組合等で権利化する制度。取得の過程で地域の結束が生まれる。",
+   "forwho": "名前を守れない産地",
+   "why": "",
+   "summary": "「地域名＋商品名」を組合などで登録して、勝手に使われないようにする制度（地域団体商標）。取る過程で地域がまとまる。",
    "reach": "日本じゅうに",
    "scale": "L",
    "scaleLabel": "十数人か、許認可が要る",
-   "step": "特許庁の地域団体商標ガイドブックを1冊読む",
+   "step": "特許庁のサイトで、地域団体商標のガイドブックを1冊読む",
    "result": "出願1件と、参加した事業者数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁 地域団体商標の活用事例"
+   "ref": "特許庁 地域団体商標の活用事例",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html",
+   "titleSrc": "地元の産品を地域団体商標に登録する",
+   "summarySrc": "地域名＋商品名を組合等で権利化する制度。取得の過程で地域の結束が生まれる。",
+   "stepSrc": "特許庁の地域団体商標ガイドブックを1冊読む"
   },
   {
    "id": "A140",
    "src": "事例200",
    "title": "商工会議所・組合を巻き込んで産品名を守る",
    "genre": "地域ブランド・知財",
-   "cause": "ばらばらに戦う事業者",
+   "forwho": "ばらばらに戦う事業者",
+   "why": "",
    "summary": "全国初の商工会議所による取得例もある。個人でなく団体で取るのがこの制度。",
    "reach": "自分のまち",
    "scale": "L",
@@ -2408,14 +2734,16 @@
    "result": "参加事業者数と協議回数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁（中津からあげ・大分県）"
+   "ref": "特許庁（中津からあげ・大分県）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "A141",
    "src": "事例200",
    "title": "「うちの町らしさとは何か」を関係者で言語化する",
    "genre": "地域ブランド・知財",
-   "cause": "らしさを見失った地域",
+   "forwho": "らしさを見失った地域",
+   "why": "",
    "summary": "活気を失った温泉地が、商標取得を機に自らを問い直して再生した例がある。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2424,14 +2752,16 @@
    "result": "参加者数と、まとまった定義文1本",
    "land": "",
    "orgs": "",
-   "ref": "特許庁（玉造温泉・島根県）"
+   "ref": "特許庁（玉造温泉・島根県）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "A142",
    "src": "事例200",
    "title": "産品の認定基準を文章で決める",
    "genre": "地域ブランド・知財",
-   "cause": "品質がばらつく産地",
+   "forwho": "品質がばらつく産地",
+   "why": "",
    "summary": "「何をもって本物とするか」を決めると、品質管理と信頼が同時に立つ。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2440,14 +2770,16 @@
    "result": "基準書1本と、適合を確認した事業者数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁（風間浦鮟鱇・青森県）"
+   "ref": "特許庁（風間浦鮟鱇・青森県）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "A143",
    "src": "事例200",
    "title": "伝統工芸の技を、権利で守って継承につなぐ",
    "genre": "地域ブランド・知財",
-   "cause": "継承者がいない工芸",
+   "forwho": "継承者がいない工芸",
+   "why": "",
    "summary": "染織物などの価値とデザインを制度で保護し、本物の技術の継承につなげる考え方。",
    "reach": "日本じゅうに",
    "scale": "L",
@@ -2456,14 +2788,16 @@
    "result": "保護した意匠・商標の件数と後継者数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁（琉球びんがた／琉球かすり・沖縄県）"
+   "ref": "特許庁（琉球びんがた／琉球かすり・沖縄県）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "A144",
    "src": "事例200",
    "title": "学生に地域産品の新商品プランを考えてもらう",
    "genre": "地域ブランド・知財",
-   "cause": "発想が固まった産地",
+   "forwho": "発想が固まった産地",
+   "why": "",
    "summary": "若い発想と、外の目。全国規模の学生コンテストが実際に行われている。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2472,30 +2806,37 @@
    "result": "提出プラン数と、実現に進んだ数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁 全国地域ブランド総選挙"
+   "ref": "特許庁 全国地域ブランド総選挙",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "A145",
    "src": "事例200",
-   "title": "特産品のフレーバーチャートを作る",
+   "title": "特産品の味の違いを、1枚の図にする",
    "genre": "地域ブランド・知財",
-   "cause": "選ぶ基準がない消費者",
-   "summary": "味の違いを図にするだけで、素人でも選べる商品になる。",
+   "forwho": "選ぶ基準がない消費者",
+   "why": "",
+   "summary": "甘い・酸っぱい・濃いなどを図にするだけで、詳しくない人でも選べる商品になる。",
    "reach": "日本じゅうに",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "5銘柄を実際に飲み比べ・食べ比べする",
+   "step": "同じ種類の産品を5銘柄そろえて、実際に食べ比べ・飲み比べする",
    "result": "チャート1枚と、対応した銘柄数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁（球磨焼酎・熊本県）"
+   "ref": "特許庁（球磨焼酎・熊本県）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html",
+   "titleSrc": "特産品のフレーバーチャートを作る",
+   "summarySrc": "味の違いを図にするだけで、素人でも選べる商品になる。",
+   "stepSrc": "5銘柄を実際に飲み比べ・食べ比べする"
   },
   {
    "id": "A146",
    "src": "事例200",
    "title": "家庭に苗を配って「まちの生産者」を増やす",
    "genre": "地域ブランド・知財",
-   "cause": "生産者が減る産地",
+   "forwho": "生産者が減る産地",
+   "why": "",
    "summary": "生産者・学校・福祉作業所・商店街・行政を巻き込んだ枠組みの例がある。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2504,14 +2845,16 @@
    "result": "配布した苗の数と、育てた家庭数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁（内藤とうがらし・東京都新宿）"
+   "ref": "特許庁（内藤とうがらし・東京都新宿）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "A147",
    "src": "事例200",
    "title": "地域の味を給食に入れて次世代のファンを作る",
    "genre": "地域ブランド・知財",
-   "cause": "その産品を知らない子ども",
+   "forwho": "その産品を知らない子ども",
+   "why": "",
    "summary": "子どもの舌に入れば長く効く。シャッター街対策や食材廃棄防止とも接続できる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2520,14 +2863,16 @@
    "result": "採用回数と対象児童数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁（尼崎あんかけチャンポン・兵庫県）"
+   "ref": "特許庁（尼崎あんかけチャンポン・兵庫県）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "A148",
    "src": "事例200",
    "title": "学生・若者がSNSリレーで地域の店をつなぐ",
    "genre": "地域ブランド・知財",
-   "cause": "埋もれている個店",
+   "forwho": "埋もれている個店",
+   "why": "",
    "summary": "月1回のリレー投稿で小さなコミュニティをつなぐ。無理なく続けられるのが強み。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2536,14 +2881,16 @@
    "result": "参加店舗数と投稿数",
    "land": "",
    "orgs": "",
-   "ref": "特許庁（沖縄そば・沖縄県）"
+   "ref": "特許庁（沖縄そば・沖縄県）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "A149",
    "src": "事例200",
    "title": "地域で分別のやり方を揃えて、計量結果を共有する",
    "genre": "資源循環",
-   "cause": "ごみの量に無自覚な家庭",
+   "forwho": "ごみの量に無自覚な家庭",
+   "why": "",
    "summary": "家庭ごとにバラバラな分別を揃え、減った量を持ち寄る。個人でなく面で効かせる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2552,14 +2899,16 @@
    "result": "参加世帯数と、地域全体の可燃ごみ削減量",
    "land": "",
    "orgs": "",
-   "ref": "上勝町ゼロ・ウェイストセンター（J4CE）"
+   "ref": "上勝町ゼロ・ウェイストセンター（J4CE）",
+   "refUrl": "https://j4ce.env.go.jp/"
   },
   {
    "id": "A150",
    "src": "事例200",
    "title": "地域に資源の持ち寄り拠点を作る",
    "genre": "資源循環",
-   "cause": "分別先がない住民",
+   "forwho": "分別先がない住民",
+   "why": "",
    "summary": "分別ステーションを1か所作ると、周辺の行動がまとめて変わる。",
    "reach": "自分のまち",
    "scale": "L",
@@ -2568,14 +2917,16 @@
    "result": "持ち込み世帯数と回収量",
    "land": "",
    "orgs": "",
-   "ref": "上勝町ゼロ・ウェイストセンター（J4CE）"
+   "ref": "上勝町ゼロ・ウェイストセンター（J4CE）",
+   "refUrl": "https://j4ce.env.go.jp/"
   },
   {
    "id": "A151",
    "src": "事例200",
    "title": "修理して使い続ける「リペアカフェ」を月1回開く",
    "genre": "資源循環",
-   "cause": "捨てるしかなかった人",
+   "forwho": "捨てるしかなかった人",
+   "why": "",
    "summary": "直せる人と直したい人を月1回だけ引き合わせる。道具と場所があれば成立。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2584,30 +2935,36 @@
    "result": "開催回数と、修理できた点数",
    "land": "",
    "orgs": "",
-   "ref": "J4CE"
+   "ref": "J4CE",
+   "refUrl": "https://j4ce.env.go.jp/casestudy/group/1/recycle/"
   },
   {
    "id": "A152",
    "src": "事例200",
    "title": "制服・体操服・道具のリユース会を開く",
    "genre": "資源循環",
-   "cause": "出費がかさむ保護者",
-   "summary": "入学・進級のタイミングに合わせるだけで需要がある。保護者に確実に喜ばれる。",
+   "forwho": "出費がかさむ保護者",
+   "why": "",
+   "summary": "入学・進級のタイミングに合わせるだけで需要がある。まだ使える制服や道具を次の人へ回す。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "PTAか学校に開催可否を相談する",
+   "step": "PTAか学校に「制服のゆずり合い会をやりたい」と相談する",
    "result": "出品点数と引き取られた点数",
    "land": "",
    "orgs": "",
-   "ref": "J4CE"
+   "ref": "J4CE",
+   "refUrl": "https://j4ce.env.go.jp/casestudy/group/1/recycle/",
+   "summarySrc": "入学・進級のタイミングに合わせるだけで需要がある。保護者に確実に喜ばれる。",
+   "stepSrc": "PTAか学校に開催可否を相談する"
   },
   {
    "id": "A153",
    "src": "事例200",
    "title": "地域の生ごみを集めて堆肥にし、畑に戻す",
    "genre": "資源循環",
-   "cause": "地域の生ごみと畑",
+   "forwho": "地域の生ごみと畑",
+   "why": "",
    "summary": "自宅だけで完結させず、近隣や飲食店の分まで受ける。畑に返るところまでを設計する。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2616,14 +2973,16 @@
    "result": "処理した量と、堆肥を使った農地の面積",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域循環共生圏"
+   "ref": "環境省 地域循環共生圏",
+   "refUrl": "https://chiikijunkan.env.go.jp/"
   },
   {
    "id": "A154",
    "src": "事例200",
    "title": "廃食油を回収して燃料や石けんにする",
    "genre": "資源循環",
-   "cause": "処理に困る飲食店",
+   "forwho": "処理に困る飲食店",
+   "why": "",
    "summary": "飲食店には必ず出る。回収ルートを作れば地域の循環が1本できる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2632,14 +2991,16 @@
    "result": "回収量と、作った製品数",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域循環共生圏"
+   "ref": "環境省 地域循環共生圏",
+   "refUrl": "https://chiikijunkan.env.go.jp/"
   },
   {
    "id": "A155",
    "src": "事例200",
    "title": "使わない道具のシェア倉庫を作る",
    "genre": "資源循環",
-   "cause": "年1回のために買う人",
+   "forwho": "年1回のために買う人",
+   "why": "",
    "summary": "高圧洗浄機・草刈機・キャンプ道具。買わずに済む仕組みは歓迎される。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2648,14 +3009,16 @@
    "result": "登録された道具数と貸出回数",
    "land": "",
    "orgs": "",
-   "ref": "J4CE"
+   "ref": "J4CE",
+   "refUrl": "https://j4ce.env.go.jp/casestudy/group/1/recycle/"
   },
   {
    "id": "A156",
    "src": "事例200",
    "title": "事業所の紙・プラを分別して再資源化に回す",
    "genre": "資源循環",
-   "cause": "廃棄コストに悩む事業所",
+   "forwho": "廃棄コストに悩む事業所",
+   "why": "",
    "summary": "オフィス発の資源を回収し再製品化するサービスが実在する。導入は現実的。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2664,30 +3027,37 @@
    "result": "回収量と、削減した廃棄コスト",
    "land": "",
    "orgs": "",
-   "ref": "J4CE（オフィス資源のリサイクルサービス）"
+   "ref": "J4CE（オフィス資源のリサイクルサービス）",
+   "refUrl": "https://j4ce.env.go.jp/"
   },
   {
    "id": "A157",
    "src": "事例200",
-   "title": "地域の難処理品の回収スキームを調べて提案する",
+   "title": "捨てにくいものの回収のしくみを調べて提案する",
    "genre": "資源循環",
-   "cause": "回収されない難処理品",
-   "summary": "紙おむつ・太陽光パネル・魔法びんなど、行政と企業が組む実証例が出ている。",
+   "forwho": "回収されない難処理品",
+   "why": "",
+   "summary": "紙おむつ・太陽光パネル・魔法びんなど、行政と企業が組んで回収を始めた例が出ている。",
    "reach": "日本じゅうに",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "自分の市で回収困難とされている品目を確認",
+   "step": "自分の市で「回収できません」とされている品目を確認する",
    "result": "調べた品目数と、提案書1本",
    "land": "",
    "orgs": "",
-   "ref": "J4CE（加山興業×蒲郡市／サーモス回収サービス等）"
+   "ref": "J4CE（加山興業×蒲郡市／サーモス回収サービス等）",
+   "refUrl": "https://j4ce.env.go.jp/",
+   "titleSrc": "地域の難処理品の回収スキームを調べて提案する",
+   "summarySrc": "紙おむつ・太陽光パネル・魔法びんなど、行政と企業が組む実証例が出ている。",
+   "stepSrc": "自分の市で回収困難とされている品目を確認"
   },
   {
    "id": "A158",
    "src": "事例200",
    "title": "服を回収して繕うワークショップを開く",
    "genre": "資源循環",
-   "cause": "直せずに捨てている人",
+   "forwho": "直せずに捨てている人",
+   "why": "",
    "summary": "捨てる前に直す文化を作る。手を動かすので参加者の満足度が高い。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2696,14 +3066,16 @@
    "result": "参加者数と、直した点数",
    "land": "",
    "orgs": "",
-   "ref": "J4CE"
+   "ref": "J4CE",
+   "refUrl": "https://j4ce.env.go.jp/casestudy/group/1/recycle/"
   },
   {
    "id": "A159",
    "src": "事例200",
    "title": "団体や近隣の電気使用量を一緒に測って減らす",
    "genre": "脱炭素・エネルギー",
-   "cause": "電気代に悩む団体と世帯",
+   "forwho": "電気代に悩む団体と世帯",
+   "why": "",
    "summary": "公民館・お寺・商店・近所の家。自分の家だけでは何も変わらない。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2712,14 +3084,16 @@
    "result": "参加した拠点数と、合計の削減率",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "A160",
    "src": "事例200",
    "title": "屋根に太陽光を載せて発電量を公開する",
    "genre": "脱炭素・エネルギー",
-   "cause": "判断材料がない近隣",
+   "forwho": "判断材料がない近隣",
+   "why": "",
    "summary": "自分の家を実験場にして数字を出す。人に説明できる材料が手に入る。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2728,14 +3102,16 @@
    "result": "月間発電量と自家消費率",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "A161",
    "src": "事例200",
    "title": "高齢者宅の寒さ対策を1軒手伝う",
    "genre": "脱炭素・エネルギー",
-   "cause": "寒い家に住む高齢者",
+   "forwho": "寒い家に住む高齢者",
+   "why": "",
    "summary": "内窓・断熱シート・気密。ヒートショックは冬の死因に直結する。効果が室温で出る。",
    "reach": "目の前のひとり",
    "scale": "M",
@@ -2744,14 +3120,16 @@
    "result": "施工した軒数と、脱衣所の室温改善",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "A162",
    "src": "事例200",
    "title": "薪・ペレットを地域内で供給する仕組みを作る",
    "genre": "脱炭素・エネルギー",
-   "cause": "使われていない間伐材",
+   "forwho": "使われていない間伐材",
+   "why": "",
    "summary": "森林整備と燃料が同時に回る。里山の手入れと接続しやすい。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2760,14 +3138,16 @@
    "result": "供給量と利用世帯数",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域循環共生圏"
+   "ref": "環境省 地域循環共生圏",
+   "refUrl": "https://chiikijunkan.env.go.jp/"
   },
   {
    "id": "A163",
    "src": "事例200",
    "title": "小水力・地熱・バイオマスの可能性を調べる",
    "genre": "脱炭素・エネルギー",
-   "cause": "眠ったままの地域資源",
+   "forwho": "眠ったままの地域資源",
+   "why": "",
    "summary": "結論が「できない」でも構わない。調べた資料自体が地域の資産になる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2776,14 +3156,16 @@
    "result": "調査した候補地点数と報告書1本",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "A164",
    "src": "事例200",
    "title": "公民館・寺社・商店に省エネ診断を入れる",
    "genre": "脱炭素・エネルギー",
-   "cause": "経費に苦しむ施設",
+   "forwho": "経費に苦しむ施設",
+   "why": "",
    "summary": "診断は無料・低額の制度がある。提案まで持っていけば感謝される。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2792,14 +3174,16 @@
    "result": "診断件数と、提案した削減額",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "A165",
    "src": "事例200",
    "title": "EV・カーシェアを地域で1台回してみる",
    "genre": "脱炭素・エネルギー",
-   "cause": "移動手段がない住民",
+   "forwho": "移動手段がない住民",
+   "why": "",
    "summary": "移動と脱炭素と高齢者の足が同時に動く。1台からでも検証になる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2808,14 +3192,16 @@
    "result": "利用回数と利用者数",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "A166",
    "src": "事例200",
    "title": "森林整備とクレジット化の可能性を調べる",
    "genre": "脱炭素・エネルギー",
-   "cause": "手入れされない森",
+   "forwho": "手入れされない森",
+   "why": "",
    "summary": "山を持っている人・持てる人には現実的な選択肢。制度の理解が第一歩。",
    "reach": "日本じゅうに",
    "scale": "L",
@@ -2824,14 +3210,16 @@
    "result": "調べた面積と、試算した吸収量",
    "land": "",
    "orgs": "",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "A167",
    "src": "事例200",
    "title": "高校生と組んで特産品を開発する",
    "genre": "農山漁村",
-   "cause": "出口が見えない高校生",
+   "forwho": "出口が見えない高校生",
+   "why": "",
    "summary": "高校が主役になった選定例が複数ある。学校と組むと継続性と発信力が付く。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2840,14 +3228,16 @@
    "result": "試作品数と、販売した数量",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝"
+   "ref": "ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A168",
    "src": "事例200",
    "title": "農泊で1組だけ受け入れてみる",
    "genre": "農山漁村",
-   "cause": "泊まる場所がない来訪者",
+   "forwho": "泊まる場所がない来訪者",
+   "why": "",
    "summary": "制度も支援もある分野。まず1組泊めてみると必要なものが全部わかる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2856,30 +3246,37 @@
    "result": "受入組数と感想",
    "land": "",
    "orgs": "",
-   "ref": "農林水産省 農泊／ディスカバー農山漁村の宝"
+   "ref": "農林水産省 農泊／ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A169",
    "src": "事例200",
-   "title": "ジビエを解体から料理まで通しで体験する",
+   "title": "しかやいのししを、解体から料理まで通しで体験する",
    "genre": "農山漁村",
-   "cause": "鳥獣被害に苦しむ農家",
-   "summary": "鳥獣被害という深刻な課題と、食と、狩猟が一本でつながる。",
+   "forwho": "鳥獣被害に苦しむ農家",
+   "why": "",
+   "summary": "畑を荒らす鳥獣という深刻な問題と、食と、狩猟が1本でつながる。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "地元の猟友会か市の鳥獣担当に連絡する",
+   "step": "地元の猟友会か、市の鳥獣被害の担当に連絡する",
    "result": "参加回数と、扱った頭数",
    "land": "",
    "orgs": "",
-   "ref": "農林水産省 ジビエ利用拡大"
+   "ref": "農林水産省 ジビエ利用拡大",
+   "refUrl": "https://www.maff.go.jp/",
+   "titleSrc": "ジビエを解体から料理まで通しで体験する",
+   "summarySrc": "鳥獣被害という深刻な課題と、食と、狩猟が一本でつながる。",
+   "stepSrc": "地元の猟友会か市の鳥獣担当に連絡する"
   },
   {
    "id": "A170",
    "src": "事例200",
    "title": "棚田のオーナー制度に入る／作る",
    "genre": "農山漁村",
-   "cause": "維持できなくなる棚田",
+   "forwho": "維持できなくなる棚田",
+   "why": "",
    "summary": "都市の人が田を持てる仕組み。参加する側なら今週から動ける。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -2888,14 +3285,16 @@
    "result": "参加した面積と収穫量",
    "land": "",
    "orgs": "",
-   "ref": "農林水産省 棚田振興"
+   "ref": "農林水産省 棚田振興",
+   "refUrl": "https://www.maff.go.jp/"
   },
   {
    "id": "A171",
    "src": "事例200",
    "title": "空き農地でマルシェ・直売を月1回開く",
    "genre": "農山漁村",
-   "cause": "売り先がない生産者",
+   "forwho": "売り先がない生産者",
+   "why": "",
    "summary": "作る人と買う人を直接つなぐ。売上という結果がその日に出る。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2904,14 +3303,16 @@
    "result": "出店者数と売上",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝"
+   "ref": "ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A172",
    "src": "事例200",
    "title": "作る→加工する→売るを一人で通してみる",
    "genre": "農山漁村",
-   "cause": "買い叩かれる一次産業",
+   "forwho": "買い叩かれる一次産業",
+   "why": "",
    "summary": "規模は小さくてよい。全工程を一度通すと構造が体でわかる。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -2920,14 +3321,16 @@
    "result": "製造ロット数と販売額",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝"
+   "ref": "ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A173",
    "src": "事例200",
    "title": "浜の朝市・直売所を手伝って発信する",
    "genre": "農山漁村",
-   "cause": "担い手不足の朝市",
+   "forwho": "担い手不足の朝市",
+   "why": "",
    "summary": "主催しなくてよい。撮って書いて出すだけで、担い手不足の現場は助かる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2936,30 +3339,37 @@
    "result": "手伝った回数と、投稿の反応数",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝"
+   "ref": "ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A174",
    "src": "事例200",
-   "title": "集落の将来像を住民で話し合う場を作る",
+   "title": "集落のこれからを住民で話し合う場を作る",
    "genre": "農山漁村",
-   "cause": "将来像を描けない集落",
-   "summary": "農村RMOという枠組みがある。話し合いの記録そのものが成果物になる。",
+   "forwho": "将来像を描けない集落",
+   "why": "",
+   "summary": "農村RMO（集落をまとめて支える組織）という国の枠組みがある。話し合いの記録そのものが成果になる。",
    "reach": "自分のまち",
    "scale": "L",
    "scaleLabel": "十数人か、許認可が要る",
-   "step": "集落の世帯数と年齢構成を調べる",
+   "step": "自分の集落の世帯数と年齢の構成を調べる",
    "result": "参加世帯数と、まとめた将来像1本",
    "land": "",
    "orgs": "",
-   "ref": "農林水産省 農村RMO"
+   "ref": "農林水産省 農村RMO",
+   "refUrl": "https://www.maff.go.jp/",
+   "titleSrc": "集落の将来像を住民で話し合う場を作る",
+   "summarySrc": "農村RMOという枠組みがある。話し合いの記録そのものが成果物になる。",
+   "stepSrc": "集落の世帯数と年齢構成を調べる"
   },
   {
    "id": "A175",
    "src": "事例200",
    "title": "耕作放棄地に果樹を植える",
    "genre": "農山漁村",
-   "cause": "荒れたままの農地",
+   "forwho": "荒れたままの農地",
+   "why": "",
    "summary": "収穫まで数年かかるが、植えた本数は初日から成果として残る。",
    "reach": "自分のまち",
    "scale": "M",
@@ -2968,14 +3378,16 @@
    "result": "植えた本数と活着率",
    "land": "",
    "orgs": "",
-   "ref": "農林水産省 荒廃農地対策"
+   "ref": "農林水産省 荒廃農地対策",
+   "refUrl": "https://www.maff.go.jp/"
   },
   {
    "id": "A176",
    "src": "事例200",
    "title": "地域の埋もれた活動を、表彰制度に推薦・応募代行する",
    "genre": "農山漁村",
-   "cause": "埋もれている地域の活動",
+   "forwho": "埋もれている地域の活動",
+   "why": "",
    "summary": "書類が書けないせいで評価されていない団体は多い。書く役を引き受ける。",
    "reach": "自分のまち",
    "scale": "S",
@@ -2984,14 +3396,16 @@
    "result": "応募を代行した件数と、選定された数",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝（個人部門）"
+   "ref": "ディスカバー農山漁村の宝（個人部門）",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A177",
    "src": "事例200",
    "title": "有名観光地がない町で体験型コンテンツを作る",
    "genre": "観光・関係人口",
-   "cause": "観光資源がないとされた町",
+   "forwho": "観光資源がないとされた町",
+   "why": "",
    "summary": "「何もない」前提から始めた協議会が、年間100人規模の体験を運営している例がある。",
    "reach": "自分のまち",
    "scale": "M",
@@ -3000,14 +3414,16 @@
    "result": "造成したコンテンツ数と体験者数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（サードプレイスツーリズム協議会・福知山市）"
+   "ref": "手づくり郷土賞R6（サードプレイスツーリズム協議会・福知山市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A178",
    "src": "事例200",
    "title": "地元の職人を案内役にした体験を売る",
    "genre": "観光・関係人口",
-   "cause": "収入源が少ない職人",
+   "forwho": "収入源が少ない職人",
+   "why": "",
    "summary": "他では体験できない、が条件を自動的に満たす。職人側の収入にもなる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -3016,30 +3432,37 @@
    "result": "造成数と1人あたり単価",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（同上）"
+   "ref": "手づくり郷土賞R6（同上）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A179",
    "src": "事例200",
-   "title": "関係人口として通う仕組みを自分で作る",
+   "title": "住まなくても通いつづける関わり方を、自分で作る",
    "genre": "観光・関係人口",
-   "cause": "人手が足りない地域",
-   "summary": "移住でなく「通う」。月1回でも継続すれば地域側の戦力になる。",
+   "forwho": "人手が足りない地域",
+   "why": "",
+   "summary": "移住ではなく「通う」。月1回でも続ければ、地域にとっては戦力になる。",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "通う先を1か所決めて日程を3回押さえる",
+   "step": "通う先を1か所決めて、3回ぶんの日程をカレンダーに入れる",
    "result": "訪問回数と、関わった活動数",
    "land": "",
    "orgs": "",
-   "ref": "観光庁 観光地域づくり事例集"
+   "ref": "観光庁 観光地域づくり事例集",
+   "refUrl": "https://www.mlit.go.jp/kankocho/jirei_shien/kankochiikizukuri.html",
+   "titleSrc": "関係人口として通う仕組みを自分で作る",
+   "summarySrc": "移住でなく「通う」。月1回でも継続すれば地域側の戦力になる。",
+   "stepSrc": "通う先を1か所決めて日程を3回押さえる"
   },
   {
    "id": "A180",
    "src": "事例200",
    "title": "中学生・高校生をボランティアガイドに育てる",
    "genre": "観光・関係人口",
-   "cause": "語り手がいない地域",
+   "forwho": "語り手がいない地域",
+   "why": "",
    "summary": "子どもが地域を語れるようになると、郷土愛と担い手が同時に育つ。",
    "reach": "自分のまち",
    "scale": "M",
@@ -3048,14 +3471,16 @@
    "result": "養成した人数とガイド実施回数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6（井口・鈴が峰・広島市）"
+   "ref": "手づくり郷土賞R6（井口・鈴が峰・広島市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A181",
    "src": "事例200",
    "title": "泊まれる古民家を1軒だけ整える",
    "genre": "観光・関係人口",
-   "cause": "使われない古民家",
+   "forwho": "使われない古民家",
+   "why": "",
    "summary": "許認可・改修・集客が全部乗る重い企画。だが完成物が最も大きい。",
    "reach": "自分のまち",
    "scale": "L",
@@ -3064,14 +3489,16 @@
    "result": "改修の完了度と初年度の宿泊数",
    "land": "",
    "orgs": "",
-   "ref": "観光庁 観光地域づくり事例集"
+   "ref": "観光庁 観光地域づくり事例集",
+   "refUrl": "https://www.mlit.go.jp/kankocho/jirei_shien/kankochiikizukuri.html"
   },
   {
    "id": "A182",
    "src": "事例200",
    "title": "地元の人しか知らない店を巡るツアーを作る",
    "genre": "観光・関係人口",
-   "cause": "知られていない個店",
+   "forwho": "知られていない個店",
+   "why": "",
    "summary": "ガイドブックに載らない店だけで組む。企画コストがほぼゼロ。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3080,14 +3507,16 @@
    "result": "実施回数と参加者数",
    "land": "",
    "orgs": "",
-   "ref": "観光庁 観光地域づくり事例集"
+   "ref": "観光庁 観光地域づくり事例集",
+   "refUrl": "https://www.mlit.go.jp/kankocho/jirei_shien/kankochiikizukuri.html"
   },
   {
    "id": "A183",
    "src": "事例200",
    "title": "駅前や観光地に「まちの案内人」として立つ",
    "genre": "観光・関係人口",
-   "cause": "道に迷う来訪者",
+   "forwho": "道に迷う来訪者",
+   "why": "",
    "summary": "週1回・2時間から。話しかけられた数がそのまま需要のデータになる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3096,14 +3525,16 @@
    "result": "立った回数と、案内した人数",
    "land": "",
    "orgs": "",
-   "ref": "観光庁 観光地域づくり事例集"
+   "ref": "観光庁 観光地域づくり事例集",
+   "refUrl": "https://www.mlit.go.jp/kankocho/jirei_shien/kankochiikizukuri.html"
   },
   {
    "id": "A184",
    "src": "事例200",
    "title": "外国語の案内を1ページだけ作る",
    "genre": "観光・関係人口",
-   "cause": "案内が届かない外国人",
+   "forwho": "案内が届かない外国人",
+   "why": "",
    "summary": "完璧を目指さず1枚。飲食店・寺社で最も足りていない部分。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3112,14 +3543,16 @@
    "result": "作成した施設数と利用の反応",
    "land": "",
    "orgs": "",
-   "ref": "観光庁 観光地域づくり事例集"
+   "ref": "観光庁 観光地域づくり事例集",
+   "refUrl": "https://www.mlit.go.jp/kankocho/jirei_shien/kankochiikizukuri.html"
   },
   {
    "id": "A185",
    "src": "事例200",
    "title": "高校生と一緒に商品を企画して売る",
    "genre": "学校・若者との協働",
-   "cause": "売り場を持たない高校生",
+   "forwho": "売り場を持たない高校生",
+   "why": "",
    "summary": "高校が主体の選定例が全国にある。売り場を用意する側で関われば貢献できる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -3128,14 +3561,16 @@
    "result": "企画数と実売数",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝（高校の選定例）"
+   "ref": "ディスカバー農山漁村の宝（高校の選定例）",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A186",
    "src": "事例200",
    "title": "高校生の探究発表会に大人として関わる",
    "genre": "学校・若者との協働",
-   "cause": "評価してくれる大人がいない生徒",
+   "forwho": "評価してくれる大人がいない生徒",
+   "why": "",
    "summary": "審査・コメント・場の提供。半日で完結し、生徒への影響が大きい。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3144,14 +3579,16 @@
    "result": "関わった発表数と生徒数",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝 地方サミット"
+   "ref": "ディスカバー農山漁村の宝 地方サミット",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A187",
    "src": "事例200",
    "title": "小学校の総合学習に1コマ提供する",
    "genre": "学校・若者との協働",
-   "cause": "外の話を聞けない児童",
+   "forwho": "外の話を聞けない児童",
+   "why": "",
    "summary": "自分の仕事や活動を45分に切り出すだけ。学校側は常に外部人材を探している。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3160,14 +3597,16 @@
    "result": "実施したコマ数と児童数",
    "land": "",
    "orgs": "",
-   "ref": "アサザ基金（流域の学校ネットワーク）"
+   "ref": "アサザ基金（流域の学校ネットワーク）",
+   "refUrl": "https://www.asaza.jp/"
   },
   {
    "id": "A188",
    "src": "事例200",
    "title": "子どもが集めたデータを地域で共有する仕組みを作る",
    "genre": "学校・若者との協働",
-   "cause": "個人では作れないデータ",
+   "forwho": "個人では作れないデータ",
+   "why": "",
    "summary": "学区ごとの観察記録を持ち寄ると、個人では作れない量と質のデータになる。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -3176,14 +3615,16 @@
    "result": "参加校数と収集データ件数",
    "land": "",
    "orgs": "",
-   "ref": "アサザ基金×NEC（センサーネットワーク／生き物の道）"
+   "ref": "アサザ基金×NEC（センサーネットワーク／生き物の道）",
+   "refUrl": "https://www.asaza.jp/"
   },
   {
    "id": "A189",
    "src": "事例200",
    "title": "中高生と地域の課題を1つ選んで実際に解く",
    "genre": "学校・若者との協働",
-   "cause": "学んで終わってしまう生徒",
+   "forwho": "学んで終わってしまう生徒",
+   "why": "",
    "summary": "調べて終わりにしない。小さくても実装まで行くと生徒の目が変わる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -3192,15 +3633,17 @@
    "result": "選んだ課題数と、実行した施策数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A190",
    "src": "事例200",
    "title": "学生インターンを地域で受け入れる",
    "genre": "学校・若者との協働",
-   "cause": "地域を知らない学生",
-   "summary": "1人でも受ければ関係人口が1人増える。受け入れ側の整理も進む。",
+   "forwho": "地域を知らない学生",
+   "why": "",
+   "summary": "1人でも受け入れれば、その地域に通う人が1人増える。受け入れる側の整理も進む。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
@@ -3208,14 +3651,17 @@
    "result": "受入人数と就業日数",
    "land": "",
    "orgs": "",
-   "ref": "地方創生カレッジ"
+   "ref": "地方創生カレッジ",
+   "refUrl": "https://chihousousei-college.jp/e-learning_tag/tag-examples.html",
+   "summarySrc": "1人でも受ければ関係人口が1人増える。受け入れ側の整理も進む。"
   },
   {
    "id": "A191",
    "src": "事例200",
    "title": "高校生の地域情報発信の部活動を支える",
    "genre": "学校・若者との協働",
-   "cause": "技術が足りない発信部",
+   "forwho": "技術が足りない発信部",
+   "why": "",
    "summary": "撮影・編集・取材の技術面を支援する。若い発信力は借りた方が早い。",
    "reach": "自分のまち",
    "scale": "M",
@@ -3224,14 +3670,16 @@
    "result": "支援した本数と公開数",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝（高校の選定例）"
+   "ref": "ディスカバー農山漁村の宝（高校の選定例）",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A192",
    "src": "事例200",
    "title": "統廃合の前に校舎と学校史を記録する",
    "genre": "学校・若者との協働",
-   "cause": "消える校舎の記憶",
+   "forwho": "消える校舎の記憶",
+   "why": "",
    "summary": "期限が明確にある。撮り逃すと二度と撮れない。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3240,14 +3688,16 @@
    "result": "撮影枚数と、聞き取った卒業生の人数",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞（歴史伝承の取組）"
+   "ref": "手づくり郷土賞（歴史伝承の取組）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "A193",
    "src": "事例200",
    "title": "農作業を福祉施設と組んでやる（農福連携）",
    "genre": "福祉・多様性",
-   "cause": "担い手不足と働く場の不足",
+   "forwho": "担い手不足と働く場の不足",
+   "why": "",
    "summary": "担い手不足と働く場の不足が同時に解ける。国の支援制度も整っている。",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -3256,14 +3706,16 @@
    "result": "協働した日数と作業量",
    "land": "",
    "orgs": "",
-   "ref": "農林水産省 農福連携／ディスカバー農山漁村の宝"
+   "ref": "農林水産省 農福連携／ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A194",
    "src": "事例200",
    "title": "障がいのある人ができる仕事を1つ作る",
    "genre": "福祉・多様性",
-   "cause": "働く機会がない人",
+   "forwho": "働く機会がない人",
+   "why": "",
    "summary": "大きな雇用でなく、切り出せる作業を1つ。そこから広がる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -3272,14 +3724,16 @@
    "result": "切り出した作業数と従事人数",
    "land": "",
    "orgs": "",
-   "ref": "ディスカバー農山漁村の宝（障がい者就農の選定例）"
+   "ref": "ディスカバー農山漁村の宝（障がい者就農の選定例）",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "A195",
    "src": "事例200",
    "title": "認知症サポーター養成講座を職場・店で開く",
    "genre": "福祉・多様性",
-   "cause": "対応がわからない店と職場",
+   "forwho": "対応がわからない店と職場",
+   "why": "",
    "summary": "無料で講師が来る制度がある。1回開くだけで店の対応が変わる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3288,14 +3742,16 @@
    "result": "受講者数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A196",
    "src": "事例200",
    "title": "やさしい日本語の案内を作る",
    "genre": "福祉・多様性",
-   "cause": "日本語が難しい住民",
+   "forwho": "日本語が難しい住民",
+   "why": "",
    "summary": "外国人住民にも高齢者にも効く。書き換えるだけなので今日からできる。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3304,14 +3760,16 @@
    "result": "書き換えた文書数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "A197",
    "src": "事例200",
    "title": "手話・点字・音声案内のどれか1つを覚えて使う",
    "genre": "福祉・多様性",
-   "cause": "情報が届いていない人",
+   "forwho": "情報が届いていない人",
+   "why": "",
    "summary": "覚えた分だけ確実に誰かに届く。学習の成果が測りやすい。",
    "reach": "目の前のひとり",
    "scale": "S",
@@ -3320,30 +3778,37 @@
    "result": "覚えた表現数と、実際に使った回数",
    "land": "",
    "orgs": "",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "A198",
    "src": "事例200",
-   "title": "ひとり親・ヤングケアラーを支える食事会を開く",
+   "title": "ひとり親の家庭と、家族の世話をしている子の食事会を開く",
    "genre": "福祉・多様性",
-   "cause": "頼れる場がない世帯",
-   "summary": "月1回でよい。安心して食べられる場そのものが支援になる。",
+   "forwho": "頼れる場がない世帯",
+   "why": "",
+   "summary": "月1回でよい。安心して食べられる場そのものが支えになる。",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "社協か市の子育て支援課に相談する",
+   "step": "社会福祉協議会か市の子育て支援課に相談する",
    "result": "開催回数と参加世帯数",
    "land": "",
    "orgs": "",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/",
+   "titleSrc": "ひとり親・ヤングケアラーを支える食事会を開く",
+   "summarySrc": "月1回でよい。安心して食べられる場そのものが支援になる。",
+   "stepSrc": "社協か市の子育て支援課に相談する"
   },
   {
    "id": "A199",
    "src": "事例200",
    "title": "誰でも参加できるスポーツの場を作る",
    "genre": "福祉・多様性",
-   "cause": "スポーツから外れていた人",
+   "forwho": "スポーツから外れていた人",
+   "why": "",
    "summary": "競技力を問わない設計にすると、参加者の幅が一気に広がる。",
    "reach": "自分のまち",
    "scale": "M",
@@ -3352,14 +3817,16 @@
    "result": "開催回数と参加者の属性の広さ",
    "land": "",
    "orgs": "",
-   "ref": "greenz.jp（ダイバーシティサッカー協会）"
+   "ref": "greenz.jp（ダイバーシティサッカー協会）",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "A200",
    "src": "事例200",
    "title": "作ったもの・採れたものを子ども食堂に回す回路を作る",
    "genre": "福祉・多様性",
-   "cause": "食が足りない子ども",
+   "forwho": "食が足りない子ども",
+   "why": "",
    "summary": "自分の活動の出口を福祉につなぐ。両方の意味が増える。",
    "reach": "自分のまち",
    "scale": "S",
@@ -3368,7 +3835,8 @@
    "result": "寄贈した回数と量",
    "land": "",
    "orgs": "",
-   "ref": "手づくり郷土賞R6大賞（アザメの会・唐津市）"
+   "ref": "手づくり郷土賞R6大賞（アザメの会・唐津市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B002",
@@ -3377,8 +3845,9 @@
    "titleSrc": "独居高齢者の異変に気づく網をつくる",
    "genre": "高齢者・ケア",
    "genreSrc": "いのち・孤立",
-   "cause": "ひとり暮らしの人と、週に一度はつながっている状態をつくる",
-   "causeSrc": "誰にも気づかれずに亡くなる人をゼロにする",
+   "forwho": "",
+   "why": "ひとり暮らしの人と、週に一度はつながっている状態をつくる",
+   "whySrc": "誰にも気づかれずに亡くなる人をゼロにする",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3387,7 +3856,8 @@
    "result": "見守り世帯数／異変を検知して支援につないだ件数",
    "land": "電話を気づきの検知網に変え、民生委員・包括・新聞や水道の事業者と通報ルールを結ぶ",
    "orgs": "市の高齢福祉課、地域包括支援センター、民生委員児童委員協議会／地域自殺対策計画の高齢者施策に接続",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B003",
@@ -3396,8 +3866,9 @@
    "titleSrc": "介護離職を出さない",
    "genre": "高齢者・ケア",
    "genreSrc": "いのち・孤立",
-   "cause": "介護しながらでも、仕事と暮らしを続けられるようにする",
-   "causeSrc": "介護を理由に仕事と生活を失う人を減らす",
+   "forwho": "",
+   "why": "介護しながらでも、仕事と暮らしを続けられるようにする",
+   "whySrc": "介護を理由に仕事と生活を失う人を減らす",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -3406,7 +3877,8 @@
    "result": "参加者数／離職を思いとどまった件数／制度を入れた事業所数",
    "land": "愚痴の場から、企業への両立支援制度の周知と相談窓口設置の提案へ移す",
    "orgs": "市の高齢福祉課、地域包括支援センター／仕事と介護の両立支援に関する国の制度（要確認）",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "B004",
@@ -3415,8 +3887,9 @@
    "titleSrc": "産後の孤立を切る",
    "genre": "子ども・教育",
    "genreSrc": "いのち・孤立",
-   "cause": "子育てを、家の中だけで抱え込まなくていい場をつくる",
-   "causeSrc": "産後うつと、虐待に至る前の芽を減らす",
+   "forwho": "",
+   "why": "子育てを、家の中だけで抱え込まなくていい場をつくる",
+   "whySrc": "産後うつと、虐待に至る前の芽を減らす",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3425,7 +3898,8 @@
    "result": "延べ利用組数／専門機関につないだ件数",
    "land": "利用者の困りごとを集計し、市の子育て支援計画に数字で反映させる",
    "orgs": "市の子育て支援課／地域子育て支援拠点事業（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B005",
@@ -3434,8 +3908,9 @@
    "titleSrc": "",
    "genre": "心理・人間関係",
    "genreSrc": "いのち・孤立",
-   "cause": "家庭内の負担の偏りと、独居後に生活が破綻する男性を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "家庭内の負担の偏りと、独居後に生活が破綻する男性を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -3444,7 +3919,8 @@
    "result": "参加者数／自分で食事を作る頻度の変化",
    "land": "趣味の教室ではなく、配偶者を失った後を見据えた予防教育として定着させる",
    "orgs": "公民館・生涯学習課の社会教育講座枠",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "B006",
@@ -3453,8 +3929,9 @@
    "titleSrc": "",
    "genre": "福祉・多様性",
    "genreSrc": "いのち・孤立",
-   "cause": "ひとり親の家の子が、ごはんと勉強に困らないようにする",
-   "causeSrc": "貧困の世代連鎖を切る",
+   "forwho": "",
+   "why": "ひとり親の家の子が、ごはんと勉強に困らないようにする",
+   "whySrc": "貧困の世代連鎖を切る",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3463,7 +3940,8 @@
    "result": "支援世帯数／他制度につないだ件数",
    "land": "食事提供の場を、フードバンク・学習支援・就労相談への接続窓口に変える",
    "orgs": "社会福祉協議会、市の福祉・子育て担当／生活困窮者自立支援制度（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B007",
@@ -3472,8 +3950,9 @@
    "titleSrc": "ヒートショック死を地域から減らす",
    "genre": "高齢者・ケア",
    "genreSrc": "高齢者・介護",
-   "cause": "冬の家をあたたかくして、元気に動ける年数を延ばす",
-   "causeSrc": "冬に家の中で亡くなる高齢者を減らす。断熱は健康寿命に直結する",
+   "forwho": "",
+   "why": "冬の家をあたたかくして、元気に動ける年数を延ばす",
+   "whySrc": "冬に家の中で亡くなる高齢者を減らす。断熱は健康寿命に直結する",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3482,7 +3961,8 @@
    "result": "施工した軒数／脱衣所の室温改善（度）",
    "land": "1軒の施工から、改修補助の周知と申請代行に回る。地域の住宅の断熱水準を底上げする",
    "orgs": "市の高齢者住宅改修助成、地域包括支援センター／住宅省エネ関連の国の補助（要確認）",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "B008",
@@ -3491,8 +3971,9 @@
    "titleSrc": "",
    "genre": "高齢者・ケア",
    "genreSrc": "高齢者・介護",
-   "cause": "免許を返しても、行きたいところに行ける足をつくる",
-   "causeSrc": "移動できないことによる閉じこもりと、高齢ドライバー事故を同時に減らす",
+   "forwho": "",
+   "why": "免許を返しても、行きたいところに行ける足をつくる",
+   "whySrc": "移動できないことによる閉じこもりと、高齢ドライバー事故を同時に減らす",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3501,7 +3982,8 @@
    "result": "送迎回数／利用者数／外出頻度の変化",
    "land": "個別の送迎から、地域の交通計画に位置づけられた運行に育てる",
    "orgs": "市の交通政策担当／自家用有償旅客運送の登録要否を確認（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B009",
@@ -3510,8 +3992,9 @@
    "titleSrc": "",
    "genre": "AI・デジタル",
    "genreSrc": "高齢者・介護",
-   "cause": "行政サービスと生活情報から外れる高齢者をゼロにする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "行政サービスと生活情報から外れる高齢者をゼロにする",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -3520,7 +4003,8 @@
    "result": "受講者数／実際に自分で操作できた人の割合",
    "land": "単発教室から、市のデジタル支援の担い手として継続的に配置される形へ",
    "orgs": "市のデジタル推進担当／総務省のデジタル活用支援に関する事業（要確認）",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "B010",
@@ -3529,8 +4013,9 @@
    "titleSrc": "",
    "genre": "高齢者・ケア",
    "genreSrc": "高齢者・介護",
-   "cause": "認知症を隠す地域から、一緒に出かけられる地域に変える",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "認知症を隠す地域から、一緒に出かけられる地域に変える",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3539,7 +4024,8 @@
    "result": "参加者数／研修を受けた店舗・事業所数",
    "land": "イベントから、店・交通・金融機関への対応研修に広げる",
    "orgs": "地域包括支援センター／認知症サポーター養成講座（キャラバン・メイト制度、要確認）",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "B011",
@@ -3548,8 +4034,9 @@
    "titleSrc": "",
    "genre": "発信・記録",
    "genreSrc": "高齢者・介護",
-   "cause": "その世代しか知らない土地の記憶を、消える前に地域の資産にする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "その世代しか知らない土地の記憶を、消える前に地域の資産にする",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -3558,7 +4045,8 @@
    "result": "デジタル化した枚数／上映会の来場者数／特定できた人物・場所の数",
    "land": "個人の思い出整理から、公民館での上映と地域アーカイブの構築へ",
    "orgs": "市の生涯学習課・公民館／図書館の郷土資料部門",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "B012",
@@ -3567,8 +4055,9 @@
    "titleSrc": "",
    "genre": "高齢者・ケア",
    "genreSrc": "高齢者・介護",
-   "cause": "食料品を買えない世帯を地域から消す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "食料品を買えない世帯を地域から消す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3577,7 +4066,8 @@
    "result": "対象世帯数／週あたりの購入機会",
    "land": "相乗りから、移動販売や共同購入など、続く供給の形に切り替える",
    "orgs": "市の商工・福祉担当／農林水産省 円滑な食品アクセスの確保",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B013",
@@ -3586,8 +4076,9 @@
    "titleSrc": "",
    "genre": "高齢者・ケア",
    "genreSrc": "高齢者・介護",
-   "cause": "作業ができない世帯が住み続けられなくする要因を取り除く",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "作業ができない世帯が住み続けられなくする要因を取り除く",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3596,7 +4087,8 @@
    "result": "対応世帯数／実施回数／転出を思いとどまった件数",
    "land": "有志の善意から、地域運営組織の事業として予算と担い手を確保する形へ",
    "orgs": "市の地域振興担当／地域運営組織（RMO）の支援制度（要確認）",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "B014",
@@ -3605,8 +4097,9 @@
    "titleSrc": "",
    "genre": "子ども・教育",
    "genreSrc": "子ども・教育",
-   "cause": "学びと関係から切れる子どもをゼロにする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "学びと関係から切れる子どもをゼロにする",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3615,7 +4108,8 @@
    "result": "延べ利用人数／学校復帰または進路決定の件数",
    "land": "自主運営の居場所から、教育委員会に出席扱いとして認められる連携へ",
    "orgs": "市教育委員会、教育支援センター／不登校児童生徒の支援に関する制度（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B015",
@@ -3624,8 +4118,9 @@
    "titleSrc": "",
    "genre": "子ども・教育",
    "genreSrc": "子ども・教育",
-   "cause": "指導者がいないせいで子どもが競技や文化活動を諦める状況をなくす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "指導者がいないせいで子どもが競技や文化活動を諦める状況をなくす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3634,7 +4129,8 @@
    "result": "受け入れた生徒数／継続できた種目数",
    "land": "個人のボランティア指導から、地域クラブとして受託できる体制へ",
    "orgs": "市教育委員会・スポーツ担当／部活動の地域展開に関する制度（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B016",
@@ -3643,8 +4139,9 @@
    "titleSrc": "",
    "genre": "学校・若者との協働",
    "genreSrc": "子ども・教育",
-   "cause": "高校の探究が形だけで終わるのを防ぎ、地域の課題と接続する",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "高校の探究が形だけで終わるのを防ぎ、地域の課題と接続する",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3653,7 +4150,8 @@
    "result": "担当した生徒数／実装まで進んだ探究テーマ数",
    "land": "1人のメンターから、地域の大人を継続的に送り込むリストと窓口へ",
    "orgs": "県教育委員会・各校／地域学校協働活動の枠組み（要確認）",
-   "ref": "ディスカバー農山漁村の宝 地方サミット"
+   "ref": "ディスカバー農山漁村の宝 地方サミット",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "B017",
@@ -3662,8 +4160,9 @@
    "titleSrc": "",
    "genre": "道・橋・インフラ",
    "genreSrc": "子ども・教育",
-   "cause": "子どもが交通事故に遭う場所を、実際に潰す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "子どもが交通事故に遭う場所を、実際に潰す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -3672,7 +4171,8 @@
    "result": "指摘した箇所数／実際に改善された箇所数",
    "land": "マップ作りで終わらせず、通学路合同点検の対象として改善要望を出す",
    "orgs": "市の道路管理担当、教育委員会、警察／通学路の合同点検の枠組み（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B018",
@@ -3681,8 +4181,9 @@
    "titleSrc": "",
    "genre": "子ども・教育",
    "genreSrc": "子ども・教育",
-   "cause": "若者が調べもせずに地域を出ていくのを止める",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "若者が調べもせずに地域を出ていくのを止める",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3691,7 +4192,8 @@
    "result": "調べた企業数／教材を使った生徒数／地元就職率の変化",
    "land": "調べた情報を、高校のキャリア教育の教材として毎年更新する形にする",
    "orgs": "市の産業・雇用担当、高校のキャリア担当／地域おこし協力隊など人材制度も接続",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B019",
@@ -3700,8 +4202,9 @@
    "titleSrc": "",
    "genre": "学校・若者との協働",
    "genreSrc": "子ども・教育",
-   "cause": "個人では作れない量と質の環境データを、学校ネットワークで作る",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "個人では作れない量と質の環境データを、学校ネットワークで作る",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -3710,7 +4213,8 @@
    "result": "参加校数／収集データ件数／継続年数",
    "land": "1校の総合学習から、流域や市域をまたぐ観測ネットワークへ",
    "orgs": "市教育委員会、河川・環境担当／環境省 地域循環共生圏",
-   "ref": "アサザ基金×NEC（センサーネットワーク／生き物の道）"
+   "ref": "アサザ基金×NEC（センサーネットワーク／生き物の道）",
+   "refUrl": "https://www.asaza.jp/"
   },
   {
    "id": "B020",
@@ -3719,8 +4223,9 @@
    "titleSrc": "",
    "genre": "学校・若者との協働",
    "genreSrc": "子ども・教育",
-   "cause": "高校生が地域に関わる出口を作り、産地の担い手につなげる",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "高校生が地域に関わる出口を作り、産地の担い手につなげる",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3729,7 +4234,8 @@
    "result": "試作品数／実売数／継続した年数",
    "land": "単発の商品開発から、毎年のカリキュラムと販路をセットにした継続事業へ",
    "orgs": "県教育委員会、市の産業担当／ディスカバー農山漁村の宝への応募",
-   "ref": "ディスカバー農山漁村の宝（高校の選定例）"
+   "ref": "ディスカバー農山漁村の宝（高校の選定例）",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "B021",
@@ -3738,8 +4244,9 @@
    "titleSrc": "",
    "genre": "子ども・教育",
    "genreSrc": "子ども・教育",
-   "cause": "花形の職業しか知らないまま進路を決める子どもを減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "花形の職業しか知らないまま進路を決める子どもを減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3748,7 +4255,8 @@
    "result": "参加児童数／体験させた職種数",
    "land": "1回の体験会から、就業人口の多い職業を網羅する年間プログラムへ",
    "orgs": "市の子育て支援課、教育委員会／地域学校協働活動（要確認）",
-   "ref": "内閣官房 地方創生事例集"
+   "ref": "内閣官房 地方創生事例集",
+   "refUrl": "https://www.chisou.go.jp/sousei/"
   },
   {
    "id": "B022",
@@ -3757,8 +4265,9 @@
    "titleSrc": "",
    "genre": "福祉・多様性",
    "genreSrc": "福祉・多様性",
-   "cause": "農業の人手不足と、障がいのある人の働く場の不足を一度に減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "農業の人手不足と、障がいのある人の働く場の不足を一度に減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -3767,7 +4276,8 @@
    "result": "協働日数／作業量／支払った工賃",
    "land": "単発の作業委託から、年間を通じた作業計画と工賃の仕組みへ",
    "orgs": "農林水産省 農福連携／市の農政・障害福祉担当",
-   "ref": "農林水産省 農福連携／ディスカバー農山漁村の宝"
+   "ref": "農林水産省 農福連携／ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "B023",
@@ -3776,8 +4286,9 @@
    "titleSrc": "",
    "genre": "福祉・多様性",
    "genreSrc": "福祉・多様性",
-   "cause": "働く機会がないまま在宅にとどまる人を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "働く機会がないまま在宅にとどまる人を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3786,7 +4297,8 @@
    "result": "切り出した作業数／従事人数／発注額",
    "land": "1工程の切り出しから、複数事業所に発注できる標準作業へ",
    "orgs": "市の障害福祉担当、就労支援事業所／優先調達推進法に基づく調達（要確認）",
-   "ref": "ディスカバー農山漁村の宝（障がい者就農の選定例）"
+   "ref": "ディスカバー農山漁村の宝（障がい者就農の選定例）",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "B024",
@@ -3795,8 +4307,9 @@
    "titleSrc": "",
    "genre": "福祉・多様性",
    "genreSrc": "福祉・多様性",
-   "cause": "言葉を理由に、行政サービスと防災情報から漏れる住民をなくす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "言葉を理由に、行政サービスと防災情報から漏れる住民をなくす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -3805,7 +4318,8 @@
    "result": "書き換えた文書数／届いた住民数",
    "land": "1枚の書き換えから、市の様式全体のやさしい日本語化と多言語化へ",
    "orgs": "市の多文化共生・国際交流担当／自治体の外国人相談窓口",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B025",
@@ -3814,8 +4328,9 @@
    "titleSrc": "",
    "genre": "福祉・多様性",
    "genreSrc": "福祉・多様性",
-   "cause": "対応がわからず追い返してしまう場面をなくす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "対応がわからず追い返してしまう場面をなくす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -3824,7 +4339,8 @@
    "result": "受講者数／対応できた事例数",
    "land": "1回の講座から、商店街・金融機関・交通事業者への展開へ",
    "orgs": "地域包括支援センター／認知症サポーター養成講座（キャラバン・メイト制度、要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B026",
@@ -3833,8 +4349,9 @@
    "titleSrc": "",
    "genre": "からだ・健康",
    "genreSrc": "福祉・多様性",
-   "cause": "体力・障がい・年齢を理由に運動から外れる人を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "体力・障がい・年齢を理由に運動から外れる人を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3843,7 +4360,8 @@
    "result": "参加者数／参加者の年齢と属性の幅",
    "land": "単発イベントから、市のスポーツ推進計画に位置づく定例開催へ",
    "orgs": "市のスポーツ推進担当、スポーツ推進委員／総合型地域スポーツクラブ（要確認）",
-   "ref": "greenz.jp（ダイバーシティサッカー協会）"
+   "ref": "greenz.jp（ダイバーシティサッカー協会）",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "B027",
@@ -3852,8 +4370,9 @@
    "titleSrc": "ヤングケアラーを見つける",
    "genre": "福祉・多様性",
    "genreSrc": "福祉・多様性",
-   "cause": "家族の世話をしている子に、子どもの時間を返す",
-   "causeSrc": "家族の世話で学びと将来を失う子どもを減らす",
+   "forwho": "",
+   "why": "家族の世話をしている子に、子どもの時間を返す",
+   "whySrc": "家族の世話で学びと将来を失う子どもを減らす",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3862,7 +4381,8 @@
    "result": "把握した人数／支援につないだ件数",
    "land": "気づきの場から、学校・福祉・地域が連携して発見し支える経路へ",
    "orgs": "市の子育て支援・福祉担当、教育委員会／ヤングケアラー支援に関する国の施策（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B028",
@@ -3871,8 +4391,9 @@
    "titleSrc": "",
    "genre": "川・水辺・海",
    "genreSrc": "水辺・自然再生",
-   "cause": "誰も手を入れない川と堤防を、住民側が管理のパートナーとして持つ",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "誰も手を入れない川と堤防を、住民側が管理のパートナーとして持つ",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3881,7 +4402,8 @@
    "result": "受け持った区間の長さ／活動回数／指定の有無",
    "land": "有志の清掃から、河川協力団体に指定され、占用手続きが簡素化された継続活動へ",
    "orgs": "河川管理者（国管理は地方整備局の河川事務所、県管理は県土木）／河川協力団体制度（河川法。民間団体を支援する制度で、申請・審査のうえ指定される）",
-   "ref": "国土交通省 河川協力団体制度／手づくり郷土賞R6（水辺基盤協会）"
+   "ref": "国土交通省 河川協力団体制度／手づくり郷土賞R6（水辺基盤協会）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B029",
@@ -3890,8 +4412,9 @@
    "titleSrc": "",
    "genre": "川・水辺・海",
    "genreSrc": "水辺・自然再生",
-   "cause": "その川からしか採れない系統を絶やさない",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "その川からしか採れない系統を絶やさない",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -3900,7 +4423,8 @@
    "result": "調査回数／放流数／生息確認数の推移",
    "land": "放流イベントから、生息環境の保全と土砂対策までを含む継続事業へ",
    "orgs": "県の水産・環境担当、河川管理者／生物多様性地域戦略への位置づけ（要確認）",
-   "ref": "手づくり郷土賞R6（ニッコウイワナに学ぶ会・日光市）"
+   "ref": "手づくり郷土賞R6（ニッコウイワナに学ぶ会・日光市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B030",
@@ -3909,8 +4433,9 @@
    "titleSrc": "",
    "genre": "川・水辺・海",
    "genreSrc": "水辺・自然再生",
-   "cause": "子どもが水辺で遊べる場所を取り戻す",
-   "causeSrc": "水辺から子どもが切り離された状態を戻し、水難事故も減らす",
+   "forwho": "",
+   "why": "子どもが水辺で遊べる場所を取り戻す",
+   "whySrc": "水辺から子どもが切り離された状態を戻し、水難事故も減らす",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -3919,7 +4444,8 @@
    "result": "撤去した量／来た子どもの数／年間の学習実施回数",
    "land": "ごみ撤去から、市民参加の自然生態園づくりと年間の環境学習へ",
    "orgs": "河川管理者、市の環境・教育担当／水辺の楽校（子どもの水辺再発見プロジェクト、要確認）",
-   "ref": "手づくり郷土賞R6（馬入水辺の楽校・平塚市）"
+   "ref": "手づくり郷土賞R6（馬入水辺の楽校・平塚市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B031",
@@ -3928,8 +4454,9 @@
    "titleSrc": "",
    "genre": "川・水辺・海",
    "genreSrc": "水辺・自然再生",
-   "cause": "誰も持っていない長期データを地域が持ち、政策の根拠にする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "誰も持っていない長期データを地域が持ち、政策の根拠にする",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -3938,7 +4465,8 @@
    "result": "継続年数／確認種数の推移／行政に引用された回数",
    "land": "単年の調査から、同一地点の年次データにし、行政計画の基礎資料として提供する",
    "orgs": "県の環境担当、河川管理者／公共用水域の水質測定計画に接続（要確認）",
-   "ref": "手づくり郷土賞R6（矢田・庄内川をきれいにする会・名古屋市）"
+   "ref": "手づくり郷土賞R6（矢田・庄内川をきれいにする会・名古屋市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B032",
@@ -3947,8 +4475,9 @@
    "titleSrc": "",
    "genre": "自然・環境",
    "genreSrc": "水辺・自然再生",
-   "cause": "生きものの生息地の消失を止め、教育と食に接続する",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "生きものの生息地の消失を止め、教育と食に接続する",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "L",
@@ -3957,7 +4486,8 @@
    "result": "再生面積／年間の授業回数／寄贈した米の量",
    "land": "再生した場所を、学校行事として定着させ、収穫を子ども食堂に回すところまで",
    "orgs": "県・市の農政と河川担当、教育委員会／多面的機能支払交付金（農林水産省）",
-   "ref": "手づくり郷土賞R6大賞（アザメの会・唐津市）"
+   "ref": "手づくり郷土賞R6大賞（アザメの会・唐津市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B033",
@@ -3966,8 +4496,9 @@
    "titleSrc": "",
    "genre": "川・水辺・海",
    "genreSrc": "水辺・自然再生",
-   "cause": "行政の縦割りで進まない流域管理を、住民のネットワークで実現する",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "行政の縦割りで進まない流域管理を、住民のネットワークで実現する",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "L",
@@ -3976,7 +4507,8 @@
    "result": "提案書の本数／協議に乗った回数／漁獲量と水質の変化",
    "land": "清掃活動から、水門運用や漁業再生といった構造の提案へ。誰も損をしない案にまとめる",
    "orgs": "河川管理者、県の水産・環境担当／自然再生推進法に基づく協議会（要確認）",
-   "ref": "アサザ基金（霞ヶ浦・逆水門の柔軟運用案）"
+   "ref": "アサザ基金（霞ヶ浦・逆水門の柔軟運用案）",
+   "refUrl": "https://www.asaza.jp/"
   },
   {
    "id": "B034",
@@ -3985,8 +4517,9 @@
    "titleSrc": "",
    "genre": "川・水辺・海",
    "genreSrc": "水辺・自然再生",
-   "cause": "拾い続ける活動から、出さない仕組みに変える",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "拾い続ける活動から、出さない仕組みに変える",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -3995,7 +4528,8 @@
    "result": "分類したごみの内訳／発生源に届けた件数",
    "land": "清掃から、上流の自治体・事業者への発生抑制の申し入れへ",
    "orgs": "県の環境担当、海岸管理者／海岸漂着物処理推進法に基づく地域計画（要確認）",
-   "ref": "手づくり郷土賞R6（水辺基盤協会）"
+   "ref": "手づくり郷土賞R6（水辺基盤協会）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B035",
@@ -4004,8 +4538,9 @@
    "titleSrc": "",
    "genre": "川・水辺・海",
    "genreSrc": "水辺・自然再生",
-   "cause": "手つかずのまま失われる小さな生息地を残す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "手つかずのまま失われる小さな生息地を残す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4014,7 +4549,8 @@
    "result": "保全面積／観察会の回数／初参加者の割合",
    "land": "保全作業から、専門家と住民の運営委員会を作り、県の施策に位置づける",
    "orgs": "県・市の環境担当／自然環境保全地域や里地里山の保全制度（要確認）",
-   "ref": "手づくり郷土賞R6（おにぐるみの学校・大津市）"
+   "ref": "手づくり郷土賞R6（おにぐるみの学校・大津市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B036",
@@ -4023,8 +4559,9 @@
    "titleSrc": "",
    "genre": "食・農",
    "genreSrc": "里山・森・農地",
-   "cause": "農地の荒廃を止め、食料生産の基盤を守る",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "農地の荒廃を止め、食料生産の基盤を守る",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4033,7 +4570,8 @@
    "result": "戻した面積／収穫量／地域計画への位置づけの有無",
    "land": "1枚の耕作から、集落の地域計画に位置づけられた担い手として登録される形へ",
    "orgs": "市の農業委員会、農地中間管理機構／中山間地域等直接支払制度、多面的機能支払交付金（農林水産省）",
-   "ref": "農林水産省 荒廃農地の発生防止・解消"
+   "ref": "農林水産省 荒廃農地の発生防止・解消",
+   "refUrl": "https://www.maff.go.jp/"
   },
   {
    "id": "B037",
@@ -4042,8 +4580,9 @@
    "titleSrc": "",
    "genre": "自然・環境",
    "genreSrc": "里山・森・農地",
-   "cause": "拡大する竹林から、里山と農地を守る",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "拡大する竹林から、里山と農地を守る",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4052,7 +4591,8 @@
    "result": "伐採面積／加工した量／販売額",
    "land": "伐採ボランティアから、タケノコ・メンマ等の加工で消費し続ける経済に変える",
    "orgs": "市の農政・林務担当／里山林の整備に関する県の補助（要確認）",
-   "ref": "生物多様性アクション大賞2015大賞（加茂女）"
+   "ref": "生物多様性アクション大賞2015大賞（加茂女）",
+   "refUrl": "https://www.7midori.org/katsudo/kouhou/tayousei-award/"
   },
   {
    "id": "B038",
@@ -4061,8 +4601,9 @@
    "titleSrc": "",
    "genre": "食・農",
    "genreSrc": "里山・森・農地",
-   "cause": "とれた鳥獣を、おいしく食べきる形にする",
-   "causeSrc": "農家が作物を諦める状況を減らし、駆除された命を無駄にしない",
+   "forwho": "",
+   "why": "とれた鳥獣を、おいしく食べきる形にする",
+   "whySrc": "農家が作物を諦める状況を減らし、駆除された命を無駄にしない",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4071,7 +4612,8 @@
    "result": "扱った頭数／被害額の変化／販売額",
    "land": "捕獲から、処理施設と販路までをつないだジビエの流通に育てる",
    "orgs": "市の農政・鳥獣被害担当／農林水産省 鳥獣被害対策・ジビエ利用拡大",
-   "ref": "農林水産省 ジビエ利用拡大"
+   "ref": "農林水産省 ジビエ利用拡大",
+   "refUrl": "https://www.maff.go.jp/"
   },
   {
    "id": "B039",
@@ -4080,8 +4622,9 @@
    "titleSrc": "",
    "genre": "農山漁村",
    "genreSrc": "里山・森・農地",
-   "cause": "維持できずに消える棚田と、その水源涵養機能を守る",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "維持できずに消える棚田と、その水源涵養機能を守る",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -4090,7 +4633,8 @@
    "result": "維持できた面積／連れて行った人数／継続年数",
    "land": "参加する側から、都市の仲間を継続して連れていく送り手になる",
    "orgs": "市の農政担当／農林水産省 棚田振興、中山間地域等直接支払制度",
-   "ref": "農林水産省 棚田振興"
+   "ref": "農林水産省 棚田振興",
+   "refUrl": "https://www.maff.go.jp/"
   },
   {
    "id": "B040",
@@ -4099,8 +4643,9 @@
    "titleSrc": "",
    "genre": "農山漁村",
    "genreSrc": "里山・森・農地",
-   "cause": "誰も決めないまま集落が消えていくのを止める",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "誰も決めないまま集落が消えていくのを止める",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "L",
@@ -4109,7 +4654,8 @@
    "result": "参加世帯数／まとめた計画1本／組織化の有無",
    "land": "話し合いから、地域運営組織として事業と予算を持つ形へ",
    "orgs": "市の地域振興・農政担当／農林水産省 農村RMO（農村型地域運営組織）",
-   "ref": "農林水産省 農村RMO"
+   "ref": "農林水産省 農村RMO",
+   "refUrl": "https://www.maff.go.jp/"
   },
   {
    "id": "B041",
@@ -4118,8 +4664,9 @@
    "titleSrc": "",
    "genre": "自然・環境",
    "genreSrc": "里山・森・農地",
-   "cause": "放置人工林による土砂災害と水源機能の低下を防ぐ",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "放置人工林による土砂災害と水源機能の低下を防ぐ",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -4128,7 +4675,8 @@
    "result": "整備した面積／搬出した材積／使い道の件数",
    "land": "作業体験から、間伐材の出口（燃料・木工・建材）まで含めた循環へ",
    "orgs": "市の林務担当、森林組合／森林環境譲与税を財源とする市町村事業（要確認）",
-   "ref": "環境省 地域循環共生圏"
+   "ref": "環境省 地域循環共生圏",
+   "refUrl": "https://chiikijunkan.env.go.jp/"
   },
   {
    "id": "B042",
@@ -4137,8 +4685,9 @@
    "titleSrc": "",
    "genre": "食・農",
    "genreSrc": "里山・森・農地",
-   "cause": "その土地に合った品種と、種を採る技術を残す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "その土地に合った品種と、種を採る技術を残す",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -4147,7 +4696,8 @@
    "result": "保存した品種数／配布した先の数／継続世代数",
    "land": "個人の自家採種から、地域の種苗を持ち寄って交換・保存する仕組みへ",
    "orgs": "県の農業試験場、市の農政担当／在来作物の保全に関する県の施策（要確認）",
-   "ref": "生物多様性アクション大賞"
+   "ref": "生物多様性アクション大賞",
+   "refUrl": "https://www.7midori.org/katsudo/kouhou/tayousei-award/"
   },
   {
    "id": "B043",
@@ -4156,8 +4706,9 @@
    "titleSrc": "",
    "genre": "食・農",
    "genreSrc": "里山・森・農地",
-   "cause": "地場産業の販路と、子どもの食体験を同時に立てる",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "地場産業の販路と、子どもの食体験を同時に立てる",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4166,26 +4717,30 @@
    "result": "採用回数／供給量／対象児童数",
    "land": "1回の採用から、年間の供給計画と価格の取り決めまで固める",
    "orgs": "市教育委員会（給食担当）、市の農政・水産担当／地産地消の推進に関する市の計画",
-   "ref": "気仙沼の魚を学校給食に普及させる会（生物多様性アクション大賞）"
+   "ref": "気仙沼の魚を学校給食に普及させる会（生物多様性アクション大賞）",
+   "refUrl": "https://www.7midori.org/katsudo/kouhou/tayousei-award/"
   },
   {
    "id": "B044",
    "src": "大義つき90",
-   "title": "農泊で人の流れをつくる",
-   "titleSrc": "",
+   "title": "泊まれる場所を作って、地域に通う人を増やす",
+   "titleSrc": "農泊で人の流れをつくる",
    "genre": "観光・関係人口",
    "genreSrc": "里山・森・農地",
-   "cause": "泊まる場所がないことによる関係人口の頭打ちを解消する",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "泊まる場所がないことによる関係人口の頭打ちを解消する",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "農泊の届出・許可の要件を市に確認する",
+   "step": "市役所に、農家民泊をやるのに何の届出が要るか聞く",
    "result": "受入組数／宿泊日数／地域内の受入軒数",
    "land": "1組の受け入れから、地域で複数軒が受けられる協議会の形へ",
    "orgs": "市の観光・農政担当、保健所／農林水産省 農泊",
-   "ref": "農林水産省 農泊／ディスカバー農山漁村の宝"
+   "ref": "農林水産省 農泊／ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html",
+   "stepSrc": "農泊の届出・許可の要件を市に確認する"
   },
   {
    "id": "B045",
@@ -4194,8 +4749,9 @@
    "titleSrc": "",
    "genre": "資源循環",
    "genreSrc": "資源循環・脱炭素",
-   "cause": "焼却量と処理費を、地域全体の行動で下げる",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "焼却量と処理費を、地域全体の行動で下げる",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4204,7 +4760,8 @@
    "result": "参加世帯数／地域の可燃ごみ削減量／処理費の変化",
    "land": "家庭ごとの努力から、分別区分の見直しを市に提案するところまで",
    "orgs": "市の廃棄物・清掃担当／一般廃棄物処理基本計画への反映",
-   "ref": "上勝町ゼロ・ウェイストセンター（J4CE）"
+   "ref": "上勝町ゼロ・ウェイストセンター（J4CE）",
+   "refUrl": "https://j4ce.env.go.jp/"
   },
   {
    "id": "B046",
@@ -4213,8 +4770,9 @@
    "titleSrc": "",
    "genre": "資源循環",
    "genreSrc": "資源循環・脱炭素",
-   "cause": "直せる人が消えることで、使えるものが捨てられる状況を止める",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "直せる人が消えることで、使えるものが捨てられる状況を止める",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4223,7 +4781,8 @@
    "result": "修理した点数／延命した重量／技術を継いだ人数",
    "land": "月1回のリペアカフェから、修理技術の継承講座と修理業者の掘り起こしへ",
    "orgs": "市の環境・消費生活担当／循環型社会形成の市の計画に接続",
-   "ref": "J4CE"
+   "ref": "J4CE",
+   "refUrl": "https://j4ce.env.go.jp/casestudy/group/1/recycle/"
   },
   {
    "id": "B047",
@@ -4232,8 +4791,9 @@
    "titleSrc": "",
    "genre": "資源循環",
    "genreSrc": "資源循環・脱炭素",
-   "cause": "処理に困る油を、燃料や石けんとして地域内で使い切る",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "処理に困る油を、燃料や石けんとして地域内で使い切る",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4242,7 +4802,8 @@
    "result": "回収量／作った製品数／使った先の件数",
    "land": "回収から、製造と使い先までを地域内で完結させる",
    "orgs": "市の環境担当／環境省 地域循環共生圏",
-   "ref": "環境省 地域循環共生圏"
+   "ref": "環境省 地域循環共生圏",
+   "refUrl": "https://chiikijunkan.env.go.jp/"
   },
   {
    "id": "B048",
@@ -4251,8 +4812,9 @@
    "titleSrc": "",
    "genre": "資源循環",
    "genreSrc": "資源循環・脱炭素",
-   "cause": "焼却している資源を、地域の土に返す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "焼却している資源を、地域の土に返す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4261,26 +4823,30 @@
    "result": "処理した量／堆肥を使った農地面積／削減した焼却量",
    "land": "家庭のコンポストから、飲食店の分まで受ける地域の循環へ",
    "orgs": "市の環境・農政担当／環境省 地域循環共生圏",
-   "ref": "環境省 地域循環共生圏"
+   "ref": "環境省 地域循環共生圏",
+   "refUrl": "https://chiikijunkan.env.go.jp/"
   },
   {
    "id": "B049",
    "src": "大義つき90",
-   "title": "制服・道具のリユースで教育費負担を下げる",
-   "titleSrc": "",
+   "title": "制服や道具をゆずり合って、教育費の負担を下げる",
+   "titleSrc": "制服・道具のリユースで教育費負担を下げる",
    "genre": "資源循環",
    "genreSrc": "資源循環・脱炭素",
-   "cause": "入学・進級時にかかる家庭の出費を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "入学・進級時にかかる家庭の出費を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "PTAか学校に開催の可否を相談する",
+   "step": "PTAか学校に「制服のゆずり合い会をやりたい」と相談する",
    "result": "出品点数／引き取られた点数／削減できた家庭の出費",
    "land": "単発のバザーから、常設の受け渡し拠点と学校の案内への掲載へ",
    "orgs": "学校・PTA、市の教育委員会／就学援助制度との併走（要確認）",
-   "ref": "J4CE"
+   "ref": "J4CE",
+   "refUrl": "https://j4ce.env.go.jp/casestudy/group/1/recycle/",
+   "stepSrc": "PTAか学校に開催の可否を相談する"
   },
   {
    "id": "B050",
@@ -4289,8 +4855,9 @@
    "titleSrc": "",
    "genre": "脱炭素・エネルギー",
    "genreSrc": "資源循環・脱炭素",
-   "cause": "経費に苦しむ施設と店の固定費を、実測で下げる",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "経費に苦しむ施設と店の固定費を、実測で下げる",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4299,7 +4866,8 @@
    "result": "参加拠点数／合計削減率／削減額",
    "land": "1施設の削減から、地域の施設をまとめて診断・改修する流れへ",
    "orgs": "市の環境・施設担当／省エネ診断の実施機関（要確認）／環境省 地域脱炭素",
-   "ref": "環境省 地域脱炭素取組事例集"
+   "ref": "環境省 地域脱炭素取組事例集",
+   "refUrl": "https://policies.env.go.jp/policy/roadmap/assets/examples/chiiki-datsutanso-torikumi-jirei-202410.pdf"
   },
   {
    "id": "B051",
@@ -4308,8 +4876,9 @@
    "titleSrc": "",
    "genre": "脱炭素・エネルギー",
    "genreSrc": "資源循環・脱炭素",
-   "cause": "山の手入れと燃料費の域外流出を同時に解く",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "山の手入れと燃料費の域外流出を同時に解く",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4318,7 +4887,8 @@
    "result": "供給量／利用世帯・施設数／域外に払う燃料費の減少",
    "land": "薪の自家利用から、地域内での供給と、施設のボイラー導入までつなげる",
    "orgs": "市の林務・環境担当、森林組合／森林環境譲与税を財源とする市町村事業（要確認）",
-   "ref": "環境省 地域循環共生圏"
+   "ref": "環境省 地域循環共生圏",
+   "refUrl": "https://chiikijunkan.env.go.jp/"
   },
   {
    "id": "B052",
@@ -4327,8 +4897,9 @@
    "titleSrc": "",
    "genre": "資源循環",
    "genreSrc": "資源循環・脱炭素",
-   "cause": "行き場がなく放置される品目を、回収できる状態にする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "行き場がなく放置される品目を、回収できる状態にする",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -4337,7 +4908,8 @@
    "result": "調べた品目数／提案が採用された件数／回収量",
    "land": "調査から、行政と事業者をつなぐ回収スキームの提案へ",
    "orgs": "市の廃棄物担当／環境省の資源循環に関する実証事業（要確認）",
-   "ref": "J4CE（加山興業×蒲郡市の実証など）"
+   "ref": "J4CE（加山興業×蒲郡市の実証など）",
+   "refUrl": "https://j4ce.env.go.jp/"
   },
   {
    "id": "B053",
@@ -4346,8 +4918,9 @@
    "titleSrc": "",
    "genre": "まち・空き家",
    "genreSrc": "まち・空き家",
-   "cause": "放置され続けて危険家屋になる前に、使われる状態に戻す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "放置され続けて危険家屋になる前に、使われる状態に戻す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "L",
@@ -4356,7 +4929,8 @@
    "result": "動かした軒数／利用開始までの日数／減った特定空家の数",
    "land": "1軒を借りることから、所有者と使いたい人をつなぐ地域の窓口機能へ",
    "orgs": "市の空き家対策担当／空き家バンク、空家等対策計画（空家等対策特別措置法）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B054",
@@ -4365,8 +4939,9 @@
    "titleSrc": "",
    "genre": "まち・空き家",
    "genreSrc": "まち・空き家",
-   "cause": "通りから店が消えていくのを止める",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "通りから店が消えていくのを止める",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4375,7 +4950,8 @@
    "result": "開いた日数／出店に至った件数／通行量の変化",
    "land": "1日のポップアップから、出店希望者と空き店舗を継続的に結ぶ仕組みへ",
    "orgs": "市の商工担当、商工会議所／商店街の活性化に関する補助（要確認）",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "B055",
@@ -4384,8 +4960,9 @@
    "titleSrc": "",
    "genre": "まち・空き家",
    "genreSrc": "まち・空き家",
-   "cause": "距離ではなく休憩の不足で外出をやめる高齢者を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "距離ではなく休憩の不足で外出をやめる高齢者を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4394,7 +4971,8 @@
    "result": "設置数／利用されている場面の観測回数／外出頻度の変化",
    "land": "ベンチ1基から、外出の動線に沿って必要な場所を面で配置する提案へ",
    "orgs": "市の道路・公園担当、自治会／市の市民提案型の事業（要確認）",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "B056",
@@ -4403,8 +4981,9 @@
    "titleSrc": "",
    "genre": "まち・空き家",
    "genreSrc": "まち・空き家",
-   "cause": "見つけても誰も通報せず放置される状態をなくす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "見つけても誰も通報せず放置される状態をなくす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4413,7 +4992,8 @@
    "result": "通報件数／修繕された件数／対応までの日数",
    "land": "個人の通報から、住民が日常的に投稿し対応状況まで公開される仕組みへ",
    "orgs": "市の道路・情報政策担当／総務省ICT地域活性化事例（市民レポーター型の先行例あり）",
-   "ref": "総務省ICT100選（市民レポーター型）"
+   "ref": "総務省ICT100選（市民レポーター型）",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "B057",
@@ -4422,8 +5002,9 @@
    "titleSrc": "",
    "genre": "道・橋・インフラ",
    "genreSrc": "まち・空き家",
-   "cause": "荒れた沿道を、通りたくなる道に変える",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "荒れた沿道を、通りたくなる道に変える",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4432,7 +5013,8 @@
    "result": "整備した区間の長さ／継続年数／交通量・立ち寄り数",
    "land": "花植えから、ガードレールの色や案内サインを含む景観形成の協議へ",
    "orgs": "県・市の道路管理担当／道路協力団体制度や景観計画（要確認）",
-   "ref": "手づくり郷土賞R6（R29活性化委員会・鳥取）"
+   "ref": "手づくり郷土賞R6（R29活性化委員会・鳥取）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B058",
@@ -4441,8 +5023,9 @@
    "titleSrc": "",
    "genre": "道・橋・インフラ",
    "genreSrc": "まち・空き家",
-   "cause": "自分のまちに誇りを持てない状態を変える",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "自分のまちに誇りを持てない状態を変える",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4451,7 +5034,8 @@
    "result": "来場者数／参加団体数／その後の定例利用回数",
    "land": "周年イベントから、日常的に使われる公共空間の運営体へ",
    "orgs": "橋・道路の管理者、市のまちづくり担当／河川・道路空間の占用と利活用の制度",
-   "ref": "手づくり郷土賞R6大賞（金沢片町まちづくり会議・犀川大橋100年）"
+   "ref": "手づくり郷土賞R6大賞（金沢片町まちづくり会議・犀川大橋100年）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B059",
@@ -4460,8 +5044,9 @@
    "titleSrc": "",
    "genre": "道・橋・インフラ",
    "genreSrc": "まち・空き家",
-   "cause": "土地の歴史が誰にも語られないまま消えるのを止める",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "土地の歴史が誰にも語られないまま消えるのを止める",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4470,7 +5055,8 @@
    "result": "調査地点数／設置した案内板数／養成したガイド数",
    "land": "調査から、案内板の設置と、中学生ガイドの養成まで",
    "orgs": "市の文化財・観光担当、道路管理者／文化財の保存活用に関する市の計画（要確認）",
-   "ref": "手づくり郷土賞R6（井口・鈴が峰／ながと大内湯けむり街道）"
+   "ref": "手づくり郷土賞R6（井口・鈴が峰／ながと大内湯けむり街道）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B060",
@@ -4479,8 +5065,9 @@
    "titleSrc": "",
    "genre": "旅・場づくり",
    "genreSrc": "まち・空き家",
-   "cause": "整備したのに誰も使わない場所を、稼働させる",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "整備したのに誰も使わない場所を、稼働させる",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4489,26 +5076,30 @@
    "result": "利用日数／参加者数／地域住民の関与人数",
    "land": "1回のイベントから、地域が継続的に運営を担う体制へ",
    "orgs": "施設の管理者、市の担当課／公共施設の利活用や指定管理の枠組み（要確認）",
-   "ref": "手づくり郷土賞R6（奈半利町みなと未来会議）"
+   "ref": "手づくり郷土賞R6（奈半利町みなと未来会議）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B061",
    "src": "大義つき90",
-   "title": "産地の名前を守る",
-   "titleSrc": "",
+   "title": "産地の名前を、勝手に使われないようにする",
+   "titleSrc": "産地の名前を守る",
    "genre": "地域ブランド・知財",
    "genreSrc": "地域経済・ブランド",
-   "cause": "地域の名前が守られず、他所に使われ買い叩かれるのを止める",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "地域の名前が守られず、他所に使われ買い叩かれるのを止める",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "L",
    "scaleLabel": "十数人か、許認可が要る",
-   "step": "特許庁の地域団体商標ガイドブックを1冊読む",
+   "step": "特許庁のサイトで、地域団体商標のガイドブックを1冊読む",
    "result": "参加事業者数／出願・登録の有無／取引単価の変化",
    "land": "権利化を通じて、ばらばらだった事業者を一つの産地としてまとめる",
    "orgs": "特許庁（地域団体商標）／知財総合支援窓口の無料相談、商工会議所・組合",
-   "ref": "特許庁 地域団体商標の活用事例（中津からあげほか）"
+   "ref": "特許庁 地域団体商標の活用事例（中津からあげほか）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html",
+   "stepSrc": "特許庁の地域団体商標ガイドブックを1冊読む"
   },
   {
    "id": "B062",
@@ -4517,8 +5108,9 @@
    "titleSrc": "",
    "genre": "地域ブランド・知財",
    "genreSrc": "地域経済・ブランド",
-   "cause": "品質のばらつきで信頼を失う産地を立て直す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "品質のばらつきで信頼を失う産地を立て直す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4527,7 +5119,8 @@
    "result": "基準に適合した事業者数／出荷単価の変化",
    "land": "基準づくりから、認定と表示の運用、生産者の技術底上げまで",
    "orgs": "県・市の農政／特許庁、地理的表示（GI）保護制度（農林水産省）",
-   "ref": "特許庁（風間浦鮟鱇・青森県）"
+   "ref": "特許庁（風間浦鮟鱇・青森県）",
+   "refUrl": "https://www.jpo.go.jp/system/trademark/gaiyo/chidan/katsuyo-jire.html"
   },
   {
    "id": "B063",
@@ -4536,8 +5129,9 @@
    "titleSrc": "",
    "genre": "地域ブランド・知財",
    "genreSrc": "地域経済・ブランド",
-   "cause": "作るだけで価格を決められない一次産業の構造を変える",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "作るだけで価格を決められない一次産業の構造を変える",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -4546,7 +5140,8 @@
    "result": "製造ロット数／販売額／生産者の手取り単価",
    "land": "自分1人の6次化から、地域の生産者が使える加工・販売の共同基盤へ",
    "orgs": "市の農政・商工担当／農林水産省 農山漁村発イノベーション、農林漁業成長産業化ファンド（要確認）",
-   "ref": "ディスカバー農山漁村の宝"
+   "ref": "ディスカバー農山漁村の宝",
+   "refUrl": "https://www.maff.go.jp/j/nousin/kouryu/discover.html"
   },
   {
    "id": "B064",
@@ -4555,8 +5150,9 @@
    "titleSrc": "",
    "genre": "お金・小商い",
    "genreSrc": "地域経済・ブランド",
-   "cause": "働き口がないから出ていく、という流れを止める",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "働き口がないから出ていく、という流れを止める",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4565,7 +5161,8 @@
    "result": "売上／続いた月数／自分の手順で始めた人の数",
    "land": "自分の小商いから、始めたい人に手順とノウハウを渡す側へ",
    "orgs": "市の創業支援担当、商工会・商工会議所／特定創業支援等事業（要確認）",
-   "ref": "greenz.jp（小商い）"
+   "ref": "greenz.jp（小商い）",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "B065",
@@ -4574,8 +5171,9 @@
    "titleSrc": "",
    "genre": "政治・経済",
    "genreSrc": "地域経済・ブランド",
-   "cause": "エネルギーと食料の支払いが域外に流れ続ける構造を見える化する",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "エネルギーと食料の支払いが域外に流れ続ける構造を見える化する",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4584,7 +5182,8 @@
    "result": "推計した流出額／域内調達に切り替えた品目数と金額",
    "land": "図解から、域内調達に切り替えられる品目の特定と、事業者への提案へ",
    "orgs": "市の企画・産業担当／環境省 地域循環共生圏、地域経済循環分析",
-   "ref": "環境省 地域循環共生圏"
+   "ref": "環境省 地域循環共生圏",
+   "refUrl": "https://chiikijunkan.env.go.jp/"
   },
   {
    "id": "B066",
@@ -4593,8 +5192,9 @@
    "titleSrc": "",
    "genre": "お金・小商い",
    "genreSrc": "地域経済・ブランド",
-   "cause": "勘だけで続けて閉店していく個店を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "勘だけで続けて閉店していく個店を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4603,7 +5203,8 @@
    "result": "可視化した指標数／売上・客単価の変化／広がった店舗数",
    "land": "1軒の可視化から、商店会単位でデータを持ち寄る仕組みへ",
    "orgs": "市の商工担当、商工会議所／小規模事業者持続化補助金（要確認）",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "B067",
@@ -4612,8 +5213,9 @@
    "titleSrc": "",
    "genre": "観光・関係人口",
    "genreSrc": "地域経済・ブランド",
-   "cause": "何もないという前提で諦めている地域の収入源を作る",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "何もないという前提で諦めている地域の収入源を作る",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4622,7 +5224,8 @@
    "result": "造成数／体験者数／地域内に落ちた金額",
    "land": "コンテンツ造成から、販売と予約の仕組みを持つ協議会へ",
    "orgs": "市の観光担当／観光庁 観光地域づくり、DMOの枠組み（要確認）",
-   "ref": "手づくり郷土賞R6（サードプレイスツーリズム協議会・福知山市）"
+   "ref": "手づくり郷土賞R6（サードプレイスツーリズム協議会・福知山市）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B068",
@@ -4631,8 +5234,9 @@
    "titleSrc": "",
    "genre": "ものづくり・アート",
    "genreSrc": "地域経済・ブランド",
-   "cause": "後継者が出ないほど食えない状態を変える",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "後継者が出ないほど食えない状態を変える",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4641,7 +5245,8 @@
    "result": "実施回数／職人の受取額／弟子入り・継承者の数",
    "land": "体験の販売から、技術の継承講座と弟子入りの受け皿まで",
    "orgs": "市の商工・文化担当／伝統的工芸品や後継者育成の支援制度（要確認）",
-   "ref": "手づくり郷土賞R6（サードプレイスツーリズム協議会）"
+   "ref": "手づくり郷土賞R6（サードプレイスツーリズム協議会）",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   },
   {
    "id": "B069",
@@ -4650,8 +5255,9 @@
    "titleSrc": "逃げ遅れをなくす",
    "genre": "防災・安全",
    "genreSrc": "防災・安全",
-   "cause": "いざというとき、迷わず動ける状態をつくる",
-   "causeSrc": "地図を見ただけでは動けない人を、動ける状態にする",
+   "forwho": "",
+   "why": "いざというとき、迷わず動ける状態をつくる",
+   "whySrc": "地図を見ただけでは動けない人を、動ける状態にする",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4660,7 +5266,8 @@
    "result": "歩いた距離／気づいた危険箇所／訓練の参加世帯数",
    "land": "個人の確認から、自治会単位の避難経路の見直しと訓練へ",
    "orgs": "市の防災担当、自治会・自主防災組織／地区防災計画（災害対策基本法、要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B070",
@@ -4669,8 +5276,9 @@
    "titleSrc": "",
    "genre": "防災・安全",
    "genreSrc": "防災・安全",
-   "cause": "災害のとき、誰が無事かすぐ分かるようにする",
-   "causeSrc": "災害時に孤立しやすい世帯を、確実に把握する",
+   "forwho": "",
+   "why": "災害のとき、誰が無事かすぐ分かるようにする",
+   "whySrc": "災害時に孤立しやすい世帯を、確実に把握する",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4679,7 +5287,8 @@
    "result": "参加世帯数／訓練の実施回数／確認にかかった時間",
    "land": "連絡網から、避難行動要支援者名簿と接続した実効性のある体制へ",
    "orgs": "市の防災・福祉担当、自治会／避難行動要支援者名簿と個別避難計画（要確認）",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "B071",
@@ -4688,8 +5297,9 @@
    "titleSrc": "",
    "genre": "防災・安全",
    "genreSrc": "防災・安全",
-   "cause": "あるのに使われない機器をなくし、救命率を上げる",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "あるのに使われない機器をなくし、救命率を上げる",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4698,7 +5308,8 @@
    "result": "マッピング数／配布枚数／講習受講者数",
    "land": "マップ作成から、講習会と、夜間も使える設置場所の見直し提案へ",
    "orgs": "市の防災担当、消防署／救命講習の実施（消防）",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "B072",
@@ -4707,8 +5318,9 @@
    "titleSrc": "",
    "genre": "防災・安全",
    "genreSrc": "防災・安全",
-   "cause": "発災直後の数日を自力で越えられない世帯を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "発災直後の数日を自力で越えられない世帯を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4717,7 +5329,8 @@
    "result": "参加世帯数／各家庭の備蓄日数の変化",
    "land": "1回の体験会から、自治会の全世帯調査と定期的な入れ替えの習慣化へ",
    "orgs": "市の防災担当、自治会・自主防災組織",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B073",
@@ -4726,8 +5339,9 @@
    "titleSrc": "ペットが理由で避難をためらう人をなくす",
    "genre": "防災・安全",
    "genreSrc": "防災・安全",
-   "cause": "ペットと一緒に逃げられるようにする",
-   "causeSrc": "動物のせいで逃げない、という死に方を防ぐ",
+   "forwho": "",
+   "why": "ペットと一緒に逃げられるようにする",
+   "whySrc": "動物のせいで逃げない、という死に方を防ぐ",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4736,7 +5350,8 @@
    "result": "調べた避難所数／受け入れ可となった数／配布した資料数",
    "land": "調査から、同行避難のルール整備と、飼い主への事前準備の周知へ",
    "orgs": "市の防災・生活衛生担当／環境省の人とペットの災害対策ガイドライン（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B074",
@@ -4745,8 +5360,9 @@
    "titleSrc": "",
    "genre": "防災・安全",
    "genreSrc": "防災・安全",
-   "cause": "名簿はあるが動かない組織を、動くものにする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "名簿はあるが動かない組織を、動くものにする",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4755,26 +5371,30 @@
    "result": "訓練の実施回数／参加率／役割が決まっている人数",
    "land": "形だけの組織から、訓練・資機材・役割分担が回る体制へ",
    "orgs": "市の防災担当、消防団／自主防災組織の育成に関する市の事業（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B075",
    "src": "大義つき90",
-   "title": "地域団体の属人化を解消する",
-   "titleSrc": "",
+   "title": "1人がやめたら回らなくなる状態をなくす",
+   "titleSrc": "地域団体の属人化を解消する",
    "genre": "IT・システムづくり",
    "genreSrc": "デジタル・システム",
-   "cause": "1人がやめたら回らなくなる団体を、続く形にする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "1人がやめたら回らなくなる団体を、続く形にする",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
    "scaleLabel": "ひとりでも始められる",
-   "step": "一番混乱している紙を1枚もらってくる",
+   "step": "所属している団体の役員さんに「いま一番ややこしい表はどれですか」と聞いて、その紙を1枚もらう",
    "result": "移行した表の数／編集できる人の数／引き継ぎ文書の有無",
    "land": "1つの表の共有から、引き継ぎ手順とデータの所在を文書化するところまで",
    "orgs": "—（市の地域振興担当が支援制度を持つ場合あり）",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "stepSrc": "一番混乱している紙を1枚もらってくる"
   },
   {
    "id": "B076",
@@ -4783,8 +5403,9 @@
    "titleSrc": "",
    "genre": "IT・システムづくり",
    "genreSrc": "デジタル・システム",
-   "cause": "手続きのために平日に動けない人を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "手続きのために平日に動けない人を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4793,7 +5414,8 @@
    "result": "電子化した様式数／提出にかかる日数の短縮",
    "land": "1様式の電子化から、団体・自治体の様式全体の見直し提案へ",
    "orgs": "市の情報政策・行政改革担当／自治体DXの推進に関する国の枠組み（要確認）",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B077",
@@ -4802,8 +5424,9 @@
    "titleSrc": "",
    "genre": "IT・システムづくり",
    "genreSrc": "デジタル・システム",
-   "cause": "機能が多いせいで使えず諦める人をなくす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "機能が多いせいで使えず諦める人をなくす",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -4812,7 +5435,8 @@
    "result": "テスト参加者数／完了できた人の割合／採用された指針の数",
    "land": "1つの改善から、自治体や事業者に渡せる設計指針へ",
    "orgs": "市の情報政策担当／デジタル庁のウェブアクセシビリティ関連の指針（要確認）",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "B078",
@@ -4821,8 +5445,9 @@
    "titleSrc": "",
    "genre": "政治・経済",
    "genreSrc": "デジタル・システム",
-   "cause": "拾われないまま消える声を、行政の議題にする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "拾われないまま消える声を、行政の議題にする",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4831,7 +5456,8 @@
    "result": "記録件数／提出した提案数／採用・回答された件数",
    "land": "30日の記録から、課題リストを市民提案やパブリックコメントとして提出する",
    "orgs": "市の広聴・企画担当／市民提案型の協働事業、パブリックコメント制度",
-   "ref": "地域課題ソリューションベース"
+   "ref": "地域課題ソリューションベース",
+   "refUrl": "https://local-solution-base.com/"
   },
   {
    "id": "B079",
@@ -4840,8 +5466,9 @@
    "titleSrc": "",
    "genre": "IT・システムづくり",
    "genreSrc": "デジタル・システム",
-   "cause": "書記の負担で担い手が減る会議を減らす",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "書記の負担で担い手が減る会議を減らす",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4850,7 +5477,8 @@
    "result": "導入した会議数／作成時間の短縮／続いた月数",
    "land": "1つの会議から、自治会・PTA・商店会に横展開する",
    "orgs": "—（市の地域振興担当が講座枠を持つ場合あり）",
-   "ref": "チーム2030（Notta×Claude検証）"
+   "ref": "チーム2030（Notta×Claude検証）",
+   "refUrl": ""
   },
   {
    "id": "B080",
@@ -4859,8 +5487,9 @@
    "titleSrc": "",
    "genre": "IT・システムづくり",
    "genreSrc": "デジタル・システム",
-   "cause": "紙の時刻表しかないせいで使われない交通を、使える状態にする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "紙の時刻表しかないせいで使われない交通を、使える状態にする",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4869,26 +5498,30 @@
    "result": "登録した便数／検索数／利用者数の変化",
    "land": "1路線から、市の地域公共交通計画に載るデータ整備へ",
    "orgs": "市の交通政策担当／地域公共交通計画（要確認）",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html"
   },
   {
    "id": "B081",
    "src": "大義つき90",
-   "title": "眠っているオープンデータを使う",
-   "titleSrc": "",
+   "title": "市が公開しているのに誰も使っていないデータを使う",
+   "titleSrc": "眠っているオープンデータを使う",
    "genre": "IT・システムづくり",
    "genreSrc": "デジタル・システム",
-   "cause": "公開されているのに誰も使わないデータを、使われる形にする",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "公開されているのに誰も使わないデータを、使われる形にする",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
    "scaleLabel": "数人いると動く",
-   "step": "市のオープンデータページからCSVを1本落とす",
+   "step": "市のホームページの「オープンデータ」ページから、表データを1本ダウンロードする",
    "result": "使ったデータセット数／利用者数／改善要望が通った件数",
    "land": "1つのアプリから、自治体にデータ整備の要望を返すところまで",
    "orgs": "市の情報政策担当／自治体のオープンデータ推進",
-   "ref": "総務省ICT100選"
+   "ref": "総務省ICT100選",
+   "refUrl": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/top/local_support/ict/jirei/index-pop.html",
+   "stepSrc": "市のオープンデータページからCSVを1本落とす"
   },
   {
    "id": "B082",
@@ -4897,8 +5530,9 @@
    "titleSrc": "静かな離脱を検知する",
    "genre": "IT・システムづくり",
    "genreSrc": "デジタル・システム",
-   "cause": "反応が減った仲間に、早めに声をかけられるようにする",
-   "causeSrc": "気づかないうちに関係が切れていく人を、切れる前に拾う",
+   "forwho": "",
+   "why": "反応が減った仲間に、早めに声をかけられるようにする",
+   "whySrc": "気づかないうちに関係が切れていく人を、切れる前に拾う",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -4907,7 +5541,8 @@
    "result": "検知人数／声かけ後に戻った人数／配った先の団体数",
    "land": "自分の組織での運用から、他団体が使える手順として配る",
    "orgs": "—（民間。自治会・PTA・NPOの運営改善として展開）",
-   "ref": "チーム2030 運用設計（30日オンボーディング）"
+   "ref": "チーム2030 運用設計（30日オンボーディング）",
+   "refUrl": ""
   },
   {
    "id": "B083",
@@ -4916,8 +5551,9 @@
    "titleSrc": "",
    "genre": "歴史・文化",
    "genreSrc": "記録・文化継承",
-   "cause": "その人しか知らないことが、何も残らずに失われるのを止める",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "その人しか知らないことが、何も残らずに失われるのを止める",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "M",
@@ -4926,7 +5562,8 @@
    "result": "作品数／聞き取った人数／継続年数",
    "land": "1本の聞き書きから、高校と組んで毎年続く記録事業へ",
    "orgs": "市の文化財・生涯学習担当、図書館／地域文化の保存活用に関する事業（要確認）",
-   "ref": "聞き書き甲子園／共存の森ネットワーク"
+   "ref": "聞き書き甲子園／共存の森ネットワーク",
+   "refUrl": "https://www.kikigaki.net/"
   },
   {
    "id": "B084",
@@ -4935,8 +5572,9 @@
    "titleSrc": "",
    "genre": "歴史・文化",
    "genreSrc": "記録・文化継承",
-   "cause": "話者が減り、二度と採れなくなる音声を確保する",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "話者が減り、二度と採れなくなる音声を確保する",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -4945,7 +5583,8 @@
    "result": "録音時間／文字起こし本数／収蔵された件数",
    "land": "個人の録音から、図書館・博物館に収蔵されるアーカイブへ",
    "orgs": "市の図書館・博物館、教育委員会／地域資料のデジタル化事業（要確認）",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "B085",
@@ -4954,8 +5593,9 @@
    "titleSrc": "",
    "genre": "歴史・文化",
    "genreSrc": "記録・文化継承",
-   "cause": "地域の記憶と、人が集まる理由を取り戻す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "地域の記憶と、人が集まる理由を取り戻す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -4964,7 +5604,8 @@
    "result": "開催回数／参加者数／継承者の数",
    "land": "縮小版の1回から、担い手と道具を継承できる形へ",
    "orgs": "市の文化財・観光担当／文化財の保存活用や地域伝統芸能の支援（要確認）",
-   "ref": "環境省GLA"
+   "ref": "環境省GLA",
+   "refUrl": "https://www.env.go.jp/policy/kihon_keikaku/goodlifeaward/"
   },
   {
    "id": "B086",
@@ -4973,8 +5614,9 @@
    "titleSrc": "",
    "genre": "発信・記録",
    "genreSrc": "記録・文化継承",
-   "cause": "閉店・統廃合で失われる空間と記憶を、期限内に残す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "閉店・統廃合で失われる空間と記憶を、期限内に残す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -4983,7 +5625,8 @@
    "result": "記録した件数／撮影枚数／聞き取った人数",
    "land": "個人の撮影から、閉じる前提の場所を地域で計画的に記録する仕組みへ",
    "orgs": "市の生涯学習・文化財担当、図書館",
-   "ref": "greenz.jp"
+   "ref": "greenz.jp",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "B087",
@@ -4992,8 +5635,9 @@
    "titleSrc": "",
    "genre": "歴史・文化",
    "genreSrc": "記録・文化継承",
-   "cause": "集落の成り立ちを知る人が消える前に、一次情報を確保する",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "集落の成り立ちを知る人が消える前に、一次情報を確保する",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -5002,7 +5646,8 @@
    "result": "記録した戸数／証言数／納本の有無",
    "land": "聞き取りから、集落誌としてまとめ、図書館に納める",
    "orgs": "市の図書館・生涯学習担当／郷土資料の収集",
-   "ref": "聞き書き甲子園／共存の森ネットワーク"
+   "ref": "聞き書き甲子園／共存の森ネットワーク",
+   "refUrl": "https://www.kikigaki.net/"
   },
   {
    "id": "B088",
@@ -5011,8 +5656,9 @@
    "titleSrc": "",
    "genre": "歴史・文化",
    "genreSrc": "記録・文化継承",
-   "cause": "誰も調べていない身近な文化財の所在を確定する",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "誰も調べていない身近な文化財の所在を確定する",
+   "whySrc": "",
    "summary": "",
    "reach": "日本じゅうに",
    "scale": "S",
@@ -5021,7 +5667,8 @@
    "result": "記録した基数／公開した地図／設置した説明板数",
    "land": "マッピングから、文化財としての把握と説明板の設置へ",
    "orgs": "市の文化財担当／文化財の悉皆調査や保存活用地域計画（要確認）",
-   "ref": "5actions.jp"
+   "ref": "5actions.jp",
+   "refUrl": "https://5actions.jp/"
   },
   {
    "id": "B089",
@@ -5030,8 +5677,9 @@
    "titleSrc": "",
    "genre": "発信・記録",
    "genreSrc": "記録・文化継承",
-   "cause": "地域に誰がいるのか誰も知らない状態を変える",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "地域に誰がいるのか誰も知らない状態を変える",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "M",
@@ -5040,7 +5688,8 @@
    "result": "掲載人数／閲覧数／他事業で使われた回数",
    "land": "個人の取材から、移住相談や高校のキャリア教育で使われる資料へ",
    "orgs": "市の移住定住・広報担当、高校のキャリア担当",
-   "ref": "房総すごい人図鑑（greenz.jp）"
+   "ref": "房総すごい人図鑑（greenz.jp）",
+   "refUrl": "https://greenz.jp/"
   },
   {
    "id": "B090",
@@ -5049,8 +5698,9 @@
    "titleSrc": "",
    "genre": "発信・記録",
    "genreSrc": "記録・文化継承",
-   "cause": "書類が書けないせいで評価されない団体を、表に出す",
-   "causeSrc": "",
+   "forwho": "",
+   "why": "書類が書けないせいで評価されない団体を、表に出す",
+   "whySrc": "",
    "summary": "",
    "reach": "自分のまち",
    "scale": "S",
@@ -5059,7 +5709,8 @@
    "result": "応募代行した件数／選定された数／その後に取れた助成の額",
    "land": "応募代行から、その団体が自力で申請・受託できる状態にする",
    "orgs": "国土交通省 手づくり郷土賞、農林水産省 ディスカバー農山漁村の宝、環境省グッドライフアワード（いずれも公募あり）",
-   "ref": "ディスカバー農山漁村の宝（個人部門）／手づくり郷土賞"
+   "ref": "ディスカバー農山漁村の宝（個人部門）／手づくり郷土賞",
+   "refUrl": "https://www.mlit.go.jp/sogoseisaku/region/tedukuri/gaiyo/main_r6.html"
   }
  ],
  "reals": [
