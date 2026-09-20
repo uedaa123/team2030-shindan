@@ -1,34 +1,86 @@
 /* チーム2030 プロジェクト診断
    ── 配色の考え方 ──────────────────────────────────
-   分野11項目に、それぞれ固有の色を割り当てている（--h0〜--h10、
+   分野26項目に、それぞれ固有の色を割り当てている（--h0〜--h25、
    data/cases.json の genres の並び順）。選んだ分野の色が、そのまま結果画面の
    カードの上辺に出る。色は飾りではなく、自分が何を選んだかの目印。
    勇誠義礼の4タイプにも固有色がある（勇＝朱、誠＝青、義＝橙、礼＝桃）。
    色の指定は --c（文字用の濃い側）と --cv（塗り用の鮮やかな側）を
-   各要素に流し込む形に統一してある。分野を増やすときは --h11 / --h11v を足すだけ。 */
+   各要素に流し込む形に統一してある。色は tools/ のパレット生成で作った26色。 */
 
 :root{
-  /* 分野11色（data/cases.json の genres と同じ順） */
-  --h0:#d9700a;  /* 子ども・教育         橙 */
-  --h1:#1d7fc2;  /* 川・海・生きもの     青 */
-  --h2:#5f8f18;  /* 里山・森・畑         黄緑 */
-  --h3:#8438c9;  /* 歴史・文化・記録     紫 */
-  --h4:#e8471f;  /* 空き家・まちなみ     朱 */
-  --h5:#b07d00;  /* 地域のしごと・お店   黄 */
-  --h6:#159a5c;  /* ごみ・エネルギー     緑 */
-  --h7:#4a4cdb;  /* デジタル・事務しごと 藍 */
-  --h8:#00867c;  /* 高齢者・介護         青緑 */
-  --h9:#d62d72;  /* 福祉・多様性         桃 */
-  --h10:#8a5a2b; /* 防災                 土 */
+  /* 分野26色（data/cases.json の genres と同じ順）
+     h0 子ども・教育
+     h1 学校・若者との協働
+     h2 川・水辺・海
+     h3 自然・環境
+     h4 農山漁村
+     h5 食・農
+     h6 動物
+     h7 歴史・文化
+     h8 発信・記録
+     h9 ものづくり・アート
+     h10 まち・空き家
+     h11 道・橋・インフラ
+     h12 旅・場づくり
+     h13 観光・関係人口
+     h14 地域ブランド・知財
+     h15 お金・小商い
+     h16 政治・経済
+     h17 IT・システムづくり
+     h18 AI・デジタル
+     h19 資源循環
+     h20 脱炭素・エネルギー
+     h21 防災・安全
+     h22 からだ・健康
+     h23 高齢者・ケア
+     h24 心理・人間関係
+     h25 福祉・多様性  */
+  /* h1 学校・若者との協働 */
+  /* h2 川・水辺・海 */
+  /* h3 自然・環境 */
+  /* h4 農山漁村 */
+  /* h5 食・農 */
+  /* h6 動物 */
+  /* h7 歴史・文化 */
+  /* h8 発信・記録 */
+  /* h9 ものづくり・アート */
+  /* h10 まち・空き家 */
+  /* h11 道・橋・インフラ */
+  /* h12 旅・場づくり */
+  /* h13 観光・関係人口 */
+  /* h14 地域ブランド・知財 */
+  /* h15 お金・小商い */
+  /* h16 政治・経済 */
+  /* h17 IT・システムづくり */
+  /* h18 AI・デジタル */
+  /* h19 資源循環 */
+  /* h20 脱炭素・エネルギー */
+  /* h21 防災・安全 */
+  /* h22 からだ・健康 */
+  /* h23 高齢者・ケア */
+  /* h24 心理・人間関係 */
+  /* h25 福祉・多様性 */
+*/
+  --h0:#9d4925; --h1:#9d6525; --h2:#80691e; --h3:#807f1e;
+  --h4:#6a801e; --h5:#54801e; --h6:#4b9d25; --h7:#2f9d25;
+  --h8:#259d36; --h9:#259d52; --h10:#259d6e; --h11:#259d8a;
+  --h12:#25959d; --h13:#25799d; --h14:#255d9d; --h15:#25419d;
+  --h16:#25269d; --h17:#40259d; --h18:#5b259d; --h19:#77259d;
+  --h20:#93259d; --h21:#9d258b; --h22:#9d2570; --h23:#9d2554;
+  --h24:#9d2538; --h25:#9d2d25;
 
-  /* 同じ11色の、塗り用の鮮やかな側。--hN は文字にも使うので白地で読める濃さに
-     抑えてある。面で見せるところ（カードの上辺・丸・バー）は --hNv を使う。 */
-  --h0v:#fb8b1e; --h1v:#2fa3e8; --h2v:#84cc16; --h3v:#a855f7; --h4v:#ff5a2d;
-  --h5v:#fbbf24; --h6v:#18c26e; --h7v:#6366f1; --h8v:#00c2b2; --h9v:#f43f8e;
-  --h10v:#c08457;
+  /* 塗り用の鮮やかな側。--hN は文字にも使うので白地で読める濃さに抑えてある */
+--h0v:#e3581c; --h1v:#e3861c; --h2v:#bf9718; --h3v:#bfbd18;
+  --h4v:#99bf18; --h5v:#73bf18; --h6v:#5be31c; --h7v:#2de31c;
+  --h8v:#1ce339; --h9v:#1ce367; --h10v:#1ce395; --h11v:#1ce3c3;
+  --h12v:#1cd5e3; --h13v:#1ca7e3; --h14v:#1c79e3; --h15v:#1c4be3;
+  --h16v:#1c1ee3; --h17v:#481ce3; --h18v:#761ce3; --h19v:#a41ce3;
+  --h20v:#d21ce3; --h21v:#e31cc6; --h22v:#e31c98; --h23v:#e31c6a;
+  --h24v:#e31c3c; --h25v:#e32a1c;
 
   /* 勇誠義礼 */
-  --yu:#e8471f; --sei:#1d7fc2; --gi:#d9700a; --rei:#d62d72;
+  --yu:#c2410c;  --sei:#1d4ed8; --gi:#a16207;  --rei:#be185d;
+  --yuv:#f97316; --seiv:#3b82f6; --giv:#eab308; --reiv:#ec4899;
 
   --accent:#e8471f;
   --accent-soft:#fdeee9;
@@ -52,22 +104,42 @@
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --h0:#ffa049; --h1:#4fb3f0; --h2:#9fd13f; --h3:#bb7bf5; --h4:#ff7a55;
-    --h5:#f0bd3a; --h6:#3ed294; --h7:#8f91ff; --h8:#2ebfb2; --h9:#ff6fa3; --h10:#c99a6d;
-    --h0v:#ffa049; --h1v:#4fb3f0; --h2v:#9fd13f; --h3v:#bb7bf5; --h4v:#ff7a55;
-    --h5v:#f0bd3a; --h6v:#3ed294; --h7v:#8f91ff; --h8v:#2ebfb2; --h9v:#ff6fa3; --h10v:#c99a6d;
-    --yu:#ff7a55; --sei:#4fb3f0; --gi:#ffa049; --rei:#ff6fa3;
+  --h0:#eba384; --h0v:#e78f6a; --h1:#ebbb84; --h1v:#e7ac6a;
+    --h2:#ebd284; --h2v:#e7c96a; --h3:#ebea84; --h3v:#e7e66a;
+    --h4:#d4eb84; --h4v:#cbe76a; --h5:#bceb84; --h5v:#aee76a;
+    --h6:#a5eb84; --h6v:#91e76a; --h7:#8deb84; --h7v:#74e76a;
+    --h8:#84eb93; --h8v:#6ae77c; --h9:#84ebab; --h9v:#6ae799;
+    --h10:#84ebc3; --h10v:#6ae7b6; --h11:#84ebda; --h11v:#6ae7d3;
+    --h12:#84e4eb; --h12v:#6adee7; --h13:#84cceb; --h13v:#6ac1e7;
+    --h14:#84b4eb; --h14v:#6aa4e7; --h15:#849deb; --h15v:#6a88e7;
+    --h16:#8485eb; --h16v:#6a6be7; --h17:#9b84eb; --h17v:#866ae7;
+    --h18:#b384eb; --h18v:#a36ae7; --h19:#cb84eb; --h19v:#bf6ae7;
+    --h20:#e284eb; --h20v:#dc6ae7; --h21:#eb84dc; --h21v:#e76ad4;
+    --h22:#eb84c4; --h22v:#e76ab8; --h23:#eb84ad; --h23v:#e76a9b;
+    --h24:#eb8495; --h24v:#e76a7e; --h25:#eb8b84; --h25v:#e7736a;
+    --yu:#fb923c; --sei:#60a5fa; --gi:#facc15; --rei:#f472b6;
+    --yuv:#fb923c; --seiv:#60a5fa; --giv:#facc15; --reiv:#f472b6;
     --accent:#ff7a55; --accent-soft:#33221d;
     --ink:#e9ecf6; --ink-2:#a2aac4; --paper:#12142a; --card:#1c1f38;
     --deep:#0c0e20; --line:#333856; --line-2:#272b46;
   }
 }
 :root[data-theme="dark"]{
-  --h0:#ffa049; --h1:#4fb3f0; --h2:#9fd13f; --h3:#bb7bf5; --h4:#ff7a55;
-  --h5:#f0bd3a; --h6:#3ed294; --h7:#8f91ff; --h8:#2ebfb2; --h9:#ff6fa3; --h10:#c99a6d;
-  --h0v:#ffa049; --h1v:#4fb3f0; --h2v:#9fd13f; --h3v:#bb7bf5; --h4v:#ff7a55;
-  --h5v:#f0bd3a; --h6v:#3ed294; --h7v:#8f91ff; --h8v:#2ebfb2; --h9v:#ff6fa3; --h10v:#c99a6d;
-  --yu:#ff7a55; --sei:#4fb3f0; --gi:#ffa049; --rei:#ff6fa3;
+  --h0:#eba384; --h0v:#e78f6a; --h1:#ebbb84; --h1v:#e7ac6a;
+    --h2:#ebd284; --h2v:#e7c96a; --h3:#ebea84; --h3v:#e7e66a;
+    --h4:#d4eb84; --h4v:#cbe76a; --h5:#bceb84; --h5v:#aee76a;
+    --h6:#a5eb84; --h6v:#91e76a; --h7:#8deb84; --h7v:#74e76a;
+    --h8:#84eb93; --h8v:#6ae77c; --h9:#84ebab; --h9v:#6ae799;
+    --h10:#84ebc3; --h10v:#6ae7b6; --h11:#84ebda; --h11v:#6ae7d3;
+    --h12:#84e4eb; --h12v:#6adee7; --h13:#84cceb; --h13v:#6ac1e7;
+    --h14:#84b4eb; --h14v:#6aa4e7; --h15:#849deb; --h15v:#6a88e7;
+    --h16:#8485eb; --h16v:#6a6be7; --h17:#9b84eb; --h17v:#866ae7;
+    --h18:#b384eb; --h18v:#a36ae7; --h19:#cb84eb; --h19v:#bf6ae7;
+    --h20:#e284eb; --h20v:#dc6ae7; --h21:#eb84dc; --h21v:#e76ad4;
+    --h22:#eb84c4; --h22v:#e76ab8; --h23:#eb84ad; --h23v:#e76a9b;
+    --h24:#eb8495; --h24v:#e76a7e; --h25:#eb8b84; --h25v:#e7736a;
+  --yu:#fb923c; --sei:#60a5fa; --gi:#facc15; --rei:#f472b6;
+  --yuv:#fb923c; --seiv:#60a5fa; --giv:#facc15; --reiv:#f472b6;
   --accent:#ff7a55; --accent-soft:#33221d;
   --ink:#e9ecf6; --ink-2:#a2aac4; --paper:#12142a; --card:#1c1f38;
   --deep:#0c0e20; --line:#333856; --line-2:#272b46;
@@ -83,13 +155,9 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--gothic)
 
 /* ── ヘッダー ──────────────────────────────────── */
 header{background:var(--deep);color:#fff;padding:0 0 40px}
-/* 11色の帯。このツールが扱う分野の数だけ色がある */
+/* 26色の帯。このツールが扱う分野の数だけ色がある */
 header:before{content:"";display:block;height:7px;
-  background:linear-gradient(90deg,
-    var(--h0v) 0 9.09%, var(--h1v) 9.09% 18.2%, var(--h2v) 18.2% 27.3%,
-    var(--h3v) 27.3% 36.4%, var(--h4v) 36.4% 45.5%, var(--h5v) 45.5% 54.5%,
-    var(--h6v) 54.5% 63.6%, var(--h7v) 63.6% 72.7%, var(--h8v) 72.7% 81.8%,
-    var(--h9v) 81.8% 90.9%, var(--h10v) 90.9% 100%)}
+  background:linear-gradient(90deg,var(--h0v), var(--h1v), var(--h2v), var(--h3v), var(--h4v), var(--h5v), var(--h6v), var(--h7v), var(--h8v), var(--h9v), var(--h10v), var(--h11v), var(--h12v), var(--h13v), var(--h14v), var(--h15v), var(--h16v), var(--h17v), var(--h18v), var(--h19v), var(--h20v), var(--h21v), var(--h22v), var(--h23v), var(--h24v), var(--h25v))}
 header .wrap{padding-top:40px;padding-bottom:0}
 h1{font-family:var(--display);font-weight:700;font-size:38px;line-height:1.3;
    margin:0 0 14px;letter-spacing:.01em;text-wrap:balance}
@@ -133,11 +201,14 @@ button.opt b{display:block;font-weight:700;font-family:var(--display)}
 button.opt span{display:block;font-size:12.5px;color:var(--ink-2);margin-top:3px;
   line-height:1.7;font-family:var(--gothic)}
 
-/* 色を持つ選択肢（分野・勇誠義礼）は、色の丸を先頭に出す */
-button.opt.hue{display:flex;gap:11px;align-items:flex-start}
-button.opt.hue:before{content:"";flex:0 0 auto;width:15px;height:15px;border-radius:50%;
-  background:var(--cv,var(--c));margin-top:5px;transition:box-shadow .13s}
+/* 色を持つ選択肢（分野・勇誠義礼）は、色の丸を左に置いて、中身は縦に積む */
+button.opt.hue{display:grid;grid-template-columns:15px 1fr;column-gap:12px}
+button.opt.hue:before{content:"";grid-column:1;grid-row:1;width:15px;height:15px;
+  border-radius:50%;background:var(--cv,var(--c));margin-top:6px;transition:box-shadow .13s}
 button.opt.hue.on:before{box-shadow:0 0 0 4px color-mix(in srgb,var(--cv,var(--c)) 30%,transparent)}
+button.opt.hue > b,
+button.opt.hue > span,
+button.opt.hue > em{grid-column:2}
 
 .nav{display:flex;gap:12px;align-items:center;margin-top:28px;flex-wrap:wrap}
 .go{font:inherit;font-family:var(--display);font-weight:700;background:var(--accent);
@@ -296,3 +367,68 @@ details.previewbox summary:focus-visible{outline:3px solid var(--accent);outline
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{transition-duration:.01ms !important;animation-duration:.01ms !important}
 }
+
+/* ══ 2026-09-20 作り直し：3問・結果を3つに分ける ══════════ */
+
+/* 「複数えらべます」を見落とさせない */
+.multi{display:inline-block;font-family:var(--display);font-weight:700;font-size:12.5px;
+  color:var(--accent);background:var(--accent-soft);border-radius:999px;
+  padding:6px 14px;margin:0 0 20px}
+
+/* 分野の選択肢。見出しは行為、分野名は小さく添える */
+.opt .gtag{justify-self:start;font-style:normal;font-size:11px;font-weight:700;
+  font-family:var(--display);color:var(--c,var(--accent));
+  border:1px solid var(--c,var(--accent));border-radius:999px;
+  padding:1px 9px;margin-top:8px}
+.step.haspad{padding-bottom:20px}
+
+/* 下に固定する「次へ」。26個スクロールしても押せるように */
+.bottombar{position:sticky;bottom:0;z-index:6;margin:0 -20px;
+  padding:10px 20px calc(10px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+.bottominner{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.bottominner .count{margin:0;white-space:nowrap}
+.bottominner .go{flex:1;text-align:center}
+
+/* 結果の読み方 */
+.guide{background:var(--card);border:2px solid var(--line-2);border-radius:var(--r);
+  padding:18px 20px;margin:0 0 30px}
+.guidehead{font-family:var(--display);font-weight:700;font-size:15px;margin:0 0 10px}
+.guidelist{margin:0;padding-left:1.4em;font-size:13.5px;color:var(--ink-2);line-height:1.9}
+.guidelist b{color:var(--ink)}
+
+/* 大見出しに番号 */
+h4.sec{display:flex;align-items:center;gap:11px;font-size:21px;margin:44px 0 14px}
+h4.sec .secno{display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--paper);
+  font-size:15px;flex:0 0 auto}
+.subsec{font-family:var(--display);font-weight:700;font-size:14px;color:var(--ink-2);
+  margin:28px 0 12px}
+.forwho{font-size:12.5px;color:var(--ink-2);margin:-8px 0 14px}
+
+/* 進め方の4ステップ */
+.stlead{font-family:var(--display);font-weight:700;font-size:16px;
+  color:var(--ink) !important;margin:0 0 14px !important}
+ol.ststeps{margin:0;padding:0;list-style:none;counter-reset:st}
+ol.ststeps li{counter-increment:st;position:relative;padding:12px 0 12px 42px;
+  font-size:14.5px;line-height:1.8;border-top:1px solid var(--line-2)}
+ol.ststeps li:before{content:counter(st);position:absolute;left:0;top:12px;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--cv,var(--accent));color:#fff;
+  font-family:var(--display);font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center}
+.ststuck{font-size:12.5px;color:var(--ink-2) !important;margin:16px 0 0 !important;
+  padding-top:14px;border-top:1px solid var(--line-2)}
+
+/* 共有：バディ用とチーム用 */
+.shares{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:620px){.shares{grid-template-columns:1fr}}
+.share{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-s);
+  padding:16px}
+.sharelabel{font-family:var(--display);font-weight:700;font-size:16px;margin:0 0 4px}
+.sharedesc{font-size:12.5px;color:var(--ink-2);margin:0 0 12px;line-height:1.75}
+.share .go{width:100%;text-align:center}
+.act{border-color:var(--line-2);border-width:1px}
+.go.ghost{background:none;color:var(--ink-2);border:2px solid var(--line)}
+.go.ghost:hover{color:var(--ink);border-color:var(--ink-2);filter:none}
