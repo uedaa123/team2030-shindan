@@ -246,7 +246,7 @@ var SCALE_ORDER = {S:0, M:1, L:2};
 var A, step, STEPS, TOTAL, DB = null, lastResult = null, started = false;
 var SESSION = "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 
-function reset(){ A = {group:[], genre:[], project:null, wd:null, yn1:null, name:""}; step = 0; lastResult = null; }
+function reset(){ A = {group:[], genre:[], project:null, wd:null, yn1:null, name:"", email:""}; step = 0; lastResult = null; }
 reset();
 STEPS = STEP_SETS[CFG.questionSet] || STEP_SETS.full;
 TOTAL = STEPS.length;
@@ -562,15 +562,32 @@ function refLink(it){
    バディにもチームにも同じ文を貼れるようにする。
    「話せますか？」のような問いかけは入れない（貼る人が決める）。 ── */
 function shareCard(){
-  var wantName = CFG.askName && !!CFG.logEndpoint;
   return '<div class="act">' +
-    (wantName ?
-      '<div class="namefield"><label for="nm">あなたの表示名（任意）</label>' +
-      '<input type="text" id="nm" class="nm" autocomplete="off" maxlength="40" value="' + esc(A.name) + '"></div>' : '') +
     '<button type="button" class="go copybtn" data-kind="share">診断結果をコピーする</button>' +
     '<p class="copied" data-msg="share" role="status"></p>' +
     '<details class="previewbox"><summary>コピーされる内容を見る</summary>' +
-      '<pre class="preview" data-pre="share">' + esc(shareText("share")) + '</pre></details>' +
+      '<pre class="preview" data-pre="share">' + esc(shareText()) + '</pre></details>' +
+  '</div>' +
+  mailCard();
+}
+
+/* ── メールで受け取る ────────────────────────────────
+   config.js の logEndpoint（GASのURL）が入っているときだけ出す。
+   入っていなければ送り先がないので、欄ごと出さない。 ── */
+function mailCard(){
+  if (!CFG.logEndpoint) return "";
+  return '<div class="act mail">' +
+    '<h4>メールで受け取る</h4>' +
+    '<p>この結果をそのままメールで送ります。あとから見返せます。</p>' +
+    '<div class="namefield"><label for="mnm">お名前</label>' +
+      '<input type="text" id="mnm" class="nm" autocomplete="name" maxlength="40" ' +
+      'placeholder="山田 太郎" value="' + esc(A.name) + '"></div>' +
+    '<div class="namefield"><label for="mml">メールアドレス</label>' +
+      '<input type="email" id="mml" class="ml" autocomplete="email" maxlength="120" ' +
+      'inputmode="email" placeholder="you@example.com" value="' + esc(A.email) + '"></div>' +
+    '<button type="button" class="go mailbtn">この内容をメールで送る</button>' +
+    '<p class="copied" data-msg="mail" role="status"></p>' +
+    '<p class="tiny">お名前とメールアドレスは、送信のためと、運営の記録として保存されます。</p>' +
   '</div>';
 }
 
@@ -581,7 +598,7 @@ function shareText(){
   var L = [];
   var me = [lastResult.wdKey, lastResult.yn ? lastResult.yn + "タイプ" : null].filter(Boolean).join("／");
 
-  L.push("【プロジェクト診断の結果】" + (A.name ? " " + A.name : ""));
+  L.push("【プロジェクトコンパスの結果】" + (A.name ? " " + A.name : ""));
   L.push("気になった分野：" + A.genre.join("／"));
   if (me) L.push("タイプ：" + me);
   L.push("");
@@ -606,13 +623,16 @@ function shareText(){
 }
 
 function wireShare(){
-  var inp = app.querySelector(".nm");
-  if (inp) inp.oninput = function(){ A.name = inp.value.trim(); refreshPreviews(); };
+  var nm = app.querySelector(".nm");
+  if (nm) nm.oninput = function(){ A.name = nm.value.trim(); refreshPreviews(); };
+  var ml = app.querySelector(".ml");
+  if (ml) ml.oninput = function(){ A.email = ml.value.trim(); };
+
   Array.prototype.forEach.call(app.querySelectorAll(".copybtn"), function(btn){
     btn.onclick = function(){
       var kind = btn.getAttribute("data-kind");
       var msg = app.querySelector('.copied[data-msg="' + kind + '"]');
-      copyToClipboard(shareText(kind), function(ok){
+      copyToClipboard(shareText(), function(ok){
         btn.textContent = ok ? "コピーしました" : "コピーする";
         btn.className = ok ? "go copybtn done" : "go copybtn";
         msg.textContent = ok ? "そのまま貼れます。"
@@ -621,13 +641,92 @@ function wireShare(){
           var box = btn.parentNode.querySelector("details.previewbox");
           if (box) { box.open = true; box.scrollIntoView({block:"nearest"}); }
         } else {
-          logEvent("copy-" + kind);
-          setTimeout(function(){ btn.textContent = "コピーする"; btn.className = "go copybtn"; }, 4000);
+          logEvent("copy");
+          setTimeout(function(){ btn.textContent = "診断結果をコピーする"; btn.className = "go copybtn"; }, 4000);
         }
       });
     };
   });
+
+  var mb = app.querySelector(".mailbtn");
+  if (mb) mb.onclick = function(){ sendMail(mb); };
 }
+
+/* メール送信。送り先はGAS。押せるのは1回ずつ */
+function sendMail(btn){
+  var msg = app.querySelector('.copied[data-msg="mail"]');
+  if (!A.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(A.email)) {
+    msg.textContent = "メールアドレスを確かめてください。";
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = "送っています…";
+  msg.textContent = "";
+
+  var lead = lastResult && lastResult.ranked[0];
+  var payload = {
+    session: SESSION, secret: CFG.logSecret || "", event: "mail",
+    at: new Date().toISOString(), set: CFG.questionSet,
+    name: A.name || "", email: A.email,
+    genre: A.genre, wd: A.wd, yn1: A.yn1,
+    top: lastResult ? lastResult.ranked.map(function(r){ return r.it.id; }) : [],
+    subject: "【TEAM2030】" + (lead ? lead.it.title : "プロジェクトコンパスの結果"),
+    body: mailBody()
+  };
+
+  function done(ok, note){
+    btn.disabled = false;
+    btn.textContent = ok ? "送りました" : "この内容をメールで送る";
+    msg.textContent = note;
+    if (ok) setTimeout(function(){ btn.textContent = "この内容をメールで送る"; }, 6000);
+  }
+
+  /* まず普通に投げて、返事が読めたら確実。読めなければ no-cors で投げ直す */
+  fetch(CFG.logEndpoint, {
+    method: "POST",
+    headers: {"Content-Type": "text/plain;charset=utf-8"},
+    body: JSON.stringify(payload)
+  }).then(function(r){ return r.text(); })
+    .then(function(t){
+      if (/ok/i.test(t)) done(true, A.email + " に送りました。数分で届きます。");
+      else done(false, "送れませんでした。運営に連絡してください。");
+    })
+    .catch(function(){
+      fetch(CFG.logEndpoint, {
+        method: "POST", mode: "no-cors",
+        headers: {"Content-Type": "text/plain;charset=utf-8"},
+        body: JSON.stringify(payload), keepalive: true
+      }).then(function(){
+        done(true, "送信しました。数分たっても届かないときは、迷惑メールを見てください。");
+      }).catch(function(){
+        done(false, "送れませんでした。上のコピーを使ってください。");
+      });
+    });
+}
+
+/* メール本文。画面の結果をそのまま文章にする */
+function mailBody(){
+  var lead = lastResult && lastResult.ranked[0];
+  if (!lead) return shareText();
+  var L = [];
+  if (A.name) L.push(A.name + " さん");
+  L.push("");
+  L.push("プロジェクトコンパスの結果です。");
+  L.push("");
+  L.push("──────────────");
+  L.push(shareText());
+  L.push("──────────────");
+  L.push("");
+  if (lead.it.orgs) L.push("行政の入口：" + lead.it.orgs);
+  if (lead.it.land) L.push("そのあと：" + lead.it.land);
+  if (lead.it.ref) L.push("元ネタ：" + lead.it.ref + (lead.it.refUrl ? " " + lead.it.refUrl : ""));
+  L.push("");
+  L.push("もう一度やる： " + location.href.split("?")[0]);
+  L.push("");
+  L.push("TEAM2030");
+  return L.join("\n");
+}
+
 function refreshPreviews(){
   Array.prototype.forEach.call(app.querySelectorAll("pre.preview"), function(p){
     p.textContent = shareText(p.getAttribute("data-pre"));
@@ -669,6 +768,7 @@ function logEvent(kind){
   var payload = {
     session: SESSION, secret: CFG.logSecret || "", event: kind,
     at: new Date().toISOString(), set: CFG.questionSet, name: A.name || "",
+    email: A.email || "",
     genre: A.genre, wd: A.wd, yn1: A.yn1,
     top: lastResult ? lastResult.ranked.map(function(r){ return r.it.id; }) : []
   };

@@ -467,3 +467,11 @@ ol.ststeps li:before{content:counter(st);position:absolute;left:0;top:12px;
 }
 
 .step{padding-top:0}
+
+/* ── メールで受け取る ─────────────────────────────── */
+.act.mail{margin-top:14px}
+.act.mail h4{font-family:var(--display);font-weight:700;font-size:17px;margin:0 0 6px}
+.act.mail > p{font-size:12.5px;color:var(--ink-2);margin:0 0 16px;line-height:1.8}
+.act.mail .go{width:100%;text-align:center}
+.act.mail .go[disabled]{background:var(--line);color:var(--ink-2);cursor:wait}
+.tiny{font-size:11.5px;color:var(--ink-2);margin:12px 0 0;line-height:1.7}
