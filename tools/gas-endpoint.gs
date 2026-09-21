@@ -90,8 +90,7 @@ function countMail_() {
 /** 差出人に使えるアドレスの一覧。SEND_AS に入れられるのはここに出たものだけ */
 function 使える差出人アドレス() {
   var a = GmailApp.getAliases();
-  Logger.log(a.length ? a.join('
-') : '別のアドレスは登録されていません（Gmailのアドレスで送られます）');
+  Logger.log(a.length ? a.join('\n') : '別のアドレスは登録されていません（Gmailのアドレスで送られます）');
 }
 
 /** 今日いま何通送ったか。エディタで実行するとログに出る */

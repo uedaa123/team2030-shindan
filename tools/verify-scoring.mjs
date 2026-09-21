@@ -172,6 +172,23 @@ for (const t of T.YN_ORDER) {
   }
 }
 
+/* ── ⑥ GASスクリプトの構文 ──
+   gas-endpoint.gs は貼り付けて使うので、壊れていると
+   Apps Script のエディタで初めて気づくことになる。ここで落としておく。 */
+console.log("");
+console.log("── tools/gas-endpoint.gs ──");
+try {
+  const gs = readFileSync(resolve(ROOT, "tools/gas-endpoint.gs"), "utf8");
+  new vm.Script(gs, { filename: "gas-endpoint.gs" });
+  console.log("構文OK");
+  const odd = gs.split("\n")
+    .map((l, i) => [i + 1, l])
+    .filter(([, l]) => (l.split("'").length - 1) % 2 || (l.split('"').length - 1) % 2);
+  if (odd.length) problems.push("gas-endpoint.gs で引用符が閉じていない行: " + odd.map(([n]) => n).join(", "));
+} catch (e) {
+  problems.push("gas-endpoint.gs の構文エラー: " + e.message);
+}
+
 /* ── 判定 ── */
 console.log("");
 console.log("─".repeat(52));
