@@ -227,6 +227,41 @@ const G90_ITEM = {
   83:"歴史・文化", 84:"歴史・文化", 85:"歴史・文化", 87:"歴史・文化", 88:"歴史・文化"
 };
 
+/* ── Excelに無いが、足したいプロジェクト ───────────────
+   2026-09-21 植田さんの指示で「政治・経済」に2件追加。
+   中身は miel-japan.jp と 4japan.jp に書いてあることだけで組んでいる。
+   一歩目は、MIEL JAPANシステム広める案まとめ.txt のブレストから拾った。 ── */
+const EXTRA = [
+  {
+    id: "M001", src: "追加", genre: "政治・経済",
+    title: "MIEL JAPANのシステムを、地元の人に使ってもらう",
+    summary: "議会ミエル・しみんボイス・選挙イツ？・投票ダレニ？・地域ミエルの5つ。" +
+             "どれも無料で、公共の情報を誰でも同じ基準で確認できるようにするもの。" +
+             "まず自分が使って、人に見せるところから始められる。",
+    forwho: "政治の情報にたどり着けていない人",
+    reach: "自分のまち", scale: "S",
+    step: "5つのツールを自分で1回ぜんぶ触って、いちばん人に見せたいものを1つ決める",
+    result: "人に見せた数／実際に使ってくれた人の数",
+    land: "1人に見せるところから、学校の主権者教育の教材・市政報告会・議員の便りへ載せてもらう形に広げる",
+    orgs: "—（運営はNPO法人公共データ機構／代表 高崎圭悟）",
+    ref: "MIEL JAPAN", refUrl: "https://miel-japan.jp/"
+  },
+  {
+    id: "M002", src: "追加", genre: "政治・経済",
+    title: "4 japanの地域チャンネルに入って、活動を支える",
+    summary: "全国13の地域チャンネルがあり、参加は無料。Instagram から入れる。" +
+             "4 japan は法人格を持たず金銭を受け取らない草の根のネットワークで、" +
+             "システムの開発・運営と支援の受付は MIEL JAPAN が担う。",
+    forwho: "地域で動きたいけれど、つながる先がない人",
+    reach: "自分のまち", scale: "S",
+    step: "自分の地域のチャンネルをInstagramで探して、参加する",
+    result: "参加した地域チャンネル／声をかけた人の数",
+    land: "参加するだけの状態から、地域で「使ってみよう体験会」を開く側に回る",
+    orgs: "—（支援の受付は NPO法人公共データ機構）",
+    ref: "4 japan", refUrl: "https://4japan.jp/"
+  }
+];
+
 const REACH = { "人":"目の前のひとり", "地域":"自分のまち", "日本":"日本じゅうに" };
 const SCALE = { S:"ひとりでも始められる", M:"数人いると動く", L:"十数人か、許認可が要る" };
 
@@ -340,6 +375,15 @@ for (const r of tsv(p90)) {
   }));
 }
 
+/* ── Excelに無い追加ぶんを足す ── */
+for (const e of EXTRA) {
+  if (!GENRE_SET.has(e.genre)) throw new Error(`EXTRA の分野が26分野にない: ${e.genre}`);
+  items.push(Object.assign({
+    why: "", titleSrc: "", causeSrc: "",
+    scaleLabel: SCALE[e.scale] || e.scale
+  }, e));
+}
+
 /* ── 実在事例33件（旧データ）を26分野に当てる ── */
 const old = JSON.parse(readFileSync(pOld, "utf8"));
 const REAL_GENRE = [
@@ -385,7 +429,7 @@ const db = {
 };
 writeFileSync("data/cases.json", JSON.stringify(db, null, 1), "utf8");
 
-console.log(`プロジェクト ${items.length} 件（事例200 ${items.filter(i=>i.src==="事例200").length} ＋ 大義つき90 ${items.filter(i=>i.src==="大義つき90").length}）`);
+console.log(`プロジェクト ${items.length} 件（事例200 ${items.filter(i=>i.src==="事例200").length} ＋ 大義つき90 ${items.filter(i=>i.src==="大義つき90").length} ＋ 追加 ${items.filter(i=>i.src==="追加").length}）`);
 console.log(`もう動いている場所 ${reals.length} 件\n`);
 console.log("大きな6つ");
 for (const [name, , gs] of GROUPS) {

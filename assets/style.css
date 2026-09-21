@@ -311,6 +311,33 @@ section.me .note{color:#b8bfdc}
 .restart{margin-top:34px}
 .restart .go{background:var(--ink)}
 
+/* ── 事例集（分野ごとにたたんでおく）────────── */
+.all{margin-top:14px;display:grid;gap:8px}
+.allbox{border:2px solid var(--line);border-radius:var(--r);background:var(--card);
+  overflow:hidden}
+.allbox[open]{border-color:var(--c,var(--accent))}
+.allbox summary{cursor:pointer;list-style:none;padding:13px 15px;
+  display:flex;align-items:center;gap:10px;font-size:14.5px;
+  border-left:7px solid var(--cv,var(--c,var(--accent)))}
+.allbox summary::-webkit-details-marker{display:none}
+.allbox summary::after{content:"▾";margin-left:auto;color:var(--ink-2);font-size:12px}
+.allbox[open] summary::after{content:"▴"}
+.allbox summary b{color:var(--c,var(--ink))}
+.allbox summary em{font-style:normal;font-size:11.5px;color:var(--ink-2);
+  background:var(--paper);border-radius:99px;padding:2px 9px}
+.allbox summary:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.alllist{list-style:none;margin:0;padding:0 15px 13px;border-top:1px solid var(--line)}
+.alllist li{padding:11px 0;border-bottom:1px dotted var(--line)}
+.alllist li:last-child{border-bottom:0}
+.alllist b,.alllist .allttl{display:block;font-size:14px;line-height:1.65;font-weight:700}
+/* 元ネタのあるものは見出しがリンク。
+   行ごとに同じ出典名を並べると騒がしいのでこうする。 */
+.alllist .allttl{color:var(--ink);text-decoration:underline;
+  text-decoration-color:var(--cv,var(--c,var(--accent)));
+  text-decoration-thickness:2px;text-underline-offset:3px}
+.alllist .allttl:hover{color:var(--c,var(--ink))}
+.alllist span{display:block;font-size:12.5px;color:var(--ink-2);line-height:1.8;margin-top:3px}
+
 /* ── 次の行動へ：コピーカード ───────────────────── */
 .act{background:var(--card);border:2px solid var(--accent);border-radius:var(--r);
      padding:20px;margin:0 0 30px}

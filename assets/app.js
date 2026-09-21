@@ -518,6 +518,7 @@ function results(){
         '<li><b>やってみるプロジェクト</b>　選んだ1つと、ほかの候補</li>' +
         '<li><b>進め方</b>　' + (t ? esc(t) + 'タイプの' : '') + 'あなたに合った手順</li>' +
         '<li><b>チームやバディに共有する</b>　結果をコピーして貼る</li>' +
+        '<li><b>事例集</b>　' + DB.items.length + '件ぜんぶ、分野ごとに見られます</li>' +
       '</ol>' +
     '</div>' +
 
@@ -581,6 +582,11 @@ function results(){
       (CFG.logEndpoint && A.email ? '同じ内容をメールでも送っています。' : '') + '</p>' +
     shareCard() +
 
+    '<h4 class="sec"><span class="secno">4</span>事例集</h4>' +
+    '<p class="hint">合うものが無かったら、ここから探してください。' +
+      'えらんだ分野の外にも、ぜんぶで' + DB.items.length + '件あります。</p>' +
+    catalog() +
+
     '<div class="restart"><button type="button" class="go ghost" id="again">選び直す</button></div>' +
   '</div>';
 
@@ -588,6 +594,35 @@ function results(){
   autoMail();
   document.getElementById("again").onclick = function(){ reset(); render(); top(); };
   logEvent("result");
+}
+
+/* ── 事例集ぜんぶ ───────────────────────────────────
+   結果が合わなかった人が、自分で他を見に行けるようにする。
+   291件を出しっぱなしにすると読めないので、分野ごとにたたんでおく。
+   選んだ分野はもう上に出ているので、ここは全部閉じた状態で置く。 ── */
+function catalog(){
+  var byGenre = {};
+  DB.items.forEach(function(it){
+    (byGenre[it.genre] = byGenre[it.genre] || []).push(it);
+  });
+  return '<div class="all">' + DB.genres.map(function(g){
+    var list = byGenre[g.name] || [];
+    if (!list.length) return "";
+    return '<details class="allbox" style="' + genreHue(g.name) + '">' +
+      '<summary><b>' + esc(g.name) + '</b><em>' + list.length + '件</em></summary>' +
+      '<ul class="alllist">' + list.map(function(it){
+        /* 元ネタの名前を行ごとに出すと同じ名前が並んで騒がしいので、
+           見に行けるときは見出しそのものをリンクにする。 */
+        return '<li>' +
+          (it.refUrl
+            ? '<a class="allttl" href="' + esc(it.refUrl) + '" target="_blank" rel="noopener">' +
+                esc(it.title) + '</a>'
+            : '<b>' + esc(it.title) + '</b>') +
+          '<span>' + esc(it.step) + '</span>' +
+        '</li>';
+      }).join("") + '</ul>' +
+    '</details>';
+  }).join("") + '</div>';
 }
 
 /* ── カード ─────────────────────────────────────── */
