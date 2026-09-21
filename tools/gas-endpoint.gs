@@ -31,9 +31,12 @@ var SHEET_NAME = '回答';
 var SECRET = '';              // 空なら合言葉チェックなし（config.js の logSecret と同じ値にする）
 var FROM_NAME = 'TEAM2030';   // メールに表示される差出人の名前
 
-/* 返信先。ここに会社のアドレスを入れておくと、
-   送信はGmailからでも「返信」は会社のアドレスに届く。空なら送信アカウント宛て。 */
-var REPLY_TO = 'ueda.r@real-japan.jp';
+/* 返信先。空なら送信アカウント（Gmail）宛て。
+   ここに別ドメインのアドレスを入れると、「差出人 gmail.com ／ 返信先 別ドメイン」
+   という、なりすましに見えやすい形になる。実際 real-japan.jp 宛が
+   3通とも届かなかったので、いまは空にしてある（2026-09-21）。
+   会社側で許可をもらえたら、また入れてよい。 */
+var REPLY_TO = '';
 
 /* 差出人アドレスそのものを変えたいとき用。ふつうは空のままでよい。
    Gmailの 設定 → アカウントとインポート → 「他のメールアドレスを追加」で
@@ -99,6 +102,12 @@ function 今日の送信数() {
   Logger.log('今日 ' + n + ' 通 / 上限 ' + MAX_MAIL_PER_DAY + ' 通');
 }
 
+var HEADER = [
+  '受信時刻', 'イベント', 'セッション', 'お名前', 'メールアドレス',
+  '選んだ分野', 'ウェルスダイナミクス', '勇誠義礼',
+  'やること', '今週やること', 'ほかの候補', '設問セット', '候補のID'
+];
+
 function record_(d) {
   var sh = sheet_();
   sh.appendRow([
@@ -107,23 +116,26 @@ function record_(d) {
     d.session || '',
     d.name || '',
     d.email || '',
-    d.set || '',            // full / short
     (d.genre || []).join(' / '),
     d.wd || '',
     d.yn1 || '',
-    (d.top || []).join(' ')
+    d.pick || '',           // 選んだプロジェクト名
+    d.step || '',           // その今週やること
+    (d.others || []).join(' / '),
+    d.set || '',            // full / short
+    (d.top || []).join(' ') // 突き合わせ用。ふつう見なくてよい
   ]);
 }
 
 function sheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(SHEET_NAME);
-  if (!sh) {
-    sh = ss.insertSheet(SHEET_NAME);
-    sh.appendRow([
-      '受信時刻', 'イベント', 'セッション', 'お名前', 'メールアドレス',
-      '設問セット', '選んだ分野', 'ウェルスダイナミクス', '勇誠義礼', '提示された候補'
-    ]);
+  if (!sh) sh = ss.insertSheet(SHEET_NAME);
+  /* 見出しが無い、または古い並びのままなら書き直す。
+     列を足したときに、手で直さなくて済むように。 */
+  var head = sh.getRange(1, 1, 1, HEADER.length).getValues()[0].join('');
+  if (head !== HEADER.join('')) {
+    sh.getRange(1, 1, 1, HEADER.length).setValues([HEADER]);
     sh.setFrozenRows(1);
   }
   return sh;

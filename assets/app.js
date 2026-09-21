@@ -669,6 +669,9 @@ function sendMail(btn){
     at: new Date().toISOString(), set: CFG.questionSet,
     name: A.name || "", email: A.email,
     genre: A.genre, wd: A.wd, yn1: A.yn1,
+    pick: lead ? lead.it.title : "",
+    step: lead ? lead.it.step : "",
+    others: lastResult ? lastResult.ranked.slice(1).map(function(r){ return r.it.title; }) : [],
     top: lastResult ? lastResult.ranked.map(function(r){ return r.it.id; }) : [],
     subject: "【TEAM2030】" + (lead ? lead.it.title : "プロジェクトコンパスの結果"),
     body: mailBody()
@@ -762,6 +765,9 @@ function legacyCopy(text){
 }
 
 /* ── 記録。logEndpoint が空なら一切送らない ── */
+function lead0(){
+  return (lastResult && lastResult.ranked[0]) ? lastResult.ranked[0].it : null;
+}
 function markStarted(){ if (started) return; started = true; logEvent("start"); }
 function logEvent(kind){
   if (!CFG.logEndpoint) return;
@@ -770,6 +776,10 @@ function logEvent(kind){
     at: new Date().toISOString(), set: CFG.questionSet, name: A.name || "",
     email: A.email || "",
     genre: A.genre, wd: A.wd, yn1: A.yn1,
+    /* シートで読めるように、IDではなく名前で送る */
+    pick: lead0() ? lead0().title : "",
+    step: lead0() ? lead0().step : "",
+    others: lastResult ? lastResult.ranked.slice(1).map(function(r){ return r.it.title; }) : [],
     top: lastResult ? lastResult.ranked.map(function(r){ return r.it.id; }) : []
   };
   try {
