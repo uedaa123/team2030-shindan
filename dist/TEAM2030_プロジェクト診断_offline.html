@@ -1115,7 +1115,8 @@ function mailCard(){
   if (!CFG.logEndpoint) return "";
   return '<div class="act mail">' +
     '<h4>メールで受け取る</h4>' +
-    '<p>この結果をそのままメールで送ります。あとから見返せます。</p>' +
+    '<p>この結果をそのままメールで送ります。あとから見返せます。' +
+      '<br>会社のアドレスは届かないことがあるので、ふだん使っているアドレスがおすすめです。</p>' +
     '<div class="namefield"><label for="mnm">お名前</label>' +
       '<input type="text" id="mnm" class="nm" autocomplete="name" maxlength="40" ' +
       'placeholder="山田 太郎" value="' + esc(A.name) + '"></div>' +
@@ -1228,8 +1229,9 @@ function sendMail(btn){
     body: JSON.stringify(payload)
   }).then(function(r){ return r.text(); })
     .then(function(t){
-      if (/ok/i.test(t)) done(true, A.email + " に送りました。数分で届きます。");
-      else done(false, "送れませんでした。運営に連絡してください。");
+      if (/^ok/i.test(t)) done(true, A.email + " に送りました。数分で届きます。見つからないときは迷惑メールも見てください。");
+      else if (/limit/i.test(t)) done(false, "今日の送信上限に達しました。上のコピーを使ってください。");
+      else done(false, "送れませんでした。上のコピーを使ってください。");
     })
     .catch(function(){
       fetch(CFG.logEndpoint, {
