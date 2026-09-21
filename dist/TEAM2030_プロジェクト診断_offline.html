@@ -706,7 +706,7 @@ var Q = {
     結果は最後に自動でメール送信するので、そのことを先に伝える。
     送り先がない（logEndpoint が空）ときは、この設問ごと出さない。 */
  who: {key:"who", type:"form",
-   label:"あなた",
+   label:"お名前",
    q:"お名前とメールアドレス",
    h:"診断が終わったら、結果をこのアドレスにお送りします。",
    fields:[
@@ -937,16 +937,13 @@ function form(S){
     (step > 0 ? '<div class="nav"><button type="button" class="back" id="back">ひとつ戻る</button></div>' : '') +
   '</div>' +
   '<div class="bottombar"><div class="bottominner">' +
-    '<button type="button" class="go" id="go"' + (whoReady() ? "" : " disabled") + '>' +
-    (whoReady() ? "はじめる" : "2つとも入れてね") + '</button>' +
+    '<button type="button" class="go" id="go"' + (whoReady() ? "" : " disabled") + '>次へ</button>' +
   '</div></div>';
 
   Array.prototype.forEach.call(app.querySelectorAll("input[data-k]"), function(inp){
     inp.oninput = function(){
       A[inp.getAttribute("data-k")] = inp.value.trim();
-      var g = document.getElementById("go");
-      g.disabled = !whoReady();
-      g.textContent = whoReady() ? "はじめる" : "2つとも入れてね";
+      document.getElementById("go").disabled = !whoReady();
       document.getElementById("formmsg").textContent = "";
     };
   });
