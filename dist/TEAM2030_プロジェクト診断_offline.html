@@ -1115,8 +1115,7 @@ function mailCard(){
   if (!CFG.logEndpoint) return "";
   return '<div class="act mail">' +
     '<h4>メールで受け取る</h4>' +
-    '<p>この結果をそのままメールで送ります。あとから見返せます。' +
-      '<br>会社のアドレスは届かないことがあるので、ふだん使っているアドレスがおすすめです。</p>' +
+    '<p>この結果をそのままメールで送ります。あとから見返せます。</p>' +
     '<div class="namefield"><label for="mnm">お名前</label>' +
       '<input type="text" id="mnm" class="nm" autocomplete="name" maxlength="40" ' +
       'placeholder="山田 太郎" value="' + esc(A.name) + '"></div>' +
