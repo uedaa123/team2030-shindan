@@ -587,7 +587,6 @@ function mailCard(){
       'inputmode="email" placeholder="you@example.com" value="' + esc(A.email) + '"></div>' +
     '<button type="button" class="go mailbtn">この内容をメールで送る</button>' +
     '<p class="copied" data-msg="mail" role="status"></p>' +
-    '<p class="tiny">お名前とメールアドレスは、送信のためと、運営の記録として保存されます。</p>' +
   '</div>';
 }
 
