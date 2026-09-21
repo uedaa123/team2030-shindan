@@ -20,6 +20,11 @@
  * 「アクセスできるユーザー：全員」は、URLを知っていれば誰でも叩けるという意味。
  * 書き込み専用で読み出す口は作っていないが、いたずら送信は起こりうる。
  * 気になる場合は SECRET を設定して、config.js の logSecret にも同じ値を入れる。
+ *
+ * 許可を求められる権限は2つだけ。
+ *   ・このスプレッドシートを読み書きする
+ *   ・あなたとしてメールを送る（Send email as you）
+ * 「Gmailのメールを読む・削除する」は求めない。要らないので使っていない。
  */
 
 var SHEET_NAME = '回答';
@@ -30,10 +35,12 @@ var FROM_NAME = 'TEAM2030';   // メールに表示される差出人の名前
    送信はGmailからでも「返信」は会社のアドレスに届く。空なら送信アカウント宛て。 */
 var REPLY_TO = 'ueda.r@real-japan.jp';
 
-/* 差出人アドレスそのものを変えたいとき用。
+/* 差出人アドレスそのものを変えたいとき用。ふつうは空のままでよい。
    Gmailの 設定 → アカウントとインポート → 「他のメールアドレスを追加」で
-   登録・確認ずみのアドレスだけが使える。未登録のまま入れても無視される。
-   空なら、ログインしているGmailのアドレスで送られる。 */
+   登録・確認ずみのアドレスだけが使える（登録は Gmail の画面で確認すること）。
+   空なら、ログインしているGmailのアドレスで送られる。
+
+   ※ここに未登録のアドレスを入れると、送信時にエラーになる。 */
 var SEND_AS = '';
 var MAX_MAIL_PER_DAY = 60;    // 1日に送る上限。いたずらで使い切られないための保険
 
@@ -54,8 +61,7 @@ function doPost(e) {
         name: FROM_NAME
       };
       if (REPLY_TO) opt.replyTo = REPLY_TO;
-      /* 登録ずみの別アドレスがあるときだけ、差出人を差し替える */
-      if (SEND_AS && GmailApp.getAliases().indexOf(SEND_AS) >= 0) opt.from = SEND_AS;
+      if (SEND_AS) opt.from = SEND_AS;
       MailApp.sendEmail(opt);
       countMail_();
     }
@@ -85,12 +91,6 @@ function countMail_() {
   var p = PropertiesService.getScriptProperties();
   var k = todayKey_();
   p.setProperty(k, String(Number(p.getProperty(k) || 0) + 1));
-}
-
-/** 差出人に使えるアドレスの一覧。SEND_AS に入れられるのはここに出たものだけ */
-function 使える差出人アドレス() {
-  var a = GmailApp.getAliases();
-  Logger.log(a.length ? a.join('\n') : '別のアドレスは登録されていません（Gmailのアドレスで送られます）');
 }
 
 /** 今日いま何通送ったか。エディタで実行するとログに出る */
