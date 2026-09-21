@@ -24,7 +24,17 @@
 
 var SHEET_NAME = '回答';
 var SECRET = '';              // 空なら合言葉チェックなし（config.js の logSecret と同じ値にする）
-var FROM_NAME = 'TEAM2030';   // メールの差出人名
+var FROM_NAME = 'TEAM2030';   // メールに表示される差出人の名前
+
+/* 返信先。ここに会社のアドレスを入れておくと、
+   送信はGmailからでも「返信」は会社のアドレスに届く。空なら送信アカウント宛て。 */
+var REPLY_TO = 'ueda.r@real-japan.jp';
+
+/* 差出人アドレスそのものを変えたいとき用。
+   Gmailの 設定 → アカウントとインポート → 「他のメールアドレスを追加」で
+   登録・確認ずみのアドレスだけが使える。未登録のまま入れても無視される。
+   空なら、ログインしているGmailのアドレスで送られる。 */
+var SEND_AS = '';
 var MAX_MAIL_PER_DAY = 60;    // 1日に送る上限。いたずらで使い切られないための保険
 
 function doPost(e) {
@@ -37,12 +47,16 @@ function doPost(e) {
     /* メール希望のときだけ送る */
     if (d.event === 'mail' && d.email) {
       if (!canSendToday_()) return ok('limit');
-      MailApp.sendEmail({
+      var opt = {
         to: d.email,
         subject: d.subject || '【TEAM2030】プロジェクトコンパスの結果',
         body: d.body || '',
         name: FROM_NAME
-      });
+      };
+      if (REPLY_TO) opt.replyTo = REPLY_TO;
+      /* 登録ずみの別アドレスがあるときだけ、差出人を差し替える */
+      if (SEND_AS && GmailApp.getAliases().indexOf(SEND_AS) >= 0) opt.from = SEND_AS;
+      MailApp.sendEmail(opt);
       countMail_();
     }
     return ok('ok');
@@ -71,6 +85,13 @@ function countMail_() {
   var p = PropertiesService.getScriptProperties();
   var k = todayKey_();
   p.setProperty(k, String(Number(p.getProperty(k) || 0) + 1));
+}
+
+/** 差出人に使えるアドレスの一覧。SEND_AS に入れられるのはここに出たものだけ */
+function 使える差出人アドレス() {
+  var a = GmailApp.getAliases();
+  Logger.log(a.length ? a.join('
+') : '別のアドレスは登録されていません（Gmailのアドレスで送られます）');
 }
 
 /** 今日いま何通送ったか。エディタで実行するとログに出る */
