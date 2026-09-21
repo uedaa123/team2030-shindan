@@ -23,8 +23,9 @@
  */
 
 var SHEET_NAME = '回答';
-var SECRET = '';            // 空なら合言葉チェックなし
-var FROM_NAME = 'TEAM2030'; // メールの差出人名
+var SECRET = '';              // 空なら合言葉チェックなし（config.js の logSecret と同じ値にする）
+var FROM_NAME = 'TEAM2030';   // メールの差出人名
+var MAX_MAIL_PER_DAY = 60;    // 1日に送る上限。いたずらで使い切られないための保険
 
 function doPost(e) {
   try {
@@ -35,12 +36,14 @@ function doPost(e) {
 
     /* メール希望のときだけ送る */
     if (d.event === 'mail' && d.email) {
+      if (!canSendToday_()) return ok('limit');
       MailApp.sendEmail({
         to: d.email,
         subject: d.subject || '【TEAM2030】プロジェクトコンパスの結果',
         body: d.body || '',
         name: FROM_NAME
       });
+      countMail_();
     }
     return ok('ok');
   } catch (err) {
@@ -50,7 +53,30 @@ function doPost(e) {
 }
 
 function doGet() {
-  return ok('ok'); // 疎通確認用
+  return ok('ok'); // 疎通確認用。ブラウザでこのURLを開いて ok と出れば生きている
+}
+
+/* ── 1日の送信数を数える ──────────────────────────
+   このURLは「全員」に開いているので、見つかれば誰でも叩ける。
+   上限を切っておけば、いたずらされても被害が1日ぶんで止まる。
+   上限に当たったら送らずに limit を返す（記録だけは残る）。 ── */
+function todayKey_() {
+  return 'mail_' + Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyyMMdd');
+}
+function canSendToday_() {
+  var p = PropertiesService.getScriptProperties();
+  return Number(p.getProperty(todayKey_()) || 0) < MAX_MAIL_PER_DAY;
+}
+function countMail_() {
+  var p = PropertiesService.getScriptProperties();
+  var k = todayKey_();
+  p.setProperty(k, String(Number(p.getProperty(k) || 0) + 1));
+}
+
+/** 今日いま何通送ったか。エディタで実行するとログに出る */
+function 今日の送信数() {
+  var n = PropertiesService.getScriptProperties().getProperty(todayKey_()) || 0;
+  Logger.log('今日 ' + n + ' 通 / 上限 ' + MAX_MAIL_PER_DAY + ' 通');
 }
 
 function record_(d) {
