@@ -700,6 +700,20 @@ function shortlist(){
 }
 
 var Q = {
+ /* 入口。名前とメールを必須で取る。
+    ここで取っておかないと、途中でやめた人が誰なのか分からず、
+    運営が声をかけられない（それが本来いちばん拾いたい人）。
+    結果は最後に自動でメール送信するので、そのことを先に伝える。
+    送り先がない（logEndpoint が空）ときは、この設問ごと出さない。 */
+ who: {key:"who", type:"form",
+   label:"あなた",
+   q:"お名前とメールアドレス",
+   h:"診断が終わったら、結果をこのアドレスにお送りします。",
+   fields:[
+     {key:"name",  label:"お名前",         type:"text",  ph:"山田 太郎",       auto:"name"},
+     {key:"email", label:"メールアドレス", type:"email", ph:"you@example.com", auto:"email"}
+   ]},
+
  group: {key:"group", type:"many", max:2,
    label:"大分類",
    q:"どのへんに、ワクワクする？",
@@ -756,6 +770,11 @@ var STEP_SETS = {
   full:  [Q.group, Q.genre, Q.project, Q.yn, Q.wd],
   short: [Q.group, Q.genre, Q.project, Q.yn]
 };
+/* 送り先があるときだけ、入口の設問を先頭に足す */
+if (CFG.logEndpoint) {
+  STEP_SETS.full  = [Q.who].concat(STEP_SETS.full);
+  STEP_SETS.short = [Q.who].concat(STEP_SETS.short);
+}
 
 /* 6グループの色は、それぞれの代表になる分野の色を使う */
 var GROUP_HUE = [2, 0, 8, 5, 3, 6];
@@ -780,10 +799,13 @@ var YN_HUE = {
 var SCALE_ORDER = {S:0, M:1, L:2};
 
 /* ── 状態 ───────────────────────────────────────── */
-var A, step, STEPS, TOTAL, DB = null, lastResult = null, started = false;
+var A, step, STEPS, TOTAL, DB = null, lastResult = null, started = false, mailSent = false;
 var SESSION = "s" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 
-function reset(){ A = {group:[], genre:[], project:null, wd:null, yn1:null, name:"", email:""}; step = 0; lastResult = null; }
+function reset(){
+  A = {group:[], genre:[], project:null, wd:null, yn1:null, name:"", email:""};
+  step = 0; lastResult = null; mailSent = false;
+}
 reset();
 STEPS = STEP_SETS[CFG.questionSet] || STEP_SETS.full;
 TOTAL = STEPS.length;
@@ -842,6 +864,7 @@ function render(){
   prune();
   if (step >= STEPS.length) return results();
   var S = STEPS[step];
+  if (S.type === "form") return form(S);
   var cur = A[S.key];
   var sel = function(v){ return S.type === "many" ? cur.indexOf(v) >= 0 : cur === v; };
   var opts = S.opts();
@@ -895,6 +918,52 @@ function render(){
   var bk = document.getElementById("back");
   if (bk) bk.onclick = function(){ step--; render(); top(); };
 }
+
+/* 入口の入力画面。両方そろうまで先に進めない */
+function form(S){
+  app.innerHTML =
+  stepper() +
+  '<div class="step">' +
+    '<h2>' + esc(S.q) + '</h2>' +
+    '<p class="hint">' + esc(S.h) + '</p>' +
+    S.fields.map(function(f){
+      return '<div class="namefield"><label for="f-' + f.key + '">' + esc(f.label) + '</label>' +
+        '<input type="' + f.type + '" id="f-' + f.key + '" data-k="' + f.key + '" ' +
+        'autocomplete="' + f.auto + '" maxlength="120" ' +
+        (f.type === "email" ? 'inputmode="email" ' : '') +
+        'placeholder="' + esc(f.ph) + '" value="' + esc(A[f.key]) + '"></div>';
+    }).join("") +
+    '<p class="copied" id="formmsg" role="status"></p>' +
+    (step > 0 ? '<div class="nav"><button type="button" class="back" id="back">ひとつ戻る</button></div>' : '') +
+  '</div>' +
+  '<div class="bottombar"><div class="bottominner">' +
+    '<button type="button" class="go" id="go"' + (whoReady() ? "" : " disabled") + '>' +
+    (whoReady() ? "はじめる" : "2つとも入れてね") + '</button>' +
+  '</div></div>';
+
+  Array.prototype.forEach.call(app.querySelectorAll("input[data-k]"), function(inp){
+    inp.oninput = function(){
+      A[inp.getAttribute("data-k")] = inp.value.trim();
+      var g = document.getElementById("go");
+      g.disabled = !whoReady();
+      g.textContent = whoReady() ? "はじめる" : "2つとも入れてね";
+      document.getElementById("formmsg").textContent = "";
+    };
+  });
+  document.getElementById("go").onclick = function(){
+    if (!whoReady()) {
+      document.getElementById("formmsg").textContent =
+        !A.name ? "お名前を入れてください。" : "メールアドレスを確かめてください。";
+      return;
+    }
+    markStarted();     /* ここで運営側に「誰が始めたか」が残る */
+    step++; render(); top();
+  };
+  var bk = document.getElementById("back");
+  if (bk) bk.onclick = function(){ step--; render(); top(); };
+}
+function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v || ""); }
+function whoReady(){ return !!A.name && validEmail(A.email); }
 
 /* ── 並べ方 ─────────────────────────────────────
    選んだ分野に入っているかどうかだけ。同じなら「小さく始められる順」。
@@ -1048,13 +1117,15 @@ function results(){
     '</section>' : '') +
 
     '<h4 class="sec"><span class="secno">3</span>チームやバディに共有する</h4>' +
-    '<p class="hint">バディやチームに共有しましょう。そして、アドバイスや感想をもらいましょう。</p>' +
+    '<p class="hint">バディやチームに共有しましょう。そして、アドバイスや感想をもらいましょう。' +
+      (CFG.logEndpoint && A.email ? '同じ内容をメールでも送っています。' : '') + '</p>' +
     shareCard() +
 
     '<div class="restart"><button type="button" class="go ghost" id="again">選び直す</button></div>' +
   '</div>';
 
   wireShare();
+  autoMail();
   document.getElementById("again").onclick = function(){ reset(); render(); top(); };
   logEvent("result");
 }
@@ -1108,22 +1179,16 @@ function shareCard(){
   mailCard();
 }
 
-/* ── メールで受け取る ────────────────────────────────
-   config.js の logEndpoint（GASのURL）が入っているときだけ出す。
-   入っていなければ送り先がないので、欄ごと出さない。 ── */
+/* ── メールの状態 ───────────────────────────────────
+   入口でアドレスをもらっているので、結果が出た時点で自動で送る。
+   ここは「送ったこと」を見せて、届かなかった人が送り直せる場所。 ── */
 function mailCard(){
-  if (!CFG.logEndpoint) return "";
+  if (!CFG.logEndpoint || !A.email) return "";
   return '<div class="act mail">' +
-    '<h4>メールで受け取る</h4>' +
-    '<p>この結果をそのままメールで送ります。あとから見返せます。</p>' +
-    '<div class="namefield"><label for="mnm">お名前</label>' +
-      '<input type="text" id="mnm" class="nm" autocomplete="name" maxlength="40" ' +
-      'placeholder="山田 太郎" value="' + esc(A.name) + '"></div>' +
-    '<div class="namefield"><label for="mml">メールアドレス</label>' +
-      '<input type="email" id="mml" class="ml" autocomplete="email" maxlength="120" ' +
-      'inputmode="email" placeholder="you@example.com" value="' + esc(A.email) + '"></div>' +
-    '<button type="button" class="go mailbtn">この内容をメールで送る</button>' +
-    '<p class="copied" data-msg="mail" role="status"></p>' +
+    '<h4>メールでも送りました</h4>' +
+    '<p>' + esc(A.email) + ' に、この結果を送っています。あとから見返せます。</p>' +
+    '<p class="copied" data-msg="mail" role="status">送信中…</p>' +
+    '<button type="button" class="go ghost mailbtn">もう一度送る</button>' +
   '</div>';
 }
 
@@ -1188,16 +1253,25 @@ function wireShare(){
   if (mb) mb.onclick = function(){ sendMail(mb); };
 }
 
+/* 結果が出たら1回だけ自動で送る。押し直したいときは「もう一度送る」から */
+function autoMail(){
+  if (!CFG.logEndpoint || !A.email) return;
+  if (mailSent) {
+    var m = app.querySelector('.copied[data-msg="mail"]');
+    if (m) m.textContent = "送信ずみです。";
+    return;
+  }
+  mailSent = true;
+  sendMail(app.querySelector(".mailbtn"));
+}
+
 /* メール送信。送り先はGAS。押せるのは1回ずつ */
 function sendMail(btn){
   var msg = app.querySelector('.copied[data-msg="mail"]');
-  if (!A.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(A.email)) {
-    msg.textContent = "メールアドレスを確かめてください。";
-    return;
-  }
-  btn.disabled = true;
-  btn.textContent = "送っています…";
-  msg.textContent = "";
+  if (!msg) return;
+  if (!validEmail(A.email)) { msg.textContent = "メールアドレスを確かめてください。"; return; }
+  if (btn) { btn.disabled = true; btn.textContent = "送っています…"; }
+  msg.textContent = "送信中…";
 
   var lead = lastResult && lastResult.ranked[0];
   var payload = {
@@ -1214,10 +1288,9 @@ function sendMail(btn){
   };
 
   function done(ok, note){
-    btn.disabled = false;
-    btn.textContent = ok ? "送りました" : "この内容をメールで送る";
+    if (btn) { btn.disabled = false; btn.textContent = "もう一度送る"; }
     msg.textContent = note;
-    if (ok) setTimeout(function(){ btn.textContent = "この内容をメールで送る"; }, 6000);
+    if (!ok) mailSent = false;   /* 失敗したら、もう一度押せるようにしておく */
   }
 
   /* まず普通に投げて、返事が読めたら確実。読めなければ no-cors で投げ直す */
@@ -1227,7 +1300,7 @@ function sendMail(btn){
     body: JSON.stringify(payload)
   }).then(function(r){ return r.text(); })
     .then(function(t){
-      if (/^ok/i.test(t)) done(true, A.email + " に送りました。数分で届きます。見つからないときは迷惑メールも見てください。");
+      if (/^ok/i.test(t)) done(true, "送りました。数分で届きます。見つからないときは迷惑メールも見てください。");
       else if (/limit/i.test(t)) done(false, "今日の送信上限に達しました。上のコピーを使ってください。");
       else done(false, "送れませんでした。上のコピーを使ってください。");
     })
